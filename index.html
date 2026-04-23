@@ -747,6 +747,66 @@
   .stack-tier.tier-aware .stack-item.primary { color: var(--wf-pink-dark); }
   .stack-tier.tier-act .stack-item.primary { color: #E05627; }
 
+  /* ================= CONTENT PRODUCTION TABLE ================= */
+  .prod-table { margin-top: 2vh; width: 100%; border-collapse: collapse; table-layout: fixed; }
+  .prod-table col.c-region { width: 20%; }
+  .prod-table col.c-product { width: 28%; }
+  .prod-table col.c-num { width: 14%; }
+  .prod-table col.c-note { width: 38%; }
+  .prod-table thead th {
+    text-align: left;
+    padding: 0.7vh 1vw 0.7vh 0;
+    font-size: clamp(0.62rem, 1vh, 0.72rem);
+    font-weight: 600;
+    color: var(--ink-soft);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-bottom: 1.5px solid var(--ink);
+  }
+  .prod-table thead th.num { text-align: center; }
+  .prod-table tbody td {
+    padding: 0.55vh 1vw 0.55vh 0;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: clamp(0.78rem, 1.35vh, 0.92rem);
+    color: var(--ink);
+    line-height: 1.3;
+    vertical-align: middle;
+  }
+  .prod-table tbody td.region { font-weight: 600; }
+  .prod-table tbody td.product { color: var(--ink-soft); font-size: clamp(0.72rem, 1.2vh, 0.85rem); }
+  .prod-table tbody td.num { text-align: center; font-variant-numeric: tabular-nums; }
+  .prod-table tbody td.num strong {
+    color: var(--wf-pink);
+    font-weight: 700;
+    font-size: clamp(0.92rem, 1.55vh, 1.08rem);
+  }
+  .prod-table tbody td.n-cell { font-size: clamp(0.7rem, 1.15vh, 0.82rem); color: var(--ink-soft); }
+  .prod-table tbody tr.tbd td { opacity: 0.5; }
+  .prod-table tbody tr.tbd td.num { color: var(--muted); }
+  .prod-table tbody tr.total td { font-weight: 700; border-top: 1.5px solid var(--ink); border-bottom: none; padding-top: 0.9vh; }
+  .prod-table tbody tr.total td.num { color: var(--wf-pink); font-size: clamp(1rem, 1.7vh, 1.2rem); }
+  .prod-summary {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5vw; margin-top: 1.2vh;
+  }
+  .prod-summary-item {
+    padding: 1vh 1vw;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--wf-pink);
+    border-radius: 2px;
+  }
+  .prod-summary-item .ps-label {
+    font-size: clamp(0.68rem, 1.1vh, 0.78rem);
+    font-weight: 600; color: var(--wf-pink);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 0.3vh; display: block;
+  }
+  .prod-summary-item .ps-body {
+    font-size: clamp(0.75rem, 1.25vh, 0.88rem);
+    color: var(--ink-soft); line-height: 1.4;
+  }
+
   /* ================= IMAGE LIGHTBOX ================= */
   .lb-img {
     cursor: zoom-in;
@@ -1686,12 +1746,12 @@
     <div class="slide-body v-center">
       <div class="column column-narrow">
         <span class="eyebrow">21 · The battle plan</span>
-        <h2 class="xl"><em>Regional creators</em> + short-form carrying Q2 product focus to 20M / month.</h2>
+        <h2 class="xl"><em>Regional creators</em> + short-form carrying Q2 product focus to 20M impressions.</h2>
         <ul class="bullets">
           <li><strong>Who</strong> &mdash; regional creators in priority corridors, not central talking heads</li>
           <li><strong>What</strong> &mdash; platform-native short-form tied directly to WorldFirst product benefit</li>
           <li><strong>When</strong> &mdash; two-month concentration, Q2</li>
-          <li><strong>How much</strong> &mdash; <strong class="pink">20M impressions per month</strong> across priority regions</li>
+          <li><strong>How much</strong> &mdash; <strong class="pink">20M impressions</strong> across priority regions, Q2</li>
         </ul>
       </div>
     </div>
@@ -1765,9 +1825,9 @@
         <span class="eyebrow">23 · The number</span>
         <h2 class="xl">Why <em>20M?</em> Awareness needs scale to move the needle.</h2>
         <ul class="bullets">
-          <li><strong>At 1M per month</strong> we sit below recall threshold in priority regions &mdash; noise, not signal</li>
+          <li><strong>At Q1's 1M total</strong> we sit below recall threshold in priority regions &mdash; noise, not signal</li>
           <li><strong>Awareness cycle</strong> &mdash; decision-makers need 3+ exposures within ~4 weeks to retain the message</li>
-          <li><strong>At 20M per month</strong> we clear effective reach &mdash; results become measurable</li>
+          <li><strong>At 20M Q2 total</strong> we clear effective reach &mdash; results become measurable</li>
         </ul>
         <div class="pull-quote">Small numbers are measurement noise. <span class="pink-strong">20M is the scale that makes awareness readable.</span></div>
       </div>
@@ -1786,7 +1846,7 @@
     <div class="slide-body v-start">
       <div class="column column-wide">
         <span class="eyebrow">24 · How we do it &mdash; the distribution</span>
-        <h2 class="lg">20M per month distributed <em>against</em> paid budget &amp; product focus.</h2>
+        <h2 class="lg">20M Q2 impressions distributed <em>against</em> paid budget &amp; product focus.</h2>
         <p class="fine" style="max-width: 82ch;">Awareness content built for the paid team's activation targets &mdash; same regions, same products. The demand we create feeds the pool they convert.</p>
         <div class="region-bars">
           <div class="region-row"><span class="rr-name">UK</span><span class="rr-product">WorldCard, World Account</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 100%;"></div></div></div>
@@ -1805,16 +1865,72 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 25 — PRODUCTION FLOW (HTML chart)                                 -->
+  <!-- 26 — MAY PRODUCTION PLAN                                          -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Production flow</span><span class="sep"></span><span class="head-num">26</span></div>
+      <div class="head-meta"><span>May production plan</span><span class="sep"></span><span class="head-num">26</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">25 · Production flow</span>
+        <span class="eyebrow">25 · May production plan &mdash; minimum output</span>
+        <h2 class="lg">The <em>freelancer creatives</em> we'll produce ASAP for May.</h2>
+        <p class="fine" style="max-width: 82ch;">Minimum set. Each creative lands on our own channels, gets handed to paid for ads, and gets shared with regional teams as a benchmark to test more messages. May feeds the tests &mdash; June expands on whichever work best.</p>
+        <table class="prod-table">
+          <colgroup>
+            <col class="c-region">
+            <col class="c-product">
+            <col class="c-num">
+            <col class="c-note">
+          </colgroup>
+          <thead>
+            <tr><th>Region</th><th>Product focus</th><th class="num">Creatives</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="region">UK</td><td class="product">WorldCard, World Account, FX campaign</td><td class="num"><strong>9</strong></td><td class="n-cell">3 freelancers &times; 2 products = 6, plus 3 FX campaign tests</td></tr>
+            <tr><td class="region">SEA &middot; MY</td><td class="product">1688 WP, World Account</td><td class="num"><strong>2</strong></td><td class="n-cell">Co-production with regional team</td></tr>
+            <tr><td class="region">SEA &middot; SG</td><td class="product">1688 WP, World Account</td><td class="num"><strong>2</strong></td><td class="n-cell">Co-production with regional team</td></tr>
+            <tr><td class="region">SEA &middot; PH</td><td class="product">1688 WP, World Account</td><td class="num"><strong>2</strong></td><td class="n-cell">Co-production with regional team</td></tr>
+            <tr><td class="region">SEA &middot; ID</td><td class="product">1688 WP, World Account</td><td class="num"><strong>2</strong></td><td class="n-cell">Co-production with regional team</td></tr>
+            <tr><td class="region">EEA &middot; DE</td><td class="product">World Account</td><td class="num"><strong>2</strong></td><td class="n-cell">Central-led</td></tr>
+            <tr><td class="region">EEA &middot; PL</td><td class="product">World Account</td><td class="num"><strong>1</strong></td><td class="n-cell">Central-led</td></tr>
+            <tr><td class="region">EEA &middot; FR-speaking</td><td class="product">World Account</td><td class="num"><strong>1</strong></td><td class="n-cell">One French-speaking creator</td></tr>
+            <tr><td class="region">Longtail &middot; PK / NG / BD / MA</td><td class="product">World Account, WorldCard</td><td class="num"><strong>8</strong></td><td class="n-cell">2 per region, central-led</td></tr>
+            <tr class="tbd"><td class="region">Vietnam &middot; US (Zyla) &middot; Turkey &middot; JKT &middot; MX_BR &middot; ME</td><td class="product">&mdash;</td><td class="num">TBD</td><td class="n-cell">Separate decisions, not in May scope</td></tr>
+            <tr class="total"><td colspan="2">Total May creatives (active regions)</td><td class="num">~29</td><td class="n-cell">Minimum. June expands on what wins.</td></tr>
+          </tbody>
+        </table>
+        <div class="prod-summary">
+          <div class="prod-summary-item">
+            <span class="ps-label">Own channels</span>
+            <div class="ps-body">Every creative posts organically first &mdash; testing message in market.</div>
+          </div>
+          <div class="prod-summary-item">
+            <span class="ps-label">Paid amplification</span>
+            <div class="ps-body">Winners get handed to paid as ad variants &mdash; awareness feeds activation pool.</div>
+          </div>
+          <div class="prod-summary-item">
+            <span class="ps-label">Regional leverage</span>
+            <div class="ps-body">Shared as benchmark. Regional teams test more messages + build ongoing freelancer relationships.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 27 — PRODUCTION FLOW (HTML chart)                                 -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Production flow</span><span class="sep"></span><span class="head-num">27</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">26 · Production flow</span>
         <h2 class="lg">After performance read, the path <em>splits.</em></h2>
         <div class="pflow">
           <svg class="pflow-svg" viewBox="0 0 1000 580" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -1895,11 +2011,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Metrics</span><span class="sep"></span><span class="head-num">28</span></div>
+      <div class="head-meta"><span>Metrics</span><span class="sep"></span><span class="head-num">29</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">27 · Metrics</span>
+        <span class="eyebrow">28 · Metrics</span>
         <h2 class="lg">The <em>metrics</em> we look at.</h2>
         <div class="metric-grid-v2">
           <div class="metric-card-v2 color-aware">
@@ -1930,11 +2046,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Beyond Q2</span><span class="sep"></span><span class="head-num">29</span></div>
+      <div class="head-meta"><span>Beyond Q2</span><span class="sep"></span><span class="head-num">30</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">28 · Beyond Q2</span>
+        <span class="eyebrow">29 · Beyond Q2</span>
         <h2 class="xl">Two months, then we <em>regroup.</em></h2>
         <p>After Q2: consolidated hybrid strategy &mdash; a mix, not one format winning everything.</p>
       </div>
@@ -1948,11 +2064,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The full stack</span><span class="sep"></span><span class="head-num">30</span></div>
+      <div class="head-meta"><span>The full stack</span><span class="sep"></span><span class="head-num">31</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">29 · The full stack</span>
+        <span class="eyebrow">30 · The full stack</span>
         <h2 class="xl">Long-term leverage is a <em>combination.</em></h2>
         <ul class="plus-list">
           <li><strong>Brand campaigns</strong></li>
@@ -1974,17 +2090,29 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The dashboard</span><span class="sep"></span><span class="head-num">31</span></div>
+      <div class="head-meta"><span>The dashboard</span><span class="sep"></span><span class="head-num">32</span></div>
     </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">30 · The dashboard</span>
-        <h2 class="xl">One dashboard. <em>Shared.</em> Upper-funnel + regional + paid.</h2>
-        <ul class="bullets">
-          <li>UK awareness content works &rarr; Vietnam adapts it same day</li>
-          <li>Paid team sees the message land &rarr; builds activation variants</li>
-        </ul>
-        <div class="pull-quote">The connective tissue doesn't exist today. <span class="pink-strong">Building it is the first systems investment.</span></div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">31 · The dashboard</span>
+        <h2 class="lg">One dashboard. <em>Shared.</em> Upper-funnel + regional + paid.</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 3vw; margin-top: 2vh; align-items: start;">
+          <div>
+            <ul class="bullets">
+              <li>UK awareness content works &rarr; Vietnam adapts it same day</li>
+              <li>Paid team sees the message land &rarr; builds activation variants</li>
+              <li>All live freelancer creatives + KOL assets catalogued by region, product, language, format</li>
+            </ul>
+            <div class="pull-quote">The connective tissue doesn't exist today. <span class="pink-strong">We've started building it.</span></div>
+            <a class="cta-button" href="https://socialworldfirst.github.io/asset-library/?cb=now" target="_blank">Open WorldFirst Asset Library</a>
+          </div>
+          <div>
+            <a href="https://socialworldfirst.github.io/asset-library/?cb=now" target="_blank" style="display: block; text-decoration: none;">
+              <img class="lb-img" src="images/wf-asset-library.jpg" alt="WorldFirst Asset Library &mdash; content ops dashboard with 24 videos across regions and campaigns" style="width: 100%; border-color: var(--line);">
+            </a>
+            <p class="fine" style="margin-top: 1vh; font-size: clamp(0.72rem, 1.2vh, 0.82rem);"><strong class="pink">Live now.</strong> Filter by region, campaign, product, language, lifecycle stage, talent. 24 videos catalogued, 4 live, 8 gaps flagged.</p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
@@ -1996,11 +2124,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Working together</span><span class="sep"></span><span class="head-num">32</span></div>
+      <div class="head-meta"><span>Working together</span><span class="sep"></span><span class="head-num">33</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">31 · Working together</span>
+        <span class="eyebrow">32 · Working together</span>
         <h2 class="xl">How awareness and activation <em>work together.</em></h2>
         <ul class="bullets">
           <li><strong>Consistent communications</strong> &mdash; same message across both layers, different jobs</li>
@@ -2018,11 +2146,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Team shape</span><span class="sep"></span><span class="head-num">33</span></div>
+      <div class="head-meta"><span>Team shape</span><span class="sep"></span><span class="head-num">34</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">32 · Team shape</span>
+        <span class="eyebrow">33 · Team shape</span>
         <h2 class="lg">One person can run social. Upper-funnel needs a <em>full team.</em></h2>
         <ul class="bullets" style="margin-top: 1.5vh;">
           <li><strong>Cathy (incoming)</strong> &mdash; shifting ad-hoc tasks over; owns social publishing + brand content coordination</li>
@@ -2046,7 +2174,7 @@
   <section class="slide slide-divider">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Part III · Brand campaign</span><span class="sep"></span><span class="head-num">34</span></div>
+      <div class="head-meta"><span>Part III · Brand campaign</span><span class="sep"></span><span class="head-num">35</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="div-num">III</div>
@@ -2065,11 +2193,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Brand campaign is risky</span><span class="sep"></span><span class="head-num">35</span></div>
+      <div class="head-meta"><span>Brand campaign is risky</span><span class="sep"></span><span class="head-num">36</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">33 · Brand campaigns come with real risk</span>
+        <span class="eyebrow">34 · Brand campaigns come with real risk</span>
         <h2 class="lg">Two reminders of what goes <em>wrong</em> when brand outpaces defence.</h2>
         <ul class="bullets" style="margin-top: 1.5vh;">
           <li><strong>Wise, 2014&ndash;19</strong> &mdash; built the "hidden fees" category for the whole market. Much of the demand got collected by Revolut, Remitly and Atlantic Money. Brand without activation defence <strong>subsidised competitors.</strong></li>
@@ -2087,11 +2215,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Awareness for us to collect</span><span class="sep"></span><span class="head-num">36</span></div>
+      <div class="head-meta"><span>Awareness for us to collect</span><span class="sep"></span><span class="head-num">37</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">34 · The proposition test</span>
+        <span class="eyebrow">35 · The proposition test</span>
         <h2 class="xl">Brand campaigns should create awareness that's <em>ours</em> to collect, not competitors'.</h2>
         <p><strong>FX savings</strong> alone is a claim most peers can match. A brand built on it educates the market on a benefit anyone delivers &mdash; the strongest activation collects the demand.</p>
         <p>The proposition has to anchor to something <strong>specifically WorldFirst</strong>: our Ant / Alipay depth, CNY routing, 1688 ecosystem, global cross-border footprint. Awareness against that is awareness we can uniquely convert.</p>
@@ -2106,12 +2234,12 @@
   <section class="slide slide-flash">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The proposition</span><span class="sep"></span><span class="head-num">37</span></div>
+      <div class="head-meta"><span>The proposition</span><span class="sep"></span><span class="head-num">38</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="flash-deco">moat</div>
       <div class="column column-wide flash-content">
-        <span class="eyebrow">35 · The global proposition</span>
+        <span class="eyebrow">36 · The global proposition</span>
         <h1 class="flash-title">Build Your<br>Cross-Border <em>Moat.</em></h1>
         <p class="flash-sub">The one idea that says what WorldFirst does that no one else can match &mdash; and invites our customers into their own story.</p>
       </div>
@@ -2125,11 +2253,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Success stories</span><span class="sep"></span><span class="head-num">38</span></div>
+      <div class="head-meta"><span>Success stories</span><span class="sep"></span><span class="head-num">39</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column">
-        <span class="eyebrow">36 · The campaign shape</span>
+        <span class="eyebrow">37 · The campaign shape</span>
         <h2 class="lg">A campaign built around <em>cross-border success stories.</em></h2>
         <p class="fine" style="max-width: 82ch;">Our customers are cross-border operators. When they share their tips, what they're really describing is <em>their</em> moat &mdash; and WorldFirst is part of how they built it. The brand campaign carries those stories.</p>
         <div class="models" style="margin-top: 2vh;">
@@ -2160,11 +2288,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Full stack · final</span><span class="sep"></span><span class="head-num">39</span></div>
+      <div class="head-meta"><span>Full stack · final</span><span class="sep"></span><span class="head-num">40</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-full">
-        <span class="eyebrow">37 · The full stack</span>
+        <span class="eyebrow">38 · The full stack</span>
         <h2 class="lg" style="max-width: 30ch;">WorldFirst's upper-funnel stack &mdash; <em>mapped.</em></h2>
         <div class="stack-funnel">
           <div class="stack-tier tier-brand">
@@ -2226,7 +2354,7 @@
 
 <div id="persist-nav">
   <button id="btn-prev" aria-label="Previous">&larr;</button>
-  <span id="counter">01 / 39</span>
+  <span id="counter">01 / 40</span>
   <button id="btn-next" aria-label="Next">&rarr;</button>
 </div>
 
