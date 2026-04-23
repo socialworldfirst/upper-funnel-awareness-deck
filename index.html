@@ -266,13 +266,13 @@
     font-size: clamp(0.75rem, 1.25vh, 0.88rem);
     border-radius: 0 3px 3px 0;
   }
-  /* Tier 1 (awareness): big expansion. Tier 2: medium. Tier 3: small. */
-  .funnel-tier.t1 .ft-bar-today { width: 40%; }
-  .funnel-tier.t1 .ft-bar-add { width: 60%; }
-  .funnel-tier.t2 .ft-bar-today { width: 24%; }
-  .funnel-tier.t2 .ft-bar-add { width: 32%; }
-  .funnel-tier.t3 .ft-bar-today { width: 12%; }
-  .funnel-tier.t3 .ft-bar-add { width: 15%; }
+  /* Tier 1 (awareness): base + modest add (~1/3 of base). Same ratio carries down. */
+  .funnel-tier.t1 .ft-bar-today { width: 70%; }
+  .funnel-tier.t1 .ft-bar-add { width: 24%; }
+  .funnel-tier.t2 .ft-bar-today { width: 42%; }
+  .funnel-tier.t2 .ft-bar-add { width: 14%; }
+  .funnel-tier.t3 .ft-bar-today { width: 22%; }
+  .funnel-tier.t3 .ft-bar-add { width: 7%; }
   .funnel-outcome {
     text-align: center;
     margin-top: 2vh;
@@ -454,31 +454,47 @@
     border-radius: 2px;
   }
 
-  /* ================= PRODUCTION FLOW ================= */
-  .pflow { margin-top: 2.5vh; position: relative; }
+  /* ================= PRODUCTION FLOW (tree with connecting lines) ================= */
+  .pflow {
+    margin-top: 2vh;
+    position: relative;
+    padding: 1vh 0 0;
+  }
+  .pflow-svg {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
   .pflow-top {
     display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 0.8vw; position: relative;
+    gap: 0.8vw;
+    position: relative; z-index: 1;
   }
   .pflow-step {
     padding: 1.2vh 0.8vw;
     background: var(--paper);
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--wf-pink);
-    border-radius: 2px;
+    border: 1.5px solid var(--wf-pink);
+    border-radius: 4px;
     text-align: center;
     position: relative;
+    box-shadow: 0 2px 6px rgba(230,24,95,0.08);
   }
   .pflow-step.read {
-    background: linear-gradient(180deg, var(--wf-pink-softer), var(--paper));
-    border-top-width: 4px;
+    background: linear-gradient(135deg, var(--wf-pink), var(--wf-pink-dark));
+    border-color: var(--wf-pink-dark);
+    color: var(--paper);
+    box-shadow: 0 4px 12px rgba(230,24,95,0.25);
   }
+  .pflow-step.read .ps-num,
+  .pflow-step.read .ps-name { color: var(--paper); }
+  .pflow-step.read .ps-desc { color: rgba(255,255,255,0.85); }
   .pflow-step .ps-num {
     display: inline-block;
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
     color: var(--wf-pink);
-    font-size: clamp(1rem, 1.75vh, 1.25rem);
+    font-size: clamp(1rem, 1.75vh, 1.3rem);
     font-weight: 400;
   }
   .pflow-step .ps-name {
@@ -486,29 +502,24 @@
     font-size: clamp(0.82rem, 1.4vh, 0.95rem);
     font-weight: 600;
     color: var(--ink);
-    margin: 0.3vh 0 0.3vh;
+    margin: 0.2vh 0 0.3vh;
   }
   .pflow-step .ps-desc {
     font-size: clamp(0.7rem, 1.15vh, 0.8rem);
     color: var(--ink-soft);
     line-height: 1.3;
   }
-  .pflow-arrow-row { display: flex; justify-content: space-around; padding: 0.3vh 0; }
-  .pflow-arrow {
-    color: var(--wf-pink);
-    font-weight: 700;
-    font-size: clamp(0.9rem, 1.5vh, 1.1rem);
-  }
   .pflow-split {
     display: grid; grid-template-columns: 1fr 1fr;
-    gap: 1.5vw; margin-top: 1.8vh;
+    gap: 1.5vw; margin-top: 5vh;
+    position: relative; z-index: 1;
   }
   .pflow-branch {
     padding: 1.3vh 1vw;
     background: var(--paper);
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--wf-pink);
-    border-radius: 2px;
+    border: 1.5px solid var(--wf-pink);
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(230,24,95,0.08);
   }
   .pflow-branch .pb-label {
     font-size: clamp(0.7rem, 1.1vh, 0.8rem); font-weight: 600;
@@ -521,16 +532,22 @@
     margin-bottom: 0.4vh;
   }
   .pflow-branch .pb-desc { font-size: clamp(0.75rem, 1.2vh, 0.85rem); color: var(--ink-soft); line-height: 1.4; }
-  .pflow-regroup {
-    margin-top: 1.6vh;
-    padding: 1vh 1vw;
-    text-align: center;
-    background: var(--ant-navy);
-    color: var(--paper);
-    border-radius: 2px;
+  .pflow-regroup-wrap {
+    margin-top: 4.5vh;
+    display: flex; justify-content: center;
+    position: relative; z-index: 1;
   }
-  .pflow-regroup .pr-name { font-weight: 600; font-size: clamp(0.85rem, 1.45vh, 0.98rem); }
-  .pflow-regroup .pr-desc { font-size: clamp(0.72rem, 1.2vh, 0.82rem); opacity: 0.8; margin-top: 0.3vh; }
+  .pflow-regroup {
+    padding: 1vh 2vw;
+    text-align: center;
+    background: linear-gradient(135deg, var(--ant-navy-deep), var(--ant-navy));
+    color: var(--paper);
+    border-radius: 4px;
+    max-width: 480px;
+    box-shadow: 0 4px 12px rgba(14,26,74,0.22);
+  }
+  .pflow-regroup .pr-name { font-weight: 600; font-size: clamp(0.92rem, 1.5vh, 1.05rem); display: block; }
+  .pflow-regroup .pr-desc { font-size: clamp(0.72rem, 1.2vh, 0.82rem); opacity: 0.82; margin-top: 0.3vh; display: block; }
 
   /* ================= VIDEO GRID ================= */
   .video-grid {
@@ -652,62 +669,231 @@
   .slide-divider .div-sub { margin-top: 3vh; max-width: 60ch; font-size: clamp(1rem, 1.8vh, 1.2rem); color: var(--ink-soft); line-height: 1.5; }
   .slide-divider .div-sub em { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; color: var(--wf-pink); font-weight: 400; }
 
-  /* ================= STACK MAP (final slide) ================= */
-  .stack-map {
-    display: flex; flex-direction: column;
-    gap: 0.4vh;
-    margin-top: 2vh;
+  /* ================= STACK MAP FUNNEL (final slide) ================= */
+  .stack-funnel {
+    margin: 2vh auto 0;
     max-width: 100%;
+    display: flex; flex-direction: column;
+    gap: 0.8vh;
+    position: relative;
   }
   .stack-tier {
     position: relative;
-    padding: 1.5vh 1.5vw 1.8vh;
+    padding: 1.2vh 2vw 1.5vh;
     border-radius: 3px;
-    min-height: 14vh;
+    box-shadow: 0 2px 8px rgba(14,26,74,0.06);
+    margin: 0 auto;
+    transition: transform 120ms;
   }
-  .stack-tier.tier-brand { background: linear-gradient(135deg, var(--ant-navy-soft), #F0F3FA); border-left: 4px solid var(--ant-navy); }
-  .stack-tier.tier-aware { background: linear-gradient(135deg, var(--wf-pink-softer), #FFF5F9); border-left: 4px solid var(--wf-pink); }
-  .stack-tier.tier-act { background: linear-gradient(135deg, var(--orange-soft), #FFF6EF); border-left: 4px solid var(--orange); }
+  .stack-tier.tier-brand {
+    width: 100%;
+    background: linear-gradient(135deg, var(--ant-navy-deep) 0%, var(--ant-navy) 50%, #25347a 100%);
+    color: var(--paper);
+    clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+  }
+  .stack-tier.tier-aware {
+    width: 92%;
+    background: linear-gradient(135deg, var(--wf-pink) 0%, var(--wf-pink-dark) 100%);
+    color: var(--paper);
+    clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+  }
+  .stack-tier.tier-act {
+    width: 84%;
+    background: linear-gradient(135deg, var(--orange) 0%, #E05627 100%);
+    color: var(--paper);
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%);
+  }
 
   .stack-tier-head {
     display: flex; align-items: baseline; gap: 1rem;
-    margin-bottom: 1vh;
+    margin-bottom: 0.8vh;
+    padding: 0 2vw;
   }
   .stack-tier-label {
-    font-size: clamp(0.78rem, 1.3vh, 0.9rem); font-weight: 700;
-    letter-spacing: 0.12em; text-transform: uppercase;
+    font-size: clamp(0.78rem, 1.3vh, 0.92rem); font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--paper);
   }
-  .stack-tier.tier-brand .stack-tier-label { color: var(--ant-navy); }
-  .stack-tier.tier-aware .stack-tier-label { color: var(--wf-pink); }
-  .stack-tier.tier-act .stack-tier-label { color: var(--orange); }
   .stack-tier-sub {
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
-    font-size: clamp(0.82rem, 1.4vh, 0.95rem);
-    color: var(--ink-soft);
+    font-size: clamp(0.85rem, 1.45vh, 1rem);
+    color: rgba(255,255,255,0.82);
     line-height: 1.3;
   }
   .stack-items {
-    display: flex; flex-wrap: wrap; gap: 0.4vh 0.5vw;
+    display: flex; flex-wrap: wrap; gap: 0.5vh 0.55vw;
+    padding: 0 2vw;
   }
   .stack-item {
-    padding: 0.5vh 0.75vw;
-    background: var(--paper);
-    border: 1px solid var(--line);
+    padding: 0.5vh 0.85vw;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.25);
     border-radius: 99px;
-    font-size: clamp(0.72rem, 1.2vh, 0.84rem);
-    font-weight: 500; color: var(--ink);
+    font-size: clamp(0.7rem, 1.18vh, 0.82rem);
+    font-weight: 500;
+    color: var(--paper);
     white-space: nowrap;
     line-height: 1.2;
+    backdrop-filter: blur(4px);
   }
   .stack-item.primary {
     background: var(--paper);
-    border-color: var(--wf-pink);
-    color: var(--wf-pink);
-    font-weight: 600;
+    border-color: var(--paper);
+    color: var(--ant-navy-deep);
+    font-weight: 700;
+    letter-spacing: 0.01em;
   }
-  .stack-tier.tier-brand .stack-item.primary { border-color: var(--ant-navy); color: var(--ant-navy); }
-  .stack-tier.tier-act .stack-item.primary { border-color: var(--orange); color: var(--orange); }
+  .stack-tier.tier-aware .stack-item.primary { color: var(--wf-pink-dark); }
+  .stack-tier.tier-act .stack-item.primary { color: #E05627; }
+
+  /* ================= IMAGE LIGHTBOX ================= */
+  .lb-img {
+    cursor: zoom-in;
+    transition: opacity 120ms, transform 120ms;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--paper);
+    max-width: 100%; height: auto; display: block;
+  }
+  .lb-img:hover { opacity: 0.88; }
+  #lightbox {
+    position: fixed; inset: 0;
+    background: rgba(14, 26, 74, 0.92);
+    z-index: 100;
+    display: none;
+    align-items: center; justify-content: center;
+    cursor: zoom-out;
+    padding: 4vh 4vw;
+  }
+  #lightbox.active { display: flex; }
+  #lightbox img {
+    max-width: 92vw; max-height: 88vh;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  #lightbox .lb-close {
+    position: fixed; top: 2vh; right: 2vw;
+    background: transparent; border: none;
+    color: var(--paper); font-size: 2rem;
+    cursor: pointer; font-weight: 300;
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 120ms;
+  }
+  #lightbox .lb-close:hover { background: rgba(255,255,255,0.1); }
+
+  /* ================= YOUTUBE EVIDENCE SLIDE ================= */
+  .yt-evidence {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2.5vw; margin-top: 2vh;
+    align-items: start;
+  }
+  .yt-stat {
+    padding: 1.5vh 1.3vw;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--wf-pink);
+    border-radius: 3px;
+  }
+  .yt-stat .yt-stat-num {
+    font-size: clamp(2.4rem, 6vh, 4rem);
+    font-weight: 700; color: var(--wf-pink);
+    letter-spacing: -0.03em; line-height: 0.95;
+    font-variant-numeric: tabular-nums;
+  }
+  .yt-stat .yt-stat-label {
+    font-size: clamp(0.72rem, 1.15vh, 0.82rem);
+    font-weight: 600; color: var(--wf-pink);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin: 0.4vh 0 0.6vh;
+  }
+  .yt-stat .yt-stat-desc {
+    font-size: clamp(0.78rem, 1.3vh, 0.9rem);
+    color: var(--ink-soft); line-height: 1.4;
+  }
+  .yt-img-block { display: flex; flex-direction: column; gap: 0.8vh; }
+  .yt-img-cap {
+    font-size: clamp(0.7rem, 1.1vh, 0.8rem);
+    color: var(--ink-soft); font-weight: 500;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+
+  /* ================= VIDEO THUMB CARDS ================= */
+  .video-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1vh 1vw;
+    margin-top: 2vh;
+    max-height: 62vh;
+  }
+  .video-thumb {
+    position: relative;
+    background: linear-gradient(135deg, #1a2668, var(--ant-navy-deep));
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    text-decoration: none;
+    transition: transform 120ms, box-shadow 120ms;
+    cursor: pointer;
+    min-height: 0;
+  }
+  .video-thumb:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(230,24,95,0.22);
+  }
+  .video-thumb .vt-top {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(230,24,95,0.18), rgba(255,107,53,0.12));
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .video-thumb .vt-play {
+    width: clamp(40px, 6vh, 56px); height: clamp(40px, 6vh, 56px);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+    border: 2px solid rgba(255,255,255,0.6);
+    display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+  .video-thumb .vt-play::before {
+    content: '';
+    display: block;
+    width: 0; height: 0;
+    border-left: clamp(10px, 1.6vh, 16px) solid var(--paper);
+    border-top: clamp(7px, 1.1vh, 10px) solid transparent;
+    border-bottom: clamp(7px, 1.1vh, 10px) solid transparent;
+    margin-left: 3px;
+  }
+  .video-thumb .vt-platform {
+    position: absolute;
+    top: 0.6vh; left: 0.6vw;
+    background: rgba(0,0,0,0.5);
+    color: var(--paper);
+    font-size: clamp(0.62rem, 1vh, 0.7rem);
+    font-weight: 600;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    padding: 0.3vh 0.5vw;
+    border-radius: 2px;
+  }
+  .video-thumb .vt-bottom {
+    padding: 0.8vh 0.8vw;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(4px);
+    color: var(--paper);
+  }
+  .video-thumb .vt-region {
+    font-size: clamp(0.62rem, 1vh, 0.7rem);
+    font-weight: 600; color: var(--wf-pink);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 0.2vh;
+  }
+  .video-thumb .vt-desc {
+    font-size: clamp(0.68rem, 1.15vh, 0.78rem);
+    line-height: 1.25;
+    color: rgba(255,255,255,0.88);
+  }
 
   /* Keyboard hint */
   .kbd-hint { position: fixed; bottom: 1vh; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.08em; z-index: 5; opacity: 0; transition: opacity 400ms ease; pointer-events: none; text-transform: uppercase; }
@@ -1235,7 +1421,7 @@
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
       <div class="head-meta"><span>Our position</span><span class="sep"></span><span class="head-num">13</span></div>
     </div>
-    <div class="slide-body v-start">
+    <div class="slide-body v-center">
       <div class="column column-wide">
         <span class="eyebrow">12 · Where WorldFirst sits today</span>
         <h2 class="lg">WorldFirst content today is roughly <em>90%</em> activation.</h2>
@@ -1249,15 +1435,45 @@
           <span><span class="dot d-aware"></span>Awareness &mdash; 5%</span>
           <span><span class="dot d-brand"></span>Brand &mdash; 5%</span>
         </div>
-        <h3 style="margin-top: 3vh;">For reference</h3>
-        <div class="models models-2" style="margin-top: 1vh;">
-          <div class="model-card">
-            <span class="model-label">B2B fintech benchmark</span>
-            <p>Roughly <strong class="pink">46 / 54</strong> brand / activation by marketing budget (Binet &amp; Field).</p>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 14 — YOUTUBE: PAID VS ORGANIC REALITY                             -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Our YouTube &mdash; a closer look</span><span class="sep"></span><span class="head-num">14</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">13 · YouTube reality check</span>
+        <h2 class="lg">Our YouTube runs on <em>ads</em>. Organic alone isn't the engine yet.</h2>
+        <div class="yt-evidence">
+          <div>
+            <div class="yt-stat">
+              <div class="yt-stat-num">~99%</div>
+              <div class="yt-stat-label">Of views come from YouTube advertising</div>
+              <div class="yt-stat-desc">Across 20.06M views in Q1 2026, YouTube Advertising is the dominant traffic source. Organic surfaces (Suggested, Search, Browse, Shorts, Channel pages) add up to a small tail. <strong>Organic is growing, but it's not yet a standalone awareness engine.</strong></div>
+            </div>
+            <div class="yt-img-block" style="margin-top: 1.5vh;">
+              <img class="lb-img" src="images/wf-yt-traffic-source.png" alt="YouTube Studio Views by Traffic source &mdash; YouTube advertising dominates">
+              <span class="yt-img-cap">Views by traffic source &middot; YouTube Studio &middot; Q1 2026</span>
+            </div>
           </div>
-          <div class="model-card">
-            <span class="model-label">Peer-set median (from previous six)</span>
-            <p>Roughly <strong class="pink">30% brand / 30% awareness / 40% activation</strong> across Wise, Monzo, Nubank, Revolut, Pleo, Ramp.</p>
+          <div>
+            <div class="yt-stat">
+              <div class="yt-stat-num">Top views</div>
+              <div class="yt-stat-label">Top content is paid activation ads</div>
+              <div class="yt-stat-desc">The most-viewed pieces on our channel are boosted product activation ads (WorldCard 1%, Shopify Global Supplier Payments, World Account). These drive registration, not category awareness. <a href="https://www.youtube.com/watch?v=kmYzgqEdFpk" target="_blank" class="pink-strong" style="text-decoration: underline;">See this top-viewed example &rarr;</a></div>
+            </div>
+            <div class="yt-img-block" style="margin-top: 1.5vh;">
+              <img class="lb-img" src="images/wf-yt-content-list.png" alt="YouTube Studio Views by Content &mdash; top videos are product activation">
+              <span class="yt-img-cap">Views by content &middot; YouTube Studio &middot; Q1 2026</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1266,30 +1482,35 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 14 — UPPER-FUNNEL = BRANDING + AWARENESS                          -->
+  <!-- 15 — UPPER-FUNNEL = BRANDING + AWARENESS                          -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Inside upper-funnel</span><span class="sep"></span><span class="head-num">14</span></div>
+      <div class="head-meta"><span>Inside upper-funnel</span><span class="sep"></span><span class="head-num">15</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">13 · Inside upper-funnel</span>
+        <span class="eyebrow">14 · Inside upper-funnel</span>
         <h2 class="lg">Upper-funnel itself has <em>two</em> layers.</h2>
-        <ul class="dual">
-          <li>
-            <strong>Branding</strong>
-            Identity, values, distinctiveness. Global consistency. Slow ROI. Compounds permanently.
-            <p class="fine" style="margin-top: 0.6vh;"><em class="serif">Looks like:</em> Monzo coral card, Wise "hidden fees" era, WorldFirst's <strong class="pink">"Build Your Cross-Border Moat."</strong></p>
-          </li>
-          <li>
-            <strong>Awareness</strong>
-            Product benefit. Regional. Creator-led. Creates demand about WorldFirst specifically. Medium-term ROI.
-            <p class="fine" style="margin-top: 0.6vh;"><em class="serif">Looks like:</em> "how to pay 1688 suppliers," "locking CNY rates before Q4," regional creator breakdowns.</p>
-          </li>
-        </ul>
-        <div class="pull-quote">Q2 concentrates on <span class="pink-strong">awareness.</span> Branding is the parallel long-term build &mdash; final section of this deck.</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3vw; margin-top: 1vh; align-items: start;">
+          <div>
+            <div style="border-top: 2px solid var(--wf-pink); padding-top: 1vh;">
+              <span style="font-size: clamp(0.72rem, 1.15vh, 0.82rem); font-weight: 600; color: var(--wf-pink); letter-spacing: 0.12em; text-transform: uppercase;">Branding</span>
+              <p class="fine" style="margin-top: 0.5vh;">Identity, distinctiveness. Global consistency. Slow ROI. Compounds permanently.</p>
+              <p class="fine" style="margin-top: 0.4vh;"><em class="serif">E.g.</em> WorldFirst &times; AFA sponsor.</p>
+            </div>
+            <img class="lb-img" src="images/wf-branding-afa.png" alt="WorldFirst &times; AFA branding post on LinkedIn" style="margin-top: 1.2vh; width: 100%;">
+          </div>
+          <div>
+            <div style="border-top: 2px solid var(--wf-pink); padding-top: 1vh;">
+              <span style="font-size: clamp(0.72rem, 1.15vh, 0.82rem); font-weight: 600; color: var(--wf-pink); letter-spacing: 0.12em; text-transform: uppercase;">Awareness</span>
+              <p class="fine" style="margin-top: 0.5vh;">Product benefit. Regional. Creator-led. Creates demand about WorldFirst specifically.</p>
+              <p class="fine" style="margin-top: 0.4vh;"><em class="serif">E.g.</em> &ldquo;Send &pound;10,000 to USD&rdquo; tutorial.</p>
+            </div>
+            <img class="lb-img" src="images/wf-awareness-send-10k.png" alt="WorldFirst awareness tutorial — send £10,000 GBP to USD" style="margin-top: 1.2vh; width: 100%;">
+          </div>
+        </div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
@@ -1301,11 +1522,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Finding the balance</span><span class="sep"></span><span class="head-num">15</span></div>
+      <div class="head-meta"><span>Finding the balance</span><span class="sep"></span><span class="head-num">16</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">14 · Finding the balance</span>
+        <span class="eyebrow">15 · Finding the balance</span>
         <h2 class="xl">The question is <em>rebalancing</em> &mdash; upper-funnel catches up to activation.</h2>
         <p>Activation stays strong &mdash; it's already our strongest layer.</p>
         <p>Upper-funnel gradually gains weight over 3&ndash;4 quarters toward the 46 / 54 benchmark. No rebalancing = CPA climbs, pool shrinks.</p>
@@ -1320,11 +1541,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Content + distribution</span><span class="sep"></span><span class="head-num">16</span></div>
+      <div class="head-meta"><span>Content + distribution</span><span class="sep"></span><span class="head-num">17</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">15 · Content mix + distribution mix</span>
+        <span class="eyebrow">16 · Content mix + distribution mix</span>
         <h2 class="xl">Content mix matters. Distribution mix matters <em>more.</em></h2>
         <p>Calling upper-funnel "social's job" is the core mistake. Same asset, eight channels &rarr; outperforms same budget on social alone.</p>
         <p>The work: design for the awareness outcome, then distribute across whatever channels carry it best.</p>
@@ -1339,11 +1560,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Channel map</span><span class="sep"></span><span class="head-num">17</span></div>
+      <div class="head-meta"><span>Channel map</span><span class="sep"></span><span class="head-num">18</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column">
-        <span class="eyebrow">16 · The eight channels</span>
+        <span class="eyebrow">17 · The eight channels</span>
         <h2 class="lg">Peer brands land on <em>eight channels</em> simultaneously.</h2>
         <div class="models models-4" style="margin-top: 2.5vh;">
           <div class="model-card"><span class="model-label">01 · Own social</span><p>WorldFirst handles &mdash; LinkedIn, YouTube, Instagram, TikTok.</p></div>
@@ -1366,16 +1587,16 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Worked example</span><span class="sep"></span><span class="head-num">18</span></div>
+      <div class="head-meta"><span>Worked example</span><span class="sep"></span><span class="head-num">19</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">17 · Worked example · Airwallex F1</span>
+        <span class="eyebrow">18 · Worked example · Airwallex F1</span>
         <h2 class="lg">Airwallex &times; F1 &mdash; <em>every</em> channel carried the same message.</h2>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3vw; margin-top: 2vh; align-items: start;">
           <div>
-            <div class="placeholder" style="min-height: 24vh;">[IMAGE: Airwallex F1 campaign still &mdash; Steven to provide]</div>
-            <p class="fine" style="margin-top: 1.5vh;">A shared creative spine deployed across all eight channels during the F1 season &mdash; the sum read bigger than any individual activation.</p>
+            <img class="lb-img" src="images/airwallex-mclaren.png" alt="Zak Brown, McLaren F1 CEO, speaking on Airwallex socials about the partnership" style="width: 100%; max-height: 40vh; object-fit: cover; object-position: top;">
+            <p class="fine" style="margin-top: 1.5vh;">Zak Brown (McLaren F1 CEO) talks about the partnership <em class="serif">on Airwallex's own socials.</em> A shared creative spine deployed across all eight channels during the F1 season.</p>
           </div>
           <div class="models models-2">
             <div class="model-card"><span class="model-label">Own social</span><p>Race-day content, announcements.</p></div>
@@ -1399,11 +1620,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Three layers</span><span class="sep"></span><span class="head-num">19</span></div>
+      <div class="head-meta"><span>Three layers</span><span class="sep"></span><span class="head-num">20</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">18 · Three layers</span>
+        <span class="eyebrow">19 · Three layers</span>
         <h2 class="lg">Three content layers. <em>Three</em> return profiles.</h2>
         <div class="roi-chart">
           <div class="roi-label">Brand</div>
@@ -1441,11 +1662,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Q2 focus</span><span class="sep"></span><span class="head-num">20</span></div>
+      <div class="head-meta"><span>Q2 focus</span><span class="sep"></span><span class="head-num">21</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">19 · Q2 focus</span>
+        <span class="eyebrow">20 · Q2 focus</span>
         <h2 class="xl">Today we talk about <em>awareness</em> content. Brand matters &mdash; we return to it at the end.</h2>
         <p>Awareness has the biggest expansion headroom and the best short-term impact-to-effort ratio.</p>
         <p>Brand is the parallel long-term build &mdash; final section of this deck.</p>
@@ -1460,11 +1681,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The battle plan</span><span class="sep"></span><span class="head-num">21</span></div>
+      <div class="head-meta"><span>The battle plan</span><span class="sep"></span><span class="head-num">22</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">20 · The battle plan</span>
+        <span class="eyebrow">21 · The battle plan</span>
         <h2 class="xl"><em>Regional creators</em> + short-form carrying Q2 product focus to 20M / month.</h2>
         <ul class="bullets">
           <li><strong>Who</strong> &mdash; regional creators in priority corridors, not central talking heads</li>
@@ -1483,22 +1704,48 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>What it looks like</span><span class="sep"></span><span class="head-num">22</span></div>
+      <div class="head-meta"><span>What it looks like</span><span class="sep"></span><span class="head-num">23</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">21 · What it looks like</span>
+        <span class="eyebrow">22 · What it looks like</span>
         <h2 class="lg">Regional creators talking about our <em>product.</em></h2>
         <p class="fine" style="max-width: 80ch;">Short-form videos by operators in each priority region, dedicated to WorldFirst product benefits in their own voice, their own market. Placeholders below &mdash; Steven to drop in eight example links.</p>
-        <div class="video-grid">
-          <div class="video-cell"><span class="vc-region">UK</span>WorldCard for freelancers with Asian suppliers</div>
-          <div class="video-cell"><span class="vc-region">SEA · MY</span>Paying 1688 suppliers in MYR</div>
-          <div class="video-cell"><span class="vc-region">Vietnam</span>CNY rates + Forwards for Q4 imports</div>
-          <div class="video-cell"><span class="vc-region">US · Zyla</span>Cross-border brand scaling story</div>
-          <div class="video-cell"><span class="vc-region">EEA · DE</span>World Account for European SMEs</div>
-          <div class="video-cell"><span class="vc-region">Longtail · PK</span>Local supplier payments in Urdu</div>
-          <div class="video-cell"><span class="vc-region">ANZ</span>WorldCard for Amazon sellers</div>
-          <div class="video-cell"><span class="vc-region">Turkey</span>Currency lock-in for importers</div>
+        <div class="video-grid-v2">
+          <a class="video-thumb" href="https://www.instagram.com/reel/DWgU4nWkakm/" target="_blank">
+            <div class="vt-top"><span class="vt-platform">Instagram</span><div class="vt-play"></div></div>
+            <div class="vt-bottom"><div class="vt-region">Reel 01</div><div class="vt-desc">Creator product walkthrough</div></div>
+          </a>
+          <a class="video-thumb" href="https://www.instagram.com/reel/DU7zJeUlGUL/" target="_blank">
+            <div class="vt-top"><span class="vt-platform">Instagram</span><div class="vt-play"></div></div>
+            <div class="vt-bottom"><div class="vt-region">Reel 02</div><div class="vt-desc">Regional creator explainer</div></div>
+          </a>
+          <a class="video-thumb" href="https://www.instagram.com/reel/DQE7W6Aj4tf/" target="_blank">
+            <div class="vt-top"><span class="vt-platform">Instagram</span><div class="vt-play"></div></div>
+            <div class="vt-bottom"><div class="vt-region">Reel 03</div><div class="vt-desc">Product benefit in market voice</div></div>
+          </a>
+          <a class="video-thumb" href="https://www.instagram.com/reel/DSJ6tPpk9px/" target="_blank">
+            <div class="vt-top"><span class="vt-platform">Instagram</span><div class="vt-play"></div></div>
+            <div class="vt-bottom"><div class="vt-region">Reel 04</div><div class="vt-desc">Real-operator use case</div></div>
+          </a>
+          <a class="video-thumb" href="https://www.instagram.com/reel/DMpprivsf-M/" target="_blank">
+            <div class="vt-top"><span class="vt-platform">Instagram</span><div class="vt-play"></div></div>
+            <div class="vt-bottom"><div class="vt-region">Reel 05</div><div class="vt-desc">Short-form product awareness</div></div>
+          </a>
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=IHuzT1xNS8g" target="_blank">
+            <div class="vt-top"><span class="vt-platform">YouTube</span><div class="vt-play"></div></div>
+            <div class="vt-bottom"><div class="vt-region">Long-form</div><div class="vt-desc">Regional creator product deep-dive</div></div>
+          </a>
+          <a class="video-thumb" href="https://www.tiktok.com/@worldfirst_vn/video/7610331433768439047" target="_blank">
+            <div class="vt-top"><span class="vt-platform">TikTok</span><div class="vt-play"></div></div>
+            <div class="vt-bottom"><div class="vt-region">Vietnam</div><div class="vt-desc">Regional creator building product awareness</div></div>
+          </a>
+          <div class="video-thumb" style="background: linear-gradient(135deg, var(--wf-pink-softer), var(--paper)); border: 1.5px dashed var(--wf-pink); cursor: default;">
+            <div class="vt-top" style="background: transparent; flex-direction: column; gap: 0.6vh;">
+              <span style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: clamp(1rem, 1.6vh, 1.2rem); color: var(--wf-pink);">More coming</span>
+              <span style="font-size: clamp(0.68rem, 1.05vh, 0.75rem); color: var(--wf-pink); opacity: 0.7; letter-spacing: 0.08em; text-transform: uppercase;">Per region, per product</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1511,11 +1758,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Why 20M</span><span class="sep"></span><span class="head-num">23</span></div>
+      <div class="head-meta"><span>Why 20M</span><span class="sep"></span><span class="head-num">24</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">22 · The number</span>
+        <span class="eyebrow">23 · The number</span>
         <h2 class="xl">Why <em>20M?</em> Awareness needs scale to move the needle.</h2>
         <ul class="bullets">
           <li><strong>At 1M per month</strong> we sit below recall threshold in priority regions &mdash; noise, not signal</li>
@@ -1534,25 +1781,24 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>How we do it</span><span class="sep"></span><span class="head-num">24</span></div>
+      <div class="head-meta"><span>How we do it</span><span class="sep"></span><span class="head-num">25</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">23 · How we do it &mdash; the distribution</span>
+        <span class="eyebrow">24 · How we do it &mdash; the distribution</span>
         <h2 class="lg">20M per month distributed <em>against</em> paid budget &amp; product focus.</h2>
         <p class="fine" style="max-width: 82ch;">Awareness content built for the paid team's activation targets &mdash; same regions, same products. The demand we create feeds the pool they convert.</p>
         <div class="region-bars">
           <div class="region-row"><span class="rr-name">UK</span><span class="rr-product">WorldCard, World Account</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 100%;"></div></div></div>
           <div class="region-row"><span class="rr-name">SEA (MY + SG)</span><span class="rr-product">1688 WP, World Account</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 58%;"></div></div></div>
-          <div class="region-row"><span class="rr-name">US (Zyla)</span><span class="rr-product">Zyla brand</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 41%;"></div></div></div>
           <div class="region-row"><span class="rr-name">EEA</span><span class="rr-product">World Account</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 41%;"></div></div></div>
+          <div class="region-row"><span class="rr-name">Longtail (PK/NG/BD/MA)</span><span class="rr-product">1688 WP</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 41%;"></div></div></div>
           <div class="region-row"><span class="rr-name">Vietnam</span><span class="rr-product">World Account, WorldCard</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 23%;"></div></div></div>
-          <div class="region-row"><span class="rr-name">Longtail (PK/NG/BD/MA)</span><span class="rr-product">1688 WP</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 21%;"></div></div></div>
           <div class="region-row"><span class="rr-name">ANZ</span><span class="rr-product">WorldCard</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 21%;"></div></div></div>
-          <div class="region-row"><span class="rr-name">Turkey</span><span class="rr-product">WorldCard</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 18%;"></div></div></div>
-          <div class="region-row"><span class="rr-name">Other (JKT, MX_BR, ME)</span><span class="rr-product">Mixed</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 22%;"></div></div></div>
+          <div class="region-row" style="opacity: 0.45;"><span class="rr-name">Turkey</span><span class="rr-product">TBD</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 18%; background: var(--muted);"></div></div></div>
+          <div class="region-row" style="opacity: 0.45;"><span class="rr-name">US (Zyla)</span><span class="rr-product">TBD</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 41%; background: var(--muted);"></div></div></div>
         </div>
-        <p class="fine" style="margin-top: 1.5vh;">Bar length reflects paid budget share &mdash; each region's absolute impressions will vary based on CPM.</p>
+        <p class="fine" style="margin-top: 1.5vh;">Bar length reflects paid budget share. <strong>Turkey</strong> and <strong>US / Zyla</strong> are TBD &mdash; separate creative and brand decisions still being worked through.</p>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
@@ -1564,36 +1810,58 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Production flow</span><span class="sep"></span><span class="head-num">25</span></div>
+      <div class="head-meta"><span>Production flow</span><span class="sep"></span><span class="head-num">26</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">24 · Production flow</span>
+        <span class="eyebrow">25 · Production flow</span>
         <h2 class="lg">After performance read, the path <em>splits.</em></h2>
         <div class="pflow">
+          <svg class="pflow-svg" viewBox="0 0 1000 580" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Arrows between step 1→2→3→4 -->
+            <g stroke="#E6185F" stroke-width="2" fill="none">
+              <line x1="252" y1="60" x2="258" y2="60" marker-end="url(#arrowhead)"/>
+              <line x1="498" y1="60" x2="504" y2="60" marker-end="url(#arrowhead)"/>
+              <line x1="744" y1="60" x2="750" y2="60" marker-end="url(#arrowhead)"/>
+            </g>
+            <!-- Split lines from step 4 down to two branches -->
+            <path d="M 875 125 L 875 165 L 250 165 L 250 255" stroke="#E6185F" stroke-width="2" fill="none" stroke-dasharray="0" marker-end="url(#arrowhead)"/>
+            <path d="M 875 125 L 875 165 L 750 165 L 750 255" stroke="#E6185F" stroke-width="2" fill="none" stroke-dasharray="0" marker-end="url(#arrowhead)"/>
+            <!-- Converge lines to regroup -->
+            <path d="M 250 390 L 250 445 L 500 445 L 500 485" stroke="#E6185F" stroke-width="2" fill="none" marker-end="url(#arrowhead2)"/>
+            <path d="M 750 390 L 750 445 L 500 445" stroke="#E6185F" stroke-width="2" fill="none"/>
+            <defs>
+              <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+                <polygon points="0 0, 10 5, 0 10" fill="#E6185F"/>
+              </marker>
+              <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+                <polygon points="0 0, 10 5, 0 10" fill="#0E1A4A"/>
+              </marker>
+            </defs>
+          </svg>
           <div class="pflow-top">
             <div class="pflow-step"><span class="ps-num">01</span><span class="ps-name">Campaign identification</span><span class="ps-desc">Product, region, audience</span></div>
             <div class="pflow-step"><span class="ps-num">02</span><span class="ps-name">Creative ideation</span><span class="ps-desc">Multiple message angles</span></div>
             <div class="pflow-step"><span class="ps-num">03</span><span class="ps-name">Freelancer testing</span><span class="ps-desc">Fast iteration, boosted</span></div>
             <div class="pflow-step read"><span class="ps-num">04</span><span class="ps-name">Performance read</span><span class="ps-desc">What's working</span></div>
           </div>
-          <div class="pflow-arrow-row"><span class="pflow-arrow">&darr;</span></div>
           <div class="pflow-split">
             <div class="pflow-branch">
-              <span class="pb-label">05a · Paid team</span>
+              <span class="pb-label">05a &middot; Paid team</span>
               <span class="pb-name">Amplify via assets + audiences</span>
               <span class="pb-desc">Winning creative becomes paid variants. Awareness audiences become retargeting pools. Scale acquisition against in-market 5%.</span>
             </div>
             <div class="pflow-branch">
-              <span class="pb-label">05b · Upper-funnel + regional teams</span>
+              <span class="pb-label">05b &middot; Upper-funnel + regional teams</span>
               <span class="pb-name">Amplify via creators + influencers</span>
               <span class="pb-desc">Proven message localised by regional creators at volume. Influencer program builds repeated exposure in priority corridors.</span>
             </div>
           </div>
-          <div class="pflow-arrow-row"><span class="pflow-arrow">&darr;</span></div>
-          <div class="pflow-regroup">
-            <span class="pr-name">06 · Regroup &middot; back to campaign goal</span>
-            <span class="pr-desc">Shared dashboard: what's contributing, what to double down on, what to cut.</span>
+          <div class="pflow-regroup-wrap">
+            <div class="pflow-regroup">
+              <span class="pr-name">06 &middot; Regroup &middot; back to campaign goal</span>
+              <span class="pr-desc">Shared dashboard: what's contributing, what to double down on, what to cut.</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1607,14 +1875,14 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Regional reality</span><span class="sep"></span><span class="head-num">26</span></div>
+      <div class="head-meta"><span>Regional reality</span><span class="sep"></span><span class="head-num">27</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">25 · Regional reality</span>
-        <h2 class="xl">Vietnam is already <em>ready.</em> Other regions need a bridge &mdash; which is me.</h2>
-        <p><strong>Vietnam</strong> is ready for regional creator collaboration today &mdash; local team owns local channels, understands their audience, has language capability.</p>
-        <p><strong>Other regions</strong> &mdash; UK, SEA, EEA, ANZ, Longtail &mdash; don't have dedicated regional content leads yet. Central (me) steps in as the bridge: sourcing creators, briefing them on WorldFirst product benefit, co-producing with regional stakeholders.</p>
+        <span class="eyebrow">26 · Regional reality</span>
+        <h2 class="xl">Vietnam and SEA are already <em>ready.</em> Others need a helping hand from central.</h2>
+        <p><strong>Vietnam</strong> and <strong>SEA</strong> are ready for regional creator collaboration today &mdash; local teams own local channels, understand their audiences, have language capability.</p>
+        <p><strong>Other regions</strong> &mdash; UK, EEA, ANZ, Longtail &mdash; don't have dedicated regional content leads yet. Central steps in with a helping hand: sourcing creators, briefing them on WorldFirst product benefit, co-producing with regional stakeholders.</p>
         <div class="pull-quote">A genuine description of where WorldFirst is, <span class="pink-strong">not an asterisk.</span></div>
       </div>
     </div>
@@ -1627,31 +1895,27 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Metrics</span><span class="sep"></span><span class="head-num">27</span></div>
+      <div class="head-meta"><span>Metrics</span><span class="sep"></span><span class="head-num">28</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">26 · Metrics</span>
-        <h2 class="lg">The <em>metrics</em> we look at &mdash; four jobs, four time-horizons.</h2>
+        <span class="eyebrow">27 · Metrics</span>
+        <h2 class="lg">The <em>metrics</em> we look at.</h2>
         <div class="metric-grid-v2">
           <div class="metric-card-v2 color-aware">
-            <div class="mc-head"><span class="mc-label">01 · Content performance</span><span class="mc-time">Weekly</span></div>
-            <div class="mc-desc">Is the content itself working? Are people watching, engaging, coming back?</div>
+            <div class="mc-head"><span class="mc-label">01 · Content performance</span><span class="mc-time">Real-time</span></div>
             <ul><li>Impressions</li><li>Time spent</li><li>Engagement rate</li><li>Completion</li></ul>
           </div>
           <div class="metric-card-v2 color-act">
-            <div class="mc-head"><span class="mc-label">02 · Direct acquisition</span><span class="mc-time">3 / 6 / 12 mo</span></div>
-            <div class="mc-desc">Are people acting directly on what they saw &mdash; clicking through, signing up?</div>
+            <div class="mc-head"><span class="mc-label">02 · Direct acquisition</span><span class="mc-time">Real-time</span></div>
             <ul><li>Website visits</li><li>App downloads</li><li>Registrations</li></ul>
           </div>
           <div class="metric-card-v2 color-brand">
             <div class="mc-head"><span class="mc-label">03 · Audience building</span><span class="mc-time">Monthly</span></div>
-            <div class="mc-desc">Is the asset behind acquisition growing? This is what compounds into paid retargeting efficiency.</div>
             <ul><li>Social audiences</li><li>Website audiences</li><li>Retargeting pool</li></ul>
           </div>
           <div class="metric-card-v2 color-cycle">
             <div class="mc-head"><span class="mc-label">04 · Cycle signals</span><span class="mc-time">Quarterly</span></div>
-            <div class="mc-desc">Is awareness translating into consideration over time? This is the long-horizon payback read.</div>
             <ul><li>Brand-search lift</li><li>Indirect conversion (3 / 6 / 12 mo)</li></ul>
           </div>
         </div>
@@ -1666,11 +1930,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Beyond Q2</span><span class="sep"></span><span class="head-num">28</span></div>
+      <div class="head-meta"><span>Beyond Q2</span><span class="sep"></span><span class="head-num">29</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">27 · Beyond Q2</span>
+        <span class="eyebrow">28 · Beyond Q2</span>
         <h2 class="xl">Two months, then we <em>regroup.</em></h2>
         <p>After Q2: consolidated hybrid strategy &mdash; a mix, not one format winning everything.</p>
       </div>
@@ -1684,11 +1948,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The full stack</span><span class="sep"></span><span class="head-num">29</span></div>
+      <div class="head-meta"><span>The full stack</span><span class="sep"></span><span class="head-num">30</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">28 · The full stack</span>
+        <span class="eyebrow">29 · The full stack</span>
         <h2 class="xl">Long-term leverage is a <em>combination.</em></h2>
         <ul class="plus-list">
           <li><strong>Brand campaigns</strong></li>
@@ -1710,11 +1974,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The dashboard</span><span class="sep"></span><span class="head-num">30</span></div>
+      <div class="head-meta"><span>The dashboard</span><span class="sep"></span><span class="head-num">31</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">29 · The dashboard</span>
+        <span class="eyebrow">30 · The dashboard</span>
         <h2 class="xl">One dashboard. <em>Shared.</em> Upper-funnel + regional + paid.</h2>
         <ul class="bullets">
           <li>UK awareness content works &rarr; Vietnam adapts it same day</li>
@@ -1732,11 +1996,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Working together</span><span class="sep"></span><span class="head-num">31</span></div>
+      <div class="head-meta"><span>Working together</span><span class="sep"></span><span class="head-num">32</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">30 · Working together</span>
+        <span class="eyebrow">31 · Working together</span>
         <h2 class="xl">How awareness and activation <em>work together.</em></h2>
         <ul class="bullets">
           <li><strong>Consistent communications</strong> &mdash; same message across both layers, different jobs</li>
@@ -1754,22 +2018,22 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Team shape</span><span class="sep"></span><span class="head-num">32</span></div>
+      <div class="head-meta"><span>Team shape</span><span class="sep"></span><span class="head-num">33</span></div>
     </div>
-    <div class="slide-body v-start">
-      <div class="column column-wide">
-        <span class="eyebrow">31 · Team shape</span>
+    <div class="slide-body v-center">
+      <div class="column column-narrow">
+        <span class="eyebrow">32 · Team shape</span>
         <h2 class="lg">One person can run social. Upper-funnel needs a <em>full team.</em></h2>
-        <ul class="bullets" style="margin-top: 2vh;">
-          <li><strong>Cathy (incoming)</strong> &mdash; shifting ad-hoc tasks over to her; owns social publishing + brand content coordination</li>
+        <ul class="bullets" style="margin-top: 1.5vh;">
+          <li><strong>Cathy (incoming)</strong> &mdash; shifting ad-hoc tasks over; owns social publishing + brand content coordination</li>
         </ul>
-        <p class="fine" style="margin-top: 1vh; max-width: 80ch;"><strong class="pink">Additional roles over time (as volume grows):</strong></p>
+        <p class="fine" style="margin-top: 1vh;"><strong class="pink">Additional roles over time (as volume grows):</strong></p>
         <ul class="bullets">
           <li>Proof / partnership / customer content + employee amplification</li>
           <li>Influencer / KOL program ownership</li>
           <li>Production support for regional content at volume</li>
         </ul>
-        <p class="fine" style="max-width: 80ch; margin-top: 1.5vh;"><strong class="pink">And &mdash;</strong> close collaboration with the <strong>Branding department.</strong> Branding owns a huge share of upper-funnel composition. Awareness content only lands when the brand above it is coherent.</p>
+        <p class="fine" style="margin-top: 1.2vh;"><strong class="pink">And &mdash;</strong> close collaboration with the <strong>Branding department.</strong> Awareness content only lands when the brand above it is coherent.</p>
         <div class="pull-quote">Medium-term leverage is awareness. <span class="pink-strong">Long-term leverage is brand.</span></div>
       </div>
     </div>
@@ -1782,7 +2046,7 @@
   <section class="slide slide-divider">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Part III · Brand campaign</span><span class="sep"></span><span class="head-num">33</span></div>
+      <div class="head-meta"><span>Part III · Brand campaign</span><span class="sep"></span><span class="head-num">34</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="div-num">III</div>
@@ -1801,13 +2065,13 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Brand campaign is risky</span><span class="sep"></span><span class="head-num">34</span></div>
+      <div class="head-meta"><span>Brand campaign is risky</span><span class="sep"></span><span class="head-num">35</span></div>
     </div>
-    <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">32 · Brand campaigns come with real risk</span>
+    <div class="slide-body v-center">
+      <div class="column column-narrow">
+        <span class="eyebrow">33 · Brand campaigns come with real risk</span>
         <h2 class="lg">Two reminders of what goes <em>wrong</em> when brand outpaces defence.</h2>
-        <ul class="bullets" style="margin-top: 2vh;">
+        <ul class="bullets" style="margin-top: 1.5vh;">
           <li><strong>Wise, 2014&ndash;19</strong> &mdash; built the "hidden fees" category for the whole market. Much of the demand got collected by Revolut, Remitly and Atlantic Money. Brand without activation defence <strong>subsidised competitors.</strong></li>
           <li><strong>WorldFirst &times; Spurs</strong> &mdash; the football sponsorship delivered visibility but hasn't translated into upper-funnel awareness our activation teams can compound. A brand beat without the content layers to carry it through.</li>
         </ul>
@@ -1823,11 +2087,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Awareness for us to collect</span><span class="sep"></span><span class="head-num">35</span></div>
+      <div class="head-meta"><span>Awareness for us to collect</span><span class="sep"></span><span class="head-num">36</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">33 · The proposition test</span>
+        <span class="eyebrow">34 · The proposition test</span>
         <h2 class="xl">Brand campaigns should create awareness that's <em>ours</em> to collect, not competitors'.</h2>
         <p><strong>FX savings</strong> alone is a claim most peers can match. A brand built on it educates the market on a benefit anyone delivers &mdash; the strongest activation collects the demand.</p>
         <p>The proposition has to anchor to something <strong>specifically WorldFirst</strong>: our Ant / Alipay depth, CNY routing, 1688 ecosystem, global cross-border footprint. Awareness against that is awareness we can uniquely convert.</p>
@@ -1842,12 +2106,12 @@
   <section class="slide slide-flash">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The proposition</span><span class="sep"></span><span class="head-num">36</span></div>
+      <div class="head-meta"><span>The proposition</span><span class="sep"></span><span class="head-num">37</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="flash-deco">moat</div>
       <div class="column column-wide flash-content">
-        <span class="eyebrow">34 · The global proposition</span>
+        <span class="eyebrow">35 · The global proposition</span>
         <h1 class="flash-title">Build Your<br>Cross-Border <em>Moat.</em></h1>
         <p class="flash-sub">The one idea that says what WorldFirst does that no one else can match &mdash; and invites our customers into their own story.</p>
       </div>
@@ -1861,11 +2125,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Success stories</span><span class="sep"></span><span class="head-num">37</span></div>
+      <div class="head-meta"><span>Success stories</span><span class="sep"></span><span class="head-num">38</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column">
-        <span class="eyebrow">35 · The campaign shape</span>
+        <span class="eyebrow">36 · The campaign shape</span>
         <h2 class="lg">A campaign built around <em>cross-border success stories.</em></h2>
         <p class="fine" style="max-width: 82ch;">Our customers are cross-border operators. When they share their tips, what they're really describing is <em>their</em> moat &mdash; and WorldFirst is part of how they built it. The brand campaign carries those stories.</p>
         <div class="models" style="margin-top: 2vh;">
@@ -1896,25 +2160,27 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Full stack · final</span><span class="sep"></span><span class="head-num">38</span></div>
+      <div class="head-meta"><span>Full stack · final</span><span class="sep"></span><span class="head-num">39</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-full">
-        <span class="eyebrow">36 · The full stack</span>
+        <span class="eyebrow">37 · The full stack</span>
         <h2 class="lg" style="max-width: 30ch;">WorldFirst's upper-funnel stack &mdash; <em>mapped.</em></h2>
-        <div class="stack-map">
+        <div class="stack-funnel">
           <div class="stack-tier tier-brand">
             <div class="stack-tier-head">
               <span class="stack-tier-label">Brand &middot; long-term leverage</span>
               <span class="stack-tier-sub">Compounds permanently &mdash; the idea everything sits under</span>
             </div>
             <div class="stack-items">
-              <span class="stack-item primary">Build Your Cross-Border Moat</span>
-              <span class="stack-item">Customer hero stories</span>
-              <span class="stack-item">Brand identity films</span>
+              <span class="stack-item primary">Cross-border success stories</span>
+              <span class="stack-item">Customer hero films</span>
+              <span class="stack-item">Brand identity campaigns</span>
               <span class="stack-item">Distinctive visual asset</span>
-              <span class="stack-item">Major sponsorships (F1-scale)</span>
+              <span class="stack-item">Major sponsorships (Spurs, tennis)</span>
               <span class="stack-item">Founder / exec voice</span>
+              <span class="stack-item">Events &middot; people &middot; culture</span>
+              <span class="stack-item">China sourcing map</span>
             </div>
           </div>
           <div class="stack-tier tier-aware">
@@ -1927,12 +2193,10 @@
               <span class="stack-item primary">Platform-native short-form</span>
               <span class="stack-item">Value-driven educational</span>
               <span class="stack-item">Comparison + tutorial</span>
-              <span class="stack-item">KLC · customer ambassador</span>
+              <span class="stack-item">KLC &middot; customer ambassador</span>
               <span class="stack-item">Flagship research (CFO-Playbook style)</span>
-              <span class="stack-item">Events · people · culture</span>
               <span class="stack-item">Milestone announcements</span>
               <span class="stack-item">PR-coded earned media</span>
-              <span class="stack-item">Corridor reports</span>
               <span class="stack-item">Employee amplification</span>
             </div>
           </div>
@@ -1945,7 +2209,6 @@
               <span class="stack-item primary">FX calculator + SEO</span>
               <span class="stack-item">Paid search ads</span>
               <span class="stack-item">Product demo landing pages</span>
-              <span class="stack-item">Case-study landing pages</span>
               <span class="stack-item">Retargeting creative</span>
             </div>
           </div>
@@ -1963,8 +2226,13 @@
 
 <div id="persist-nav">
   <button id="btn-prev" aria-label="Previous">&larr;</button>
-  <span id="counter">01 / 38</span>
+  <span id="counter">01 / 39</span>
   <button id="btn-next" aria-label="Next">&rarr;</button>
+</div>
+
+<div id="lightbox" role="dialog" aria-label="Expanded image">
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <img id="lb-img" src="" alt="">
 </div>
 
 <script>
@@ -2032,6 +2300,25 @@
   }
 
   show(current);
+
+  /* Lightbox */
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbClose = lb.querySelector('.lb-close');
+  document.querySelectorAll('.lb-img').forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || '';
+      lb.classList.add('active');
+    });
+  });
+  function closeLightbox() { lb.classList.remove('active'); lbImg.src = ''; }
+  lb.addEventListener('click', closeLightbox);
+  lbClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lb.classList.contains('active')) closeLightbox();
+  });
 })();
 </script>
 </body>
