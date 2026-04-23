@@ -325,6 +325,117 @@
   .cta-button:hover { background: var(--wf-pink-dark); }
   .cta-button::after { content: ' \2192'; font-size: 1.2em; }
 
+  /* ================= CHANNEL GRID (slide 18 - icons for 8 channels) ================= */
+  .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vh 1.4vw;
+    margin-top: 3vh;
+  }
+  .channel-card {
+    padding: 2vh 1vw 1.6vh;
+    text-align: center;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    transition: transform 120ms, box-shadow 120ms;
+  }
+  .channel-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(230,24,95,0.08);
+    border-color: var(--wf-pink-soft);
+  }
+  .channel-card .ch-icon {
+    display: flex; align-items: center; justify-content: center;
+    width: clamp(44px, 6vh, 60px);
+    height: clamp(44px, 6vh, 60px);
+    margin: 0 auto 1vh;
+    border-radius: 50%;
+    background: var(--wf-pink-softer);
+    color: var(--wf-pink);
+  }
+  .channel-card .ch-icon svg {
+    width: clamp(22px, 3.2vh, 32px);
+    height: clamp(22px, 3.2vh, 32px);
+  }
+  .channel-card .ch-name {
+    font-size: clamp(0.85rem, 1.5vh, 1rem);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.4vh;
+  }
+  .channel-card .ch-desc {
+    font-size: clamp(0.72rem, 1.2vh, 0.85rem);
+    color: var(--ink-soft);
+    line-height: 1.35;
+  }
+
+  /* ================= LAYER CARDS (slide 15 - branding + awareness) ================= */
+  .layer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5vw;
+    margin-top: 1.5vh;
+  }
+  .layer-card {
+    padding: 2vh 1.8vw 1.6vh;
+    border-radius: 6px;
+    display: flex; flex-direction: column;
+    height: 62vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .layer-card.layer-branding {
+    background: linear-gradient(135deg, var(--ant-navy-deep) 0%, var(--ant-navy) 100%);
+    color: var(--paper);
+  }
+  .layer-card.layer-awareness {
+    background: linear-gradient(135deg, var(--wf-pink) 0%, var(--wf-pink-dark) 100%);
+    color: var(--paper);
+  }
+  .layer-tag {
+    align-self: flex-start;
+    background: var(--paper);
+    padding: 0.5vh 1vw;
+    border-radius: 99px;
+    font-size: clamp(0.72rem, 1.2vh, 0.85rem);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 1.5vh;
+  }
+  .layer-card.layer-branding .layer-tag { color: var(--ant-navy-deep); }
+  .layer-card.layer-awareness .layer-tag { color: var(--wf-pink-dark); }
+  .layer-desc {
+    font-size: clamp(0.9rem, 1.55vh, 1.05rem);
+    color: var(--paper) !important;
+    line-height: 1.45;
+    margin-bottom: 0.6vh;
+    max-width: none;
+  }
+  .layer-eg {
+    font-size: clamp(0.82rem, 1.4vh, 0.95rem);
+    color: rgba(255,255,255,0.82) !important;
+    margin-bottom: 1.5vh;
+    max-width: none;
+  }
+  .layer-eg em.serif { color: var(--paper); }
+  .layer-img-slot {
+    flex: 1;
+    background: rgba(255,255,255,0.96);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    padding: 1.2vh 1.2vw;
+  }
+  .layer-img-slot img {
+    max-width: 100%; max-height: 100%;
+    width: auto; height: auto;
+    object-fit: contain;
+    border: 1px solid var(--line-soft);
+    border-radius: 3px;
+  }
+
   /* ================= PEER SLIDE · pillar composition + distribution mix ================= */
   .peer-layout {
     display: grid; grid-template-columns: 1fr 1.1fr;
@@ -356,12 +467,12 @@
 
   .peer-logo {
     position: absolute;
-    top: 8.5vh; right: 5vw;
-    height: clamp(36px, 6vh, 62px);
+    bottom: 6vh; left: 5vw;
+    height: clamp(32px, 5vh, 52px);
     width: auto;
-    opacity: 0.92;
+    opacity: 0.85;
     z-index: 5;
-    max-width: 180px;
+    max-width: 160px;
     object-fit: contain;
     pointer-events: none;
   }
@@ -686,12 +797,12 @@
 
   /* ================= STACK MAP FUNNEL (final slide) ================= */
   .stack-funnel {
-    margin: 1.5vh auto 0;
+    margin: 1vh auto 0;
     width: 100%;
-    height: 72vh;
-    max-height: 640px;
+    height: 68vh;
+    max-height: 620px;
     display: flex; flex-direction: column;
-    gap: 1.2vh;
+    gap: 1vh;
     position: relative;
     justify-content: space-between;
   }
@@ -898,12 +1009,14 @@
     grid-template-columns: repeat(7, 1fr);
     gap: 1vh 0.8vw;
     margin-top: 2vh;
-    max-height: 64vh;
+  }
+  .video-thumb {
+    aspect-ratio: 9 / 16;
   }
   .video-thumb {
     position: relative;
     background: linear-gradient(135deg, #1a2668, var(--ant-navy-deep));
-    border-radius: 4px;
+    border-radius: 6px;
     overflow: hidden;
     display: flex; flex-direction: column;
     text-decoration: none;
@@ -1562,7 +1675,7 @@
             <div class="yt-stat">
               <div class="yt-stat-num">Top views</div>
               <div class="yt-stat-label">Activation videos aren't building awareness</div>
-              <div class="yt-stat-desc">Our top-viewed pieces are boosted activation ads (WorldCard 1%, Shopify, World Account). <strong>They're trying to sell, not build awareness.</strong> <a href="https://www.youtube.com/watch?v=kmYzgqEdFpk" target="_blank" class="pink-strong" style="text-decoration: underline;">See a top example &rarr;</a></div>
+              <div class="yt-stat-desc">Our top-viewed pieces read like <strong>stacked-up display ads</strong> &mdash; feature lists, CTAs, reasons to sign up. Great for people already in-market. <strong>They don't create demand among people who don't yet know they need us.</strong> <a href="https://www.youtube.com/watch?v=kmYzgqEdFpk" target="_blank" class="pink-strong" style="text-decoration: underline;">See one &rarr;</a></div>
             </div>
             <div class="yt-img-block" style="margin-top: 1.5vh;">
               <img class="lb-img" src="images/wf-yt-content-list.png" alt="YouTube Studio Views by Content &mdash; top videos are product activation">
@@ -1587,25 +1700,21 @@
       <div class="column column-wide">
         <span class="eyebrow">14 · Inside upper-funnel</span>
         <h2 class="lg">Upper-funnel itself has <em>two</em> layers.</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3vw; margin-top: 1vh; align-items: start;">
-          <div>
-            <div style="border-top: 2px solid var(--wf-pink); padding-top: 1vh;">
-              <span style="font-size: clamp(0.72rem, 1.15vh, 0.82rem); font-weight: 600; color: var(--wf-pink); letter-spacing: 0.12em; text-transform: uppercase;">Branding</span>
-              <p class="fine" style="margin-top: 0.5vh;">Identity, distinctiveness. Global consistency. Slow ROI. Compounds permanently.</p>
-              <p class="fine" style="margin-top: 0.4vh;"><em class="serif">E.g.</em> WorldFirst &times; AFA sponsor.</p>
-            </div>
-            <div style="margin-top: 1.2vh; height: 52vh; background: var(--paper); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-              <img class="lb-img" src="images/wf-branding-afa.png" alt="WorldFirst &times; AFA branding post on LinkedIn" style="max-width: 100%; max-height: 100%; width: auto; height: auto; border: none; object-fit: contain; display: block;">
+        <div class="layer-grid">
+          <div class="layer-card layer-branding">
+            <div class="layer-tag">Branding</div>
+            <p class="layer-desc">Identity, distinctiveness. Global consistency. Slow ROI. Compounds permanently.</p>
+            <p class="layer-eg"><em class="serif">E.g.</em> WorldFirst &times; AFA sponsor.</p>
+            <div class="layer-img-slot">
+              <img class="lb-img" src="images/wf-branding-afa.png" alt="WorldFirst &times; AFA branding post on LinkedIn">
             </div>
           </div>
-          <div>
-            <div style="border-top: 2px solid var(--wf-pink); padding-top: 1vh;">
-              <span style="font-size: clamp(0.72rem, 1.15vh, 0.82rem); font-weight: 600; color: var(--wf-pink); letter-spacing: 0.12em; text-transform: uppercase;">Awareness</span>
-              <p class="fine" style="margin-top: 0.5vh;">Product benefit. Regional. Creator-led. Creates demand about WorldFirst specifically.</p>
-              <p class="fine" style="margin-top: 0.4vh;"><em class="serif">E.g.</em> &ldquo;Send &pound;10,000 to USD&rdquo; tutorial.</p>
-            </div>
-            <div style="margin-top: 1.2vh; height: 52vh; background: var(--paper); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-              <img class="lb-img" src="images/wf-awareness-send-10k.png" alt="WorldFirst awareness tutorial — send £10,000 GBP to USD" style="max-width: 100%; max-height: 100%; width: auto; height: auto; border: none; object-fit: contain; display: block;">
+          <div class="layer-card layer-awareness">
+            <div class="layer-tag">Awareness</div>
+            <p class="layer-desc">Product benefit. Regional. Creator-led. Creates demand about WorldFirst specifically.</p>
+            <p class="layer-eg"><em class="serif">E.g.</em> &ldquo;Send &pound;10,000 to USD&rdquo; tutorial.</p>
+            <div class="layer-img-slot">
+              <img class="lb-img" src="images/wf-awareness-send-10k.png" alt="WorldFirst awareness tutorial — send £10,000 GBP to USD">
             </div>
           </div>
         </div>
@@ -1660,19 +1769,51 @@
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
       <div class="head-meta"><span>Channel map</span><span class="sep"></span><span class="head-num">18</span></div>
     </div>
-    <div class="slide-body v-start">
+    <div class="slide-body v-center">
       <div class="column">
         <span class="eyebrow">17 · The eight channels</span>
         <h2 class="lg">Peer brands land on <em>eight channels</em> simultaneously.</h2>
-        <div class="models models-4" style="margin-top: 2.5vh;">
-          <div class="model-card"><span class="model-label">01 · Own social</span><p>WorldFirst handles &mdash; LinkedIn, YouTube, Instagram, TikTok.</p></div>
-          <div class="model-card"><span class="model-label">02 · Creators &amp; influencers</span><p>Their audiences, their voice, their channels.</p></div>
-          <div class="model-card"><span class="model-label">03 · Paid media</span><p>Social + display boosting to expand reach.</p></div>
-          <div class="model-card"><span class="model-label">04 · PR &amp; press</span><p>Editorial placement, press relations, broadcast.</p></div>
-          <div class="model-card"><span class="model-label">05 · Website + SEO</span><p>Awareness-tier search content, not just activation.</p></div>
-          <div class="model-card"><span class="model-label">06 · Employee social</span><p>Personal accounts as amplification layer.</p></div>
-          <div class="model-card"><span class="model-label">07 · Events &amp; sponsorships</span><p>Physical + virtual, industry-specific.</p></div>
-          <div class="model-card"><span class="model-label">08 · Partnerships</span><p>Co-marketing, referral, ecosystem.</p></div>
+        <div class="channel-grid">
+          <div class="channel-card">
+            <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 4a3 3 0 110 6 3 3 0 010-6zm0 15c-2.5 0-4.7-1.3-6-3.2.03-2 4-3.1 6-3.1s5.97 1.1 6 3.1c-1.3 1.9-3.5 3.2-6 3.2z" fill="currentColor"/></svg></div>
+            <div class="ch-name">Own social</div>
+            <div class="ch-desc">WorldFirst handles &mdash; LinkedIn, YouTube, Instagram, TikTok</div>
+          </div>
+          <div class="channel-card">
+            <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4a4 4 0 11-8 0 4 4 0 018 0zM12 14c-4.4 0-8 1.8-8 4v2h16v-2c0-2.2-3.6-4-8-4zM20 9a2 2 0 100-4 2 2 0 000 4zm-16 0a2 2 0 100-4 2 2 0 000 4zm14 7.8c1.9.7 3 1.8 3 3.2v2h3v-2c0-1.8-2.6-3-6-3.2zM4 16.8c-3.4.2-6 1.4-6 3.2v2h3v-2c0-1.4 1.1-2.5 3-3.2z" fill="currentColor"/></svg></div>
+            <div class="ch-name">Creators + KOLs</div>
+            <div class="ch-desc">Their audiences, their voice, their channels</div>
+          </div>
+          <div class="channel-card">
+            <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 17h20v2H2v-2zm1.15-4.05L4 11.47l.85 1.48 1.3-.75L5.3 10.72H7v-1.5H5.3l.85-1.48-1.3-.75L4 8.47l-.85-1.48-1.3.75.85 1.48H1v1.5h1.7l-.85 1.48 1.3.75zM9.5 11h8a2 2 0 002-2V6a2 2 0 00-2-2h-8a2 2 0 00-2 2v3a2 2 0 002 2zm10.35 1.95l-.85-1.48 1.3-.75L21.15 12 22 10.52l.85 1.48 1.3.75-.85 1.48H25v1.5h-1.7l.85 1.48-1.3.75L22 16.48l-.85 1.48-1.3-.75.85-1.48H19v-1.5h1.7l-.85-1.28z" fill="currentColor"/></svg></div>
+            <div class="ch-name">Paid media</div>
+            <div class="ch-desc">Social + display boosting to expand reach</div>
+          </div>
+          <div class="channel-card">
+            <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 14H4V8h16v10zM6 10h6v2H6v-2zm0 4h6v2H6v-2zm8-4h4v6h-4v-6z" fill="currentColor"/></svg></div>
+            <div class="ch-name">PR + press</div>
+            <div class="ch-desc">Editorial placement, press relations, broadcast</div>
+          </div>
+          <div class="channel-card">
+            <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 16a4.5 4.5 0 100-9 4.5 4.5 0 000 9zm0-2a2.5 2.5 0 110-5 2.5 2.5 0 010 5zm10-.4l-4.5-4.5v3l2.9 2.9-1.4 1.4-2.9-2.9h-3l4.5 4.5a1 1 0 001.4 0l3-3a1 1 0 000-1.4z" fill="currentColor"/></svg></div>
+            <div class="ch-name">Website + SEO</div>
+            <div class="ch-desc">Awareness-tier search content, not just activation</div>
+          </div>
+          <div class="channel-card">
+            <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 8a3 3 0 116 0 3 3 0 01-6 0zm8 8.5c0 1.8-2.7 3-5 3s-5-1.2-5-3V15c0-1 1.6-2 3-2.3.5-.1 1-.1 1.5-.1l1 .1c1.4.3 3 1.3 3 2.3v1.5zM19 10a2 2 0 100-4 2 2 0 000 4zm-14 0a2 2 0 100-4 2 2 0 000 4zm16 4.5c0-.9-.8-1.7-2-2.2.1-.1.1-.2.1-.3.8.2 2 .7 2 1.5v1h3v-1c0-1.4-1.8-2.4-3.1-2.5zM1 14.5C1 13 2.8 12 4.1 11.9c-1.2.5-2 1.3-2 2.2v1H1v-.6z" fill="currentColor"/></svg></div>
+            <div class="ch-name">Employee social</div>
+            <div class="ch-desc">Personal accounts as amplification layer</div>
+          </div>
+          <div class="channel-card">
+            <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 2v2H7V2H5v2H4a2 2 0 00-2 2v14a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2h-1V2h-2zm3 18H4V9h16v11zm-2-5H6v2h12v-2z" fill="currentColor"/></svg></div>
+            <div class="ch-name">Events + sponsorships</div>
+            <div class="ch-desc">Physical + virtual, industry-specific</div>
+          </div>
+          <div class="channel-card">
+            <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/></svg></div>
+            <div class="ch-name">Partnerships</div>
+            <div class="ch-desc">Co-marketing, referral, ecosystem</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1810,7 +1951,7 @@
       <div class="column column-wide">
         <span class="eyebrow">22 · What it looks like</span>
         <h2 class="lg">Regional creators talking about our <em>product.</em></h2>
-        <p class="fine" style="max-width: 80ch;">Short-form videos by operators in each priority region, dedicated to WorldFirst product benefits in their own voice, their own market. Placeholders below &mdash; Steven to drop in eight example links.</p>
+        <p class="fine" style="max-width: 80ch;">Short-form vertical videos by operators in each priority region, speaking to WorldFirst product benefits in their own voice and market.</p>
         <div class="video-grid-v2">
           <a class="video-thumb" href="https://www.instagram.com/reel/DWgU4nWkakm/" target="_blank">
             <div class="vt-top"><img src="images/ig-DWgU4nWkakm.jpg" alt=""><div class="vt-overlay"></div><span class="vt-platform">IG</span><div class="vt-play"></div></div>
@@ -1840,6 +1981,9 @@
             <div class="vt-top" style="background: linear-gradient(135deg, #FE2C55 0%, #25F4EE 100%);"><div class="vt-overlay"></div><span class="vt-platform">TikTok</span><div class="vt-play"></div></div>
             <div class="vt-bottom"><div class="vt-region">Vietnam</div><div class="vt-desc">Regional creator, product</div></div>
           </a>
+        </div>
+        <div class="note" style="margin-top: 2.5vh;">
+          <div class="note-text"><strong>Authentic local voices telling our audiences why they need WorldFirst.</strong> These are awareness content built to create demand &mdash; organic first, then boosted for reach. Paid can repurpose them later, but the primary job is the one above: <strong>local voices stating the product benefit, in their own words.</strong> That's awareness for growth.</div>
         </div>
       </div>
     </div>
@@ -1983,9 +2127,9 @@
             <!-- 04 splits to 05a and 05b -->
             <path d="M 835 85 C 835 180, 260 180, 260 280" stroke="#E6185F" stroke-width="2.5" fill="none" marker-end="url(#pf-arrow)"/>
             <path d="M 835 85 C 835 180, 720 180, 720 280" stroke="#E6185F" stroke-width="2.5" fill="none" marker-end="url(#pf-arrow)"/>
-            <!-- 05a and 05b converge to regroup -->
-            <path d="M 260 375 C 260 450, 490 450, 490 475" stroke="#0E1A4A" stroke-width="2.5" fill="none" marker-end="url(#pf-arrow-navy)"/>
-            <path d="M 720 375 C 720 450, 510 450, 510 475" stroke="#0E1A4A" stroke-width="2.5" fill="none" marker-end="url(#pf-arrow-navy)"/>
+            <!-- 05a and 05b converge to regroup with smooth curves -->
+            <path d="M 260 375 C 260 460, 500 460, 500 490" stroke="#0E1A4A" stroke-width="2.5" fill="none"/>
+            <path d="M 720 375 C 720 460, 500 460, 500 490" stroke="#0E1A4A" stroke-width="2.5" fill="none" marker-end="url(#pf-arrow-navy)"/>
           </svg>
           <!-- Nodes positioned as percentages -->
           <div class="pf-node" style="left: 8.25%; top: 11%;">
@@ -2009,14 +2153,14 @@
             <span class="pn-desc">What's working</span>
           </div>
           <div class="pf-node branch" style="left: 26%; top: 60%;">
-            <span class="pn-label">05a &middot; Paid team</span>
-            <span class="pn-name">Amplify via assets + audiences</span>
-            <span class="pn-desc">Winners become paid variants. Awareness audiences become retargeting pools.</span>
+            <span class="pn-label">05a &middot; Paid team &middot; direct activation</span>
+            <span class="pn-name">Expand with <em class="serif">paid</em> reach</span>
+            <span class="pn-desc">Winners become paid variants. Awareness audiences feed retargeting. Scale acquisition against in-market 5%.</span>
           </div>
           <div class="pf-node branch" style="left: 72%; top: 60%;">
-            <span class="pn-label">05b &middot; Upper-funnel + regional</span>
-            <span class="pn-name">Amplify via creators + KOLs</span>
-            <span class="pn-desc">Proven message localised by regional creators. Influencer program builds repeat exposure.</span>
+            <span class="pn-label">05b &middot; Upper-funnel + regional &middot; awareness</span>
+            <span class="pn-name">Expand with <em class="serif">organic</em> reach</span>
+            <span class="pn-desc">Proven message localised by creators + KOLs. Further experimentation with awareness-building in priority corridors.</span>
           </div>
           <div class="pf-node regroup" style="left: 50%; top: 94%;">
             <span class="pn-num">06</span>
@@ -2299,7 +2443,7 @@
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
       <div class="head-meta"><span>Success stories</span><span class="sep"></span><span class="head-num">39</span></div>
     </div>
-    <div class="slide-body v-start">
+    <div class="slide-body v-center">
       <div class="column">
         <span class="eyebrow">37 · The campaign shape</span>
         <h2 class="lg">A campaign built around <em>cross-border success stories.</em></h2>
