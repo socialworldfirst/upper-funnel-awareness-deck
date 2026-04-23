@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Upper-Funnel Awareness · A Q2 Battle Plan · WorldFirst</title>
+<title>Upper-Funnel Awareness · Q2 Battle Plan · WorldFirst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -32,8 +32,7 @@
   html, body { height: 100%; overflow: hidden; }
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-    background: var(--cream);
-    color: var(--ink);
+    background: var(--cream); color: var(--ink);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -55,8 +54,7 @@
     position: absolute; inset: 0;
     display: flex; flex-direction: column;
     opacity: 0; pointer-events: none;
-    transition: opacity 220ms ease;
-    overflow: hidden;
+    transition: opacity 220ms ease; overflow: hidden;
   }
   .slide.active { opacity: 1; pointer-events: auto; }
 
@@ -72,8 +70,7 @@
     display: flex; align-items: center; gap: 1rem;
     font-size: clamp(0.68rem, 0.95vh, 0.78rem);
     color: var(--ink-soft);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    letter-spacing: 0.1em; text-transform: uppercase;
     font-weight: 500;
   }
   .head-meta .sep { width: 1px; height: 12px; background: var(--line); }
@@ -86,11 +83,12 @@
     overflow: hidden; position: relative;
   }
   .slide-body.v-center { justify-content: center; }
-  .slide-body.v-start { justify-content: flex-start; padding-top: 6vh; }
+  .slide-body.v-start { justify-content: flex-start; padding-top: 5.5vh; }
 
   .column { width: 100%; max-width: 1100px; margin: 0 auto; }
   .column-narrow { max-width: 900px; }
   .column-wide { max-width: 1180px; }
+  .column-full { max-width: 100%; }
 
   .slide-foot {
     flex-shrink: 0;
@@ -101,11 +99,9 @@
     font-size: clamp(0.62rem, 0.88vh, 0.72rem);
     color: var(--muted);
     letter-spacing: 0.08em;
-    font-weight: 500;
-    text-transform: uppercase;
+    font-weight: 500; text-transform: uppercase;
   }
   .slide-foot a { color: var(--wf-pink); text-decoration: none; font-weight: 600; }
-  .slide-foot a:hover { text-decoration: underline; }
 
   .eyebrow {
     display: inline-flex; align-items: center; gap: 0.6rem;
@@ -175,42 +171,6 @@
     font-style: italic; font-weight: 400; color: var(--wf-pink);
   }
 
-  /* TITLE SLIDE */
-  .slide-title .slide-body { justify-content: center; padding: 4vh 8vw; position: relative; }
-  .title-deco {
-    position: absolute;
-    right: 5vw; top: 50%; transform: translateY(-50%);
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(12rem, 40vh, 36rem);
-    line-height: 0.85;
-    color: var(--wf-pink);
-    opacity: 0.07;
-    font-weight: 400;
-    pointer-events: none; user-select: none;
-    z-index: 0;
-  }
-  .title-content { position: relative; z-index: 1; max-width: 1100px; }
-  .title-sub {
-    margin-top: 3.5vh;
-    font-size: clamp(0.95rem, 1.65vh, 1.15rem);
-    color: var(--ink-soft);
-    max-width: 60ch; line-height: 1.45;
-  }
-  .title-sub em {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic; color: var(--wf-pink); font-weight: 400;
-  }
-  .title-meta {
-    margin-top: 6vh;
-    display: flex; align-items: center; gap: 1.5rem;
-    font-size: clamp(0.85rem, 1.4vh, 1rem);
-    letter-spacing: 0.02em;
-  }
-  .title-meta .author { font-weight: 600; color: var(--ink); }
-  .title-meta .date { color: var(--ink-soft); }
-  .title-meta .bar { width: 1px; height: 14px; background: var(--line); }
-
   /* PULL QUOTE */
   .pull-quote {
     font-family: 'Instrument Serif', Georgia, serif;
@@ -218,15 +178,14 @@
     font-size: clamp(1.1rem, 1.95vh, 1.4rem);
     line-height: 1.35;
     color: var(--ink);
-    max-width: 52ch;
+    max-width: 54ch;
     padding: 2vh 0 0;
     margin-top: 2.5vh;
     border-top: 1px solid var(--line);
     position: relative;
   }
   .pull-quote::before {
-    content: '';
-    position: absolute;
+    content: ''; position: absolute;
     left: 0; top: -1px;
     width: 40px; height: 1.5px;
     background: var(--wf-pink);
@@ -237,12 +196,11 @@
     color: var(--wf-pink);
   }
 
-  /* NOTE */
   .note {
     position: relative;
     padding-left: 3rem;
     margin-top: 2vh;
-    max-width: 62ch;
+    max-width: 68ch;
   }
   .note::before {
     content: 'Note.';
@@ -258,18 +216,16 @@
   }
   .note strong { color: var(--ink); }
 
-  /* BULLET LISTS */
+  /* BULLETS */
   ul.bullets { list-style: none; margin: 1.5vh 0; padding: 0; }
   ul.bullets li {
-    padding-left: 1.3rem;
-    position: relative;
+    padding-left: 1.3rem; position: relative;
     font-size: clamp(0.9rem, 1.6vh, 1.02rem);
     margin-bottom: 1vh; line-height: 1.45;
-    max-width: 66ch; color: var(--ink);
+    max-width: 68ch; color: var(--ink);
   }
   ul.bullets li::before {
-    content: '';
-    position: absolute;
+    content: ''; position: absolute;
     left: 0; top: 0.72em;
     width: 8px; height: 1.5px;
     background: var(--wf-pink);
@@ -277,12 +233,9 @@
   ul.bullets li strong { font-weight: 600; color: var(--ink); }
 
   ul.dual {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3vw;
-    list-style: none;
-    margin: 2vh 0;
-    padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3vw; list-style: none;
+    margin: 2vh 0; padding: 0;
   }
   ul.dual li {
     padding-top: 1.2vh;
@@ -291,17 +244,13 @@
     line-height: 1.45; color: var(--ink);
   }
   ul.dual li strong {
-    display: block;
-    font-weight: 600; color: var(--ink);
-    margin-bottom: 0.5vh;
+    display: block; font-weight: 600;
+    color: var(--ink); margin-bottom: 0.5vh;
   }
 
-  /* MODELS (grid cards) */
   .models {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5vw;
-    margin-top: 3vh;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2.5vw; margin-top: 3vh;
   }
   .models-2 { grid-template-columns: repeat(2, 1fr); }
   .models-4 { grid-template-columns: repeat(4, 1fr); }
@@ -324,17 +273,12 @@
   }
 
   /* HERO KPI */
-  .hero-kpi {
-    display: flex; flex-direction: column;
-    align-items: center; text-align: center;
-    margin-top: 1vh;
-  }
+  .hero-kpi { display: flex; flex-direction: column; align-items: center; text-align: center; }
   .hero-kpi .num {
-    font-size: clamp(8rem, 26vh, 22rem);
+    font-size: clamp(8rem, 24vh, 18rem);
     font-weight: 700; color: var(--wf-pink);
     line-height: 0.85; letter-spacing: -0.055em;
     font-variant-numeric: tabular-nums;
-    position: relative;
   }
   .hero-kpi .num .unit {
     font-family: 'Instrument Serif', Georgia, serif;
@@ -343,26 +287,17 @@
   }
   .hero-kpi .label {
     font-size: clamp(0.82rem, 1.3vh, 0.95rem);
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin-top: 2vh; font-weight: 600;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--ink); margin-top: 1.8vh; font-weight: 600;
   }
   .hero-kpi .label .sep { color: var(--wf-pink); margin: 0 0.8rem; }
-  .hero-kpi .label em {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic; color: var(--wf-pink);
-    font-weight: 400; text-transform: none; letter-spacing: normal;
-  }
   .hero-kpi .context {
     font-size: clamp(0.88rem, 1.55vh, 1rem);
     color: var(--ink-soft);
-    max-width: 58ch;
-    margin: 2vh auto 0;
+    max-width: 60ch; margin: 2vh auto 0;
     line-height: 1.5;
   }
 
-  /* PLACEHOLDER */
   .placeholder {
     margin: 2vh 0;
     padding: 2.5vh 2vw;
@@ -373,51 +308,15 @@
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic; color: var(--wf-pink);
     font-size: clamp(0.92rem, 1.6vh, 1.08rem);
-    text-align: center;
-    line-height: 1.4;
-    max-width: 76ch;
-    min-height: 8vh;
+    text-align: center; line-height: 1.4;
+    max-width: 78ch; min-height: 8vh;
   }
   .placeholder.small { min-height: 5.5vh; padding: 1.6vh 2vw; font-size: clamp(0.82rem, 1.4vh, 0.95rem); }
   .placeholder.wide { max-width: 100%; }
 
-  /* METRIC GRID */
-  .metric-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2vh 2.5vw;
-    margin-top: 2.5vh;
-  }
-  .metric-card {
-    padding: 1.8vh 1.6vw;
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--wf-pink);
-    background: var(--paper);
-    border-radius: 2px;
-  }
-  .metric-card .metric-label {
-    font-size: clamp(0.72rem, 1.15vh, 0.82rem);
-    font-weight: 600; color: var(--wf-pink);
-    letter-spacing: 0.12em; text-transform: uppercase;
-    margin-bottom: 0.8vh; display: block;
-  }
-  .metric-card ul { list-style: none; padding: 0; margin: 0; }
-  .metric-card ul li {
-    font-size: clamp(0.85rem, 1.45vh, 0.95rem);
-    color: var(--ink); padding: 0.35vh 0; line-height: 1.4;
-  }
-  .metric-card ul li::before { content: none; }
-  .metric-card ul li strong { color: var(--ink); font-weight: 600; }
-  .metric-card .metric-note {
-    font-size: clamp(0.72rem, 1.2vh, 0.82rem);
-    color: var(--ink-soft);
-    margin-top: 0.8vh; line-height: 1.4;
-  }
-
   /* PYRAMID */
   .pyramid {
-    margin: 2.5vh auto 0;
-    max-width: 720px;
+    margin: 2.5vh auto 0; max-width: 720px;
     display: flex; flex-direction: column; align-items: center; gap: 1vh;
   }
   .pyramid .tier-row {
@@ -444,92 +343,388 @@
   .pyramid .tier-body strong { font-weight: 600; color: var(--ink); }
   .pyramid .tier-top .tier-body { background: var(--wf-pink-softer); }
 
-  /* ASK LIST */
-  ol.asks {
-    list-style: none; counter-reset: ask;
-    margin: 1.5vh 0; padding: 0;
-    display: grid; grid-template-columns: 1fr; gap: 1.2vh;
+  /* ================= FLASHY COVER ================= */
+  .slide-cover {
+    background: linear-gradient(135deg, var(--ant-navy-deep) 0%, #0a1238 50%, #1a2668 100%);
+    color: var(--paper);
   }
-  ol.asks li {
-    counter-increment: ask;
-    padding: 1.2vh 1.2vw 1.2vh 3.5rem;
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--wf-pink);
-    background: var(--paper);
-    border-radius: 2px; position: relative;
-    font-size: clamp(0.92rem, 1.6vh, 1.03rem);
-    color: var(--ink); line-height: 1.4;
+  .slide-cover .slide-head { border-bottom-color: rgba(255,255,255,0.08); }
+  .slide-cover .slide-head .head-meta { color: rgba(255,255,255,0.5); }
+  .slide-cover .slide-head .head-num { color: var(--wf-pink); }
+  .slide-cover .slide-foot { border-top-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); }
+  .slide-cover .eyebrow { color: var(--wf-pink); }
+  .slide-cover .cover-wrap {
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2vw;
+    width: 100%;
+    text-align: center;
   }
-  ol.asks li::before {
-    content: counter(ask);
+  .slide-cover .cover-deco {
     position: absolute;
-    left: 1.2vw; top: 50%; transform: translateY(-50%);
+    left: 50%; top: 50%; transform: translate(-50%, -45%);
     font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic; color: var(--wf-pink);
-    font-size: clamp(1.4rem, 2.6vh, 2rem);
-    font-weight: 400; line-height: 1;
+    font-style: italic;
+    font-size: clamp(20rem, 60vh, 50rem);
+    color: var(--wf-pink);
+    opacity: 0.09;
+    line-height: 0.85;
+    pointer-events: none; user-select: none;
+    z-index: 0;
+    white-space: nowrap;
+  }
+  .slide-cover .cover-content { position: relative; z-index: 1; }
+  .slide-cover .cover-tag {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    font-size: clamp(0.72rem, 1.15vh, 0.85rem);
+    font-weight: 600;
+    color: var(--wf-pink);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 3vh;
+  }
+  .slide-cover .cover-tag::before { content: ''; width: 32px; height: 1.5px; background: var(--wf-pink); }
+  .slide-cover .cover-tag::after { content: ''; width: 32px; height: 1.5px; background: var(--wf-pink); }
+  .slide-cover .cover-nums {
+    display: inline-flex; align-items: baseline;
+    gap: clamp(1rem, 3vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--paper);
+    line-height: 0.9;
+  }
+  .slide-cover .cover-nums .cn-prefix {
+    font-size: clamp(1rem, 1.8vh, 1.4rem);
+    font-weight: 500;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.8vh;
+  }
+  .slide-cover .cover-nums .cn-num {
+    font-size: clamp(5rem, 17vh, 13rem);
+    line-height: 1;
+  }
+  .slide-cover .cover-nums .cn-arrow {
+    font-size: clamp(3rem, 10vh, 8rem);
+    color: var(--wf-pink);
+    font-weight: 300;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    line-height: 1;
+    align-self: center;
+    padding: 0 0.5rem;
+  }
+  .slide-cover .cover-nums .cn-num.cn-to {
+    color: var(--wf-pink);
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .slide-cover .cover-col {
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .slide-cover .cover-sub-1 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.8rem, 4vh, 3rem);
+    color: var(--wf-pink);
+    letter-spacing: -0.01em;
+    line-height: 1;
+    margin-top: 1.5vh;
+  }
+  .slide-cover .cover-sub-2 {
+    font-size: clamp(1rem, 1.9vh, 1.3rem);
+    font-weight: 500;
+    color: rgba(255,255,255,0.82);
+    margin-top: 3vh;
+    max-width: 56ch;
+    margin-left: auto; margin-right: auto;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+  }
+  .slide-cover .cover-sub-2 em {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    color: var(--wf-pink);
+    font-weight: 400;
+  }
+  .slide-cover .cover-meta {
+    margin-top: 5vh;
+    display: inline-flex; align-items: center; gap: 1.5rem;
+    font-size: clamp(0.82rem, 1.4vh, 1rem);
+    color: rgba(255,255,255,0.7);
+  }
+  .slide-cover .cover-meta .author {
+    color: var(--paper);
+    font-weight: 600;
+  }
+  .slide-cover .cover-meta .bar {
+    width: 1px; height: 14px;
+    background: rgba(255,255,255,0.3);
   }
 
-  /* PEER RESEARCH LINK */
+  /* ================= ICP CHART (slide 2) ================= */
+  .icp-viz {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vw;
+    margin: 3vh 0;
+    align-items: end;
+  }
+  .icp-col { text-align: center; }
+  .icp-label {
+    font-size: clamp(0.72rem, 1.15vh, 0.82rem);
+    font-weight: 600; color: var(--wf-pink);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 1.5vh;
+  }
+  .icp-ring {
+    width: clamp(160px, 22vh, 220px);
+    height: clamp(160px, 22vh, 220px);
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .icp-ring-full {
+    background: radial-gradient(circle, var(--wf-pink) 0%, var(--wf-pink-dark) 100%);
+    box-shadow: 0 8px 24px rgba(230,24,95,0.22);
+  }
+  .icp-ring-partial {
+    background: var(--line-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  .icp-ring-partial::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(from 0deg, var(--wf-pink) 0deg 18deg, transparent 18deg);
+  }
+  .icp-pct {
+    position: relative; z-index: 1;
+    font-size: clamp(2rem, 5vh, 3.6rem);
+    font-weight: 700;
+    color: var(--paper);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .icp-ring-partial .icp-pct { color: var(--wf-pink); }
+  .icp-caption {
+    margin-top: 1.5vh;
+    font-size: clamp(0.82rem, 1.4vh, 0.95rem);
+    color: var(--ink);
+    max-width: 28ch;
+    margin-left: auto; margin-right: auto;
+    line-height: 1.4;
+  }
+  .icp-caption strong { color: var(--wf-pink); font-weight: 600; }
+
+  /* ================= FUNNEL VIZ (slide 3) ================= */
+  .funnel-viz {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vw;
+    align-items: flex-start;
+    margin: 2.5vh 0;
+  }
+  .funnel-col { text-align: center; }
+  .funnel-col-label {
+    font-size: clamp(0.72rem, 1.15vh, 0.82rem);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2vh;
+  }
+  .funnel-col-label.now { color: var(--ink-soft); }
+  .funnel-col-label.expand { color: var(--wf-pink); }
+  .funnel-shape {
+    margin: 0 auto;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 1vh;
+    width: 100%; max-width: 260px;
+  }
+  .funnel-tier {
+    text-align: center; padding: 0.9vh 0;
+    font-size: clamp(0.75rem, 1.25vh, 0.88rem);
+    font-weight: 600; color: var(--paper);
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+  }
+  .funnel-shape.shape-now .tier-top { width: 60%; background: var(--muted); }
+  .funnel-shape.shape-now .tier-mid { width: 35%; background: var(--ink-soft); }
+  .funnel-shape.shape-now .tier-bot { width: 18%; background: var(--ant-navy); }
+
+  .funnel-shape.shape-expand .tier-top { width: 100%; background: linear-gradient(90deg, var(--wf-pink), var(--wf-pink-dark)); }
+  .funnel-shape.shape-expand .tier-mid { width: 62%; background: var(--wf-pink); }
+  .funnel-shape.shape-expand .tier-bot { width: 28%; background: var(--wf-pink-dark); }
+
+  .funnel-outcome {
+    margin-top: 2vh;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(0.92rem, 1.6vh, 1.1rem);
+    color: var(--wf-pink);
+    line-height: 1.4;
+  }
+
+  /* ================= CONTENT BLEND BAR ================= */
+  .blend-bar {
+    display: flex;
+    height: clamp(38px, 5vh, 56px);
+    border-radius: 4px; overflow: hidden;
+    margin: 1.8vh 0 1.2vh;
+  }
+  .blend-seg {
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; color: var(--paper);
+    font-size: clamp(0.78rem, 1.3vh, 0.92rem);
+    letter-spacing: 0.04em;
+  }
+  .blend-seg.s-act { background: linear-gradient(135deg, var(--wf-pink), var(--wf-pink-dark)); }
+  .blend-seg.s-aware { background: var(--orange); }
+  .blend-seg.s-brand { background: var(--ant-navy); }
+  .blend-seg.s-thin { font-size: clamp(0.66rem, 1.05vh, 0.76rem); }
+  .blend-legend {
+    display: flex; gap: 2.2vw; flex-wrap: wrap;
+    font-size: clamp(0.78rem, 1.3vh, 0.9rem);
+    color: var(--ink-soft);
+    margin-top: 0.8vh;
+  }
+  .blend-legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .blend-legend .dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  .blend-legend .d-act { background: var(--wf-pink); }
+  .blend-legend .d-aware { background: var(--orange); }
+  .blend-legend .d-brand { background: var(--ant-navy); }
+
+  /* ================= PEER CHARTS ================= */
+  .peer-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3vw;
+    margin-top: 1.5vh;
+    align-items: start;
+  }
+  .peer-left h2 { margin-bottom: 1.5vh; }
+  .peer-left ul.bullets { margin-top: 0.8vh; }
+  .peer-charts {
+    display: flex; flex-direction: column;
+    gap: 1.8vh;
+  }
+  .peer-chart-block {
+    padding: 1.4vh 1.2vw;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--wf-pink);
+    border-radius: 2px;
+  }
+  .peer-chart-title {
+    font-size: clamp(0.72rem, 1.1vh, 0.82rem);
+    font-weight: 600; color: var(--wf-pink);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 0.9vh; display: block;
+  }
+  .peer-chart-block .blend-bar { margin: 0.5vh 0 0.6vh; height: clamp(28px, 3.6vh, 40px); }
+  .peer-chart-block .blend-legend {
+    font-size: clamp(0.68rem, 1.1vh, 0.78rem);
+    gap: 1.2vw; margin-top: 0.4vh;
+  }
+  .peer-dist-rows { display: flex; flex-direction: column; gap: 0.5vh; }
+  .peer-dist-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 32px;
+    align-items: center;
+    gap: 0.6vw;
+  }
+  .peer-dist-row .dr-label {
+    font-size: clamp(0.72rem, 1.15vh, 0.82rem);
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .peer-dist-row .dr-bar-wrap {
+    height: clamp(10px, 1.5vh, 14px);
+    background: var(--line-soft);
+    border-radius: 2px; overflow: hidden;
+  }
+  .peer-dist-row .dr-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--wf-pink), var(--wf-pink-dark));
+    border-radius: 2px;
+  }
+  .peer-dist-row .dr-pct {
+    font-size: clamp(0.65rem, 1vh, 0.72rem);
+    color: var(--ink-soft);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
   .peer-link {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    margin-top: 2.5vh;
+    margin-top: 2vh;
     font-size: clamp(0.78rem, 1.35vh, 0.9rem);
     font-weight: 500;
-    color: var(--wf-pink);
-    text-decoration: none;
+    color: var(--wf-pink); text-decoration: none;
     letter-spacing: 0.02em;
     border-bottom: 1px solid var(--wf-pink);
     padding-bottom: 2px;
-    transition: color 120ms;
   }
-  .peer-link:hover { color: var(--wf-pink-dark); border-color: var(--wf-pink-dark); }
   .peer-link::after { content: ' \2192'; }
 
-  /* ROI CHART (slide 24) */
+  .peer-takeaway {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1rem, 1.75vh, 1.22rem);
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 40ch;
+    margin: 1.8vh 0 0;
+    padding-top: 1.2vh;
+    border-top: 1.5px solid var(--wf-pink);
+  }
+  .peer-takeaway strong { color: var(--wf-pink); font-family: 'Inter', sans-serif; font-style: normal; font-weight: 600; }
+
+  /* ================= ROI CHART ================= */
   .roi-chart {
     margin: 2.5vh 0 1vh;
     display: grid;
-    grid-template-columns: 140px 1fr 140px;
+    grid-template-columns: 130px 1fr 130px;
     gap: 0.6vh 1.2vw;
     align-items: center;
-    max-width: 100%;
   }
   .roi-chart .roi-label {
     font-size: clamp(0.82rem, 1.4vh, 0.95rem);
-    font-weight: 600;
-    color: var(--wf-pink);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-weight: 600; color: var(--wf-pink);
+    letter-spacing: 0.08em; text-transform: uppercase;
   }
   .roi-chart .roi-bar-wrap {
     position: relative;
     height: clamp(24px, 3vh, 34px);
-    background: var(--line-soft);
-    border-radius: 3px;
+    background: var(--line-soft); border-radius: 3px;
     overflow: hidden;
   }
   .roi-chart .roi-bar {
-    position: absolute; top: 0; left: 0; height: 100%;
-    border-radius: 3px;
-    display: flex; align-items: center; padding: 0 0.9rem;
+    position: absolute; top: 0;
+    height: 100%; border-radius: 3px;
+    display: flex; align-items: center;
+    padding: 0 0.9rem;
     font-size: clamp(0.72rem, 1.2vh, 0.82rem);
     color: var(--paper); font-weight: 600;
     letter-spacing: 0.04em;
   }
-  .roi-chart .bar-brand { width: 94%; background: linear-gradient(90deg, var(--wf-pink), var(--wf-pink-dark)); }
-  .roi-chart .bar-aware { width: 68%; background: linear-gradient(90deg, var(--wf-pink), var(--orange)); }
-  .roi-chart .bar-act { width: 35%; background: var(--orange); }
+  .roi-chart .bar-brand { left: 18%; width: 75%; background: linear-gradient(90deg, var(--wf-pink), var(--wf-pink-dark)); }
+  .roi-chart .bar-aware { left: 0; width: 55%; background: linear-gradient(90deg, var(--wf-pink), var(--orange)); }
+  .roi-chart .bar-act { left: 0; width: 22%; background: var(--orange); }
   .roi-chart .roi-time {
     font-size: clamp(0.72rem, 1.2vh, 0.82rem);
-    color: var(--ink-soft);
-    font-weight: 500;
+    color: var(--ink-soft); font-weight: 500;
     font-variant-numeric: tabular-nums;
   }
   .roi-chart .roi-axis {
     grid-column: 2 / 3;
     display: flex; justify-content: space-between;
-    font-size: clamp(0.66rem, 1.1vh, 0.75rem);
+    font-size: clamp(0.66rem, 1.05vh, 0.75rem);
     color: var(--muted);
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -538,130 +733,110 @@
     margin-top: 0.4vh;
   }
 
-  /* CONTENT BLEND CHART (slide 09) */
-  .blend-bar {
-    display: flex;
-    height: clamp(42px, 5.5vh, 62px);
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 2vh 0 1.2vh;
-    box-shadow: 0 1px 0 var(--line-soft);
+  /* ================= REGIONAL × PRODUCT CHART (Slide 23) ================= */
+  table.region-chart {
+    width: 100%; border-collapse: collapse;
+    font-size: clamp(0.8rem, 1.4vh, 0.92rem);
+    margin-top: 2vh;
   }
-  .blend-seg {
-    display: flex; align-items: center; justify-content: center;
+  table.region-chart thead th {
+    text-align: left;
+    padding: 0.7vh 0.9rem;
     font-weight: 600;
-    color: var(--paper);
-    font-size: clamp(0.78rem, 1.35vh, 0.92rem);
-    letter-spacing: 0.04em;
-  }
-  .blend-seg.s-act { background: linear-gradient(135deg, var(--wf-pink), var(--wf-pink-dark)); }
-  .blend-seg.s-aware { background: var(--orange); }
-  .blend-seg.s-brand { background: var(--ant-navy); }
-  .blend-legend {
-    display: flex; gap: 2.2vw; flex-wrap: wrap;
-    font-size: clamp(0.78rem, 1.35vh, 0.9rem);
+    font-size: clamp(0.62rem, 1vh, 0.72rem);
+    letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--ink-soft);
+    border-bottom: 1.5px solid var(--ink);
   }
-  .blend-legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
-  .blend-legend .dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
-  .blend-legend .d-act { background: var(--wf-pink); }
-  .blend-legend .d-aware { background: var(--orange); }
-  .blend-legend .d-brand { background: var(--ant-navy); }
+  table.region-chart thead th.num { text-align: right; }
+  table.region-chart tbody td {
+    padding: 0.5vh 0.9rem;
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  table.region-chart tbody td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  table.region-chart tbody td.product { color: var(--ink-soft); font-size: 0.92em; }
+  table.region-chart tbody tr.total td {
+    border-top: 1.5px solid var(--ink);
+    border-bottom: none;
+    padding-top: 0.9vh;
+    font-weight: 600;
+  }
+  table.region-chart tbody tr.total td.num { color: var(--wf-pink); }
+  table.region-chart td .share-bar {
+    display: inline-block;
+    height: 8px;
+    background: linear-gradient(90deg, var(--wf-pink), var(--orange));
+    border-radius: 1px;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
 
-  /* CHANNEL MIX MINI CHART */
-  .platform-mix {
+  /* ================= METRIC GRID ================= */
+  .metric-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.6vw;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vh 2.5vw;
     margin-top: 2.5vh;
   }
-  .platform-cell {
-    padding: 1vh 1vw 1.2vh;
-    background: var(--paper);
+  .metric-card {
+    padding: 1.6vh 1.4vw;
     border: 1px solid var(--line);
     border-top: 3px solid var(--wf-pink);
+    background: var(--paper);
     border-radius: 2px;
   }
-  .platform-cell .pname {
-    font-size: clamp(0.78rem, 1.3vh, 0.88rem);
-    font-weight: 600;
-    color: var(--ink);
-  }
-  .platform-cell .prole {
-    display: block;
+  .metric-card .metric-label {
     font-size: clamp(0.72rem, 1.15vh, 0.82rem);
-    color: var(--wf-pink);
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-top: 0.4vh;
+    font-weight: 600; color: var(--wf-pink);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 0.8vh; display: block;
   }
-  .platform-cell .pnote {
-    font-size: clamp(0.72rem, 1.2vh, 0.82rem);
-    color: var(--ink-soft);
-    margin-top: 0.4vh;
-    line-height: 1.4;
+  .metric-card ul { list-style: none; padding: 0; margin: 0; }
+  .metric-card ul li {
+    font-size: clamp(0.82rem, 1.4vh, 0.93rem);
+    color: var(--ink); padding: 0.3vh 0; line-height: 1.4;
   }
+  .metric-card ul li::before { content: none; }
 
-  /* ========= FLASHY HERO (Part 6 proposition slide) ========= */
+  /* ================= FLASHY HERO ================= */
   .slide-flash {
-    background: var(--ant-navy-deep);
-    color: var(--paper);
+    background: var(--ant-navy-deep); color: var(--paper);
   }
-  .slide-flash .slide-head {
-    border-bottom-color: rgba(255,255,255,0.08);
-  }
+  .slide-flash .slide-head { border-bottom-color: rgba(255,255,255,0.08); }
   .slide-flash .slide-head .head-meta,
-  .slide-flash .slide-head .head-meta .head-num {
-    color: rgba(255,255,255,0.55);
-  }
+  .slide-flash .slide-head .head-meta .head-num { color: rgba(255,255,255,0.55); }
   .slide-flash .slide-head .head-num { color: var(--wf-pink); }
-  .slide-flash .slide-foot {
-    border-top-color: rgba(255,255,255,0.08);
-    color: rgba(255,255,255,0.4);
-  }
+  .slide-flash .slide-foot { border-top-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); }
   .slide-flash .eyebrow { color: var(--wf-pink); }
-  .slide-flash .eyebrow::before { background: var(--wf-pink); }
-  .slide-flash h1, .slide-flash h2, .slide-flash h3, .slide-flash p, .slide-flash strong {
-    color: var(--paper);
-  }
+  .slide-flash h1, .slide-flash h2, .slide-flash h3, .slide-flash p, .slide-flash strong { color: var(--paper); }
   .slide-flash h2 em { color: var(--wf-pink); }
   .slide-flash ul.bullets li { color: var(--paper); }
-  .slide-flash ul.bullets li strong { color: var(--paper); }
   .slide-flash .flash-deco {
     position: absolute;
-    left: 50%; top: 50%;
-    transform: translate(-50%, -45%);
+    left: 50%; top: 50%; transform: translate(-50%, -45%);
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
     font-size: clamp(18rem, 55vh, 48rem);
     line-height: 0.85;
     color: var(--wf-pink);
     opacity: 0.12;
-    font-weight: 400;
     pointer-events: none; user-select: none;
     z-index: 0;
     white-space: nowrap;
   }
-  .slide-flash .flash-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-  }
+  .slide-flash .flash-content { position: relative; z-index: 1; text-align: center; }
   .slide-flash .flash-title {
     font-size: clamp(4rem, 13vh, 9rem);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 0.95;
-    color: var(--paper);
+    font-weight: 700; letter-spacing: -0.04em;
+    line-height: 0.95; color: var(--paper);
   }
   .slide-flash .flash-title em {
     font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    font-weight: 400;
+    font-style: italic; font-weight: 400;
     color: var(--wf-pink);
-    letter-spacing: -0.015em;
-    font-size: 1.1em;
+    letter-spacing: -0.015em; font-size: 1.1em;
   }
   .slide-flash .flash-sub {
     font-family: 'Instrument Serif', Georgia, serif;
@@ -674,42 +849,30 @@
     line-height: 1.4;
   }
   .slide-flash .flash-pillars {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.6vw;
-    margin-top: 5vh;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1.6vw; margin-top: 5vh;
     max-width: 1000px;
     margin-left: auto; margin-right: auto;
   }
   .slide-flash .flash-pillar {
-    padding-top: 1.2vh;
-    border-top: 2px solid var(--wf-pink);
+    padding-top: 1.2vh; border-top: 2px solid var(--wf-pink);
     text-align: left;
   }
   .slide-flash .flash-pillar .p-label {
     font-size: clamp(0.7rem, 1.1vh, 0.8rem);
-    font-weight: 600;
-    color: var(--wf-pink);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 0.6vh;
-    display: block;
+    font-weight: 600; color: var(--wf-pink);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 0.6vh; display: block;
   }
   .slide-flash .flash-pillar p {
     font-size: clamp(0.82rem, 1.4vh, 0.95rem);
     color: rgba(255,255,255,0.82);
-    line-height: 1.4;
-    margin: 0;
-    max-width: none;
+    line-height: 1.4; margin: 0; max-width: none;
   }
 
-  /* ========= DIVIDER SLIDE (Part 6 pivot intro) ========= */
+  /* ================= DIVIDER ================= */
   .slide-divider .slide-body { position: relative; }
-  .slide-divider .div-content {
-    max-width: 900px;
-    position: relative;
-    z-index: 1;
-  }
+  .slide-divider .div-content { max-width: 900px; position: relative; z-index: 1; }
   .slide-divider .div-num {
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
@@ -719,36 +882,90 @@
     opacity: 0.15;
     position: absolute;
     right: 7vw; top: 15vh;
-    font-weight: 400;
     pointer-events: none;
   }
   .slide-divider h1.div-title {
     font-size: clamp(3rem, 8.5vh, 6rem);
-    font-weight: 700;
-    letter-spacing: -0.035em;
-    line-height: 1.0;
-    color: var(--ink);
+    font-weight: 700; letter-spacing: -0.035em;
+    line-height: 1.0; color: var(--ink);
     max-width: 20ch;
   }
   .slide-divider h1.div-title em {
     font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--wf-pink);
+    font-style: italic; font-weight: 400; color: var(--wf-pink);
   }
   .slide-divider .div-sub {
-    margin-top: 3vh;
-    max-width: 58ch;
+    margin-top: 3vh; max-width: 60ch;
     font-size: clamp(1rem, 1.8vh, 1.2rem);
-    color: var(--ink-soft);
-    line-height: 1.5;
+    color: var(--ink-soft); line-height: 1.5;
   }
   .slide-divider .div-sub em {
     font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    color: var(--wf-pink);
-    font-weight: 400;
+    font-style: italic; color: var(--wf-pink); font-weight: 400;
   }
+
+  /* ================= RESEARCH EVIDENCE PANEL ================= */
+  .evidence-panel {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 3vw;
+    margin: 2.5vh 0;
+    padding: 2vh 2vw;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--wf-pink);
+    border-radius: 3px;
+  }
+  .evidence-num {
+    font-weight: 700;
+    color: var(--wf-pink);
+    font-size: clamp(3rem, 8vh, 5.2rem);
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    font-variant-numeric: tabular-nums;
+  }
+  .evidence-num .slash {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic; font-weight: 400;
+    margin: 0 0.1em;
+  }
+  .evidence-body { flex: 1; }
+  .evidence-body .ev-label {
+    font-size: clamp(0.72rem, 1.1vh, 0.82rem);
+    font-weight: 600; color: var(--wf-pink);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 0.5vh;
+  }
+  .evidence-body .ev-quote {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1rem, 1.75vh, 1.2rem);
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 0.8vh;
+  }
+  .evidence-body .ev-source {
+    font-size: clamp(0.75rem, 1.2vh, 0.85rem);
+    color: var(--ink-soft);
+  }
+
+  /* ================= CTA LINK BUTTON ================= */
+  .cta-button {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    margin-top: 2.5vh;
+    padding: 1.2vh 1.6vw;
+    background: var(--wf-pink);
+    color: var(--paper);
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: clamp(0.82rem, 1.4vh, 0.95rem);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    transition: background 120ms;
+  }
+  .cta-button:hover { background: var(--wf-pink-dark); }
+  .cta-button::after { content: ' \2192'; font-size: 1.2em; }
 
   /* Keyboard hint */
   .kbd-hint {
@@ -769,8 +986,10 @@
     font-family: ui-monospace, Menlo, monospace;
     margin: 0 2px;
   }
+  .slide-cover ~ .kbd-hint kbd,
+  .slide-flash ~ .kbd-hint kbd { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); color: var(--paper); }
 
-  /* Persistent nav */
+  /* Nav */
   #persist-nav {
     position: fixed;
     bottom: 0.9vh; right: 5vw;
@@ -782,8 +1001,7 @@
   #persist-nav button {
     background: transparent; border: none;
     color: var(--ink-soft);
-    width: 24px; height: 24px;
-    cursor: pointer;
+    width: 24px; height: 24px; cursor: pointer;
     font-size: 0.9rem;
     border-radius: 4px;
     display: flex; align-items: center; justify-content: center;
@@ -797,7 +1015,6 @@
     min-width: 52px; text-align: center;
     letter-spacing: 0.06em;
   }
-  .slide-flash ~ #persist-nav #counter { color: var(--paper); }
 
   @media print {
     html, body { overflow: visible; height: auto; }
@@ -818,475 +1035,576 @@
 
   <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
 
-  <!-- =============================================================== -->
-  <!-- 01 — COVER                                                      -->
-  <!-- =============================================================== -->
-  <section class="slide slide-title active">
+  <!-- ================================================================= -->
+  <!-- 01 — FLASHY COVER                                                -->
+  <!-- ================================================================= -->
+  <section class="slide slide-cover active">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt="Ant International · WorldFirst"></div>
       <div class="head-meta"><span>Internal</span><span class="sep"></span><span class="head-num">Q2 2026</span></div>
     </div>
-    <div class="slide-body">
-      <div class="title-deco">20M</div>
-      <div class="title-content">
-        <span class="eyebrow">A Q2 proposal · WorldFirst · April 2026</span>
-        <h1 class="title">Q1: 1M &rarr; Q2: 20M<br>monthly <em>impressions.</em></h1>
-        <p class="title-sub">A <em>battle plan</em> for scaling WorldFirst's upper-funnel awareness on social &mdash; and the infrastructure that makes those impressions compound.</p>
-        <div class="title-meta">
-          <span class="author">Steven Chen</span>
-          <span class="bar"></span>
-          <span class="date">April 2026</span>
+    <div class="slide-body v-center">
+      <div class="cover-deco">20M</div>
+      <div class="cover-wrap">
+        <div class="cover-content">
+          <span class="cover-tag">Upper-funnel awareness</span>
+          <div class="cover-nums">
+            <div class="cover-col">
+              <span class="cn-prefix">Q1</span>
+              <span class="cn-num">1M</span>
+            </div>
+            <span class="cn-arrow">&rarr;</span>
+            <div class="cover-col">
+              <span class="cn-prefix">Q2</span>
+              <span class="cn-num cn-to">20M</span>
+            </div>
+          </div>
+          <div class="cover-sub-1">impressions.</div>
+          <p class="cover-sub-2">Building upper-funnel <em>awareness</em> for growth. A battle plan for Q2.</p>
+          <div class="cover-meta">
+            <span class="author">Steven Chen</span>
+            <span class="bar"></span>
+            <span>April 2026</span>
+          </div>
         </div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 02 — THESIS                                                     -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 02 — THESIS · ICP CHART                                          -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Upper-funnel awareness</span><span class="sep"></span><span class="head-num">02</span></div>
+      <div class="head-meta"><span>Thesis</span><span class="sep"></span><span class="head-num">02</span></div>
     </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">Upper-funnel awareness</span>
-        <h2 class="xl">Use content to create the <em>demand</em> activation converts.</h2>
-        <ul class="bullets">
-          <li><strong>Reach the 95%</strong> who aren't in-market today so they remember us when they are.</li>
-          <li><strong>Feed direct activation</strong> with a larger, better-qualified pool &mdash; lower CPA, wider audiences.</li>
-          <li><strong>Build a retargeting audience</strong> demand-gen can convert for quarters to come.</li>
-        </ul>
-        <div class="pull-quote">That's the job upper-funnel awareness does. <span class="pink-strong">This deck is how we run it.</span></div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">01 · The difference</span>
+        <h2 class="lg">Awareness reaches <em>100%</em> of the ICP. Activation converts the <em>5%</em> ready to buy.</h2>
+        <p class="fine" style="max-width: 80ch;">These are different jobs pointed at different audiences. A complete upper-funnel stack needs both &mdash; and today WorldFirst does one of them well and the other barely at all.</p>
+        <div class="icp-viz">
+          <div class="icp-col">
+            <div class="icp-label">Awareness target</div>
+            <div class="icp-ring icp-ring-full"><span class="icp-pct">100%</span></div>
+            <div class="icp-caption"><strong>All of ICP</strong> &mdash; decision-makers who will be in-market someday</div>
+          </div>
+          <div class="icp-col">
+            <div class="icp-label">Activation target</div>
+            <div class="icp-ring icp-ring-partial"><span class="icp-pct">5%</span></div>
+            <div class="icp-caption"><strong>In-market today</strong> &mdash; ready to buy in the next 30-90 days</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 03 — OPPORTUNITY                                                -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 03 — OPPORTUNITY · FUNNEL GRAPHIC                                -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
       <div class="head-meta"><span>Opportunity</span><span class="sep"></span><span class="head-num">03</span></div>
     </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">01 · Opportunity</span>
-        <h2 class="xl">Activation has a pool. Awareness <em>expands</em> it.</h2>
-        <ul class="bullets">
-          <li>Activation converts the ~5% of buyers in-market today.</li>
-          <li>Tomorrow's 5% is the 95% we reach now &mdash; or don't.</li>
-          <li>Upper-funnel awareness is how we reach them.</li>
-        </ul>
-        <div class="pull-quote">Without demand expansion, CPA climbs and audiences tap out. <span class="pink-strong">The cost of not investing compounds.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 04 — DYNAMIC 1 · BRAND ARCHITECTURE                             -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Dynamic 1 · Brand architecture</span><span class="sep"></span><span class="head-num">04</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">02 · Brand architecture</span>
-        <h2 class="xl">Ant + WorldFirst show up <em>together.</em></h2>
-        <p>When both brands anchor a single campaign, the signal splits &mdash; each dollar does less for WorldFirst specifically.</p>
-        <p>A clear policy &mdash; <strong>when Ant leads</strong> (institutional legitimacy) <strong>vs when WorldFirst leads</strong> (product, proposition, moat) &mdash; turns two brands into a multiplier.</p>
-        <div class="pull-quote">Not less investment. <span class="pink-strong">Sharper architecture.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 05 — DYNAMIC 2 · 46/54 BUDGET                                   -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Dynamic 2 · Budget split</span><span class="sep"></span><span class="head-num">05</span></div>
-    </div>
     <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">03 · Budget split</span>
-        <h2 class="lg">B2B fintech's <em>marketing budget</em> converges on 46 / 54.</h2>
-        <p class="fine" style="max-width: 80ch;"><strong>Source:</strong> Binet &amp; Field + LinkedIn B2B Institute. Long-term optimum for B2B fintech growth: <strong class="pink">~46% of marketing budget to brand</strong>, ~54% to activation. WorldFirst today tilts more heavily toward activation &mdash; sensible given attribution clarity, but over time the imbalance limits demand expansion.</p>
-        <div class="placeholder wide">[PLACEHOLDER: 46 / 54 budget-split bar graphic &mdash; WorldFirst current marketing spend vs B2B fintech benchmark]</div>
-        <div class="pull-quote">Close the gap over 3&ndash;4 quarters. <span class="pink-strong">Not a rebalance. A calibration.</span></div>
+      <div class="column column-wide">
+        <span class="eyebrow">02 · Opportunity</span>
+        <h2 class="lg">Opening the <em>upper</em> funnel expands the lower one.</h2>
+        <p class="fine" style="max-width: 80ch;">When more of the ICP hears about WorldFirst, the activation pool grows. Growth accelerates. CPA drops. The lower funnel runs on the demand the upper funnel creates.</p>
+        <div class="funnel-viz">
+          <div class="funnel-col">
+            <div class="funnel-col-label now">Today</div>
+            <div class="funnel-shape shape-now">
+              <div class="funnel-tier tier-top">Awareness</div>
+              <div class="funnel-tier tier-mid">Consideration</div>
+              <div class="funnel-tier tier-bot">Convert</div>
+            </div>
+            <div class="funnel-outcome" style="color: var(--ink-soft);">Narrow top &mdash; activation starves the same pool.</div>
+          </div>
+          <div class="funnel-col">
+            <div class="funnel-col-label expand">With upper-funnel investment</div>
+            <div class="funnel-shape shape-expand">
+              <div class="funnel-tier tier-top">Awareness</div>
+              <div class="funnel-tier tier-mid">Consideration</div>
+              <div class="funnel-tier tier-bot">Convert</div>
+            </div>
+            <div class="funnel-outcome">Wider top &rarr; wider conversion &rarr; lower CPA.</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 06 — DYNAMIC 3 · REGIONAL REALITY                               -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 04 — RESEARCH + EVIDENCE                                          -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Dynamic 3 · Regional reality</span><span class="sep"></span><span class="head-num">06</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">04 · Regional reality</span>
-        <h2 class="lg">Different markets, <em>different</em> messages.</h2>
-        <p class="fine" style="max-width: 80ch;">WorldFirst serves priority markets with very different product emphasis. SEA isn't Europe. Vietnam isn't the US. China-adjacent messaging carries its own constraints.</p>
-        <div class="placeholder wide">[PLACEHOLDER: regional budget weighting &mdash; UK, SEA, EEA, Vietnam, Longtail, ANZ, US (Zyla), MX_BR]</div>
-        <div class="pull-quote">Regional intelligence is baked into upper-funnel design &mdash; <span class="pink-strong">not layered on after.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 07 — DYNAMIC 4 · TIME HORIZON                                   -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Dynamic 4 · Time horizon</span><span class="sep"></span><span class="head-num">07</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">05 · Time horizon</span>
-        <h2 class="lg">Awareness pays on a <em>different</em> clock.</h2>
-        <p class="fine" style="max-width: 80ch;">Activation returns in days. Awareness returns in quarters to years. The direction matters less than the commitment to hold it &mdash; cycling resets the investment.</p>
-        <div class="placeholder wide">[PLACEHOLDER: time-to-ROI curve &mdash; activation (fast, plateau) vs awareness (slow, compounds)]</div>
-        <div class="pull-quote">Continuity compounds. <span class="pink-strong">Cycling resets.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 08 — DYNAMIC 5 · COMPOSITION                                    -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Dynamic 5 · Composition</span><span class="sep"></span><span class="head-num">08</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">06 · Composition</span>
-        <h2 class="xl">Upper-funnel is a <em>composition</em> problem, not a channel one.</h2>
-        <p>Teams are organised around channels. Upper-funnel happens across them.</p>
-        <p>Peer brands land PR + influencers + social + SEO + events + partnerships + paid + employee voices <strong>simultaneously.</strong></p>
-        <div class="pull-quote">10M KOL impressions on social alone can't solve it. <span class="pink-strong">The answer is composition.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 09 — CURRENT CONTENT BLEND + PLATFORM MIX                       -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Current state</span><span class="sep"></span><span class="head-num">09</span></div>
+      <div class="head-meta"><span>Research</span><span class="sep"></span><span class="head-num">04</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">07 · Current state</span>
-        <h2 class="lg">Today's content leans <em>activation.</em> Platform mix already signals opportunity.</h2>
-        <h3 style="margin-top: 0.5vh;">Content blend (approx.)</h3>
-        <div class="blend-bar">
-          <div class="blend-seg s-act" style="flex: 70;">70% Activation</div>
-          <div class="blend-seg s-aware" style="flex: 20;">20% Awareness</div>
-          <div class="blend-seg s-brand" style="flex: 10;">10% Brand</div>
+        <span class="eyebrow">03 · The research</span>
+        <h2 class="lg">Upper-funnel research of our <em>competitors</em> &mdash; and a relook at our current strategy.</h2>
+        <p class="fine" style="max-width: 82ch;">Over the past month I've built a dedicated Fintech Upper-Funnel Study covering 8 competitor cases + WorldFirst's current position. The single clearest benchmark to calibrate against:</p>
+        <div class="evidence-panel">
+          <div class="evidence-num">46<span class="slash">/</span>54</div>
+          <div class="evidence-body">
+            <div class="ev-label">The budget split evidence</div>
+            <div class="ev-quote">&ldquo;The optimal B2B long-term marketing mix is 46% brand, 54% activation.&rdquo;</div>
+            <div class="ev-source"><strong>Les Binet &amp; Peter Field</strong> &middot; <em>The B2B Effectiveness Code</em> (LinkedIn B2B Institute, 2021) &middot; n = 1,400 B2B campaigns</div>
+          </div>
+        </div>
+        <p class="fine">The full competitor study covers 8 brands, pillar composition, distribution ecology, platform role maps, and a 5-dimension fit framework.</p>
+        <a class="cta-button" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/" target="_blank">Read the full Fintech Upper-Funnel Study</a>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 05 — DYNAMICS (COMBINED)                                          -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>WorldFirst dynamics</span><span class="sep"></span><span class="head-num">05</span></div>
+    </div>
+    <div class="slide-body v-center">
+      <div class="column column-narrow">
+        <span class="eyebrow">04 · What's specific to WorldFirst</span>
+        <h2 class="xl">Three dynamics shape our upper-funnel <em>specifically.</em></h2>
+        <ul class="bullets">
+          <li><strong>Brand architecture</strong> &mdash; Ant and WorldFirst show up together. Each dollar can do less for WorldFirst specifically unless we have a clear policy on when each brand leads.</li>
+          <li><strong>Regional reality</strong> &mdash; different markets, different messages. SEA isn't Europe. Vietnam isn't the US. Regional intelligence has to be baked into the design.</li>
+          <li><strong>Time horizon</strong> &mdash; awareness plays on a different clock. Activation returns in days; awareness in quarters to years. Continuity compounds; cycling resets.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 06 — COMPOSITION (TEASE COMPETITORS)                              -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>The composition problem</span><span class="sep"></span><span class="head-num">06</span></div>
+    </div>
+    <div class="slide-body v-center">
+      <div class="column column-narrow">
+        <span class="eyebrow">05 · Composition</span>
+        <h2 class="xl">Upper-funnel is a <em>composition</em> problem, not a channel one.</h2>
+        <p>Teams organise around channels. Peer brands running meaningful upper-funnel land on PR + influencers + social + SEO + events + partnerships + paid + employees <strong>simultaneously.</strong></p>
+        <div class="pull-quote">Let's look at exactly how they compose it &mdash; <span class="pink-strong">six peer brands, six different answers.</span></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 07 — PEER · WISE                                                  -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Peer · Wise</span><span class="sep"></span><span class="head-num">07</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">06 · Peer · Wise &mdash; brand-led to a fault</span>
+        <div class="peer-layout">
+          <div class="peer-left">
+            <h2 class="lg">Wise led with <em>brand</em> &mdash; racing to re-learn activation.</h2>
+            <ul class="bullets">
+              <li><strong>2014&ndash;19</strong> &mdash; built the "cheap transparent FX" category via PR + OOH (&pound;5.6B Westminster protest, hidden-fee campaigns)</li>
+              <li><strong>2020+</strong> &mdash; lost share to Revolut, Remitly, Atlantic Money</li>
+              <li><strong>Now</strong> &mdash; CMO publicly tripling marketing spend, building activation in parallel</li>
+            </ul>
+            <div class="peer-takeaway">Brand without activation defence <strong>leaks demand</strong> to whoever shows up to collect it.</div>
+            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#wise" target="_blank">Read more: Study &rarr; Wise</a>
+          </div>
+          <div class="peer-charts">
+            <div class="peer-chart-block">
+              <span class="peer-chart-title">Content composition</span>
+              <div class="blend-bar">
+                <div class="blend-seg s-brand" style="flex: 50;">50% Brand</div>
+                <div class="blend-seg s-aware" style="flex: 30;">30% Awareness</div>
+                <div class="blend-seg s-act" style="flex: 20;">20% Activation</div>
+              </div>
+            </div>
+            <div class="peer-chart-block">
+              <span class="peer-chart-title">Distribution mix</span>
+              <div class="peer-dist-rows">
+                <div class="peer-dist-row"><span class="dr-label">PR / editorial</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 92%;"></div></div><span class="dr-pct">92</span></div>
+                <div class="peer-dist-row"><span class="dr-label">OOH / protest</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 80%;"></div></div><span class="dr-pct">80</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Own social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 55%;"></div></div><span class="dr-pct">55</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Paid social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 45%;"></div></div><span class="dr-pct">45</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Partnerships</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 40%;"></div></div><span class="dr-pct">40</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Events</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 25%;"></div></div><span class="dr-pct">25</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 08 — PEER · MONZO                                                 -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Peer · Monzo</span><span class="sep"></span><span class="head-num">08</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">07 · Peer · Monzo &mdash; distinctive asset + community</span>
+        <div class="peer-layout">
+          <div class="peer-left">
+            <h2 class="lg">Monzo built awareness through <em>community</em> &mdash; then rode it into expansion.</h2>
+            <ul class="bullets">
+              <li><strong>Distinctive asset</strong> &mdash; coral card as visual icon + Subway / Tube OOH presence</li>
+              <li><strong>Community content</strong> &mdash; Instagram "card eyes" meme, product updates shared friend-to-friend</li>
+              <li><strong>Expansion</strong> &mdash; mortgages, pensions, investing launched on existing brand trust</li>
+            </ul>
+            <div class="peer-takeaway">A distinctive asset + community voice <strong>compounds into the right to expand.</strong></div>
+            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#monzo" target="_blank">Read more: Study &rarr; Monzo</a>
+          </div>
+          <div class="peer-charts">
+            <div class="peer-chart-block">
+              <span class="peer-chart-title">Content composition</span>
+              <div class="blend-bar">
+                <div class="blend-seg s-brand" style="flex: 45;">45% Brand</div>
+                <div class="blend-seg s-aware" style="flex: 35;">35% Awareness</div>
+                <div class="blend-seg s-act" style="flex: 20;">20% Activation</div>
+              </div>
+            </div>
+            <div class="peer-chart-block">
+              <span class="peer-chart-title">Distribution mix</span>
+              <div class="peer-dist-rows">
+                <div class="peer-dist-row"><span class="dr-label">Own social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 90%;"></div></div><span class="dr-pct">90</span></div>
+                <div class="peer-dist-row"><span class="dr-label">OOH (Tube)</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 80%;"></div></div><span class="dr-pct">80</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Community</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 78%;"></div></div><span class="dr-pct">78</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Referral</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 65%;"></div></div><span class="dr-pct">65</span></div>
+                <div class="peer-dist-row"><span class="dr-label">PR</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 60%;"></div></div><span class="dr-pct">60</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Partnerships</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 40%;"></div></div><span class="dr-pct">40</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 09 — PEER · REVOLUT                                               -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Peer · Revolut</span><span class="sep"></span><span class="head-num">09</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">08 · Peer · Revolut &mdash; activation-first, brand later</span>
+        <div class="peer-layout">
+          <div class="peer-left">
+            <h2 class="lg">Revolut scaled on <em>activation</em> &mdash; then bolted on brand.</h2>
+            <ul class="bullets">
+              <li><strong>Performance-led</strong> growth to 50M+ users via referral + paid + product hooks</li>
+              <li><strong>Sidemen sponsorship</strong> (2023) &mdash; mass-market UK brand awareness after activation had scaled</li>
+              <li><strong>Sequence</strong> &mdash; activation first, brand catches up. The mirror of Wise.</li>
+            </ul>
+            <div class="peer-takeaway">Activation-first compounds users. <strong>Brand catches up on the back of scale.</strong></div>
+            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#revolut" target="_blank">Read more: Study &rarr; Revolut</a>
+          </div>
+          <div class="peer-charts">
+            <div class="peer-chart-block">
+              <span class="peer-chart-title">Content composition</span>
+              <div class="blend-bar">
+                <div class="blend-seg s-brand" style="flex: 20;">20% Brand</div>
+                <div class="blend-seg s-aware" style="flex: 20;">20% Awareness</div>
+                <div class="blend-seg s-act" style="flex: 60;">60% Activation</div>
+              </div>
+            </div>
+            <div class="peer-chart-block">
+              <span class="peer-chart-title">Distribution mix</span>
+              <div class="peer-dist-rows">
+                <div class="peer-dist-row"><span class="dr-label">Referral</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 95%;"></div></div><span class="dr-pct">95</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Paid / perf.</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 88%;"></div></div><span class="dr-pct">88</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Sponsorships</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 70%;"></div></div><span class="dr-pct">70</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Own social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 55%;"></div></div><span class="dr-pct">55</span></div>
+                <div class="peer-dist-row"><span class="dr-label">PR</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 48%;"></div></div><span class="dr-pct">48</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Partnerships</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 40%;"></div></div><span class="dr-pct">40</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 10 — PEER · AIRWALLEX                                             -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Peer · Airwallex</span><span class="sep"></span><span class="head-num">10</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">09 · Peer · Airwallex &mdash; the triumvirate</span>
+        <div class="peer-layout">
+          <div class="peer-left">
+            <h2 class="lg">Airwallex runs the <em>triumvirate</em>: product, brand, performance.</h2>
+            <ul class="bullets">
+              <li><strong>Explicit split</strong> &mdash; VP Global Marketing: product marketing &rarr; brand &rarr; performance as three distinct functions</li>
+              <li><strong>F1 partnership</strong> (2024) &mdash; distinctive brand association, global sponsorship play</li>
+              <li><strong>Senior hires</strong> &mdash; Balint as VP APAC (2025), signalling heavier brand build-out</li>
+            </ul>
+            <div class="peer-takeaway">Three functions. Three budgets. <strong>One shared message across every channel.</strong></div>
+            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/" target="_blank">Read more: Study</a>
+          </div>
+          <div class="peer-charts">
+            <div class="peer-chart-block">
+              <span class="peer-chart-title">Content composition</span>
+              <div class="blend-bar">
+                <div class="blend-seg s-brand" style="flex: 40;">40% Brand</div>
+                <div class="blend-seg s-aware" style="flex: 30;">30% Awareness</div>
+                <div class="blend-seg s-act" style="flex: 30;">30% Activation</div>
+              </div>
+            </div>
+            <div class="peer-chart-block">
+              <span class="peer-chart-title">Distribution mix</span>
+              <div class="peer-dist-rows">
+                <div class="peer-dist-row"><span class="dr-label">Sponsorships (F1)</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 95%;"></div></div><span class="dr-pct">95</span></div>
+                <div class="peer-dist-row"><span class="dr-label">PR</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 78%;"></div></div><span class="dr-pct">78</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Events</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 72%;"></div></div><span class="dr-pct">72</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Own social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 60%;"></div></div><span class="dr-pct">60</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Paid media</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 55%;"></div></div><span class="dr-pct">55</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Employees</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 42%;"></div></div><span class="dr-pct">42</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 11 — PEER · PLEO                                                  -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Peer · Pleo</span><span class="sep"></span><span class="head-num">11</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">10 · Peer · Pleo &mdash; flagship research as engine</span>
+        <div class="peer-layout">
+          <div class="peer-left">
+            <h2 class="lg">Pleo anchors awareness with <em>flagship</em> research.</h2>
+            <ul class="bullets">
+              <li><strong>CFO Playbook</strong> &mdash; annual research drumbeat that doubles as awareness + lead gen + sales enablement</li>
+              <li><strong>Creator short-form</strong> for top-of-funnel volume</li>
+              <li><strong>Activation paid</strong> complements, doesn't replace</li>
+            </ul>
+            <div class="peer-takeaway">Research-led content is slow-burn. <strong>It also compounds into category authority.</strong></div>
+            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#pleo" target="_blank">Read more: Study &rarr; Pleo</a>
+          </div>
+          <div class="peer-charts">
+            <div class="peer-chart-block">
+              <span class="peer-chart-title">Content composition</span>
+              <div class="blend-bar">
+                <div class="blend-seg s-brand" style="flex: 25;">25% Brand</div>
+                <div class="blend-seg s-aware" style="flex: 50;">50% Awareness</div>
+                <div class="blend-seg s-act" style="flex: 25;">25% Activation</div>
+              </div>
+            </div>
+            <div class="peer-chart-block">
+              <span class="peer-chart-title">Distribution mix</span>
+              <div class="peer-dist-rows">
+                <div class="peer-dist-row"><span class="dr-label">Research / reports</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 95%;"></div></div><span class="dr-pct">95</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Creator content</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 72%;"></div></div><span class="dr-pct">72</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Own social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 62%;"></div></div><span class="dr-pct">62</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Paid media</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 50%;"></div></div><span class="dr-pct">50</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Events</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 48%;"></div></div><span class="dr-pct">48</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Email / CRM</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 45%;"></div></div><span class="dr-pct">45</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 12 — PEER · RAMP                                                  -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Peer · Ramp</span><span class="sep"></span><span class="head-num">12</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">11 · Peer · Ramp &mdash; distribution-led growth</span>
+        <div class="peer-layout">
+          <div class="peer-left">
+            <h2 class="lg">Ramp plays the <em>middle</em>: partnerships + founder voice.</h2>
+            <ul class="bullets">
+              <li><strong>PPC + accountant partnerships</strong> &mdash; mid-funnel activation at scale</li>
+              <li><strong>Founder-led content</strong> &mdash; Eric Glyman's personal social as trust channel</li>
+              <li><strong>"The Runway"</strong> thought leadership &mdash; without flashy brand campaigns</li>
+            </ul>
+            <div class="peer-takeaway">Partnerships as middle-of-funnel. <strong>Founder voice as cheap trust at scale.</strong></div>
+            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#ramp" target="_blank">Read more: Study &rarr; Ramp</a>
+          </div>
+          <div class="peer-charts">
+            <div class="peer-chart-block">
+              <span class="peer-chart-title">Content composition</span>
+              <div class="blend-bar">
+                <div class="blend-seg s-brand" style="flex: 15;">15% Brand</div>
+                <div class="blend-seg s-aware" style="flex: 35;">35% Awareness</div>
+                <div class="blend-seg s-act" style="flex: 50;">50% Activation</div>
+              </div>
+            </div>
+            <div class="peer-chart-block">
+              <span class="peer-chart-title">Distribution mix</span>
+              <div class="peer-dist-rows">
+                <div class="peer-dist-row"><span class="dr-label">Partnerships</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 95%;"></div></div><span class="dr-pct">95</span></div>
+                <div class="peer-dist-row"><span class="dr-label">PPC / paid search</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 90%;"></div></div><span class="dr-pct">90</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Founder voice</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 68%;"></div></div><span class="dr-pct">68</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Thought leadership</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 60%;"></div></div><span class="dr-pct">60</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Own social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 55%;"></div></div><span class="dr-pct">55</span></div>
+                <div class="peer-dist-row"><span class="dr-label">Events</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 40%;"></div></div><span class="dr-pct">40</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 13 — OUR CONTENT BLEND (90/5/5) · SHARP COMPARISON                -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Our position</span><span class="sep"></span><span class="head-num">13</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">12 · Where WorldFirst sits today</span>
+        <h2 class="lg">WorldFirst content today is roughly <em>90%</em> activation.</h2>
+        <div class="blend-bar" style="margin-top: 2.5vh;">
+          <div class="blend-seg s-act" style="flex: 90;">90% Activation</div>
+          <div class="blend-seg s-aware s-thin" style="flex: 5;">5%</div>
+          <div class="blend-seg s-brand s-thin" style="flex: 5;">5%</div>
         </div>
         <div class="blend-legend">
           <span><span class="dot d-act"></span>Activation &mdash; acquisition ads, product demo, CTAs</span>
-          <span><span class="dot d-aware"></span>Awareness &mdash; educational, regional, creator</span>
-          <span><span class="dot d-brand"></span>Brand &mdash; identity, milestone, values</span>
+          <span><span class="dot d-aware"></span>Awareness &mdash; 5%</span>
+          <span><span class="dot d-brand"></span>Brand &mdash; 5%</span>
         </div>
-        <h3 style="margin-top: 2vh;">Platform mix &mdash; where each platform already lands</h3>
-        <div class="platform-mix">
-          <div class="platform-cell">
-            <div class="pname">LinkedIn</div>
-            <span class="prole">Upper-funnel</span>
-            <div class="pnote">B2B decision-makers. Longer-form. Already one of our strongest.</div>
+        <h3 style="margin-top: 2.5vh;">For reference &mdash; peer averages from the previous six</h3>
+        <div class="models models-2" style="margin-top: 1vh;">
+          <div class="model-card">
+            <span class="model-label">B2B fintech benchmark</span>
+            <p>Roughly <strong class="pink">46 / 54</strong> brand / activation by marketing budget (Binet &amp; Field).</p>
           </div>
-          <div class="platform-cell">
-            <div class="pname">YouTube</div>
-            <span class="prole">Upper-funnel</span>
-            <div class="pnote">Decision-time attention. Evergreen authority. High intent.</div>
-          </div>
-          <div class="platform-cell">
-            <div class="pname">Instagram</div>
-            <span class="prole">Mid / activation</span>
-            <div class="pnote">Visual-first creator content. Conversion-leaning.</div>
-          </div>
-          <div class="platform-cell">
-            <div class="pname">TikTok</div>
-            <span class="prole">Mid / activation</span>
-            <div class="pnote">Short-form volume. Culture signal. CPA-efficient.</div>
+          <div class="model-card">
+            <span class="model-label">Our peer-set median</span>
+            <p>Roughly <strong class="pink">30% brand / 30% awareness / 40% activation</strong> across Wise, Monzo, Revolut, Airwallex, Pleo, Ramp.</p>
           </div>
         </div>
-        <p class="fine" style="margin-top: 1.5vh;">Full breakdown: <a href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#platform-ecology" target="_blank" class="pink-strong" style="text-decoration: underline;">Fintech Upper-Funnel Study &rarr; Platform Ecology</a>.</p>
+        <div class="pull-quote">Sharp comparison. <span class="pink-strong">The gap is the opportunity.</span></div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 10 — MULTIPLE ROLES                                             -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 14 — UPPER-FUNNEL = BRANDING + AWARENESS                          -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Multiple roles</span><span class="sep"></span><span class="head-num">10</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">08 · Multiple roles</span>
-        <h2 class="xl">Social isn't a <em>single-purpose</em> channel.</h2>
-        <ul class="bullets">
-          <li><strong>Trust layer</strong> &mdash; buyers search us, see activity, conclude we're credible</li>
-          <li><strong>Sales enablement</strong> &mdash; assets the sales team references in-cycle</li>
-          <li><strong>Message testing</strong> &mdash; fastest feedback on what resonates</li>
-          <li><strong>Community</strong> &mdash; existing customer engagement + retention</li>
-          <li><strong>Secondary</strong> &mdash; cultural retention, talent brand signal</li>
-        </ul>
-        <div class="pull-quote">When we say &ldquo;more on social,&rdquo; <span class="pink-strong">the answer has to specify which role.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 11 — PEER · WISE                                                -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Wise</span><span class="sep"></span><span class="head-num">11</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">09 · Peer deep dive · Wise</span>
-        <h2 class="lg">Wise led with <em>brand</em> &mdash; and is racing to re-learn activation.</h2>
-        <ul class="bullets">
-          <li><strong>2014&ndash;19</strong> &mdash; built the &ldquo;cheap transparent FX&rdquo; category via PR-led awareness (&pound;5.6B Westminster protest, hidden-fee campaigns)</li>
-          <li><strong>2020+</strong> &mdash; lost share to Revolut, Remitly, Atlantic Money (activation-heavy entrants)</li>
-          <li><strong>Now</strong> &mdash; CMO publicly tripling marketing spend; building activation in parallel to brand</li>
-        </ul>
-        <div class="pull-quote">Brand leadership without activation defence <span class="pink-strong">leaks demand to whoever shows up to collect it.</span></div>
-        <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#wise" target="_blank">Read more: Fintech Upper-Funnel Study &rarr; Wise</a>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 12 — PEER · MONZO                                               -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Monzo</span><span class="sep"></span><span class="head-num">12</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">10 · Peer deep dive · Monzo</span>
-        <h2 class="lg">Monzo built awareness through <em>community</em> &mdash; then rode it into product expansion.</h2>
-        <ul class="bullets">
-          <li><strong>Distinctive asset</strong> &mdash; coral card as visual icon + Subway / OOH presence</li>
-          <li><strong>Community content</strong> &mdash; Instagram card-eyes meme, product updates shared like friend-to-friend</li>
-          <li><strong>Expansion</strong> &mdash; mortgages, pensions, investing launched on top of existing brand trust</li>
-        </ul>
-        <div class="pull-quote">A distinctive asset + community voice <span class="pink-strong">compounds into the right to expand.</span></div>
-        <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#monzo" target="_blank">Read more: Fintech Upper-Funnel Study &rarr; Monzo</a>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 13 — PEER · REVOLUT                                             -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Revolut</span><span class="sep"></span><span class="head-num">13</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">11 · Peer deep dive · Revolut</span>
-        <h2 class="lg">Revolut scaled on <em>activation</em> &mdash; then bolted on brand.</h2>
-        <ul class="bullets">
-          <li><strong>Performance-led</strong> growth to 50M+ users via referral, product hooks, paid acquisition</li>
-          <li><strong>Sidemen sponsorship</strong> (2023) &mdash; mass-market UK brand awareness after activation had scaled</li>
-          <li><strong>Sequence</strong> &mdash; activation first, brand catches up. Mirror of Wise.</li>
-        </ul>
-        <div class="pull-quote">Activation-first compounds users. <span class="pink-strong">Brand catches up on the back of scale.</span></div>
-        <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#revolut" target="_blank">Read more: Fintech Upper-Funnel Study &rarr; Revolut</a>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 14 — PEER · AIRWALLEX                                           -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Airwallex</span><span class="sep"></span><span class="head-num">14</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">12 · Peer deep dive · Airwallex</span>
-        <h2 class="lg">Airwallex runs the <em>triumvirate</em>: product, brand, performance.</h2>
-        <ul class="bullets">
-          <li><strong>Explicit split</strong> &mdash; VP Global Marketing: product marketing &rarr; brand &rarr; performance as three distinct functions</li>
-          <li><strong>F1 partnership</strong> (2024) &mdash; distinctive brand association, global sponsorship play</li>
-          <li><strong>Senior hires</strong> &mdash; Balint as VP APAC (2025), signalling heavier brand build-out</li>
-        </ul>
-        <div class="pull-quote">Three functions. Three budgets. <span class="pink-strong">One shared message across every channel.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 15 — PEER · PLEO                                                -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Pleo</span><span class="sep"></span><span class="head-num">15</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">13 · Peer deep dive · Pleo</span>
-        <h2 class="lg">Pleo anchors awareness with <em>flagship</em> research.</h2>
-        <ul class="bullets">
-          <li><strong>CFO Playbook</strong> &mdash; annual research drumbeat that doubles as awareness + lead gen + sales enablement</li>
-          <li><strong>Creator short-form</strong> for top-of-funnel volume</li>
-          <li><strong>Activation paid</strong> complements, not replaces</li>
-        </ul>
-        <div class="pull-quote">Research-led content is slow-burn. <span class="pink-strong">It also compounds into category authority.</span></div>
-        <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#pleo" target="_blank">Read more: Fintech Upper-Funnel Study &rarr; Pleo</a>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 16 — PEER · RAMP                                                -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Ramp</span><span class="sep"></span><span class="head-num">16</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">14 · Peer deep dive · Ramp</span>
-        <h2 class="lg">Ramp plays the <em>middle</em>: partnerships + founder voice.</h2>
-        <ul class="bullets">
-          <li><strong>PPC + accountant partnerships</strong> &mdash; mid-funnel activation at scale</li>
-          <li><strong>Founder-led content</strong> &mdash; Eric Glyman's personal social as trust channel</li>
-          <li><strong>Thought leadership</strong> (&ldquo;The Runway&rdquo;) without flashy brand campaigns &mdash; distribution-led growth</li>
-        </ul>
-        <div class="pull-quote">Partnerships as middle-of-funnel. <span class="pink-strong">Founder voice as cheap trust at scale.</span></div>
-        <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#ramp" target="_blank">Read more: Fintech Upper-Funnel Study &rarr; Ramp</a>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 17 — THE 5%                                                     -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The 5%</span><span class="sep"></span><span class="head-num">17</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">15 · The 5%</span>
-        <h2 class="lg">Activation reaches the <em>5%</em> in-market today.</h2>
-        <p class="fine" style="max-width: 80ch;">Ehrenberg-Bass: ~5% of B2B buyers are in-market at any moment. Activation targets them. The other 95% aren't ready to buy right now &mdash; but will be, within a 3&ndash;5 year replacement cycle.</p>
-        <div class="placeholder wide">[PLACEHOLDER: side-by-side content example &mdash; activation creative vs awareness creative, same product, different job]</div>
-        <div class="pull-quote">Expanding the pool means reaching the 95% <span class="pink-strong">now &mdash; so they remember us when they enter market.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 18 — FINDING THE BALANCE                                        -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Finding the balance</span><span class="sep"></span><span class="head-num">18</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">16 · Finding the balance</span>
-        <h2 class="xl">The question is the <em>balance</em> between upper-funnel and activation.</h2>
-        <p>Activation stays strong. Upper-funnel gradually catches up toward the 46 / 54 benchmark.</p>
-        <p>Pure activation raises CPA over time &mdash; the 5% pool shrinks, competition intensifies.</p>
-        <div class="pull-quote">Balance is <span class="pink-strong">the long-term efficiency play.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 19 — UPPER-FUNNEL = BRANDING + AWARENESS (NEW)                  -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Inside upper-funnel</span><span class="sep"></span><span class="head-num">19</span></div>
+      <div class="head-meta"><span>Inside upper-funnel</span><span class="sep"></span><span class="head-num">14</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">17 · Inside upper-funnel</span>
-        <h2 class="lg">Upper-funnel has <em>two</em> layers of its own.</h2>
+        <span class="eyebrow">13 · Inside upper-funnel</span>
+        <h2 class="lg">Upper-funnel itself has <em>two</em> layers.</h2>
         <ul class="dual">
-          <li><strong>Branding</strong>Identity, values, distinctiveness. Global consistency. Slow ROI. Compounds permanently.
-            <p class="fine" style="margin-top: 0.6vh;"><em class="serif">Looks like:</em> Monzo coral card, Airwallex F1, Wise &ldquo;hidden fees&rdquo; era, WorldFirst's <strong class="pink">&ldquo;Your cross-border moat.&rdquo;</strong></p>
+          <li>
+            <strong>Branding</strong>
+            Identity, values, distinctiveness. Global consistency. Slow ROI. Compounds permanently.
+            <p class="fine" style="margin-top: 0.6vh;"><em class="serif">Looks like:</em> Monzo coral card, Airwallex F1, Wise "hidden fees" era, WorldFirst's <strong class="pink">"Your cross-border moat."</strong></p>
           </li>
-          <li><strong>Awareness</strong>Product benefit. Regional. Creator-led. Creates demand about WorldFirst specifically. Medium-term ROI.
-            <p class="fine" style="margin-top: 0.6vh;"><em class="serif">Looks like:</em> &ldquo;how to pay 1688 suppliers,&rdquo; &ldquo;locking CNY rates before Q4,&rdquo; regional creator breakdowns.</p>
+          <li>
+            <strong>Awareness</strong>
+            Product benefit. Regional. Creator-led. Creates demand about WorldFirst specifically. Medium-term ROI.
+            <p class="fine" style="margin-top: 0.6vh;"><em class="serif">Looks like:</em> "how to pay 1688 suppliers," "locking CNY rates before Q4," regional creator breakdowns.</p>
           </li>
         </ul>
-        <div class="pull-quote">Q2 concentrates on <span class="pink-strong">awareness.</span> Branding is the parallel long-term build &mdash; Part 6.</div>
+        <div class="pull-quote">Q2 concentrates on <span class="pink-strong">awareness.</span> Branding is the parallel long-term build &mdash; final section of this deck.</div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 20 — NOT JUST SOCIAL                                            -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 15 — FINDING THE BALANCE                                          -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Distribution mix</span><span class="sep"></span><span class="head-num">20</span></div>
+      <div class="head-meta"><span>Finding the balance</span><span class="sep"></span><span class="head-num">15</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">18 · Distribution mix</span>
+        <span class="eyebrow">14 · Finding the balance</span>
+        <h2 class="xl">The question is <em>rebalancing</em> &mdash; upper-funnel catches up to activation.</h2>
+        <p>Activation stays strong &mdash; it's already our strongest layer.</p>
+        <p>Upper-funnel gradually gains weight over 3&ndash;4 quarters toward the 46 / 54 benchmark. No rebalancing today = CPA climbs and the pool shrinks.</p>
+        <div class="pull-quote">These two go hand in hand. <span class="pink-strong">Balance is the long-term efficiency play.</span></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 16 — CONTENT MIX + DISTRIBUTION MIX                               -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Content + distribution</span><span class="sep"></span><span class="head-num">16</span></div>
+    </div>
+    <div class="slide-body v-center">
+      <div class="column column-narrow">
+        <span class="eyebrow">15 · Content mix + distribution mix</span>
         <h2 class="xl">Content mix matters. Distribution mix matters <em>more.</em></h2>
-        <p>Calling upper-funnel &ldquo;social's job&rdquo; is the core mistake. Same asset, 8 channels &rarr; outperforms same budget on social alone.</p>
+        <p>Calling upper-funnel "social's job" is the core mistake. Same asset, eight channels &rarr; outperforms same budget on social alone.</p>
         <p>The work: design for the awareness outcome, then distribute across whatever channels carry it best.</p>
         <div class="pull-quote">Distribution thinking <span class="pink-strong">precedes content thinking.</span></div>
       </div>
@@ -1294,17 +1612,17 @@
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 21 — 8-CHANNEL MAP                                              -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 17 — 8 CHANNELS                                                   -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Channel map</span><span class="sep"></span><span class="head-num">21</span></div>
+      <div class="head-meta"><span>Channel map</span><span class="sep"></span><span class="head-num">17</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column">
-        <span class="eyebrow">19 · Channel map</span>
+        <span class="eyebrow">16 · The eight channels</span>
         <h2 class="lg">Peer brands land on <em>eight channels</em> simultaneously.</h2>
         <div class="models models-4" style="margin-top: 2.5vh;">
           <div class="model-card"><span class="model-label">01 · Own social</span><p>WorldFirst handles &mdash; LinkedIn, YouTube, Instagram, TikTok.</p></div>
@@ -1321,55 +1639,59 @@
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 22 — ONE BEST EXAMPLE · AIRWALLEX F1                            -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 18 — AIRWALLEX F1 WORKED EXAMPLE                                  -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>One brand, every channel</span><span class="sep"></span><span class="head-num">22</span></div>
+      <div class="head-meta"><span>Worked example</span><span class="sep"></span><span class="head-num">18</span></div>
     </div>
     <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">20 · Worked example · Airwallex F1</span>
-        <h2 class="lg">Airwallex x F1 &mdash; <em>every</em> channel carried the same message.</h2>
-        <p class="fine" style="max-width: 80ch;">A single brand message (&ldquo;Airwallex powers global ambition&rdquo;, via F1) deployed as a shared creative spine across all eight channels. The sum read bigger than any individual activation could.</p>
-        <div class="models models-4" style="margin-top: 2vh;">
-          <div class="model-card"><span class="model-label">Own social</span><p>Race-day content, F1 partnership announcements, driver cameos.</p></div>
-          <div class="model-card"><span class="model-label">Creators</span><p>F1 community creators + driver collabs.</p></div>
-          <div class="model-card"><span class="model-label">PR</span><p>Trade press + FT + Forbes pickup on sponsorship reveal.</p></div>
-          <div class="model-card"><span class="model-label">Events</span><p>Paddock hospitality for enterprise customers, season-long.</p></div>
-          <div class="model-card"><span class="model-label">Paid</span><p>F1-themed brand campaigns, global placements.</p></div>
-          <div class="model-card"><span class="model-label">Website</span><p>Dedicated F1 landing page + content hub.</p></div>
-          <div class="model-card"><span class="model-label">Employees</span><p>LinkedIn posts from leadership + sales during race weekends.</p></div>
-          <div class="model-card"><span class="model-label">Partnerships</span><p>F1 ecosystem partners + co-marketing.</p></div>
+      <div class="column column-wide">
+        <span class="eyebrow">17 · Worked example · Airwallex F1</span>
+        <h2 class="lg">Airwallex &times; F1 &mdash; <em>every</em> channel carried the same message.</h2>
+        <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 3vw; margin-top: 2vh; align-items: start;">
+          <div>
+            <div class="placeholder" style="min-height: 22vh;">[IMAGE: Airwallex F1 campaign still &mdash; car livery, paddock activation, or hero creative from the F1 partnership. Borrow from Study.]</div>
+            <p class="fine" style="margin-top: 1.5vh;">One shared creative spine: "Airwallex powers global ambition." Deployed across all eight channels during the F1 season.</p>
+          </div>
+          <div class="models models-2">
+            <div class="model-card"><span class="model-label">Own social</span><p>Race-day content, announcements, driver cameos.</p></div>
+            <div class="model-card"><span class="model-label">Creators</span><p>F1 community creators + driver collabs.</p></div>
+            <div class="model-card"><span class="model-label">PR</span><p>Trade press + FT + Forbes pickup.</p></div>
+            <div class="model-card"><span class="model-label">Events</span><p>Paddock hospitality, season-long.</p></div>
+            <div class="model-card"><span class="model-label">Paid</span><p>F1-themed global brand ads.</p></div>
+            <div class="model-card"><span class="model-label">Website</span><p>Dedicated F1 landing page + hub.</p></div>
+            <div class="model-card"><span class="model-label">Employees</span><p>Leadership posts during race weekends.</p></div>
+            <div class="model-card"><span class="model-label">Partnerships</span><p>F1 ecosystem co-marketing.</p></div>
+          </div>
         </div>
-        <div class="pull-quote" style="margin-top: 2vh;">One brand message. Eight channels. <span class="pink-strong">That's upper-funnel done right.</span></div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 23 — THREE LAYERS + ROI CHART                                   -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 19 — THREE LAYERS + ROI CHART                                     -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Three layers</span><span class="sep"></span><span class="head-num">23</span></div>
+      <div class="head-meta"><span>Three layers</span><span class="sep"></span><span class="head-num">19</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">21 · Three layers</span>
+        <span class="eyebrow">18 · Three layers</span>
         <h2 class="lg">Three content layers. <em>Three</em> return profiles.</h2>
         <div class="roi-chart">
           <div class="roi-label">Brand</div>
           <div class="roi-bar-wrap"><div class="roi-bar bar-brand">Compounds permanently</div></div>
-          <div class="roi-time">2+ years</div>
+          <div class="roi-time">1&ndash;3 years+</div>
 
           <div class="roi-label">Awareness</div>
           <div class="roi-bar-wrap"><div class="roi-bar bar-aware">Builds product demand</div></div>
-          <div class="roi-time">3&ndash;12 months</div>
+          <div class="roi-time">0&ndash;12 months</div>
 
           <div class="roi-label">Activation</div>
           <div class="roi-bar-wrap"><div class="roi-bar bar-act">Converts in-market</div></div>
@@ -1384,135 +1706,405 @@
           </div>
           <div></div>
         </div>
-        <div class="placeholder small wide" style="margin-top: 1vh;">[PLACEHOLDER: replace above schematic with actual WorldFirst attribution data once measurement dashboard is running]</div>
-        <div class="note">
-          <div class="note-text">A KOL collab tagged as &ldquo;awareness&rdquo; showing <strong>0 direct registrations</strong> didn't fail &mdash; it was measured against the wrong job. Awareness reads in audience growth, retargeting pool size, and 3&ndash;12 month indirect conversion, <strong>not</strong> next-day sign-ups.</div>
+        <div class="note" style="max-width: 80ch;">
+          <div class="note-text"><strong>Case to make here.</strong> When we evaluated some of the KOL content we ran last year, direct registrations read as zero. That doesn't mean it failed &mdash; awareness content doesn't convert next-day. Real contribution comes through retargeting, brand-search lift, and conversions 3&ndash;12 months later. <strong>Measure the right job.</strong></div>
         </div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 24 — BRAND CONTENT                                              -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 20 — AWARENESS = THE FOCUS                                        -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Brand content</span><span class="sep"></span><span class="head-num">24</span></div>
+      <div class="head-meta"><span>Q2 focus</span><span class="sep"></span><span class="head-num">20</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">22 · Brand content &mdash; top layer</span>
-        <h2 class="xl">Identity. Distinctiveness. <em>Consistent</em> globally.</h2>
-        <p>Compounds permanently. Cross-functional investment, delivered across every channel.</p>
-        <div class="pull-quote">We return to brand content in <span class="pink-strong">Part 6 &mdash; long-term, not Q2.</span></div>
+        <span class="eyebrow">19 · Q2 focus</span>
+        <h2 class="xl">Q2 focuses on <em>awareness</em> content. Brand matters &mdash; we return to it at the end.</h2>
+        <p>Awareness has the biggest expansion headroom and the best short-term impact-to-effort ratio.</p>
+        <p>Brand is the parallel long-term build &mdash; Part 8 of this deck.</p>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 25 — AWARENESS = THE BATTLE PLAN                                -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 21 — THE BATTLE PLAN (DIRECT)                                     -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The battle plan</span><span class="sep"></span><span class="head-num">25</span></div>
+      <div class="head-meta"><span>The battle plan</span><span class="sep"></span><span class="head-num">21</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">23 · Awareness &mdash; the battle plan</span>
-        <h2 class="xl">This is what I'm <em>running</em> in Q2.</h2>
+        <span class="eyebrow">20 · The battle plan</span>
+        <h2 class="xl"><em>Regional creators</em> + short-form carrying Q2 product focus to 20M / month.</h2>
         <ul class="bullets">
-          <li><strong>Regional creators + platform-native short-form</strong> &mdash; best short-term impact-to-effort ratio in our mix</li>
-          <li><strong>Tied directly to WorldFirst product benefit</strong> &mdash; not generic category education</li>
-          <li><strong>20M monthly impressions target</strong> across priority regions over two months</li>
-          <li><strong>Shared dashboard with paid</strong> &mdash; audiences feed activation retargeting</li>
+          <li><strong>Who</strong> &mdash; regional creators in priority corridors, not central talking heads</li>
+          <li><strong>What</strong> &mdash; platform-native short-form tied directly to WorldFirst product benefit (not generic category)</li>
+          <li><strong>When</strong> &mdash; two-month concentration, Q2</li>
+          <li><strong>How much</strong> &mdash; <strong class="pink">20M impressions per month</strong> across priority regions</li>
         </ul>
-        <div class="pull-quote">Other layers hold in maintenance for two months. <span class="pink-strong">This is where the needle moves.</span></div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 26 — ACTIVATION CONTENT                                         -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 22 — WHY 20M                                                      -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Activation content</span><span class="sep"></span><span class="head-num">26</span></div>
+      <div class="head-meta"><span>Why 20M</span><span class="sep"></span><span class="head-num">22</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">24 · Activation content</span>
-        <h2 class="xl">Targets the in-market 5%. <em>Already</em> our strongest layer.</h2>
-        <p>This deck doesn't propose changing activation.</p>
-        <div class="pull-quote">The question is what sits <span class="pink-strong">above it, feeding it.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 27 — WHY 20M                                                    -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Why 20M</span><span class="sep"></span><span class="head-num">27</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">25 · The number</span>
+        <span class="eyebrow">21 · The number</span>
         <h2 class="xl">Why <em>20M?</em> Awareness needs scale to move the needle.</h2>
         <ul class="bullets">
-          <li><strong>At 1M/month</strong> we sit below the recall threshold in priority regions &mdash; noise, not signal</li>
+          <li><strong>At 1M per month</strong> we sit below the recall threshold in priority regions &mdash; noise, not signal</li>
           <li><strong>Awareness cycle</strong> &mdash; decision-makers need 3+ exposures within ~4 weeks to retain the message</li>
-          <li><strong>At 20M/month</strong> across priority regions, we clear effective reach &mdash; results become measurable</li>
+          <li><strong>At 20M per month</strong> we clear effective reach &mdash; results become measurable</li>
         </ul>
-        <div class="pull-quote">Small numbers are measurement noise. <span class="pink-strong">20M is the scale that makes awareness readable.</span></div>
+        <div class="pull-quote">Small numbers are measurement noise. <span class="pink-strong">20M per month is the scale that makes awareness readable.</span></div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 28 — PIVOT DIVIDER · LONG-TERM BRAND                            -->
-  <!-- =============================================================== -->
-  <section class="slide slide-divider">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Part II · Long-term brand</span><span class="sep"></span><span class="head-num">28</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="div-num">II</div>
-      <div class="div-content">
-        <span class="eyebrow">A parallel build &mdash; not Q2</span>
-        <h1 class="div-title">Now &mdash; the long-term <em>brand campaign.</em></h1>
-        <p class="div-sub">Q2 is the awareness engine. This next section is about what we build <em>alongside</em> it &mdash; the global brand positioning that sits above regional awareness and compounds for years.</p>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 29 — WISE CAUTIONARY TALE                                       -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 23 — HOW WE DO IT · REGIONAL × PRODUCT CHART                     -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Cautionary tale</span><span class="sep"></span><span class="head-num">29</span></div>
+      <div class="head-meta"><span>How we do it</span><span class="sep"></span><span class="head-num">23</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">22 · How we do it &mdash; the distribution</span>
+        <h2 class="lg">20M per month <em>distributed</em> against paid budget &amp; product focus.</h2>
+        <p class="fine" style="max-width: 82ch;">Awareness content is built for the paid team's activation targets &mdash; same regions, same products. The demand we create feeds the pool they convert.</p>
+        <table class="region-chart">
+          <thead>
+            <tr><th>Region</th><th>Product focus</th><th class="num">Paid budget</th><th class="num">20M share</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>UK</strong></td><td class="product">WorldCard, World Account</td><td class="num">27.5%</td><td class="num"><span class="share-bar" style="width: 82px;"></span>5.5M</td></tr>
+            <tr><td><strong>SEA (MY + SG)</strong></td><td class="product">1688 WP, World Account</td><td class="num">16.0%</td><td class="num"><span class="share-bar" style="width: 48px;"></span>3.2M</td></tr>
+            <tr><td><strong>US (Zyla)</strong></td><td class="product">Zyla brand</td><td class="num">11.4%</td><td class="num"><span class="share-bar" style="width: 34px;"></span>2.3M</td></tr>
+            <tr><td><strong>EEA</strong></td><td class="product">World Account</td><td class="num">11.2%</td><td class="num"><span class="share-bar" style="width: 34px;"></span>2.2M</td></tr>
+            <tr><td><strong>Vietnam</strong></td><td class="product">World Account, WorldCard</td><td class="num">6.2%</td><td class="num"><span class="share-bar" style="width: 19px;"></span>1.2M</td></tr>
+            <tr><td><strong>Longtail (PK/NG/BD/MA)</strong></td><td class="product">1688 WP</td><td class="num">5.7%</td><td class="num"><span class="share-bar" style="width: 17px;"></span>1.1M</td></tr>
+            <tr><td><strong>ANZ</strong></td><td class="product">WorldCard</td><td class="num">5.7%</td><td class="num"><span class="share-bar" style="width: 17px;"></span>1.1M</td></tr>
+            <tr><td><strong>Turkey</strong></td><td class="product">WorldCard</td><td class="num">4.8%</td><td class="num"><span class="share-bar" style="width: 14px;"></span>1.0M</td></tr>
+            <tr><td><strong>JKT</strong></td><td class="product">1688 WP</td><td class="num">4.5%</td><td class="num"><span class="share-bar" style="width: 14px;"></span>0.9M</td></tr>
+            <tr><td><strong>Other</strong></td><td class="product">MX_BR, Middle East</td><td class="num">7.0%</td><td class="num"><span class="share-bar" style="width: 22px;"></span>1.5M</td></tr>
+            <tr class="total"><td colspan="2">Total priority regions</td><td class="num">~100%</td><td class="num">~20M / month</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 24 — PRODUCTION FLOW                                              -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Production flow</span><span class="sep"></span><span class="head-num">24</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column">
-        <span class="eyebrow">26 · The Wise mistake</span>
+        <span class="eyebrow">23 · Production flow</span>
+        <h2 class="lg">After performance read, the path <em>splits.</em></h2>
+        <p class="fine" style="max-width: 80ch;"><strong>Today:</strong> identify &rarr; ideate &rarr; test &rarr; read &rarr; distribute (linear). <strong>Proposal:</strong> at the read, split into two parallel streams.</p>
+        <ul class="dual" style="margin-top: 1.5vh;">
+          <li><strong>Paid team</strong>Doubles down on activation variants for the in-market 5%.</li>
+          <li><strong>Upper-funnel + regional teams</strong>Build localised creator content for regional awareness pools.</li>
+        </ul>
+        <div class="placeholder wide" style="margin-top: 1.5vh;">[PLACEHOLDER: flow diagram &mdash; the split after performance read, two streams converging on shared dashboard]</div>
+        <p class="fine" style="max-width: 80ch;">Same campaign. Two workstreams. Different audiences. <strong class="pink">Shared dashboard.</strong></p>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 25 — REGIONAL REALITY                                             -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Regional reality</span><span class="sep"></span><span class="head-num">25</span></div>
+    </div>
+    <div class="slide-body v-center">
+      <div class="column column-narrow">
+        <span class="eyebrow">24 · Regional reality</span>
+        <h2 class="xl">Vietnam and SEA are <em>ready.</em> Others need a bridge.</h2>
+        <p>Vietnam and SEA are ready for collaborative execution today. Other regions are further behind &mdash; we build the bridge as we go.</p>
+        <div class="pull-quote">A genuine description of where WorldFirst is, <span class="pink-strong">not an asterisk.</span></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 26 — METRICS                                                      -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Metrics</span><span class="sep"></span><span class="head-num">26</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">25 · Metrics</span>
+        <h2 class="lg">The <em>metrics</em> we look at.</h2>
+        <div class="metric-grid">
+          <div class="metric-card">
+            <span class="metric-label">01 · Content performance</span>
+            <ul><li>Impressions</li><li>Time spent</li><li>Engagement rate</li></ul>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">02 · Direct acquisition</span>
+            <ul><li>Website visits</li><li>App downloads</li><li>Registrations</li></ul>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">03 · Audience building</span>
+            <ul><li>Social audiences</li><li>Website audiences (paid retargeting pool)</li></ul>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">04 · Cycle signals</span>
+            <ul><li>Brand-search lift</li><li>Indirect conversion (3 / 6 / 12 mo)</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 27 — BEYOND Q2                                                    -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Beyond Q2</span><span class="sep"></span><span class="head-num">27</span></div>
+    </div>
+    <div class="slide-body v-center">
+      <div class="column column-narrow">
+        <span class="eyebrow">26 · Beyond Q2</span>
+        <h2 class="xl">Two months, then we <em>regroup.</em></h2>
+        <p>After Q2: consolidated hybrid strategy &mdash; a mix, not one format winning everything.</p>
+        <div class="pull-quote">The next slides outline <span class="pink-strong">what that mix looks like.</span></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 28 — FULL STACK                                                   -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>The full stack</span><span class="sep"></span><span class="head-num">28</span></div>
+    </div>
+    <div class="slide-body v-center">
+      <div class="column column-narrow">
+        <span class="eyebrow">27 · The full stack</span>
+        <h2 class="xl">Long-term leverage is a <em>combination.</em></h2>
+        <ul class="bullets">
+          <li><strong>Brand campaigns</strong> &mdash; the top layer</li>
+          <li><strong>Networking events</strong> &mdash; business people talk to business people</li>
+          <li><strong>Proof / partnership / customer-ambassador content</strong></li>
+          <li><strong>Flagship research</strong> &mdash; regional + corridor-specific</li>
+        </ul>
+        <div class="pull-quote">Awareness content alone is a short-term play. <span class="pink-strong">These compound.</span></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 29 — FLAGSHIP CONTENT WORTH INVESTING                             -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Flagship content</span><span class="sep"></span><span class="head-num">29</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column">
+        <span class="eyebrow">28 · Why flagship content &mdash; and when</span>
+        <h2 class="lg">Invest in flagship content <em>after</em> Q2 &mdash; once the awareness pipe is established.</h2>
+        <p class="fine" style="max-width: 82ch;">Flagship research is slow-burn. It's also a category-authority builder that differentiates WorldFirst from peers running creator-only upper-funnel. Right sequence: Q2 gets awareness running; Q3&ndash;Q4 we start flagship content on top.</p>
+        <div class="models models-2" style="margin-top: 2.5vh;">
+          <div class="model-card">
+            <span class="model-label">Idea 01</span>
+            <p><strong>The Cross-Border E-commerce Opportunity 2026</strong><span class="model-sub">Global, region-relevant, lead-gen magnet. Annual drumbeat in the Pleo CFO Playbook mould.</span></p>
+          </div>
+          <div class="model-card">
+            <span class="model-label">Idea 02</span>
+            <p><strong>Quarterly FX Management Report</strong><span class="model-sub">Corridor-specific (SGD, CNY, GBP). T0 / T1 client sales enablement + PR hook.</span></p>
+          </div>
+        </div>
+        <div class="pull-quote" style="margin-top: 3vh; max-width: 64ch;">Both compound. Both build category authority. <span class="pink-strong">Both differentiate us from peers running creator-only upper-funnel.</span></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 30 — FLYWHEEL COMPOSITION                                         -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>The flywheel</span><span class="sep"></span><span class="head-num">30</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column">
+        <span class="eyebrow">29 · The flywheel</span>
+        <h2 class="lg">Three levels speaking the <em>same</em> language.</h2>
+        <div class="pyramid">
+          <div class="tier-row tier-top">
+            <div class="tier-label">Top</div>
+            <div class="tier-body"><strong>Business people talk about WorldFirst.</strong> Stripe-founder-interview energy &mdash; operators, investors, founders speaking unprompted.</div>
+          </div>
+          <div class="tier-row">
+            <div class="tier-label">Middle</div>
+            <div class="tier-body"><strong>Educational white papers</strong> for brands scaling up &mdash; research, corridors, market studies.</div>
+          </div>
+          <div class="tier-row">
+            <div class="tier-label">Bottom</div>
+            <div class="tier-body"><strong>How to save money, how to use WorldFirst.</strong> Product education, feature walkthroughs, practical guidance.</div>
+          </div>
+        </div>
+        <div class="pull-quote" style="margin-top: 3vh; max-width: 62ch;">Nothing overtakes everything else. <span class="pink-strong">It's a composition, not a winner.</span></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 31 — DASHBOARD                                                    -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>The dashboard</span><span class="sep"></span><span class="head-num">31</span></div>
+    </div>
+    <div class="slide-body v-center">
+      <div class="column column-narrow">
+        <span class="eyebrow">30 · The dashboard</span>
+        <h2 class="xl">One dashboard. <em>Shared.</em> Upper-funnel + regional + paid.</h2>
+        <ul class="bullets">
+          <li>UK awareness content works &rarr; Vietnam adapts it same day</li>
+          <li>Paid team sees the message land &rarr; builds activation variants</li>
+        </ul>
+        <div class="pull-quote">The connective tissue doesn't exist today. <span class="pink-strong">Building it is the first systems investment.</span></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 32 — AWARENESS + ACTIVATION TOGETHER                              -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Awareness + activation</span><span class="sep"></span><span class="head-num">32</span></div>
+    </div>
+    <div class="slide-body v-center">
+      <div class="column column-narrow">
+        <span class="eyebrow">31 · Working together</span>
+        <h2 class="xl">How awareness and activation <em>work together.</em></h2>
+        <ul class="bullets">
+          <li><strong>Consistent communications</strong> &mdash; same message across both layers, different jobs</li>
+          <li><strong>Shared assets</strong> &mdash; winning awareness creative becomes activation variants</li>
+          <li><strong>Shared data</strong> &mdash; awareness audiences become activation's retargeting pool</li>
+        </ul>
+        <div class="pull-quote">They aren't separate programs. <span class="pink-strong">They're one program with two jobs.</span></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 33 — TEAM SHAPE (+ BRANDING SEGUE)                                -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Team shape</span><span class="sep"></span><span class="head-num">33</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">32 · Team shape</span>
+        <h2 class="lg">The team shape that <em>delivers</em> a complete upper-funnel stack.</h2>
+        <ul class="bullets" style="margin-top: 2vh;">
+          <li><strong>Cathy (incoming)</strong> &mdash; shifting ad-hoc tasks over to her; owns social publishing + brand content coordination</li>
+        </ul>
+        <p class="fine" style="margin-top: 1vh; max-width: 80ch;"><strong class="pink">Additional roles over time (as volume grows):</strong></p>
+        <ul class="bullets">
+          <li>Proof / partnership / customer content + employee amplification</li>
+          <li>Influencer / KOL program ownership</li>
+          <li>Production support for regional content at volume</li>
+        </ul>
+        <p class="fine" style="max-width: 80ch; margin-top: 1.5vh;"><strong class="pink">And &mdash;</strong> close collaboration with the <strong>Branding department.</strong> Branding owns a huge share of the upper-funnel composition. Awareness content only lands when the brand above it is coherent.</p>
+        <div class="pull-quote">Medium-term leverage is awareness. <span class="pink-strong">Long-term leverage is brand.</span></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 34 — PIVOT DIVIDER · BRAND CAMPAIGN                               -->
+  <!-- ================================================================= -->
+  <section class="slide slide-divider">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Part III · Brand campaign</span><span class="sep"></span><span class="head-num">34</span></div>
+    </div>
+    <div class="slide-body v-center">
+      <div class="div-num">III</div>
+      <div class="div-content">
+        <span class="eyebrow">A unified brand idea &mdash; the long-run leverage</span>
+        <h1 class="div-title">A unified <em>brand campaign</em> for the long run.</h1>
+        <p class="div-sub">Awareness content builds medium-term demand. A brand campaign &mdash; sustained, distinctive, defensible &mdash; is where <em>long-term</em> leverage actually comes from. This is the positioning we'd carry alongside Q2.</p>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 35 — WISE MISTAKE                                                 -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Cautionary tale</span><span class="sep"></span><span class="head-num">35</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column">
+        <span class="eyebrow">33 · The Wise cautionary tale</span>
         <h2 class="lg">Wise built the category. <em>Others</em> collected the demand.</h2>
         <ul class="bullets">
-          <li><strong>2014&ndash;19</strong> &mdash; hidden-fees narrative built industry-wide awareness of the &ldquo;banks overcharge on FX&rdquo; idea</li>
+          <li><strong>2014&ndash;19</strong> &mdash; the hidden-fees narrative built industry-wide awareness of "banks overcharge on FX"</li>
           <li><strong>2020+</strong> &mdash; Revolut Business, Remitly, Atlantic Money entered with activation at scale</li>
-          <li><strong>Leakage</strong> &mdash; buyers now educated on the category went shopping, many landed elsewhere</li>
+          <li><strong>Leakage</strong> &mdash; buyers educated on the category went shopping, many landed elsewhere</li>
         </ul>
         <div class="pull-quote">Without a product moat Wise could uniquely defend, <span class="pink-strong">brand investment subsidised competitor growth.</span></div>
       </div>
@@ -1520,17 +2112,17 @@
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 30 — MOAT BEFORE BRAND                                          -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 36 — MOAT BEFORE BRAND                                            -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The moat test</span><span class="sep"></span><span class="head-num">30</span></div>
+      <div class="head-meta"><span>The moat test</span><span class="sep"></span><span class="head-num">36</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">27 · The moat test</span>
+        <span class="eyebrow">34 · The moat test</span>
         <h2 class="xl">Invest in brand <em>after</em> the moat is defensible.</h2>
         <p><strong>FX savings alone is matchable.</strong> Most peers compete on the same claim. Brand built on a generic benefit leaks to whoever executes activation better.</p>
         <p><strong>Our moat is specific:</strong> Ant / Alipay relationship, CNY depth, 1688 ecosystem, global corridors. Regional awareness concentrates around these. Global brand anchors to them.</p>
@@ -1540,18 +2132,18 @@
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 31 — FLASHY HERO · YOUR CROSS-BORDER MOAT                       -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 37 — FLASHY HERO · YOUR CROSS-BORDER MOAT                         -->
+  <!-- ================================================================= -->
   <section class="slide slide-flash">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The proposition</span><span class="sep"></span><span class="head-num">31</span></div>
+      <div class="head-meta"><span>The proposition</span><span class="sep"></span><span class="head-num">37</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="flash-deco">moat</div>
       <div class="column column-wide flash-content">
-        <span class="eyebrow">28 · The global proposition</span>
+        <span class="eyebrow">35 · The global proposition</span>
         <h1 class="flash-title">Your cross-border <em>moat.</em></h1>
         <p class="flash-sub">The one sentence that says what WorldFirst does that no one else can match.</p>
         <div class="flash-pillars">
@@ -1577,17 +2169,17 @@
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 32 — ARCHETYPES + CONTRARIAN                                    -->
-  <!-- =============================================================== -->
+  <!-- ================================================================= -->
+  <!-- 38 — ARCHETYPES + CONTRARIAN                                      -->
+  <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Stories that prove the moat</span><span class="sep"></span><span class="head-num">32</span></div>
+      <div class="head-meta"><span>Stories that prove the moat</span><span class="sep"></span><span class="head-num">38</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column">
-        <span class="eyebrow">29 · Story archetypes</span>
+        <span class="eyebrow">36 · Story archetypes</span>
         <h2 class="lg">Real operators. Real <em>moats.</em></h2>
         <div class="models" style="margin-top: 2.5vh;">
           <div class="model-card">
@@ -1611,349 +2203,6 @@
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
-  <!-- =============================================================== -->
-  <!-- 33 — COMPOSITION                                                -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Composition</span><span class="sep"></span><span class="head-num">33</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">30 · Composition</span>
-        <h2 class="lg"><em>Regional creators</em> + short-form carry Q2.</h2>
-        <p class="fine" style="max-width: 80ch;">Pillar composition from the Fintech Upper-Funnel Study: regional creators (heaviest), platform-native short-form, milestone, educational evergreen, PR-coded. Q2 weighting concentrates on the first two. Others hold in maintenance.</p>
-        <div class="placeholder wide">[PLACEHOLDER: pillar bar chart &mdash; current vs Q2 proposed composition across 5 pillars]</div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 34 — PRODUCTION FLOW                                            -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Production flow</span><span class="sep"></span><span class="head-num">34</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">31 · Production flow</span>
-        <h2 class="lg">After performance read, the path <em>splits.</em></h2>
-        <p class="fine" style="max-width: 80ch;"><strong>Today:</strong> identify &rarr; ideate &rarr; test &rarr; read &rarr; distribute (linear). <strong>Proposal:</strong> at the read, split into two parallel streams.</p>
-        <ul class="dual" style="margin-top: 1.5vh;">
-          <li><strong>Paid team</strong>Doubles down on activation variants for the in-market 5%.</li>
-          <li><strong>Upper-funnel + regional teams</strong>Build localised creator content for regional awareness pools.</li>
-        </ul>
-        <div class="placeholder wide" style="margin-top: 1.5vh;">[PLACEHOLDER: flow diagram &mdash; the split after performance read]</div>
-        <p class="fine" style="max-width: 80ch;">Same campaign. Two workstreams. Different audiences. <strong class="pink">Shared dashboard.</strong></p>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 35 — REGIONAL REALITY                                           -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Regional reality</span><span class="sep"></span><span class="head-num">35</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">32 · Regional reality</span>
-        <h2 class="xl">Vietnam and SEA are <em>ready.</em> Others need a bridge.</h2>
-        <p>Vietnam and SEA are ready for collaborative execution today. Other regions are further behind &mdash; we build the bridge as we go.</p>
-        <div class="pull-quote">This is a genuine description of where WorldFirst is, <span class="pink-strong">not an asterisk.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 36 — 20M KPI                                                    -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The pilot</span><span class="sep"></span><span class="head-num">36</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column" style="text-align: center;">
-        <span class="eyebrow" style="display: inline-flex;">33 · The pilot</span>
-        <div class="hero-kpi">
-          <div class="num">20<span class="unit">M</span></div>
-          <div class="label">Impressions <span class="sep">/</span> <em>month</em></div>
-          <p class="context">Across priority regions over two months. Educational evergreen, flagship research, PR &rarr; maintenance. Regional creators + platform-native short-form get the concentration.</p>
-        </div>
-        <div class="pull-quote" style="margin: 2.5vh auto 0; text-align: left; max-width: 58ch;">Two-month pilot. This is the test that informs the strategy &mdash; <span class="pink-strong">not the strategy itself.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 37 — METRICS                                                    -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>How we measure</span><span class="sep"></span><span class="head-num">37</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column column-wide">
-        <span class="eyebrow">34 · How we measure</span>
-        <h2 class="lg"><em>Four</em> categories. Four jobs.</h2>
-        <div class="metric-grid">
-          <div class="metric-card">
-            <span class="metric-label">01 · Content performance</span>
-            <ul><li>Impressions</li><li>Time spent</li><li>Engagement rate</li></ul>
-            <div class="metric-note">Weekly. The input signal.</div>
-          </div>
-          <div class="metric-card">
-            <span class="metric-label">02 · Direct acquisition</span>
-            <ul><li>Website visits</li><li>App downloads</li><li>Registrations</li></ul>
-            <div class="metric-note">Weekly. Direct conversion.</div>
-          </div>
-          <div class="metric-card">
-            <span class="metric-label">03 · Audience building</span>
-            <ul><li>Social audiences</li><li>Website audiences (paid retargeting pool)</li></ul>
-            <div class="metric-note">Monthly. The compounding asset.</div>
-          </div>
-          <div class="metric-card">
-            <span class="metric-label">04 · Cycle signals</span>
-            <ul><li>Brand-search lift</li><li>Indirect conversion (3 / 6 / 12 mo)</li></ul>
-            <div class="metric-note">Quarterly. Long-horizon payback.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 38 — BEYOND Q2                                                  -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Beyond Q2</span><span class="sep"></span><span class="head-num">38</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">35 · Beyond Q2</span>
-        <h2 class="xl">Two months, then we <em>regroup.</em></h2>
-        <p>After Q2: consolidated hybrid strategy &mdash; a mix, not one format winning everything.</p>
-        <div class="pull-quote">The next slides outline <span class="pink-strong">what that mix looks like.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 39 — FULL STACK                                                 -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The full stack</span><span class="sep"></span><span class="head-num">39</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">36 · The full stack</span>
-        <h2 class="xl">Long-term leverage is a <em>combination.</em></h2>
-        <ul class="bullets">
-          <li><strong>Brand campaigns</strong> &mdash; the top layer</li>
-          <li><strong>Networking events</strong> &mdash; business people talk to business people</li>
-          <li><strong>Proof / partnership / customer-ambassador content</strong></li>
-          <li><strong>Flagship research</strong> &mdash; regional + corridor-specific</li>
-        </ul>
-        <div class="pull-quote">Awareness content alone is a short-term play. <span class="pink-strong">These compound.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 40 — FLAGSHIP RESEARCH                                          -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Flagship research</span><span class="sep"></span><span class="head-num">40</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">37 · Flagship research</span>
-        <h2 class="lg">Two research ideas worth <em>investing</em> in.</h2>
-        <div class="models models-2" style="margin-top: 2.5vh;">
-          <div class="model-card">
-            <span class="model-label">Research 01</span>
-            <p><strong>The Cross-Border E-commerce Opportunity 2026</strong><span class="model-sub">Global, region-relevant, lead-gen magnet. Annual drumbeat.</span></p>
-          </div>
-          <div class="model-card">
-            <span class="model-label">Research 02</span>
-            <p><strong>Quarterly FX Management Report</strong><span class="model-sub">Corridor-specific (SGD, CNY, GBP). T0 / T1 client sales enablement.</span></p>
-          </div>
-        </div>
-        <div class="pull-quote" style="margin-top: 3vh; max-width: 64ch;">Both slow-burn. Both compound. <span class="pink-strong">Both differentiate WorldFirst from peers running creator-only upper-funnel.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 41 — COMPOSITION MODEL                                          -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The flywheel</span><span class="sep"></span><span class="head-num">41</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">38 · The flywheel</span>
-        <h2 class="lg">Three levels speaking the <em>same</em> language.</h2>
-        <div class="pyramid">
-          <div class="tier-row tier-top">
-            <div class="tier-label">Top</div>
-            <div class="tier-body"><strong>Business people talk about WorldFirst.</strong> Stripe-founder-interview energy &mdash; operators, investors, founders speaking unprompted.</div>
-          </div>
-          <div class="tier-row">
-            <div class="tier-label">Middle</div>
-            <div class="tier-body"><strong>Educational white papers</strong> for brands scaling up &mdash; research, corridors, market studies.</div>
-          </div>
-          <div class="tier-row">
-            <div class="tier-label">Bottom</div>
-            <div class="tier-body"><strong>How to save money, how to use WorldFirst.</strong> Product education, feature walkthroughs, practical guidance.</div>
-          </div>
-        </div>
-        <div class="pull-quote" style="margin-top: 3vh; max-width: 62ch;">Nothing overtakes everything else. <span class="pink-strong">It's a composition, not a winner.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 42 — DASHBOARD                                                  -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The dashboard</span><span class="sep"></span><span class="head-num">42</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">39 · The dashboard</span>
-        <h2 class="xl">One dashboard. <em>Shared.</em> Upper-funnel + regional + paid.</h2>
-        <ul class="bullets">
-          <li>UK awareness content works &rarr; Vietnam adapts it same day</li>
-          <li>Paid team sees the message land &rarr; builds activation variants</li>
-        </ul>
-        <div class="pull-quote">The connective tissue doesn't exist today. <span class="pink-strong">Building it is the first systems investment.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 43 — TIE-BACK                                                   -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The tie-back</span><span class="sep"></span><span class="head-num">43</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">40 · The tie-back</span>
-        <h2 class="xl">Awareness has to <em>connect</em> to activation &mdash; or we're buying wrong impressions.</h2>
-        <p>From day one, awareness audiences need to be:</p>
-        <ul class="bullets">
-          <li>Targeted (not blanket reach)</li>
-          <li>Meaningfully larger than the activation pool (that's the point)</li>
-          <li>Tracked for downstream conversion at 3 / 6 / 12 months</li>
-        </ul>
-        <div class="pull-quote">Tied-back measurement is the difference between <span class="pink-strong">buying traffic and building upper-funnel.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 44 — TEAM SHAPE                                                 -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Team shape</span><span class="sep"></span><span class="head-num">44</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">41 · Team shape</span>
-        <h2 class="lg">The team shape that <em>delivers</em> a complete upper-funnel stack.</h2>
-        <ul class="bullets" style="margin-top: 2vh;">
-          <li><strong>Cassie (incoming)</strong> &mdash; social + publishing + brand content</li>
-        </ul>
-        <p class="fine" style="margin-top: 1vh; max-width: 78ch;"><strong class="pink">Additional roles over time:</strong></p>
-        <ul class="bullets">
-          <li>Proof / partnership / customer content + employee amplification</li>
-          <li>Influencer / KOL program ownership</li>
-          <li>Production support for regional content at volume</li>
-        </ul>
-        <div class="placeholder wide" style="margin-top: 2vh;">[PLACEHOLDER: before / after team sketch &mdash; today's team vs proposed complete stack]</div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 45 — THE COMMITMENT                                             -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The commitment</span><span class="sep"></span><span class="head-num">45</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">42 · The commitment</span>
-        <h2 class="xl">Upper-funnel isn't social's job <em>alone.</em></h2>
-        <p>Cross-channel. Cross-function. Long-term.</p>
-        <p>Q2 is the start &mdash; a pilot to show the engine works.</p>
-        <div class="pull-quote">Post-Q2: a consolidated strategy that <span class="pink-strong">expands across content layers and teams.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- =============================================================== -->
-  <!-- 46 — THE ASK                                                    -->
-  <!-- =============================================================== -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>What we need</span><span class="sep"></span><span class="head-num">46</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">43 · What we need</span>
-        <h2 class="lg">What this proposal <em>needs</em> to move forward.</h2>
-        <ol class="asks" style="margin-top: 2.5vh;">
-          <li>Permission to run the Q2 pilot with 20M impressions target</li>
-          <li>Alignment with paid team on a shared measurement dashboard</li>
-          <li>Gradual budget shift toward the 46 / 54 benchmark over 3&ndash;4 quarters</li>
-          <li>Commitment to post-Q2 review before further shifts</li>
-          <li>Headcount plan for the complete upper-funnel stack</li>
-        </ol>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
 </div>
 
 <div class="kbd-hint">
@@ -1962,7 +2211,7 @@
 
 <div id="persist-nav">
   <button id="btn-prev" aria-label="Previous">&larr;</button>
-  <span id="counter">01 / 46</span>
+  <span id="counter">01 / 38</span>
   <button id="btn-next" aria-label="Next">&rarr;</button>
 </div>
 
@@ -1987,6 +2236,11 @@
     nextBtn.disabled = current === total - 1;
     prevBtn.style.opacity = current === 0 ? '0.25' : '1';
     nextBtn.style.opacity = current === total - 1 ? '0.25' : '1';
+    const active = slides[current];
+    const dark = active && (active.classList.contains('slide-cover') || active.classList.contains('slide-flash'));
+    counter.style.color = dark ? '#FFFFFF' : '';
+    prevBtn.style.color = dark ? 'rgba(255,255,255,0.7)' : '';
+    nextBtn.style.color = dark ? 'rgba(255,255,255,0.7)' : '';
     if (history.replaceState) {
       history.replaceState(null, '', '#' + (current + 1));
     }
