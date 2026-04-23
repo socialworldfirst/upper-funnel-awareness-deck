@@ -208,10 +208,12 @@
   .icp-label { font-size: clamp(0.72rem, 1.15vh, 0.82rem); font-weight: 600; color: var(--wf-pink); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5vh; }
   .icp-ring { width: clamp(160px, 22vh, 220px); height: clamp(160px, 22vh, 220px); border-radius: 50%; margin: 0 auto; position: relative; display: flex; align-items: center; justify-content: center; }
   .icp-ring-full { background: radial-gradient(circle, var(--wf-pink) 0%, var(--wf-pink-dark) 100%); box-shadow: 0 8px 24px rgba(230,24,95,0.22); }
-  .icp-ring-partial { background: var(--line-soft); position: relative; overflow: hidden; }
-  .icp-ring-partial::before { content: ''; position: absolute; inset: 0; background: conic-gradient(from 0deg, var(--wf-pink) 0deg 18deg, transparent 18deg); }
+  .icp-ring-partial { background: var(--ant-navy-soft); position: relative; overflow: hidden; }
+  .icp-ring-partial::before { content: ''; position: absolute; inset: 0; background: conic-gradient(from 0deg, var(--ant-navy) 0deg 18deg, transparent 18deg); }
   .icp-pct { position: relative; z-index: 1; font-size: clamp(2rem, 5vh, 3.6rem); font-weight: 700; color: var(--paper); letter-spacing: -0.03em; line-height: 1; }
-  .icp-ring-partial .icp-pct { color: var(--wf-pink); }
+  .icp-ring-partial .icp-pct { color: var(--ant-navy); position: absolute; top: auto; bottom: 14%; right: 12%; font-size: clamp(1.3rem, 2.8vh, 2rem); }
+  .icp-col:nth-child(2) .icp-label { color: var(--ant-navy); }
+  .icp-col:nth-child(2) .icp-caption strong { color: var(--ant-navy); }
   .icp-caption { margin-top: 1.5vh; font-size: clamp(0.82rem, 1.4vh, 0.95rem); color: var(--ink); max-width: 28ch; margin-left: auto; margin-right: auto; line-height: 1.4; }
   .icp-caption strong { color: var(--wf-pink); font-weight: 600; }
 
@@ -254,17 +256,30 @@
   }
   .funnel-tier .ft-bar-today {
     background: var(--ink-soft);
-    display: flex; align-items: center; justify-content: center;
+    display: flex; align-items: center; justify-content: flex-start;
+    padding: 0 0.9rem;
     color: var(--paper); font-weight: 600;
     font-size: clamp(0.75rem, 1.25vh, 0.88rem);
     border-radius: 3px 0 0 3px;
+    white-space: nowrap;
   }
   .funnel-tier .ft-bar-add {
     background: linear-gradient(90deg, var(--wf-pink), var(--wf-pink-dark));
-    display: flex; align-items: center; justify-content: center;
+    display: flex; align-items: center; justify-content: flex-start;
     color: var(--paper); font-weight: 600;
-    font-size: clamp(0.75rem, 1.25vh, 0.88rem);
+    font-size: clamp(0.7rem, 1.15vh, 0.8rem);
     border-radius: 0 3px 3px 0;
+    position: relative;
+    overflow: visible;
+  }
+  .funnel-tier .ft-bar-add span.add-label {
+    position: absolute;
+    left: calc(100% + 0.6rem);
+    top: 50%; transform: translateY(-50%);
+    color: var(--wf-pink);
+    font-weight: 600;
+    white-space: nowrap;
+    font-size: clamp(0.7rem, 1.15vh, 0.82rem);
   }
   /* Tier 1 (awareness): base + modest add (~1/3 of base). Same ratio carries down. */
   .funnel-tier.t1 .ft-bar-today { width: 70%; }
@@ -338,6 +353,18 @@
     padding-bottom: 2px; align-self: flex-start;
   }
   .peer-link::after { content: ' \2192'; }
+
+  .peer-logo {
+    position: absolute;
+    top: 8.5vh; right: 5vw;
+    height: clamp(36px, 6vh, 62px);
+    width: auto;
+    opacity: 0.92;
+    z-index: 5;
+    max-width: 180px;
+    object-fit: contain;
+    pointer-events: none;
+  }
 
   .peer-charts {
     display: flex; flex-direction: column;
@@ -454,100 +481,88 @@
     border-radius: 2px;
   }
 
-  /* ================= PRODUCTION FLOW (tree with connecting lines) ================= */
-  .pflow {
+  /* ================= PRODUCTION FLOW (curved SVG tree) ================= */
+  .pflow-v2 {
     margin-top: 2vh;
     position: relative;
-    padding: 1vh 0 0;
+    width: 100%;
+    height: 62vh;
+    max-height: 540px;
   }
-  .pflow-svg {
-    position: absolute; inset: 0;
+  .pflow-v2 svg {
+    position: absolute;
+    inset: 0;
     width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 0;
+    overflow: visible;
   }
-  .pflow-top {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 0.8vw;
-    position: relative; z-index: 1;
-  }
-  .pflow-step {
-    padding: 1.2vh 0.8vw;
+  .pflow-v2 .pf-node {
+    position: absolute;
+    padding: 1.2vh 1.2vw;
     background: var(--paper);
     border: 1.5px solid var(--wf-pink);
-    border-radius: 4px;
+    border-radius: 6px;
     text-align: center;
-    position: relative;
-    box-shadow: 0 2px 6px rgba(230,24,95,0.08);
+    box-shadow: 0 2px 8px rgba(230,24,95,0.08);
+    font-family: 'Inter', sans-serif;
+    transform: translate(-50%, -50%);
+    min-width: 140px;
   }
-  .pflow-step.read {
+  .pflow-v2 .pf-node.pivot {
     background: linear-gradient(135deg, var(--wf-pink), var(--wf-pink-dark));
     border-color: var(--wf-pink-dark);
     color: var(--paper);
-    box-shadow: 0 4px 12px rgba(230,24,95,0.25);
+    box-shadow: 0 4px 16px rgba(230,24,95,0.28);
+    min-width: 160px;
   }
-  .pflow-step.read .ps-num,
-  .pflow-step.read .ps-name { color: var(--paper); }
-  .pflow-step.read .ps-desc { color: rgba(255,255,255,0.85); }
-  .pflow-step .ps-num {
+  .pflow-v2 .pf-node.regroup {
+    background: linear-gradient(135deg, var(--ant-navy-deep), var(--ant-navy));
+    border-color: var(--ant-navy-deep);
+    color: var(--paper);
+    box-shadow: 0 4px 16px rgba(14,26,74,0.22);
+    min-width: 200px;
+  }
+  .pflow-v2 .pf-node.branch {
+    min-width: 220px;
+    padding: 1.2vh 1vw;
+  }
+  .pflow-v2 .pf-node .pn-num {
     display: inline-block;
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
     color: var(--wf-pink);
-    font-size: clamp(1rem, 1.75vh, 1.3rem);
+    font-size: clamp(0.92rem, 1.55vh, 1.15rem);
     font-weight: 400;
+    margin-bottom: 0.2vh;
   }
-  .pflow-step .ps-name {
+  .pflow-v2 .pf-node.pivot .pn-num,
+  .pflow-v2 .pf-node.regroup .pn-num { color: var(--paper); }
+  .pflow-v2 .pf-node .pn-name {
     display: block;
     font-size: clamp(0.82rem, 1.4vh, 0.95rem);
     font-weight: 600;
     color: var(--ink);
-    margin: 0.2vh 0 0.3vh;
+    line-height: 1.2;
   }
-  .pflow-step .ps-desc {
-    font-size: clamp(0.7rem, 1.15vh, 0.8rem);
+  .pflow-v2 .pf-node.pivot .pn-name,
+  .pflow-v2 .pf-node.regroup .pn-name { color: var(--paper); }
+  .pflow-v2 .pf-node .pn-desc {
+    display: block;
+    font-size: clamp(0.68rem, 1.1vh, 0.78rem);
     color: var(--ink-soft);
-    line-height: 1.3;
+    line-height: 1.35;
+    margin-top: 0.3vh;
   }
-  .pflow-split {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 1.5vw; margin-top: 5vh;
-    position: relative; z-index: 1;
+  .pflow-v2 .pf-node.pivot .pn-desc { color: rgba(255,255,255,0.82); }
+  .pflow-v2 .pf-node.regroup .pn-desc { color: rgba(255,255,255,0.82); }
+  .pflow-v2 .pf-node.branch .pn-label {
+    font-size: clamp(0.68rem, 1.1vh, 0.78rem);
+    font-weight: 600;
+    color: var(--wf-pink);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.3vh;
   }
-  .pflow-branch {
-    padding: 1.3vh 1vw;
-    background: var(--paper);
-    border: 1.5px solid var(--wf-pink);
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(230,24,95,0.08);
-  }
-  .pflow-branch .pb-label {
-    font-size: clamp(0.7rem, 1.1vh, 0.8rem); font-weight: 600;
-    color: var(--wf-pink); letter-spacing: 0.12em; text-transform: uppercase;
-    margin-bottom: 0.5vh; display: block;
-  }
-  .pflow-branch .pb-name {
-    font-size: clamp(0.9rem, 1.55vh, 1.02rem); font-weight: 600;
-    color: var(--ink); display: block;
-    margin-bottom: 0.4vh;
-  }
-  .pflow-branch .pb-desc { font-size: clamp(0.75rem, 1.2vh, 0.85rem); color: var(--ink-soft); line-height: 1.4; }
-  .pflow-regroup-wrap {
-    margin-top: 4.5vh;
-    display: flex; justify-content: center;
-    position: relative; z-index: 1;
-  }
-  .pflow-regroup {
-    padding: 1vh 2vw;
-    text-align: center;
-    background: linear-gradient(135deg, var(--ant-navy-deep), var(--ant-navy));
-    color: var(--paper);
-    border-radius: 4px;
-    max-width: 480px;
-    box-shadow: 0 4px 12px rgba(14,26,74,0.22);
-  }
-  .pflow-regroup .pr-name { font-weight: 600; font-size: clamp(0.92rem, 1.5vh, 1.05rem); display: block; }
-  .pflow-regroup .pr-desc { font-size: clamp(0.72rem, 1.2vh, 0.82rem); opacity: 0.82; margin-top: 0.3vh; display: block; }
 
   /* ================= VIDEO GRID ================= */
   .video-grid {
@@ -671,43 +686,42 @@
 
   /* ================= STACK MAP FUNNEL (final slide) ================= */
   .stack-funnel {
-    margin: 2vh auto 0;
-    max-width: 100%;
+    margin: 1.5vh auto 0;
+    width: 100%;
+    height: 72vh;
+    max-height: 640px;
     display: flex; flex-direction: column;
-    gap: 0.8vh;
+    gap: 1.2vh;
     position: relative;
+    justify-content: space-between;
   }
   .stack-tier {
     position: relative;
-    padding: 1.2vh 2vw 1.5vh;
-    border-radius: 3px;
-    box-shadow: 0 2px 8px rgba(14,26,74,0.06);
+    padding: 1.6vh 3vw;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(14,26,74,0.1);
     margin: 0 auto;
-    transition: transform 120ms;
+    flex: 1;
+    display: flex; flex-direction: column; justify-content: center;
   }
   .stack-tier.tier-brand {
     width: 100%;
-    background: linear-gradient(135deg, var(--ant-navy-deep) 0%, var(--ant-navy) 50%, #25347a 100%);
+    background: linear-gradient(135deg, var(--ant-navy-deep) 0%, var(--ant-navy) 60%, #25347a 100%);
     color: var(--paper);
-    clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
   }
   .stack-tier.tier-aware {
-    width: 92%;
+    width: 82%;
     background: linear-gradient(135deg, var(--wf-pink) 0%, var(--wf-pink-dark) 100%);
     color: var(--paper);
-    clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
   }
   .stack-tier.tier-act {
-    width: 84%;
+    width: 62%;
     background: linear-gradient(135deg, var(--orange) 0%, #E05627 100%);
     color: var(--paper);
-    clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%);
   }
-
   .stack-tier-head {
-    display: flex; align-items: baseline; gap: 1rem;
-    margin-bottom: 0.8vh;
-    padding: 0 2vw;
+    display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;
+    margin-bottom: 1vh;
   }
   .stack-tier-label {
     font-size: clamp(0.78rem, 1.3vh, 0.92rem); font-weight: 700;
@@ -722,20 +736,19 @@
     line-height: 1.3;
   }
   .stack-items {
-    display: flex; flex-wrap: wrap; gap: 0.5vh 0.55vw;
-    padding: 0 2vw;
+    display: flex; flex-wrap: wrap; gap: 0.55vh 0.5vw;
+    align-items: center;
   }
   .stack-item {
-    padding: 0.5vh 0.85vw;
+    padding: 0.5vh 0.9vw;
     background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.28);
     border-radius: 99px;
     font-size: clamp(0.7rem, 1.18vh, 0.82rem);
     font-weight: 500;
     color: var(--paper);
     white-space: nowrap;
     line-height: 1.2;
-    backdrop-filter: blur(4px);
   }
   .stack-item.primary {
     background: var(--paper);
@@ -882,11 +895,10 @@
   /* ================= VIDEO THUMB CARDS ================= */
   .video-grid-v2 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 1vh 1vw;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1vh 0.8vw;
     margin-top: 2vh;
-    max-height: 62vh;
+    max-height: 64vh;
   }
   .video-thumb {
     position: relative;
@@ -908,6 +920,22 @@
     background: linear-gradient(135deg, rgba(230,24,95,0.18), rgba(255,107,53,0.12));
     position: relative;
     display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .video-thumb .vt-top img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .video-thumb .vt-top .vt-play,
+  .video-thumb .vt-top .vt-platform {
+    z-index: 2;
+  }
+  .video-thumb .vt-top .vt-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, transparent 40%, rgba(0,0,0,0.55) 100%);
+    z-index: 1;
   }
   .video-thumb .vt-play {
     width: clamp(40px, 6vh, 56px); height: clamp(40px, 6vh, 56px);
@@ -1070,21 +1098,21 @@
             <div class="ft-label">Awareness</div>
             <div class="ft-bar-wrap">
               <div class="ft-bar-today">Today</div>
-              <div class="ft-bar-add">+ added reach</div>
+              <div class="ft-bar-add"><span class="add-label">+ added reach</span></div>
             </div>
           </div>
           <div class="funnel-tier t2">
             <div class="ft-label">Consideration</div>
             <div class="ft-bar-wrap">
               <div class="ft-bar-today">Today</div>
-              <div class="ft-bar-add">+ expanded pool</div>
+              <div class="ft-bar-add"><span class="add-label">+ expanded pool</span></div>
             </div>
           </div>
           <div class="funnel-tier t3">
             <div class="ft-label">Convert</div>
             <div class="ft-bar-wrap">
               <div class="ft-bar-today">Today</div>
-              <div class="ft-bar-add">+ lift</div>
+              <div class="ft-bar-add"><span class="add-label">+ lift, lower CPA</span></div>
             </div>
           </div>
           <div class="funnel-outcome">Wider top &rarr; wider conversion &rarr; <strong style="color: var(--wf-pink); font-family: 'Inter', sans-serif; font-style: normal; font-weight: 600;">lower CPA, faster growth.</strong></div>
@@ -1171,6 +1199,7 @@
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
       <div class="head-meta"><span>Peer · Wise</span><span class="sep"></span><span class="head-num">07</span></div>
     </div>
+    <img class="peer-logo" src="images/wise.png" alt="Wise logo">
     <div class="slide-body v-start">
       <div class="column column-wide">
         <span class="eyebrow">06 · Peer · Wise &mdash; breakthrough (2014-18) + current mature</span>
@@ -1223,6 +1252,7 @@
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
       <div class="head-meta"><span>Peer · Monzo</span><span class="sep"></span><span class="head-num">08</span></div>
     </div>
+    <img class="peer-logo" src="images/monzo.png" alt="Monzo logo">
     <div class="slide-body v-start">
       <div class="column column-wide">
         <span class="eyebrow">07 · Peer · Monzo &mdash; lifestyle-weighted</span>
@@ -1275,6 +1305,7 @@
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
       <div class="head-meta"><span>Peer · Nubank</span><span class="sep"></span><span class="head-num">09</span></div>
     </div>
+    <img class="peer-logo" src="images/nubank.png" alt="Nubank logo">
     <div class="slide-body v-start">
       <div class="column column-wide">
         <span class="eyebrow">08 · Peer · Nubank &mdash; creator-led multi-region</span>
@@ -1327,6 +1358,7 @@
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
       <div class="head-meta"><span>Peer · Revolut</span><span class="sep"></span><span class="head-num">10</span></div>
     </div>
+    <img class="peer-logo" src="images/revolut.png" alt="Revolut logo">
     <div class="slide-body v-start">
       <div class="column column-wide">
         <span class="eyebrow">09 · Peer · Revolut &mdash; YouTube-first creator push</span>
@@ -1379,6 +1411,7 @@
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
       <div class="head-meta"><span>Peer · Pleo</span><span class="sep"></span><span class="head-num">11</span></div>
     </div>
+    <img class="peer-logo" src="images/pleo.png" alt="Pleo logo">
     <div class="slide-body v-start">
       <div class="column column-wide">
         <span class="eyebrow">10 · Peer · Pleo &mdash; flagship-weighted</span>
@@ -1431,6 +1464,7 @@
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
       <div class="head-meta"><span>Peer · Ramp</span><span class="sep"></span><span class="head-num">12</span></div>
     </div>
+    <img class="peer-logo" src="images/ramp.png" alt="Ramp logo">
     <div class="slide-body v-start">
       <div class="column column-wide">
         <span class="eyebrow">11 · Peer · Ramp &mdash; social-deprioritised counter-thesis</span>
@@ -1510,14 +1544,14 @@
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">13 · YouTube reality check</span>
-        <h2 class="lg">Our YouTube runs on <em>ads</em>. Organic alone isn't the engine yet.</h2>
+        <span class="eyebrow">13 · Example &middot; our YouTube runs on ads</span>
+        <h2 class="lg">Example: our YouTube runs on <em>ads.</em></h2>
         <div class="yt-evidence">
           <div>
             <div class="yt-stat">
-              <div class="yt-stat-num">~99%</div>
-              <div class="yt-stat-label">Of views come from YouTube advertising</div>
-              <div class="yt-stat-desc">Across 20.06M views in Q1 2026, YouTube Advertising is the dominant traffic source. Organic surfaces (Suggested, Search, Browse, Shorts, Channel pages) add up to a small tail. <strong>Organic is growing, but it's not yet a standalone awareness engine.</strong></div>
+              <div class="yt-stat-num">~80K</div>
+              <div class="yt-stat-label">Organic views this year so far</div>
+              <div class="yt-stat-desc">Organic is growing &mdash; but against 20M+ paid views, it's a <strong>tiny proportion</strong>. Organic alone can't carry awareness at the scale we need.</div>
             </div>
             <div class="yt-img-block" style="margin-top: 1.5vh;">
               <img class="lb-img" src="images/wf-yt-traffic-source.png" alt="YouTube Studio Views by Traffic source &mdash; YouTube advertising dominates">
@@ -1527,8 +1561,8 @@
           <div>
             <div class="yt-stat">
               <div class="yt-stat-num">Top views</div>
-              <div class="yt-stat-label">Top content is paid activation ads</div>
-              <div class="yt-stat-desc">The most-viewed pieces on our channel are boosted product activation ads (WorldCard 1%, Shopify Global Supplier Payments, World Account). These drive registration, not category awareness. <a href="https://www.youtube.com/watch?v=kmYzgqEdFpk" target="_blank" class="pink-strong" style="text-decoration: underline;">See this top-viewed example &rarr;</a></div>
+              <div class="yt-stat-label">Activation videos aren't building awareness</div>
+              <div class="yt-stat-desc">Our top-viewed pieces are boosted activation ads (WorldCard 1%, Shopify, World Account). <strong>They're trying to sell, not build awareness.</strong> <a href="https://www.youtube.com/watch?v=kmYzgqEdFpk" target="_blank" class="pink-strong" style="text-decoration: underline;">See a top example &rarr;</a></div>
             </div>
             <div class="yt-img-block" style="margin-top: 1.5vh;">
               <img class="lb-img" src="images/wf-yt-content-list.png" alt="YouTube Studio Views by Content &mdash; top videos are product activation">
@@ -1560,7 +1594,9 @@
               <p class="fine" style="margin-top: 0.5vh;">Identity, distinctiveness. Global consistency. Slow ROI. Compounds permanently.</p>
               <p class="fine" style="margin-top: 0.4vh;"><em class="serif">E.g.</em> WorldFirst &times; AFA sponsor.</p>
             </div>
-            <img class="lb-img" src="images/wf-branding-afa.png" alt="WorldFirst &times; AFA branding post on LinkedIn" style="margin-top: 1.2vh; width: 100%;">
+            <div style="margin-top: 1.2vh; height: 52vh; background: var(--paper); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img class="lb-img" src="images/wf-branding-afa.png" alt="WorldFirst &times; AFA branding post on LinkedIn" style="max-width: 100%; max-height: 100%; width: auto; height: auto; border: none; object-fit: contain; display: block;">
+            </div>
           </div>
           <div>
             <div style="border-top: 2px solid var(--wf-pink); padding-top: 1vh;">
@@ -1568,7 +1604,9 @@
               <p class="fine" style="margin-top: 0.5vh;">Product benefit. Regional. Creator-led. Creates demand about WorldFirst specifically.</p>
               <p class="fine" style="margin-top: 0.4vh;"><em class="serif">E.g.</em> &ldquo;Send &pound;10,000 to USD&rdquo; tutorial.</p>
             </div>
-            <img class="lb-img" src="images/wf-awareness-send-10k.png" alt="WorldFirst awareness tutorial — send £10,000 GBP to USD" style="margin-top: 1.2vh; width: 100%;">
+            <div style="margin-top: 1.2vh; height: 52vh; background: var(--paper); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img class="lb-img" src="images/wf-awareness-send-10k.png" alt="WorldFirst awareness tutorial — send £10,000 GBP to USD" style="max-width: 100%; max-height: 100%; width: auto; height: auto; border: none; object-fit: contain; display: block;">
+            </div>
           </div>
         </div>
       </div>
@@ -1654,9 +1692,11 @@
         <span class="eyebrow">18 · Worked example · Airwallex F1</span>
         <h2 class="lg">Airwallex &times; F1 &mdash; <em>every</em> channel carried the same message.</h2>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3vw; margin-top: 2vh; align-items: start;">
-          <div>
-            <img class="lb-img" src="images/airwallex-mclaren.png" alt="Zak Brown, McLaren F1 CEO, speaking on Airwallex socials about the partnership" style="width: 100%; max-height: 40vh; object-fit: cover; object-position: top;">
-            <p class="fine" style="margin-top: 1.5vh;">Zak Brown (McLaren F1 CEO) talks about the partnership <em class="serif">on Airwallex's own socials.</em> A shared creative spine deployed across all eight channels during the F1 season.</p>
+          <div style="display: flex; flex-direction: column; gap: 1vh; align-items: flex-start;">
+            <div style="height: 56vh; display: flex; align-items: center; justify-content: center; background: var(--paper); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; width: 100%;">
+              <img class="lb-img" src="images/airwallex-mclaren.png" alt="Zak Brown, McLaren F1 CEO, speaking on Airwallex socials about the partnership" style="max-height: 100%; max-width: 100%; width: auto; height: auto; object-fit: contain; border: none;">
+            </div>
+            <p class="fine">Zak Brown (McLaren F1 CEO) talks about the partnership <em class="serif">on Airwallex's own socials.</em></p>
           </div>
           <div class="models models-2">
             <div class="model-card"><span class="model-label">Own social</span><p>Race-day content, announcements.</p></div>
@@ -1773,39 +1813,33 @@
         <p class="fine" style="max-width: 80ch;">Short-form videos by operators in each priority region, dedicated to WorldFirst product benefits in their own voice, their own market. Placeholders below &mdash; Steven to drop in eight example links.</p>
         <div class="video-grid-v2">
           <a class="video-thumb" href="https://www.instagram.com/reel/DWgU4nWkakm/" target="_blank">
-            <div class="vt-top"><span class="vt-platform">Instagram</span><div class="vt-play"></div></div>
-            <div class="vt-bottom"><div class="vt-region">Reel 01</div><div class="vt-desc">Creator product walkthrough</div></div>
+            <div class="vt-top"><img src="images/ig-DWgU4nWkakm.jpg" alt=""><div class="vt-overlay"></div><span class="vt-platform">IG</span><div class="vt-play"></div></div>
+            <div class="vt-bottom"><div class="vt-region">Reel 01</div><div class="vt-desc">Creator walkthrough</div></div>
           </a>
           <a class="video-thumb" href="https://www.instagram.com/reel/DU7zJeUlGUL/" target="_blank">
-            <div class="vt-top"><span class="vt-platform">Instagram</span><div class="vt-play"></div></div>
-            <div class="vt-bottom"><div class="vt-region">Reel 02</div><div class="vt-desc">Regional creator explainer</div></div>
+            <div class="vt-top"><img src="images/ig-DU7zJeUlGUL.jpg" alt=""><div class="vt-overlay"></div><span class="vt-platform">IG</span><div class="vt-play"></div></div>
+            <div class="vt-bottom"><div class="vt-region">Reel 02</div><div class="vt-desc">Regional explainer</div></div>
           </a>
           <a class="video-thumb" href="https://www.instagram.com/reel/DQE7W6Aj4tf/" target="_blank">
-            <div class="vt-top"><span class="vt-platform">Instagram</span><div class="vt-play"></div></div>
-            <div class="vt-bottom"><div class="vt-region">Reel 03</div><div class="vt-desc">Product benefit in market voice</div></div>
+            <div class="vt-top"><img src="images/ig-DQE7W6Aj4tf.jpg" alt=""><div class="vt-overlay"></div><span class="vt-platform">IG</span><div class="vt-play"></div></div>
+            <div class="vt-bottom"><div class="vt-region">Reel 03</div><div class="vt-desc">Product in market voice</div></div>
           </a>
           <a class="video-thumb" href="https://www.instagram.com/reel/DSJ6tPpk9px/" target="_blank">
-            <div class="vt-top"><span class="vt-platform">Instagram</span><div class="vt-play"></div></div>
+            <div class="vt-top"><img src="images/ig-DSJ6tPpk9px.jpg" alt=""><div class="vt-overlay"></div><span class="vt-platform">IG</span><div class="vt-play"></div></div>
             <div class="vt-bottom"><div class="vt-region">Reel 04</div><div class="vt-desc">Real-operator use case</div></div>
           </a>
           <a class="video-thumb" href="https://www.instagram.com/reel/DMpprivsf-M/" target="_blank">
-            <div class="vt-top"><span class="vt-platform">Instagram</span><div class="vt-play"></div></div>
-            <div class="vt-bottom"><div class="vt-region">Reel 05</div><div class="vt-desc">Short-form product awareness</div></div>
+            <div class="vt-top"><img src="images/ig-DMpprivsf-M.jpg" alt=""><div class="vt-overlay"></div><span class="vt-platform">IG</span><div class="vt-play"></div></div>
+            <div class="vt-bottom"><div class="vt-region">Reel 05</div><div class="vt-desc">Short-form awareness</div></div>
           </a>
           <a class="video-thumb" href="https://www.youtube.com/watch?v=IHuzT1xNS8g" target="_blank">
-            <div class="vt-top"><span class="vt-platform">YouTube</span><div class="vt-play"></div></div>
-            <div class="vt-bottom"><div class="vt-region">Long-form</div><div class="vt-desc">Regional creator product deep-dive</div></div>
+            <div class="vt-top"><img src="images/yt-thumb-IHuzT1xNS8g.jpg" alt=""><div class="vt-overlay"></div><span class="vt-platform">YT</span><div class="vt-play"></div></div>
+            <div class="vt-bottom"><div class="vt-region">Long-form</div><div class="vt-desc">Creator deep-dive (DE)</div></div>
           </a>
           <a class="video-thumb" href="https://www.tiktok.com/@worldfirst_vn/video/7610331433768439047" target="_blank">
-            <div class="vt-top"><span class="vt-platform">TikTok</span><div class="vt-play"></div></div>
-            <div class="vt-bottom"><div class="vt-region">Vietnam</div><div class="vt-desc">Regional creator building product awareness</div></div>
+            <div class="vt-top" style="background: linear-gradient(135deg, #FE2C55 0%, #25F4EE 100%);"><div class="vt-overlay"></div><span class="vt-platform">TikTok</span><div class="vt-play"></div></div>
+            <div class="vt-bottom"><div class="vt-region">Vietnam</div><div class="vt-desc">Regional creator, product</div></div>
           </a>
-          <div class="video-thumb" style="background: linear-gradient(135deg, var(--wf-pink-softer), var(--paper)); border: 1.5px dashed var(--wf-pink); cursor: default;">
-            <div class="vt-top" style="background: transparent; flex-direction: column; gap: 0.6vh;">
-              <span style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: clamp(1rem, 1.6vh, 1.2rem); color: var(--wf-pink);">More coming</span>
-              <span style="font-size: clamp(0.68rem, 1.05vh, 0.75rem); color: var(--wf-pink); opacity: 0.7; letter-spacing: 0.08em; text-transform: uppercase;">Per region, per product</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1932,52 +1966,62 @@
       <div class="column column-wide">
         <span class="eyebrow">26 · Production flow</span>
         <h2 class="lg">After performance read, the path <em>splits.</em></h2>
-        <div class="pflow">
-          <svg class="pflow-svg" viewBox="0 0 1000 580" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Arrows between step 1→2→3→4 -->
-            <g stroke="#E6185F" stroke-width="2" fill="none">
-              <line x1="252" y1="60" x2="258" y2="60" marker-end="url(#arrowhead)"/>
-              <line x1="498" y1="60" x2="504" y2="60" marker-end="url(#arrowhead)"/>
-              <line x1="744" y1="60" x2="750" y2="60" marker-end="url(#arrowhead)"/>
-            </g>
-            <!-- Split lines from step 4 down to two branches -->
-            <path d="M 875 125 L 875 165 L 250 165 L 250 255" stroke="#E6185F" stroke-width="2" fill="none" stroke-dasharray="0" marker-end="url(#arrowhead)"/>
-            <path d="M 875 125 L 875 165 L 750 165 L 750 255" stroke="#E6185F" stroke-width="2" fill="none" stroke-dasharray="0" marker-end="url(#arrowhead)"/>
-            <!-- Converge lines to regroup -->
-            <path d="M 250 390 L 250 445 L 500 445 L 500 485" stroke="#E6185F" stroke-width="2" fill="none" marker-end="url(#arrowhead2)"/>
-            <path d="M 750 390 L 750 445 L 500 445" stroke="#E6185F" stroke-width="2" fill="none"/>
+        <div class="pflow-v2">
+          <svg viewBox="0 0 1000 540" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-                <polygon points="0 0, 10 5, 0 10" fill="#E6185F"/>
+              <marker id="pf-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L7,4 L0,8 z" fill="#E6185F"/>
               </marker>
-              <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-                <polygon points="0 0, 10 5, 0 10" fill="#0E1A4A"/>
+              <marker id="pf-arrow-navy" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L7,4 L0,8 z" fill="#0E1A4A"/>
               </marker>
             </defs>
+            <!-- 01 -> 02 -> 03 -> 04 curves -->
+            <path d="M 165 60 C 200 60, 200 60, 250 60" stroke="#E6185F" stroke-width="2.5" fill="none" marker-end="url(#pf-arrow)"/>
+            <path d="M 415 60 C 450 60, 450 60, 500 60" stroke="#E6185F" stroke-width="2.5" fill="none" marker-end="url(#pf-arrow)"/>
+            <path d="M 665 60 C 700 60, 700 60, 750 60" stroke="#E6185F" stroke-width="2.5" fill="none" marker-end="url(#pf-arrow)"/>
+            <!-- 04 splits to 05a and 05b -->
+            <path d="M 835 85 C 835 180, 260 180, 260 280" stroke="#E6185F" stroke-width="2.5" fill="none" marker-end="url(#pf-arrow)"/>
+            <path d="M 835 85 C 835 180, 720 180, 720 280" stroke="#E6185F" stroke-width="2.5" fill="none" marker-end="url(#pf-arrow)"/>
+            <!-- 05a and 05b converge to regroup -->
+            <path d="M 260 375 C 260 450, 490 450, 490 475" stroke="#0E1A4A" stroke-width="2.5" fill="none" marker-end="url(#pf-arrow-navy)"/>
+            <path d="M 720 375 C 720 450, 510 450, 510 475" stroke="#0E1A4A" stroke-width="2.5" fill="none" marker-end="url(#pf-arrow-navy)"/>
           </svg>
-          <div class="pflow-top">
-            <div class="pflow-step"><span class="ps-num">01</span><span class="ps-name">Campaign identification</span><span class="ps-desc">Product, region, audience</span></div>
-            <div class="pflow-step"><span class="ps-num">02</span><span class="ps-name">Creative ideation</span><span class="ps-desc">Multiple message angles</span></div>
-            <div class="pflow-step"><span class="ps-num">03</span><span class="ps-name">Freelancer testing</span><span class="ps-desc">Fast iteration, boosted</span></div>
-            <div class="pflow-step read"><span class="ps-num">04</span><span class="ps-name">Performance read</span><span class="ps-desc">What's working</span></div>
+          <!-- Nodes positioned as percentages -->
+          <div class="pf-node" style="left: 8.25%; top: 11%;">
+            <span class="pn-num">01</span>
+            <span class="pn-name">Campaign identification</span>
+            <span class="pn-desc">Product, region, audience</span>
           </div>
-          <div class="pflow-split">
-            <div class="pflow-branch">
-              <span class="pb-label">05a &middot; Paid team</span>
-              <span class="pb-name">Amplify via assets + audiences</span>
-              <span class="pb-desc">Winning creative becomes paid variants. Awareness audiences become retargeting pools. Scale acquisition against in-market 5%.</span>
-            </div>
-            <div class="pflow-branch">
-              <span class="pb-label">05b &middot; Upper-funnel + regional teams</span>
-              <span class="pb-name">Amplify via creators + influencers</span>
-              <span class="pb-desc">Proven message localised by regional creators at volume. Influencer program builds repeated exposure in priority corridors.</span>
-            </div>
+          <div class="pf-node" style="left: 33.25%; top: 11%;">
+            <span class="pn-num">02</span>
+            <span class="pn-name">Creative ideation</span>
+            <span class="pn-desc">Multiple message angles</span>
           </div>
-          <div class="pflow-regroup-wrap">
-            <div class="pflow-regroup">
-              <span class="pr-name">06 &middot; Regroup &middot; back to campaign goal</span>
-              <span class="pr-desc">Shared dashboard: what's contributing, what to double down on, what to cut.</span>
-            </div>
+          <div class="pf-node" style="left: 58.25%; top: 11%;">
+            <span class="pn-num">03</span>
+            <span class="pn-name">Freelancer testing</span>
+            <span class="pn-desc">Fast iteration, boosted</span>
+          </div>
+          <div class="pf-node pivot" style="left: 83.5%; top: 11%;">
+            <span class="pn-num">04</span>
+            <span class="pn-name">Performance read</span>
+            <span class="pn-desc">What's working</span>
+          </div>
+          <div class="pf-node branch" style="left: 26%; top: 60%;">
+            <span class="pn-label">05a &middot; Paid team</span>
+            <span class="pn-name">Amplify via assets + audiences</span>
+            <span class="pn-desc">Winners become paid variants. Awareness audiences become retargeting pools.</span>
+          </div>
+          <div class="pf-node branch" style="left: 72%; top: 60%;">
+            <span class="pn-label">05b &middot; Upper-funnel + regional</span>
+            <span class="pn-name">Amplify via creators + KOLs</span>
+            <span class="pn-desc">Proven message localised by regional creators. Influencer program builds repeat exposure.</span>
+          </div>
+          <div class="pf-node regroup" style="left: 50%; top: 94%;">
+            <span class="pn-num">06</span>
+            <span class="pn-name">Regroup &middot; back to campaign goal</span>
+            <span class="pn-desc">Shared dashboard. What's contributing, what to double down on, what to cut.</span>
           </div>
         </div>
       </div>
@@ -2151,7 +2195,7 @@
     <div class="slide-body v-center">
       <div class="column column-narrow">
         <span class="eyebrow">33 · Team shape</span>
-        <h2 class="lg">One person can run social. Upper-funnel needs a <em>full team.</em></h2>
+        <h2 class="lg">A funnel needs a <em>full team.</em></h2>
         <ul class="bullets" style="margin-top: 1.5vh;">
           <li><strong>Cathy (incoming)</strong> &mdash; shifting ad-hoc tasks over; owns social publishing + brand content coordination</li>
         </ul>
