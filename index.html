@@ -19,6 +19,13 @@
     --ant-navy-deep: #0E1A4A;
     --ant-navy-soft: #E8ECF7;
     --orange: #FF6B35;
+    --orange-soft: #FFE8DB;
+    --teal: #0D9488;
+    --teal-soft: #CCFBF1;
+    --amber: #C2850C;
+    --amber-soft: #FEF3C7;
+    --purple: #7C3AED;
+    --purple-soft: #EDE9FE;
 
     --cream: #FAF8F3;
     --paper: #FFFFFF;
@@ -40,48 +47,24 @@
   }
   .deck { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
 
-  .progress {
-    position: fixed; top: 0; left: 0; right: 0; height: 2px;
-    background: rgba(230,24,95,0.08); z-index: 20;
-  }
-  .progress-bar {
-    height: 100%; width: 0;
-    background: linear-gradient(90deg, var(--wf-pink), var(--orange));
-    transition: width 400ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
+  .progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; background: rgba(230,24,95,0.08); z-index: 20; }
+  .progress-bar { height: 100%; width: 0; background: linear-gradient(90deg, var(--wf-pink), var(--orange)); transition: width 400ms cubic-bezier(0.4, 0, 0.2, 1); }
 
-  .slide {
-    position: absolute; inset: 0;
-    display: flex; flex-direction: column;
-    opacity: 0; pointer-events: none;
-    transition: opacity 220ms ease; overflow: hidden;
-  }
+  .slide { position: absolute; inset: 0; display: flex; flex-direction: column; opacity: 0; pointer-events: none; transition: opacity 220ms ease; overflow: hidden; }
   .slide.active { opacity: 1; pointer-events: auto; }
 
   .slide-head {
-    flex-shrink: 0;
-    height: 6vh; min-height: 48px;
+    flex-shrink: 0; height: 6vh; min-height: 48px;
     padding: 0 5vw;
     display: flex; align-items: center; justify-content: space-between;
     border-bottom: 1px solid var(--line-soft);
   }
   .logo-mark img { height: clamp(18px, 2.2vh, 26px); width: auto; display: block; }
-  .head-meta {
-    display: flex; align-items: center; gap: 1rem;
-    font-size: clamp(0.68rem, 0.95vh, 0.78rem);
-    color: var(--ink-soft);
-    letter-spacing: 0.1em; text-transform: uppercase;
-    font-weight: 500;
-  }
+  .head-meta { display: flex; align-items: center; gap: 1rem; font-size: clamp(0.68rem, 0.95vh, 0.78rem); color: var(--ink-soft); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
   .head-meta .sep { width: 1px; height: 12px; background: var(--line); }
   .head-num { color: var(--wf-pink); font-weight: 600; font-variant-numeric: tabular-nums; }
 
-  .slide-body {
-    flex: 1;
-    padding: 4vh 7vw 3vh;
-    display: flex; flex-direction: column;
-    overflow: hidden; position: relative;
-  }
+  .slide-body { flex: 1; padding: 4vh 7vw 3vh; display: flex; flex-direction: column; overflow: hidden; position: relative; }
   .slide-body.v-center { justify-content: center; }
   .slide-body.v-start { justify-content: flex-start; padding-top: 5.5vh; }
 
@@ -91,17 +74,13 @@
   .column-full { max-width: 100%; }
 
   .slide-foot {
-    flex-shrink: 0;
-    height: 4.5vh; min-height: 34px;
+    flex-shrink: 0; height: 4.5vh; min-height: 34px;
     padding: 0 5vw;
     display: flex; align-items: center; justify-content: space-between;
     border-top: 1px solid var(--line-soft);
     font-size: clamp(0.62rem, 0.88vh, 0.72rem);
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    font-weight: 500; text-transform: uppercase;
+    color: var(--muted); letter-spacing: 0.08em; font-weight: 500; text-transform: uppercase;
   }
-  .slide-foot a { color: var(--wf-pink); text-decoration: none; font-weight: 600; }
 
   .eyebrow {
     display: inline-flex; align-items: center; gap: 0.6rem;
@@ -112,66 +91,22 @@
   }
   .eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--wf-pink); }
 
-  h1.title {
-    font-size: clamp(3rem, 9vh, 6.5rem);
-    font-weight: 700; letter-spacing: -0.035em;
-    line-height: 1.0; color: var(--ink);
-  }
-  h1.title em {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic; font-weight: 400;
-    color: var(--wf-pink); letter-spacing: -0.01em;
-  }
+  h1.title { font-size: clamp(3rem, 9vh, 6.5rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.0; color: var(--ink); }
+  h1.title em { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; color: var(--wf-pink); letter-spacing: -0.01em; }
 
-  h2.xl {
-    font-size: clamp(2.4rem, 6.8vh, 5rem);
-    font-weight: 700; letter-spacing: -0.032em;
-    line-height: 1.04; max-width: 18ch;
-    margin-bottom: 3vh; color: var(--ink);
-  }
-  h2.lg {
-    font-size: clamp(1.8rem, 4.8vh, 3.4rem);
-    font-weight: 700; letter-spacing: -0.025em;
-    line-height: 1.08; max-width: 22ch;
-    margin-bottom: 2vh; color: var(--ink);
-  }
-  h2 em {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic; font-weight: 400;
-    color: var(--wf-pink); letter-spacing: -0.015em;
-  }
-  h3 {
-    font-size: clamp(0.72rem, 1.1vh, 0.82rem);
-    font-weight: 600; margin: 2.2vh 0 1vh;
-    color: var(--ink-soft);
-    letter-spacing: 0.15em; text-transform: uppercase;
-  }
+  h2.xl { font-size: clamp(2.4rem, 6.8vh, 5rem); font-weight: 700; letter-spacing: -0.032em; line-height: 1.04; max-width: 18ch; margin-bottom: 3vh; color: var(--ink); }
+  h2.lg { font-size: clamp(1.8rem, 4.8vh, 3.4rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.08; max-width: 22ch; margin-bottom: 2vh; color: var(--ink); }
+  h2 em { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; color: var(--wf-pink); letter-spacing: -0.015em; }
+  h3 { font-size: clamp(0.72rem, 1.1vh, 0.82rem); font-weight: 600; margin: 2.2vh 0 1vh; color: var(--ink-soft); letter-spacing: 0.15em; text-transform: uppercase; }
 
-  p.lede {
-    font-size: clamp(1.05rem, 2vh, 1.3rem);
-    max-width: 62ch; color: var(--ink);
-    line-height: 1.4; font-weight: 400;
-    margin-bottom: 1.6vh;
-  }
-  p {
-    font-size: clamp(0.9rem, 1.65vh, 1.05rem);
-    max-width: 64ch; color: var(--ink);
-    margin-bottom: 1.2vh; line-height: 1.45;
-  }
-  p.fine {
-    font-size: clamp(0.8rem, 1.4vh, 0.93rem);
-    color: var(--ink-soft);
-    max-width: 66ch; line-height: 1.5;
-  }
+  p.lede { font-size: clamp(1.05rem, 2vh, 1.3rem); max-width: 62ch; color: var(--ink); line-height: 1.4; font-weight: 400; margin-bottom: 1.6vh; }
+  p { font-size: clamp(0.9rem, 1.65vh, 1.05rem); max-width: 64ch; color: var(--ink); margin-bottom: 1.2vh; line-height: 1.45; }
+  p.fine { font-size: clamp(0.8rem, 1.4vh, 0.93rem); color: var(--ink-soft); max-width: 66ch; line-height: 1.5; }
   strong { font-weight: 600; color: var(--ink); }
   .pink { color: var(--wf-pink); }
   .pink-strong { color: var(--wf-pink); font-weight: 600; }
-  em.serif {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic; font-weight: 400; color: var(--wf-pink);
-  }
+  em.serif { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; color: var(--wf-pink); }
 
-  /* PULL QUOTE */
   .pull-quote {
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
@@ -184,123 +119,51 @@
     border-top: 1px solid var(--line);
     position: relative;
   }
-  .pull-quote::before {
-    content: ''; position: absolute;
-    left: 0; top: -1px;
-    width: 40px; height: 1.5px;
-    background: var(--wf-pink);
-  }
-  .pull-quote strong, .pull-quote .pink-strong {
-    font-family: 'Inter', sans-serif;
-    font-style: normal; font-weight: 600;
-    color: var(--wf-pink);
-  }
+  .pull-quote::before { content: ''; position: absolute; left: 0; top: -1px; width: 40px; height: 1.5px; background: var(--wf-pink); }
+  .pull-quote strong, .pull-quote .pink-strong { font-family: 'Inter', sans-serif; font-style: normal; font-weight: 600; color: var(--wf-pink); }
 
-  .note {
-    position: relative;
-    padding-left: 3rem;
-    margin-top: 2vh;
-    max-width: 68ch;
-  }
-  .note::before {
-    content: 'Note.';
-    position: absolute; left: 0; top: 0.15em;
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic; color: var(--wf-pink);
-    font-size: clamp(1rem, 1.7vh, 1.2rem);
-  }
-  .note p, .note .note-text {
-    font-size: clamp(0.85rem, 1.45vh, 0.95rem);
-    color: var(--ink-soft);
-    line-height: 1.5; margin: 0;
-  }
+  .note { position: relative; padding-left: 3rem; margin-top: 2vh; max-width: 68ch; }
+  .note::before { content: 'Note.'; position: absolute; left: 0; top: 0.15em; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; color: var(--wf-pink); font-size: clamp(1rem, 1.7vh, 1.2rem); }
+  .note p, .note .note-text { font-size: clamp(0.85rem, 1.45vh, 0.95rem); color: var(--ink-soft); line-height: 1.5; margin: 0; }
   .note strong { color: var(--ink); }
 
-  /* BULLETS */
   ul.bullets { list-style: none; margin: 1.5vh 0; padding: 0; }
-  ul.bullets li {
-    padding-left: 1.3rem; position: relative;
-    font-size: clamp(0.9rem, 1.6vh, 1.02rem);
-    margin-bottom: 1vh; line-height: 1.45;
-    max-width: 68ch; color: var(--ink);
-  }
-  ul.bullets li::before {
-    content: ''; position: absolute;
-    left: 0; top: 0.72em;
-    width: 8px; height: 1.5px;
-    background: var(--wf-pink);
-  }
+  ul.bullets li { padding-left: 1.3rem; position: relative; font-size: clamp(0.9rem, 1.6vh, 1.02rem); margin-bottom: 1vh; line-height: 1.45; max-width: 68ch; color: var(--ink); }
+  ul.bullets li::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 8px; height: 1.5px; background: var(--wf-pink); }
   ul.bullets li strong { font-weight: 600; color: var(--ink); }
 
-  ul.dual {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 3vw; list-style: none;
-    margin: 2vh 0; padding: 0;
+  /* PLUS-sign bullets (slide 29 full stack) */
+  ul.plus-list { list-style: none; margin: 1.5vh 0; padding: 0; }
+  ul.plus-list li { padding-left: 2rem; position: relative; font-size: clamp(0.9rem, 1.6vh, 1.02rem); margin-bottom: 1.2vh; line-height: 1.4; color: var(--ink); max-width: 70ch; }
+  ul.plus-list li::before {
+    content: '+'; position: absolute; left: 0; top: 0;
+    font-family: 'Instrument Serif', Georgia, serif;
+    color: var(--wf-pink); font-size: clamp(1.3rem, 2.4vh, 1.8rem);
+    font-weight: 400; line-height: 1;
   }
-  ul.dual li {
-    padding-top: 1.2vh;
-    border-top: 2px solid var(--wf-pink);
-    font-size: clamp(0.9rem, 1.55vh, 1.02rem);
-    line-height: 1.45; color: var(--ink);
-  }
-  ul.dual li strong {
-    display: block; font-weight: 600;
-    color: var(--ink); margin-bottom: 0.5vh;
-  }
+  ul.plus-list li strong { font-weight: 600; color: var(--ink); }
 
-  .models {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 2.5vw; margin-top: 3vh;
-  }
+  ul.dual { display: grid; grid-template-columns: 1fr 1fr; gap: 3vw; list-style: none; margin: 2vh 0; padding: 0; }
+  ul.dual li { padding-top: 1.2vh; border-top: 2px solid var(--wf-pink); font-size: clamp(0.9rem, 1.55vh, 1.02rem); line-height: 1.45; color: var(--ink); }
+  ul.dual li strong { display: block; font-weight: 600; color: var(--ink); margin-bottom: 0.5vh; }
+
+  .models { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5vw; margin-top: 3vh; }
   .models-2 { grid-template-columns: repeat(2, 1fr); }
   .models-4 { grid-template-columns: repeat(4, 1fr); }
   .model-card { padding-top: 1.2vh; border-top: 2px solid var(--wf-pink); }
-  .model-label {
-    font-size: clamp(0.72rem, 1.1vh, 0.82rem);
-    font-weight: 600; color: var(--wf-pink);
-    letter-spacing: 0.12em; text-transform: uppercase;
-    margin-bottom: 0.8vh; display: block;
-  }
-  .model-card p {
-    font-size: clamp(0.85rem, 1.5vh, 0.98rem);
-    line-height: 1.45; color: var(--ink); margin-bottom: 0;
-  }
-  .model-card .model-sub {
-    display: block;
-    font-size: clamp(0.72rem, 1.2vh, 0.85rem);
-    color: var(--ink-soft);
-    margin-top: 0.5vh; line-height: 1.4;
-  }
+  .model-label { font-size: clamp(0.72rem, 1.1vh, 0.82rem); font-weight: 600; color: var(--wf-pink); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.8vh; display: block; }
+  .model-card p { font-size: clamp(0.85rem, 1.5vh, 0.98rem); line-height: 1.45; color: var(--ink); margin-bottom: 0; }
 
-  /* HERO KPI */
   .hero-kpi { display: flex; flex-direction: column; align-items: center; text-align: center; }
-  .hero-kpi .num {
-    font-size: clamp(8rem, 24vh, 18rem);
-    font-weight: 700; color: var(--wf-pink);
-    line-height: 0.85; letter-spacing: -0.055em;
-    font-variant-numeric: tabular-nums;
-  }
-  .hero-kpi .num .unit {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic; font-weight: 400;
-    letter-spacing: -0.02em;
-  }
-  .hero-kpi .label {
-    font-size: clamp(0.82rem, 1.3vh, 0.95rem);
-    letter-spacing: 0.25em; text-transform: uppercase;
-    color: var(--ink); margin-top: 1.8vh; font-weight: 600;
-  }
+  .hero-kpi .num { font-size: clamp(8rem, 24vh, 18rem); font-weight: 700; color: var(--wf-pink); line-height: 0.85; letter-spacing: -0.055em; font-variant-numeric: tabular-nums; }
+  .hero-kpi .num .unit { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: -0.02em; }
+  .hero-kpi .label { font-size: clamp(0.82rem, 1.3vh, 0.95rem); letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink); margin-top: 1.8vh; font-weight: 600; }
   .hero-kpi .label .sep { color: var(--wf-pink); margin: 0 0.8rem; }
-  .hero-kpi .context {
-    font-size: clamp(0.88rem, 1.55vh, 1rem);
-    color: var(--ink-soft);
-    max-width: 60ch; margin: 2vh auto 0;
-    line-height: 1.5;
-  }
+  .hero-kpi .label em { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; color: var(--wf-pink); font-weight: 400; text-transform: none; letter-spacing: normal; }
+  .hero-kpi .context { font-size: clamp(0.88rem, 1.55vh, 1rem); color: var(--ink-soft); max-width: 60ch; margin: 2vh auto 0; line-height: 1.5; }
 
   .placeholder {
-    margin: 2vh 0;
-    padding: 2.5vh 2vw;
+    margin: 2vh 0; padding: 2.5vh 2vw;
     border: 1.5px dashed var(--wf-pink);
     background: var(--wf-pink-softer);
     border-radius: 4px;
@@ -314,36 +177,7 @@
   .placeholder.small { min-height: 5.5vh; padding: 1.6vh 2vw; font-size: clamp(0.82rem, 1.4vh, 0.95rem); }
   .placeholder.wide { max-width: 100%; }
 
-  /* PYRAMID */
-  .pyramid {
-    margin: 2.5vh auto 0; max-width: 720px;
-    display: flex; flex-direction: column; align-items: center; gap: 1vh;
-  }
-  .pyramid .tier-row {
-    display: flex; align-items: stretch; justify-content: center;
-    gap: 2vw; width: 100%;
-  }
-  .pyramid .tier-row .tier-label {
-    flex: 0 0 auto; min-width: 100px;
-    padding-top: 0.6vh;
-    font-size: clamp(0.72rem, 1.15vh, 0.82rem);
-    font-weight: 600; color: var(--wf-pink);
-    letter-spacing: 0.12em; text-transform: uppercase;
-  }
-  .pyramid .tier-body {
-    flex: 1;
-    padding: 1.3vh 1.4vw;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--wf-pink);
-    border-radius: 2px;
-    font-size: clamp(0.85rem, 1.5vh, 0.98rem);
-    line-height: 1.4; color: var(--ink);
-  }
-  .pyramid .tier-body strong { font-weight: 600; color: var(--ink); }
-  .pyramid .tier-top .tier-body { background: var(--wf-pink-softer); }
-
-  /* ================= FLASHY COVER ================= */
+  /* ================= FLASHY COVER (centered, no top tag) ================= */
   .slide-cover {
     background: linear-gradient(135deg, var(--ant-navy-deep) 0%, #0a1238 50%, #1a2668 100%);
     color: var(--paper);
@@ -352,229 +186,218 @@
   .slide-cover .slide-head .head-meta { color: rgba(255,255,255,0.5); }
   .slide-cover .slide-head .head-num { color: var(--wf-pink); }
   .slide-cover .slide-foot { border-top-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); }
-  .slide-cover .eyebrow { color: var(--wf-pink); }
-  .slide-cover .cover-wrap {
-    position: relative;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 2vw;
-    width: 100%;
-    text-align: center;
-  }
-  .slide-cover .cover-deco {
-    position: absolute;
-    left: 50%; top: 50%; transform: translate(-50%, -45%);
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(20rem, 60vh, 50rem);
-    color: var(--wf-pink);
-    opacity: 0.09;
-    line-height: 0.85;
-    pointer-events: none; user-select: none;
-    z-index: 0;
-    white-space: nowrap;
-  }
-  .slide-cover .cover-content { position: relative; z-index: 1; }
-  .slide-cover .cover-tag {
-    display: inline-flex; align-items: center; gap: 0.7rem;
-    font-size: clamp(0.72rem, 1.15vh, 0.85rem);
-    font-weight: 600;
-    color: var(--wf-pink);
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    margin-bottom: 3vh;
-  }
-  .slide-cover .cover-tag::before { content: ''; width: 32px; height: 1.5px; background: var(--wf-pink); }
-  .slide-cover .cover-tag::after { content: ''; width: 32px; height: 1.5px; background: var(--wf-pink); }
-  .slide-cover .cover-nums {
-    display: inline-flex; align-items: baseline;
-    gap: clamp(1rem, 3vw, 3.5rem);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    color: var(--paper);
-    line-height: 0.9;
-  }
-  .slide-cover .cover-nums .cn-prefix {
-    font-size: clamp(1rem, 1.8vh, 1.4rem);
-    font-weight: 500;
-    color: rgba(255,255,255,0.55);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.8vh;
-  }
-  .slide-cover .cover-nums .cn-num {
-    font-size: clamp(5rem, 17vh, 13rem);
-    line-height: 1;
-  }
-  .slide-cover .cover-nums .cn-arrow {
-    font-size: clamp(3rem, 10vh, 8rem);
-    color: var(--wf-pink);
-    font-weight: 300;
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    line-height: 1;
-    align-self: center;
-    padding: 0 0.5rem;
-  }
-  .slide-cover .cover-nums .cn-num.cn-to {
-    color: var(--wf-pink);
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-  }
-  .slide-cover .cover-col {
-    display: flex; flex-direction: column; align-items: center;
-  }
-  .slide-cover .cover-sub-1 {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(1.8rem, 4vh, 3rem);
-    color: var(--wf-pink);
-    letter-spacing: -0.01em;
-    line-height: 1;
-    margin-top: 1.5vh;
-  }
-  .slide-cover .cover-sub-2 {
-    font-size: clamp(1rem, 1.9vh, 1.3rem);
-    font-weight: 500;
-    color: rgba(255,255,255,0.82);
-    margin-top: 3vh;
-    max-width: 56ch;
-    margin-left: auto; margin-right: auto;
-    line-height: 1.4;
-    letter-spacing: 0.01em;
-  }
-  .slide-cover .cover-sub-2 em {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    color: var(--wf-pink);
-    font-weight: 400;
-  }
-  .slide-cover .cover-meta {
-    margin-top: 5vh;
-    display: inline-flex; align-items: center; gap: 1.5rem;
-    font-size: clamp(0.82rem, 1.4vh, 1rem);
-    color: rgba(255,255,255,0.7);
-  }
-  .slide-cover .cover-meta .author {
-    color: var(--paper);
-    font-weight: 600;
-  }
-  .slide-cover .cover-meta .bar {
-    width: 1px; height: 14px;
-    background: rgba(255,255,255,0.3);
-  }
+  .slide-cover .cover-wrap { position: relative; width: 100%; max-width: 1400px; margin: 0 auto; text-align: center; padding: 0 2vw; }
+  .slide-cover .cover-deco { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -45%); font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: clamp(22rem, 64vh, 56rem); color: var(--wf-pink); opacity: 0.09; line-height: 0.85; pointer-events: none; user-select: none; z-index: 0; white-space: nowrap; }
+  .slide-cover .cover-content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+  .slide-cover .cover-nums { display: inline-flex; align-items: baseline; gap: clamp(1.4rem, 4vw, 4rem); font-weight: 700; letter-spacing: -0.04em; color: var(--paper); line-height: 0.9; }
+  .slide-cover .cover-col { display: flex; flex-direction: column; align-items: center; }
+  .slide-cover .cover-nums .cn-prefix { font-size: clamp(1rem, 1.8vh, 1.4rem); font-weight: 500; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 0.8vh; }
+  .slide-cover .cover-nums .cn-num { font-size: clamp(6rem, 20vh, 15rem); line-height: 1; }
+  .slide-cover .cover-nums .cn-arrow { font-size: clamp(3rem, 11vh, 9rem); color: var(--wf-pink); font-weight: 300; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; line-height: 1; align-self: center; padding: 0 0.5rem; }
+  .slide-cover .cover-nums .cn-num.cn-to { color: var(--wf-pink); font-family: 'Inter', sans-serif; font-style: normal; font-weight: 700; }
+  .slide-cover .cover-sub-1 { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: clamp(1.8rem, 4vh, 3rem); color: var(--wf-pink); letter-spacing: -0.01em; line-height: 1; margin-top: 1.5vh; }
+  .slide-cover .cover-sub-2 { font-size: clamp(1rem, 1.9vh, 1.3rem); font-weight: 500; color: rgba(255,255,255,0.82); margin-top: 3.5vh; max-width: 56ch; line-height: 1.4; letter-spacing: 0.01em; }
+  .slide-cover .cover-sub-2 em { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; color: var(--wf-pink); font-weight: 400; }
+  .slide-cover .cover-meta { margin-top: 4.5vh; display: inline-flex; align-items: center; gap: 1.5rem; font-size: clamp(0.82rem, 1.4vh, 1rem); color: rgba(255,255,255,0.7); }
+  .slide-cover .cover-meta .author { color: var(--paper); font-weight: 600; }
+  .slide-cover .cover-meta .bar { width: 1px; height: 14px; background: rgba(255,255,255,0.3); }
 
-  /* ================= ICP CHART (slide 2) ================= */
-  .icp-viz {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4vw;
-    margin: 3vh 0;
-    align-items: end;
-  }
+  /* ================= ICP RINGS ================= */
+  .icp-viz { display: grid; grid-template-columns: 1fr 1fr; gap: 4vw; margin: 3vh 0; align-items: end; }
   .icp-col { text-align: center; }
-  .icp-label {
-    font-size: clamp(0.72rem, 1.15vh, 0.82rem);
-    font-weight: 600; color: var(--wf-pink);
-    letter-spacing: 0.15em; text-transform: uppercase;
-    margin-bottom: 1.5vh;
-  }
-  .icp-ring {
-    width: clamp(160px, 22vh, 220px);
-    height: clamp(160px, 22vh, 220px);
-    border-radius: 50%;
-    margin: 0 auto;
-    position: relative;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .icp-ring-full {
-    background: radial-gradient(circle, var(--wf-pink) 0%, var(--wf-pink-dark) 100%);
-    box-shadow: 0 8px 24px rgba(230,24,95,0.22);
-  }
-  .icp-ring-partial {
-    background: var(--line-soft);
-    position: relative;
-    overflow: hidden;
-  }
-  .icp-ring-partial::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: conic-gradient(from 0deg, var(--wf-pink) 0deg 18deg, transparent 18deg);
-  }
-  .icp-pct {
-    position: relative; z-index: 1;
-    font-size: clamp(2rem, 5vh, 3.6rem);
-    font-weight: 700;
-    color: var(--paper);
-    letter-spacing: -0.03em;
-    line-height: 1;
-  }
+  .icp-label { font-size: clamp(0.72rem, 1.15vh, 0.82rem); font-weight: 600; color: var(--wf-pink); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5vh; }
+  .icp-ring { width: clamp(160px, 22vh, 220px); height: clamp(160px, 22vh, 220px); border-radius: 50%; margin: 0 auto; position: relative; display: flex; align-items: center; justify-content: center; }
+  .icp-ring-full { background: radial-gradient(circle, var(--wf-pink) 0%, var(--wf-pink-dark) 100%); box-shadow: 0 8px 24px rgba(230,24,95,0.22); }
+  .icp-ring-partial { background: var(--line-soft); position: relative; overflow: hidden; }
+  .icp-ring-partial::before { content: ''; position: absolute; inset: 0; background: conic-gradient(from 0deg, var(--wf-pink) 0deg 18deg, transparent 18deg); }
+  .icp-pct { position: relative; z-index: 1; font-size: clamp(2rem, 5vh, 3.6rem); font-weight: 700; color: var(--paper); letter-spacing: -0.03em; line-height: 1; }
   .icp-ring-partial .icp-pct { color: var(--wf-pink); }
-  .icp-caption {
-    margin-top: 1.5vh;
-    font-size: clamp(0.82rem, 1.4vh, 0.95rem);
-    color: var(--ink);
-    max-width: 28ch;
-    margin-left: auto; margin-right: auto;
-    line-height: 1.4;
-  }
+  .icp-caption { margin-top: 1.5vh; font-size: clamp(0.82rem, 1.4vh, 0.95rem); color: var(--ink); max-width: 28ch; margin-left: auto; margin-right: auto; line-height: 1.4; }
   .icp-caption strong { color: var(--wf-pink); font-weight: 600; }
 
-  /* ================= FUNNEL VIZ (slide 3) ================= */
-  .funnel-viz {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4vw;
-    align-items: flex-start;
-    margin: 2.5vh 0;
+  /* ================= FUNNEL WITH INVESTMENT EXTENSION (single chart) ================= */
+  .funnel-single {
+    margin: 3vh auto 0;
+    max-width: 820px;
+    display: flex; flex-direction: column;
+    gap: 2vh;
   }
-  .funnel-col { text-align: center; }
-  .funnel-col-label {
-    font-size: clamp(0.72rem, 1.15vh, 0.82rem);
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 2vh;
+  .funnel-heading-grid {
+    display: grid; grid-template-columns: 130px 1fr;
+    gap: 1.5vw; align-items: center;
+    font-size: clamp(0.7rem, 1.1vh, 0.8rem); font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
   }
-  .funnel-col-label.now { color: var(--ink-soft); }
-  .funnel-col-label.expand { color: var(--wf-pink); }
-  .funnel-shape {
-    margin: 0 auto;
-    display: flex; flex-direction: column; align-items: center;
-    gap: 1vh;
-    width: 100%; max-width: 260px;
+  .funnel-heading-grid .fh-left { color: var(--ink-soft); }
+  .funnel-heading-grid .fh-axis {
+    display: flex; justify-content: space-between;
+    color: var(--muted); font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 0 0.4rem;
   }
+  .funnel-heading-grid .fh-axis .today-mark { color: var(--ink-soft); font-weight: 600; }
+  .funnel-heading-grid .fh-axis .add-mark { color: var(--wf-pink); font-weight: 600; }
   .funnel-tier {
-    text-align: center; padding: 0.9vh 0;
-    font-size: clamp(0.75rem, 1.25vh, 0.88rem);
-    font-weight: 600; color: var(--paper);
-    border-radius: 2px;
-    letter-spacing: 0.05em;
+    display: grid; grid-template-columns: 130px 1fr;
+    gap: 1.5vw; align-items: center;
   }
-  .funnel-shape.shape-now .tier-top { width: 60%; background: var(--muted); }
-  .funnel-shape.shape-now .tier-mid { width: 35%; background: var(--ink-soft); }
-  .funnel-shape.shape-now .tier-bot { width: 18%; background: var(--ant-navy); }
-
-  .funnel-shape.shape-expand .tier-top { width: 100%; background: linear-gradient(90deg, var(--wf-pink), var(--wf-pink-dark)); }
-  .funnel-shape.shape-expand .tier-mid { width: 62%; background: var(--wf-pink); }
-  .funnel-shape.shape-expand .tier-bot { width: 28%; background: var(--wf-pink-dark); }
-
+  .funnel-tier .ft-label {
+    font-size: clamp(0.85rem, 1.5vh, 1rem); font-weight: 600;
+    color: var(--wf-pink);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    text-align: right;
+  }
+  .funnel-tier .ft-bar-wrap {
+    position: relative;
+    height: clamp(40px, 6vh, 64px);
+    display: flex;
+  }
+  .funnel-tier .ft-bar-today {
+    background: var(--ink-soft);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--paper); font-weight: 600;
+    font-size: clamp(0.75rem, 1.25vh, 0.88rem);
+    border-radius: 3px 0 0 3px;
+  }
+  .funnel-tier .ft-bar-add {
+    background: linear-gradient(90deg, var(--wf-pink), var(--wf-pink-dark));
+    display: flex; align-items: center; justify-content: center;
+    color: var(--paper); font-weight: 600;
+    font-size: clamp(0.75rem, 1.25vh, 0.88rem);
+    border-radius: 0 3px 3px 0;
+  }
+  /* Tier 1 (awareness): big expansion. Tier 2: medium. Tier 3: small. */
+  .funnel-tier.t1 .ft-bar-today { width: 40%; }
+  .funnel-tier.t1 .ft-bar-add { width: 60%; }
+  .funnel-tier.t2 .ft-bar-today { width: 24%; }
+  .funnel-tier.t2 .ft-bar-add { width: 32%; }
+  .funnel-tier.t3 .ft-bar-today { width: 12%; }
+  .funnel-tier.t3 .ft-bar-add { width: 15%; }
   .funnel-outcome {
+    text-align: center;
     margin-top: 2vh;
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
-    font-size: clamp(0.92rem, 1.6vh, 1.1rem);
+    font-size: clamp(1rem, 1.7vh, 1.2rem);
     color: var(--wf-pink);
-    line-height: 1.4;
   }
 
-  /* ================= CONTENT BLEND BAR ================= */
+  /* ================= RESEARCH EVIDENCE ================= */
+  .evidence-panel {
+    display: grid; grid-template-columns: auto 1fr;
+    align-items: center; gap: 3vw;
+    margin: 2.5vh 0; padding: 2vh 2vw;
+    background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--wf-pink);
+    border-radius: 3px;
+  }
+  .evidence-num { font-weight: 700; color: var(--wf-pink); font-size: clamp(3rem, 8vh, 5.2rem); letter-spacing: -0.04em; line-height: 0.9; font-variant-numeric: tabular-nums; }
+  .evidence-num .slash { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; margin: 0 0.1em; }
+  .evidence-body .ev-label { font-size: clamp(0.72rem, 1.1vh, 0.82rem); font-weight: 600; color: var(--wf-pink); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5vh; }
+  .evidence-body .ev-quote { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: clamp(1rem, 1.75vh, 1.2rem); color: var(--ink); line-height: 1.4; margin-bottom: 0.8vh; }
+  .evidence-body .ev-source { font-size: clamp(0.75rem, 1.2vh, 0.85rem); color: var(--ink-soft); }
+
+  .cta-button {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    margin-top: 2.5vh;
+    padding: 1.2vh 1.6vw;
+    background: var(--wf-pink);
+    color: var(--paper); text-decoration: none;
+    border-radius: 2px;
+    font-size: clamp(0.82rem, 1.4vh, 0.95rem);
+    font-weight: 600; letter-spacing: 0.03em;
+    transition: background 120ms;
+  }
+  .cta-button:hover { background: var(--wf-pink-dark); }
+  .cta-button::after { content: ' \2192'; font-size: 1.2em; }
+
+  /* ================= PEER SLIDE · pillar composition + distribution mix ================= */
+  .peer-layout {
+    display: grid; grid-template-columns: 1fr 1.1fr;
+    gap: 3vw; margin-top: 1vh;
+    align-items: stretch;
+  }
+  .peer-left { display: flex; flex-direction: column; }
+  .peer-left h2 { margin-bottom: 1.5vh; }
+  .peer-left ul.bullets { margin-top: 0.8vh; flex: 1; }
+  .peer-takeaway {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1rem, 1.75vh, 1.22rem);
+    line-height: 1.4; color: var(--ink);
+    max-width: 40ch; margin: 1.5vh 0 0;
+    padding-top: 1.2vh; border-top: 1.5px solid var(--wf-pink);
+  }
+  .peer-takeaway strong { color: var(--wf-pink); font-family: 'Inter', sans-serif; font-style: normal; font-weight: 600; }
+  .peer-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-top: 1.8vh;
+    font-size: clamp(0.78rem, 1.35vh, 0.9rem);
+    font-weight: 500; color: var(--wf-pink);
+    text-decoration: none; letter-spacing: 0.02em;
+    border-bottom: 1px solid var(--wf-pink);
+    padding-bottom: 2px; align-self: flex-start;
+  }
+  .peer-link::after { content: ' \2192'; }
+
+  .peer-charts {
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5vh;
+  }
+  .chart-block {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--wf-pink);
+    border-radius: 2px;
+    padding: 1.3vh 1.2vw;
+  }
+  .chart-title {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 0.9vh;
+  }
+  .chart-title .ct-name {
+    font-size: clamp(0.72rem, 1.1vh, 0.82rem);
+    font-weight: 600; color: var(--wf-pink);
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .chart-title .ct-sub {
+    font-size: clamp(0.66rem, 1.05vh, 0.75rem);
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  .pillar-rows, .dist-rows { display: flex; flex-direction: column; gap: 0.45vh; }
+  .pillar-row, .dist-row {
+    display: grid; grid-template-columns: 120px 1fr 38px;
+    align-items: center; gap: 0.8vw;
+  }
+  .pillar-row .pr-label, .dist-row .dr-label {
+    font-size: clamp(0.72rem, 1.15vh, 0.82rem);
+    color: var(--ink); font-weight: 500;
+    line-height: 1.2;
+  }
+  .pillar-row .pr-bar-wrap, .dist-row .dr-bar-wrap {
+    height: clamp(10px, 1.4vh, 14px);
+    background: var(--line-soft);
+    border-radius: 2px; overflow: hidden;
+  }
+  .pillar-row .pr-bar, .dist-row .dr-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--wf-pink), var(--wf-pink-dark));
+    border-radius: 2px;
+  }
+  .pillar-row .pr-bar.muted, .dist-row .dr-bar.muted {
+    background: var(--ant-navy-soft);
+  }
+  .pillar-row .pr-pct, .dist-row .dr-pct {
+    font-size: clamp(0.65rem, 1vh, 0.75rem);
+    color: var(--ink-soft); text-align: right;
+    font-variant-numeric: tabular-nums; font-weight: 500;
+  }
+
+  /* ================= OUR CONTENT BLEND ================= */
   .blend-bar {
     display: flex;
-    height: clamp(38px, 5vh, 56px);
+    height: clamp(42px, 5.5vh, 62px);
     border-radius: 4px; overflow: hidden;
     margin: 1.8vh 0 1.2vh;
   }
@@ -588,222 +411,224 @@
   .blend-seg.s-aware { background: var(--orange); }
   .blend-seg.s-brand { background: var(--ant-navy); }
   .blend-seg.s-thin { font-size: clamp(0.66rem, 1.05vh, 0.76rem); }
-  .blend-legend {
-    display: flex; gap: 2.2vw; flex-wrap: wrap;
-    font-size: clamp(0.78rem, 1.3vh, 0.9rem);
-    color: var(--ink-soft);
-    margin-top: 0.8vh;
-  }
+  .blend-legend { display: flex; gap: 2.2vw; flex-wrap: wrap; font-size: clamp(0.78rem, 1.3vh, 0.9rem); color: var(--ink-soft); margin-top: 0.8vh; }
   .blend-legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
   .blend-legend .dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
   .blend-legend .d-act { background: var(--wf-pink); }
   .blend-legend .d-aware { background: var(--orange); }
   .blend-legend .d-brand { background: var(--ant-navy); }
 
-  /* ================= PEER CHARTS ================= */
-  .peer-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3vw;
-    margin-top: 1.5vh;
-    align-items: start;
-  }
-  .peer-left h2 { margin-bottom: 1.5vh; }
-  .peer-left ul.bullets { margin-top: 0.8vh; }
-  .peer-charts {
-    display: flex; flex-direction: column;
-    gap: 1.8vh;
-  }
-  .peer-chart-block {
-    padding: 1.4vh 1.2vw;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--wf-pink);
-    border-radius: 2px;
-  }
-  .peer-chart-title {
-    font-size: clamp(0.72rem, 1.1vh, 0.82rem);
-    font-weight: 600; color: var(--wf-pink);
-    letter-spacing: 0.12em; text-transform: uppercase;
-    margin-bottom: 0.9vh; display: block;
-  }
-  .peer-chart-block .blend-bar { margin: 0.5vh 0 0.6vh; height: clamp(28px, 3.6vh, 40px); }
-  .peer-chart-block .blend-legend {
-    font-size: clamp(0.68rem, 1.1vh, 0.78rem);
-    gap: 1.2vw; margin-top: 0.4vh;
-  }
-  .peer-dist-rows { display: flex; flex-direction: column; gap: 0.5vh; }
-  .peer-dist-row {
-    display: grid;
-    grid-template-columns: 100px 1fr 32px;
-    align-items: center;
-    gap: 0.6vw;
-  }
-  .peer-dist-row .dr-label {
-    font-size: clamp(0.72rem, 1.15vh, 0.82rem);
-    color: var(--ink);
-    font-weight: 500;
-  }
-  .peer-dist-row .dr-bar-wrap {
-    height: clamp(10px, 1.5vh, 14px);
-    background: var(--line-soft);
-    border-radius: 2px; overflow: hidden;
-  }
-  .peer-dist-row .dr-bar {
-    height: 100%;
-    background: linear-gradient(90deg, var(--wf-pink), var(--wf-pink-dark));
-    border-radius: 2px;
-  }
-  .peer-dist-row .dr-pct {
-    font-size: clamp(0.65rem, 1vh, 0.72rem);
-    color: var(--ink-soft);
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-  }
-  .peer-link {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    margin-top: 2vh;
-    font-size: clamp(0.78rem, 1.35vh, 0.9rem);
-    font-weight: 500;
-    color: var(--wf-pink); text-decoration: none;
-    letter-spacing: 0.02em;
-    border-bottom: 1px solid var(--wf-pink);
-    padding-bottom: 2px;
-  }
-  .peer-link::after { content: ' \2192'; }
-
-  .peer-takeaway {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(1rem, 1.75vh, 1.22rem);
-    line-height: 1.4;
-    color: var(--ink);
-    max-width: 40ch;
-    margin: 1.8vh 0 0;
-    padding-top: 1.2vh;
-    border-top: 1.5px solid var(--wf-pink);
-  }
-  .peer-takeaway strong { color: var(--wf-pink); font-family: 'Inter', sans-serif; font-style: normal; font-weight: 600; }
-
   /* ================= ROI CHART ================= */
   .roi-chart {
     margin: 2.5vh 0 1vh;
-    display: grid;
-    grid-template-columns: 130px 1fr 130px;
-    gap: 0.6vh 1.2vw;
-    align-items: center;
+    display: grid; grid-template-columns: 130px 1fr 130px;
+    gap: 0.6vh 1.2vw; align-items: center;
   }
-  .roi-chart .roi-label {
-    font-size: clamp(0.82rem, 1.4vh, 0.95rem);
-    font-weight: 600; color: var(--wf-pink);
-    letter-spacing: 0.08em; text-transform: uppercase;
-  }
-  .roi-chart .roi-bar-wrap {
-    position: relative;
-    height: clamp(24px, 3vh, 34px);
-    background: var(--line-soft); border-radius: 3px;
-    overflow: hidden;
-  }
-  .roi-chart .roi-bar {
-    position: absolute; top: 0;
-    height: 100%; border-radius: 3px;
-    display: flex; align-items: center;
-    padding: 0 0.9rem;
-    font-size: clamp(0.72rem, 1.2vh, 0.82rem);
-    color: var(--paper); font-weight: 600;
-    letter-spacing: 0.04em;
-  }
-  .roi-chart .bar-brand { left: 18%; width: 75%; background: linear-gradient(90deg, var(--wf-pink), var(--wf-pink-dark)); }
-  .roi-chart .bar-aware { left: 0; width: 55%; background: linear-gradient(90deg, var(--wf-pink), var(--orange)); }
-  .roi-chart .bar-act { left: 0; width: 22%; background: var(--orange); }
-  .roi-chart .roi-time {
-    font-size: clamp(0.72rem, 1.2vh, 0.82rem);
-    color: var(--ink-soft); font-weight: 500;
-    font-variant-numeric: tabular-nums;
-  }
-  .roi-chart .roi-axis {
-    grid-column: 2 / 3;
-    display: flex; justify-content: space-between;
-    font-size: clamp(0.66rem, 1.05vh, 0.75rem);
-    color: var(--muted);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 0.3vh 0.4rem 0;
-    border-top: 1px solid var(--line);
-    margin-top: 0.4vh;
-  }
+  .roi-chart .roi-label { font-size: clamp(0.82rem, 1.4vh, 0.95rem); font-weight: 600; color: var(--wf-pink); letter-spacing: 0.08em; text-transform: uppercase; }
+  .roi-chart .roi-bar-wrap { position: relative; height: clamp(24px, 3vh, 34px); background: var(--line-soft); border-radius: 3px; overflow: hidden; }
+  .roi-chart .roi-bar { position: absolute; top: 0; height: 100%; border-radius: 3px; display: flex; align-items: center; padding: 0 0.9rem; font-size: clamp(0.72rem, 1.2vh, 0.82rem); color: var(--paper); font-weight: 600; letter-spacing: 0.04em; }
+  .roi-chart .bar-brand { left: 0; width: 100%; background: linear-gradient(90deg, var(--wf-pink), var(--wf-pink-dark)); }
+  .roi-chart .bar-aware { left: 0; width: 50%; background: linear-gradient(90deg, var(--wf-pink), var(--orange)); }
+  .roi-chart .bar-act { left: 0; width: 18%; background: var(--orange); }
+  .roi-chart .roi-time { font-size: clamp(0.72rem, 1.2vh, 0.82rem); color: var(--ink-soft); font-weight: 500; font-variant-numeric: tabular-nums; }
+  .roi-chart .roi-axis { grid-column: 2 / 3; display: flex; justify-content: space-between; font-size: clamp(0.66rem, 1.05vh, 0.75rem); color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3vh 0.4rem 0; border-top: 1px solid var(--line); margin-top: 0.4vh; }
 
-  /* ================= REGIONAL × PRODUCT CHART (Slide 23) ================= */
-  table.region-chart {
-    width: 100%; border-collapse: collapse;
-    font-size: clamp(0.8rem, 1.4vh, 0.92rem);
-    margin-top: 2vh;
-  }
-  table.region-chart thead th {
-    text-align: left;
-    padding: 0.7vh 0.9rem;
-    font-weight: 600;
-    font-size: clamp(0.62rem, 1vh, 0.72rem);
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--ink-soft);
-    border-bottom: 1.5px solid var(--ink);
-  }
-  table.region-chart thead th.num { text-align: right; }
-  table.region-chart tbody td {
-    padding: 0.5vh 0.9rem;
+  /* ================= REGIONAL CHART — BARS ONLY (no numbers) ================= */
+  .region-bars { margin-top: 2.5vh; display: flex; flex-direction: column; gap: 0.8vh; }
+  .region-row {
+    display: grid; grid-template-columns: 220px 220px 1fr;
+    align-items: center; gap: 1.5vw;
+    padding: 0.5vh 0;
     border-bottom: 1px solid var(--line-soft);
-    color: var(--ink);
-    line-height: 1.3;
   }
-  table.region-chart tbody td.num { text-align: right; font-variant-numeric: tabular-nums; }
-  table.region-chart tbody td.product { color: var(--ink-soft); font-size: 0.92em; }
-  table.region-chart tbody tr.total td {
-    border-top: 1.5px solid var(--ink);
-    border-bottom: none;
-    padding-top: 0.9vh;
-    font-weight: 600;
+  .region-row .rr-name { font-size: clamp(0.85rem, 1.45vh, 0.98rem); font-weight: 600; color: var(--ink); }
+  .region-row .rr-product { font-size: clamp(0.75rem, 1.2vh, 0.85rem); color: var(--ink-soft); }
+  .region-row .rr-bar-wrap {
+    height: clamp(14px, 2vh, 20px);
+    background: var(--line-soft);
+    border-radius: 2px; overflow: hidden;
   }
-  table.region-chart tbody tr.total td.num { color: var(--wf-pink); }
-  table.region-chart td .share-bar {
-    display: inline-block;
-    height: 8px;
+  .region-row .rr-bar {
+    height: 100%;
     background: linear-gradient(90deg, var(--wf-pink), var(--orange));
-    border-radius: 1px;
-    vertical-align: middle;
-    margin-right: 0.5rem;
-  }
-
-  /* ================= METRIC GRID ================= */
-  .metric-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2vh 2.5vw;
-    margin-top: 2.5vh;
-  }
-  .metric-card {
-    padding: 1.6vh 1.4vw;
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--wf-pink);
-    background: var(--paper);
     border-radius: 2px;
   }
-  .metric-card .metric-label {
-    font-size: clamp(0.72rem, 1.15vh, 0.82rem);
+
+  /* ================= PRODUCTION FLOW ================= */
+  .pflow { margin-top: 2.5vh; position: relative; }
+  .pflow-top {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0.8vw; position: relative;
+  }
+  .pflow-step {
+    padding: 1.2vh 0.8vw;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--wf-pink);
+    border-radius: 2px;
+    text-align: center;
+    position: relative;
+  }
+  .pflow-step.read {
+    background: linear-gradient(180deg, var(--wf-pink-softer), var(--paper));
+    border-top-width: 4px;
+  }
+  .pflow-step .ps-num {
+    display: inline-block;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    color: var(--wf-pink);
+    font-size: clamp(1rem, 1.75vh, 1.25rem);
+    font-weight: 400;
+  }
+  .pflow-step .ps-name {
+    display: block;
+    font-size: clamp(0.82rem, 1.4vh, 0.95rem);
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0.3vh 0 0.3vh;
+  }
+  .pflow-step .ps-desc {
+    font-size: clamp(0.7rem, 1.15vh, 0.8rem);
+    color: var(--ink-soft);
+    line-height: 1.3;
+  }
+  .pflow-arrow-row { display: flex; justify-content: space-around; padding: 0.3vh 0; }
+  .pflow-arrow {
+    color: var(--wf-pink);
+    font-weight: 700;
+    font-size: clamp(0.9rem, 1.5vh, 1.1rem);
+  }
+  .pflow-split {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.5vw; margin-top: 1.8vh;
+  }
+  .pflow-branch {
+    padding: 1.3vh 1vw;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--wf-pink);
+    border-radius: 2px;
+  }
+  .pflow-branch .pb-label {
+    font-size: clamp(0.7rem, 1.1vh, 0.8rem); font-weight: 600;
+    color: var(--wf-pink); letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 0.5vh; display: block;
+  }
+  .pflow-branch .pb-name {
+    font-size: clamp(0.9rem, 1.55vh, 1.02rem); font-weight: 600;
+    color: var(--ink); display: block;
+    margin-bottom: 0.4vh;
+  }
+  .pflow-branch .pb-desc { font-size: clamp(0.75rem, 1.2vh, 0.85rem); color: var(--ink-soft); line-height: 1.4; }
+  .pflow-regroup {
+    margin-top: 1.6vh;
+    padding: 1vh 1vw;
+    text-align: center;
+    background: var(--ant-navy);
+    color: var(--paper);
+    border-radius: 2px;
+  }
+  .pflow-regroup .pr-name { font-weight: 600; font-size: clamp(0.85rem, 1.45vh, 0.98rem); }
+  .pflow-regroup .pr-desc { font-size: clamp(0.72rem, 1.2vh, 0.82rem); opacity: 0.8; margin-top: 0.3vh; }
+
+  /* ================= VIDEO GRID ================= */
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.2vh 1.2vw;
+    margin-top: 2vh;
+    max-height: 62vh;
+  }
+  .video-cell {
+    background: linear-gradient(135deg, var(--wf-pink-softer), var(--paper));
+    border: 1.5px dashed var(--wf-pink);
+    border-radius: 4px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 1vh 0.8vw;
+    text-align: center;
+    color: var(--wf-pink);
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(0.72rem, 1.2vh, 0.85rem);
+    line-height: 1.3;
+    position: relative;
+    transition: transform 120ms;
+    min-height: 0;
+  }
+  .video-cell::before {
+    content: '';
+    display: block;
+    width: 0; height: 0;
+    border-left: clamp(16px, 2.5vh, 24px) solid var(--wf-pink);
+    border-top: clamp(10px, 1.8vh, 15px) solid transparent;
+    border-bottom: clamp(10px, 1.8vh, 15px) solid transparent;
+    opacity: 0.4;
+    margin-bottom: 1vh;
+  }
+  .video-cell .vc-region {
+    font-family: 'Inter', sans-serif; font-style: normal;
     font-weight: 600; color: var(--wf-pink);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    font-size: clamp(0.65rem, 1.05vh, 0.75rem);
+    margin-bottom: 0.3vh;
+  }
+
+  /* ================= METRICS (coloured, descriptions, time spans) ================= */
+  .metric-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vh 2vw;
+    margin-top: 2.5vh;
+  }
+  .metric-card-v2 {
+    padding: 1.8vh 1.4vw;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--wf-pink);
+    border-radius: 3px;
+  }
+  .metric-card-v2.color-brand { border-left-color: var(--ant-navy); background: linear-gradient(135deg, var(--ant-navy-soft) 0%, var(--paper) 40%); }
+  .metric-card-v2.color-aware { border-left-color: var(--wf-pink); background: linear-gradient(135deg, var(--wf-pink-softer) 0%, var(--paper) 40%); }
+  .metric-card-v2.color-act { border-left-color: var(--orange); background: linear-gradient(135deg, var(--orange-soft) 0%, var(--paper) 40%); }
+  .metric-card-v2.color-cycle { border-left-color: var(--teal); background: linear-gradient(135deg, var(--teal-soft) 0%, var(--paper) 40%); }
+  .metric-card-v2 .mc-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 0.8vh;
+  }
+  .metric-card-v2 .mc-label {
+    font-size: clamp(0.72rem, 1.15vh, 0.82rem); font-weight: 600;
     letter-spacing: 0.12em; text-transform: uppercase;
-    margin-bottom: 0.8vh; display: block;
   }
-  .metric-card ul { list-style: none; padding: 0; margin: 0; }
-  .metric-card ul li {
-    font-size: clamp(0.82rem, 1.4vh, 0.93rem);
-    color: var(--ink); padding: 0.3vh 0; line-height: 1.4;
+  .metric-card-v2.color-brand .mc-label { color: var(--ant-navy); }
+  .metric-card-v2.color-aware .mc-label { color: var(--wf-pink); }
+  .metric-card-v2.color-act .mc-label { color: var(--orange); }
+  .metric-card-v2.color-cycle .mc-label { color: var(--teal); }
+  .metric-card-v2 .mc-time {
+    font-size: clamp(0.68rem, 1.1vh, 0.78rem); font-weight: 500;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
   }
-  .metric-card ul li::before { content: none; }
+  .metric-card-v2 .mc-desc {
+    font-size: clamp(0.78rem, 1.3vh, 0.88rem);
+    color: var(--ink-soft);
+    line-height: 1.4;
+    margin-bottom: 0.6vh;
+  }
+  .metric-card-v2 ul {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem;
+  }
+  .metric-card-v2 ul li {
+    font-size: clamp(0.72rem, 1.2vh, 0.83rem);
+    color: var(--ink); font-weight: 500;
+    position: relative; padding-left: 0.7rem;
+  }
+  .metric-card-v2 ul li::before { content: '\2022'; position: absolute; left: 0; color: var(--wf-pink); }
 
   /* ================= FLASHY HERO ================= */
-  .slide-flash {
-    background: var(--ant-navy-deep); color: var(--paper);
-  }
+  .slide-flash { background: var(--ant-navy-deep); color: var(--paper); }
   .slide-flash .slide-head { border-bottom-color: rgba(255,255,255,0.08); }
   .slide-flash .slide-head .head-meta,
   .slide-flash .slide-head .head-meta .head-num { color: rgba(255,255,255,0.55); }
@@ -812,220 +637,93 @@
   .slide-flash .eyebrow { color: var(--wf-pink); }
   .slide-flash h1, .slide-flash h2, .slide-flash h3, .slide-flash p, .slide-flash strong { color: var(--paper); }
   .slide-flash h2 em { color: var(--wf-pink); }
-  .slide-flash ul.bullets li { color: var(--paper); }
-  .slide-flash .flash-deco {
-    position: absolute;
-    left: 50%; top: 50%; transform: translate(-50%, -45%);
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(18rem, 55vh, 48rem);
-    line-height: 0.85;
-    color: var(--wf-pink);
-    opacity: 0.12;
-    pointer-events: none; user-select: none;
-    z-index: 0;
-    white-space: nowrap;
-  }
+  .slide-flash .flash-deco { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -45%); font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: clamp(20rem, 60vh, 52rem); line-height: 0.85; color: var(--wf-pink); opacity: 0.12; pointer-events: none; user-select: none; z-index: 0; white-space: nowrap; }
   .slide-flash .flash-content { position: relative; z-index: 1; text-align: center; }
-  .slide-flash .flash-title {
-    font-size: clamp(4rem, 13vh, 9rem);
-    font-weight: 700; letter-spacing: -0.04em;
-    line-height: 0.95; color: var(--paper);
-  }
-  .slide-flash .flash-title em {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic; font-weight: 400;
-    color: var(--wf-pink);
-    letter-spacing: -0.015em; font-size: 1.1em;
-  }
-  .slide-flash .flash-sub {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(1.1rem, 2vh, 1.5rem);
-    color: rgba(255,255,255,0.7);
-    margin-top: 3vh;
-    max-width: 56ch;
-    margin-left: auto; margin-right: auto;
-    line-height: 1.4;
-  }
-  .slide-flash .flash-pillars {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 1.6vw; margin-top: 5vh;
-    max-width: 1000px;
-    margin-left: auto; margin-right: auto;
-  }
-  .slide-flash .flash-pillar {
-    padding-top: 1.2vh; border-top: 2px solid var(--wf-pink);
-    text-align: left;
-  }
-  .slide-flash .flash-pillar .p-label {
-    font-size: clamp(0.7rem, 1.1vh, 0.8rem);
-    font-weight: 600; color: var(--wf-pink);
-    letter-spacing: 0.12em; text-transform: uppercase;
-    margin-bottom: 0.6vh; display: block;
-  }
-  .slide-flash .flash-pillar p {
-    font-size: clamp(0.82rem, 1.4vh, 0.95rem);
-    color: rgba(255,255,255,0.82);
-    line-height: 1.4; margin: 0; max-width: none;
-  }
+  .slide-flash .flash-title { font-size: clamp(4.5rem, 14vh, 10rem); font-weight: 700; letter-spacing: -0.04em; line-height: 0.95; color: var(--paper); }
+  .slide-flash .flash-title em { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; color: var(--wf-pink); letter-spacing: -0.015em; font-size: 1.1em; }
+  .slide-flash .flash-sub { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: clamp(1.2rem, 2.2vh, 1.6rem); color: rgba(255,255,255,0.75); margin-top: 4vh; max-width: 60ch; margin-left: auto; margin-right: auto; line-height: 1.4; }
 
   /* ================= DIVIDER ================= */
   .slide-divider .slide-body { position: relative; }
   .slide-divider .div-content { max-width: 900px; position: relative; z-index: 1; }
-  .slide-divider .div-num {
+  .slide-divider .div-num { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: clamp(5rem, 14vh, 10rem); line-height: 1; color: var(--wf-pink); opacity: 0.15; position: absolute; right: 7vw; top: 15vh; pointer-events: none; }
+  .slide-divider h1.div-title { font-size: clamp(3rem, 8.5vh, 6rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.0; color: var(--ink); max-width: 20ch; }
+  .slide-divider h1.div-title em { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; color: var(--wf-pink); }
+  .slide-divider .div-sub { margin-top: 3vh; max-width: 60ch; font-size: clamp(1rem, 1.8vh, 1.2rem); color: var(--ink-soft); line-height: 1.5; }
+  .slide-divider .div-sub em { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; color: var(--wf-pink); font-weight: 400; }
+
+  /* ================= STACK MAP (final slide) ================= */
+  .stack-map {
+    display: flex; flex-direction: column;
+    gap: 0.4vh;
+    margin-top: 2vh;
+    max-width: 100%;
+  }
+  .stack-tier {
+    position: relative;
+    padding: 1.5vh 1.5vw 1.8vh;
+    border-radius: 3px;
+    min-height: 14vh;
+  }
+  .stack-tier.tier-brand { background: linear-gradient(135deg, var(--ant-navy-soft), #F0F3FA); border-left: 4px solid var(--ant-navy); }
+  .stack-tier.tier-aware { background: linear-gradient(135deg, var(--wf-pink-softer), #FFF5F9); border-left: 4px solid var(--wf-pink); }
+  .stack-tier.tier-act { background: linear-gradient(135deg, var(--orange-soft), #FFF6EF); border-left: 4px solid var(--orange); }
+
+  .stack-tier-head {
+    display: flex; align-items: baseline; gap: 1rem;
+    margin-bottom: 1vh;
+  }
+  .stack-tier-label {
+    font-size: clamp(0.78rem, 1.3vh, 0.9rem); font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .stack-tier.tier-brand .stack-tier-label { color: var(--ant-navy); }
+  .stack-tier.tier-aware .stack-tier-label { color: var(--wf-pink); }
+  .stack-tier.tier-act .stack-tier-label { color: var(--orange); }
+  .stack-tier-sub {
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
-    font-size: clamp(5rem, 14vh, 10rem);
-    line-height: 1;
-    color: var(--wf-pink);
-    opacity: 0.15;
-    position: absolute;
-    right: 7vw; top: 15vh;
-    pointer-events: none;
+    font-size: clamp(0.82rem, 1.4vh, 0.95rem);
+    color: var(--ink-soft);
+    line-height: 1.3;
   }
-  .slide-divider h1.div-title {
-    font-size: clamp(3rem, 8.5vh, 6rem);
-    font-weight: 700; letter-spacing: -0.035em;
-    line-height: 1.0; color: var(--ink);
-    max-width: 20ch;
+  .stack-items {
+    display: flex; flex-wrap: wrap; gap: 0.4vh 0.5vw;
   }
-  .slide-divider h1.div-title em {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic; font-weight: 400; color: var(--wf-pink);
-  }
-  .slide-divider .div-sub {
-    margin-top: 3vh; max-width: 60ch;
-    font-size: clamp(1rem, 1.8vh, 1.2rem);
-    color: var(--ink-soft); line-height: 1.5;
-  }
-  .slide-divider .div-sub em {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic; color: var(--wf-pink); font-weight: 400;
-  }
-
-  /* ================= RESEARCH EVIDENCE PANEL ================= */
-  .evidence-panel {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    gap: 3vw;
-    margin: 2.5vh 0;
-    padding: 2vh 2vw;
+  .stack-item {
+    padding: 0.5vh 0.75vw;
     background: var(--paper);
     border: 1px solid var(--line);
-    border-left: 4px solid var(--wf-pink);
-    border-radius: 3px;
+    border-radius: 99px;
+    font-size: clamp(0.72rem, 1.2vh, 0.84rem);
+    font-weight: 500; color: var(--ink);
+    white-space: nowrap;
+    line-height: 1.2;
   }
-  .evidence-num {
-    font-weight: 700;
+  .stack-item.primary {
+    background: var(--paper);
+    border-color: var(--wf-pink);
     color: var(--wf-pink);
-    font-size: clamp(3rem, 8vh, 5.2rem);
-    letter-spacing: -0.04em;
-    line-height: 0.9;
-    font-variant-numeric: tabular-nums;
-  }
-  .evidence-num .slash {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic; font-weight: 400;
-    margin: 0 0.1em;
-  }
-  .evidence-body { flex: 1; }
-  .evidence-body .ev-label {
-    font-size: clamp(0.72rem, 1.1vh, 0.82rem);
-    font-weight: 600; color: var(--wf-pink);
-    letter-spacing: 0.12em; text-transform: uppercase;
-    margin-bottom: 0.5vh;
-  }
-  .evidence-body .ev-quote {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(1rem, 1.75vh, 1.2rem);
-    color: var(--ink);
-    line-height: 1.4;
-    margin-bottom: 0.8vh;
-  }
-  .evidence-body .ev-source {
-    font-size: clamp(0.75rem, 1.2vh, 0.85rem);
-    color: var(--ink-soft);
-  }
-
-  /* ================= CTA LINK BUTTON ================= */
-  .cta-button {
-    display: inline-flex; align-items: center; gap: 0.7rem;
-    margin-top: 2.5vh;
-    padding: 1.2vh 1.6vw;
-    background: var(--wf-pink);
-    color: var(--paper);
-    text-decoration: none;
-    border-radius: 2px;
-    font-size: clamp(0.82rem, 1.4vh, 0.95rem);
     font-weight: 600;
-    letter-spacing: 0.03em;
-    transition: background 120ms;
   }
-  .cta-button:hover { background: var(--wf-pink-dark); }
-  .cta-button::after { content: ' \2192'; font-size: 1.2em; }
+  .stack-tier.tier-brand .stack-item.primary { border-color: var(--ant-navy); color: var(--ant-navy); }
+  .stack-tier.tier-act .stack-item.primary { border-color: var(--orange); color: var(--orange); }
 
   /* Keyboard hint */
-  .kbd-hint {
-    position: fixed;
-    bottom: 1vh; left: 50%; transform: translateX(-50%);
-    font-size: 0.65rem; color: var(--muted);
-    letter-spacing: 0.08em; z-index: 5;
-    opacity: 0; transition: opacity 400ms ease;
-    pointer-events: none; text-transform: uppercase;
-  }
+  .kbd-hint { position: fixed; bottom: 1vh; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.08em; z-index: 5; opacity: 0; transition: opacity 400ms ease; pointer-events: none; text-transform: uppercase; }
   body:hover .kbd-hint { opacity: 0.6; }
-  .kbd-hint kbd {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 3px;
-    padding: 1px 5px;
-    font-size: 0.6rem;
-    font-family: ui-monospace, Menlo, monospace;
-    margin: 0 2px;
-  }
-  .slide-cover ~ .kbd-hint kbd,
-  .slide-flash ~ .kbd-hint kbd { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); color: var(--paper); }
+  .kbd-hint kbd { background: var(--paper); border: 1px solid var(--line); border-radius: 3px; padding: 1px 5px; font-size: 0.6rem; font-family: ui-monospace, Menlo, monospace; margin: 0 2px; }
 
-  /* Nav */
-  #persist-nav {
-    position: fixed;
-    bottom: 0.9vh; right: 5vw;
-    display: flex; align-items: center; gap: 0.4rem;
-    z-index: 15;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.72rem;
-  }
-  #persist-nav button {
-    background: transparent; border: none;
-    color: var(--ink-soft);
-    width: 24px; height: 24px; cursor: pointer;
-    font-size: 0.9rem;
-    border-radius: 4px;
-    display: flex; align-items: center; justify-content: center;
-    transition: background 120ms, color 120ms;
-    font-family: inherit;
-  }
+  #persist-nav { position: fixed; bottom: 0.9vh; right: 5vw; display: flex; align-items: center; gap: 0.4rem; z-index: 15; font-family: 'Inter', sans-serif; font-size: 0.72rem; }
+  #persist-nav button { background: transparent; border: none; color: var(--ink-soft); width: 24px; height: 24px; cursor: pointer; font-size: 0.9rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: background 120ms, color 120ms; font-family: inherit; }
   #persist-nav button:hover:not(:disabled) { background: var(--wf-pink-soft); color: var(--wf-pink); }
-  #persist-nav #counter {
-    font-variant-numeric: tabular-nums;
-    color: var(--ink); font-weight: 500;
-    min-width: 52px; text-align: center;
-    letter-spacing: 0.06em;
-  }
+  #persist-nav #counter { font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 500; min-width: 52px; text-align: center; letter-spacing: 0.06em; }
 
   @media print {
     html, body { overflow: visible; height: auto; }
     body { background: #fff; }
     .deck { height: auto; overflow: visible; }
-    .slide {
-      position: relative; inset: auto;
-      opacity: 1 !important; pointer-events: auto !important;
-      page-break-after: always; break-after: page;
-      height: 100vh; width: 100vw;
-    }
+    .slide { position: relative; inset: auto; opacity: 1 !important; pointer-events: auto !important; page-break-after: always; break-after: page; height: 100vh; width: 100vw; }
     .progress, .kbd-hint, #persist-nav { display: none !important; }
   }
 </style>
@@ -1036,7 +734,7 @@
   <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
 
   <!-- ================================================================= -->
-  <!-- 01 — FLASHY COVER                                                -->
+  <!-- 01 — COVER (centered, no top eyebrow)                            -->
   <!-- ================================================================= -->
   <section class="slide slide-cover active">
     <div class="slide-head">
@@ -1047,7 +745,6 @@
       <div class="cover-deco">20M</div>
       <div class="cover-wrap">
         <div class="cover-content">
-          <span class="cover-tag">Upper-funnel awareness</span>
           <div class="cover-nums">
             <div class="cover-col">
               <span class="cn-prefix">Q1</span>
@@ -1073,7 +770,7 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 02 — THESIS · ICP CHART                                          -->
+  <!-- 02 — ICP CHART                                                    -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
@@ -1084,7 +781,7 @@
       <div class="column column-wide">
         <span class="eyebrow">01 · The difference</span>
         <h2 class="lg">Awareness reaches <em>100%</em> of the ICP. Activation converts the <em>5%</em> ready to buy.</h2>
-        <p class="fine" style="max-width: 80ch;">These are different jobs pointed at different audiences. A complete upper-funnel stack needs both &mdash; and today WorldFirst does one of them well and the other barely at all.</p>
+        <p class="fine" style="max-width: 80ch;">These are different jobs pointed at different audiences. A complete upper-funnel stack needs both &mdash; and today WorldFirst does one well and the other barely at all.</p>
         <div class="icp-viz">
           <div class="icp-col">
             <div class="icp-label">Awareness target</div>
@@ -1103,7 +800,7 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 03 — OPPORTUNITY · FUNNEL GRAPHIC                                -->
+  <!-- 03 — FUNNEL EXPANSION (single chart)                              -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
@@ -1114,26 +811,37 @@
       <div class="column column-wide">
         <span class="eyebrow">02 · Opportunity</span>
         <h2 class="lg">Opening the <em>upper</em> funnel expands the lower one.</h2>
-        <p class="fine" style="max-width: 80ch;">When more of the ICP hears about WorldFirst, the activation pool grows. Growth accelerates. CPA drops. The lower funnel runs on the demand the upper funnel creates.</p>
-        <div class="funnel-viz">
-          <div class="funnel-col">
-            <div class="funnel-col-label now">Today</div>
-            <div class="funnel-shape shape-now">
-              <div class="funnel-tier tier-top">Awareness</div>
-              <div class="funnel-tier tier-mid">Consideration</div>
-              <div class="funnel-tier tier-bot">Convert</div>
+        <p class="fine" style="max-width: 80ch;">When more of the ICP hears about WorldFirst, the activation pool grows, growth accelerates, CPA drops. The lower funnel runs on the demand the upper funnel creates.</p>
+        <div class="funnel-single">
+          <div class="funnel-heading-grid">
+            <div class="fh-left">Funnel tier</div>
+            <div class="fh-axis">
+              <span class="today-mark">Today</span>
+              <span class="add-mark">+ Upper-funnel investment</span>
             </div>
-            <div class="funnel-outcome" style="color: var(--ink-soft);">Narrow top &mdash; activation starves the same pool.</div>
           </div>
-          <div class="funnel-col">
-            <div class="funnel-col-label expand">With upper-funnel investment</div>
-            <div class="funnel-shape shape-expand">
-              <div class="funnel-tier tier-top">Awareness</div>
-              <div class="funnel-tier tier-mid">Consideration</div>
-              <div class="funnel-tier tier-bot">Convert</div>
+          <div class="funnel-tier t1">
+            <div class="ft-label">Awareness</div>
+            <div class="ft-bar-wrap">
+              <div class="ft-bar-today">Today</div>
+              <div class="ft-bar-add">+ added reach</div>
             </div>
-            <div class="funnel-outcome">Wider top &rarr; wider conversion &rarr; lower CPA.</div>
           </div>
+          <div class="funnel-tier t2">
+            <div class="ft-label">Consideration</div>
+            <div class="ft-bar-wrap">
+              <div class="ft-bar-today">Today</div>
+              <div class="ft-bar-add">+ expanded pool</div>
+            </div>
+          </div>
+          <div class="funnel-tier t3">
+            <div class="ft-label">Convert</div>
+            <div class="ft-bar-wrap">
+              <div class="ft-bar-today">Today</div>
+              <div class="ft-bar-add">+ lift</div>
+            </div>
+          </div>
+          <div class="funnel-outcome">Wider top &rarr; wider conversion &rarr; <strong style="color: var(--wf-pink); font-family: 'Inter', sans-serif; font-style: normal; font-weight: 600;">lower CPA, faster growth.</strong></div>
         </div>
       </div>
     </div>
@@ -1141,44 +849,16 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 04 — RESEARCH + EVIDENCE                                          -->
+  <!-- 04 — DYNAMICS (combined)                                          -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Research</span><span class="sep"></span><span class="head-num">04</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column column-wide">
-        <span class="eyebrow">03 · The research</span>
-        <h2 class="lg">Upper-funnel research of our <em>competitors</em> &mdash; and a relook at our current strategy.</h2>
-        <p class="fine" style="max-width: 82ch;">Over the past month I've built a dedicated Fintech Upper-Funnel Study covering 8 competitor cases + WorldFirst's current position. The single clearest benchmark to calibrate against:</p>
-        <div class="evidence-panel">
-          <div class="evidence-num">46<span class="slash">/</span>54</div>
-          <div class="evidence-body">
-            <div class="ev-label">The budget split evidence</div>
-            <div class="ev-quote">&ldquo;The optimal B2B long-term marketing mix is 46% brand, 54% activation.&rdquo;</div>
-            <div class="ev-source"><strong>Les Binet &amp; Peter Field</strong> &middot; <em>The B2B Effectiveness Code</em> (LinkedIn B2B Institute, 2021) &middot; n = 1,400 B2B campaigns</div>
-          </div>
-        </div>
-        <p class="fine">The full competitor study covers 8 brands, pillar composition, distribution ecology, platform role maps, and a 5-dimension fit framework.</p>
-        <a class="cta-button" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/" target="_blank">Read the full Fintech Upper-Funnel Study</a>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- ================================================================= -->
-  <!-- 05 — DYNAMICS (COMBINED)                                          -->
-  <!-- ================================================================= -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>WorldFirst dynamics</span><span class="sep"></span><span class="head-num">05</span></div>
+      <div class="head-meta"><span>WorldFirst dynamics</span><span class="sep"></span><span class="head-num">04</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">04 · What's specific to WorldFirst</span>
+        <span class="eyebrow">03 · What's specific to WorldFirst</span>
         <h2 class="xl">Three dynamics shape our upper-funnel <em>specifically.</em></h2>
         <ul class="bullets">
           <li><strong>Brand architecture</strong> &mdash; Ant and WorldFirst show up together. Each dollar can do less for WorldFirst specifically unless we have a clear policy on when each brand leads.</li>
@@ -1191,26 +871,54 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 06 — COMPOSITION (TEASE COMPETITORS)                              -->
+  <!-- 05 — COMPOSITION PROBLEM (tease)                                  -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The composition problem</span><span class="sep"></span><span class="head-num">06</span></div>
+      <div class="head-meta"><span>The composition problem</span><span class="sep"></span><span class="head-num">05</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">05 · Composition</span>
+        <span class="eyebrow">04 · Composition</span>
         <h2 class="xl">Upper-funnel is a <em>composition</em> problem, not a channel one.</h2>
         <p>Teams organise around channels. Peer brands running meaningful upper-funnel land on PR + influencers + social + SEO + events + partnerships + paid + employees <strong>simultaneously.</strong></p>
-        <div class="pull-quote">Let's look at exactly how they compose it &mdash; <span class="pink-strong">six peer brands, six different answers.</span></div>
+        <div class="pull-quote">To calibrate what that composition should look like, we ran a dedicated competitor study. <span class="pink-strong">Here's what it found.</span></div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
-  <!-- 07 — PEER · WISE                                                  -->
+  <!-- 06 — RESEARCH + EVIDENCE                                          -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Research</span><span class="sep"></span><span class="head-num">06</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">05 · The research</span>
+        <h2 class="lg">Upper-funnel research of our <em>competitors</em> &mdash; and a relook at our current strategy.</h2>
+        <p class="fine" style="max-width: 82ch;">Dedicated Fintech Upper-Funnel Study covering 8 competitor cases + WorldFirst's current position. The single clearest benchmark to calibrate against:</p>
+        <div class="evidence-panel">
+          <div class="evidence-num">46<span class="slash">/</span>54</div>
+          <div class="evidence-body">
+            <div class="ev-label">The budget split evidence</div>
+            <div class="ev-quote">&ldquo;The optimal B2B long-term marketing mix is 46% brand, 54% activation.&rdquo;</div>
+            <div class="ev-source"><strong>Les Binet &amp; Peter Field</strong> &middot; <em>The B2B Effectiveness Code</em> (LinkedIn B2B Institute, 2021) &middot; n = 1,400 B2B campaigns</div>
+          </div>
+        </div>
+        <p class="fine">The full study covers 8 brands, pillar composition, distribution ecology, platform role maps, and a 5-dimension fit framework. The next six slides pull directly from it.</p>
+        <a class="cta-button" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/" target="_blank">Read the full Fintech Upper-Funnel Study</a>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 07 — PEER · WISE (pillar comp + distribution from study)          -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
@@ -1219,36 +927,39 @@
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">06 · Peer · Wise &mdash; brand-led to a fault</span>
+        <span class="eyebrow">06 · Peer · Wise &mdash; breakthrough (2014-18) + current mature</span>
         <div class="peer-layout">
           <div class="peer-left">
-            <h2 class="lg">Wise led with <em>brand</em> &mdash; racing to re-learn activation.</h2>
+            <h2 class="lg">Wise led with <em>PR-coded</em> category-creation &mdash; then shifted to evergreen defence.</h2>
             <ul class="bullets">
-              <li><strong>2014&ndash;19</strong> &mdash; built the "cheap transparent FX" category via PR + OOH (&pound;5.6B Westminster protest, hidden-fee campaigns)</li>
-              <li><strong>2020+</strong> &mdash; lost share to Revolut, Remitly, Atlantic Money</li>
-              <li><strong>Now</strong> &mdash; CMO publicly tripling marketing spend, building activation in parallel</li>
+              <li><strong>2014&ndash;18</strong> &mdash; villain framing &ldquo;cheap transparent FX&rdquo; via Guardian-era PR, Westminster protest, hidden-fee campaigns</li>
+              <li><strong>Now (mature)</strong> &mdash; shifted to educational evergreen SEO as the defence moat</li>
+              <li><strong>Lost share</strong> 2020+ to Revolut Business, Remitly, Atlantic Money as activation-led entrants caught up</li>
             </ul>
-            <div class="peer-takeaway">Brand without activation defence <strong>leaks demand</strong> to whoever shows up to collect it.</div>
-            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#wise" target="_blank">Read more: Study &rarr; Wise</a>
+            <div class="peer-takeaway">Wise built the category. <strong>Without activation defence, others collected the demand.</strong></div>
+            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#case-wise" target="_blank">Read: Study &rarr; Wise</a>
           </div>
           <div class="peer-charts">
-            <div class="peer-chart-block">
-              <span class="peer-chart-title">Content composition</span>
-              <div class="blend-bar">
-                <div class="blend-seg s-brand" style="flex: 50;">50% Brand</div>
-                <div class="blend-seg s-aware" style="flex: 30;">30% Awareness</div>
-                <div class="blend-seg s-act" style="flex: 20;">20% Activation</div>
+            <div class="chart-block">
+              <div class="chart-title"><span class="ct-name">Content composition</span><span class="ct-sub">Pillars (current mature)</span></div>
+              <div class="pillar-rows">
+                <div class="pillar-row"><span class="pr-label">Educational evergreen</span><div class="pr-bar-wrap"><div class="pr-bar" style="width: 87.5%;"></div></div><span class="pr-pct">35%</span></div>
+                <div class="pillar-row"><span class="pr-label">Flagship research</span><div class="pr-bar-wrap"><div class="pr-bar" style="width: 37.5%;"></div></div><span class="pr-pct">15%</span></div>
+                <div class="pillar-row"><span class="pr-label">Short-form</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 37.5%;"></div></div><span class="pr-pct">15%</span></div>
+                <div class="pillar-row"><span class="pr-label">Creators + local</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 25%;"></div></div><span class="pr-pct">10%</span></div>
+                <div class="pillar-row"><span class="pr-label">Lifestyle / cultural</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 25%;"></div></div><span class="pr-pct">10%</span></div>
+                <div class="pillar-row"><span class="pr-label">PR / earned media</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 25%;"></div></div><span class="pr-pct">10%</span></div>
+                <div class="pillar-row"><span class="pr-label">Milestone / momentum</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 12.5%;"></div></div><span class="pr-pct">5%</span></div>
               </div>
             </div>
-            <div class="peer-chart-block">
-              <span class="peer-chart-title">Distribution mix</span>
-              <div class="peer-dist-rows">
-                <div class="peer-dist-row"><span class="dr-label">PR / editorial</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 92%;"></div></div><span class="dr-pct">92</span></div>
-                <div class="peer-dist-row"><span class="dr-label">OOH / protest</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 80%;"></div></div><span class="dr-pct">80</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Own social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 55%;"></div></div><span class="dr-pct">55</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Paid social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 45%;"></div></div><span class="dr-pct">45</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Partnerships</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 40%;"></div></div><span class="dr-pct">40</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Events</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 25%;"></div></div><span class="dr-pct">25</span></div>
+            <div class="chart-block">
+              <div class="chart-title"><span class="ct-name">Distribution mix</span><span class="ct-sub">2014-18 breakthrough era</span></div>
+              <div class="dist-rows">
+                <div class="dist-row"><span class="dr-label">Press / earned</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 87.5%;"></div></div><span class="dr-pct">35%</span></div>
+                <div class="dist-row"><span class="dr-label">Blog / web (SEO)</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 62.5%;"></div></div><span class="dr-pct">25%</span></div>
+                <div class="dist-row"><span class="dr-label">YouTube</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 37.5%;"></div></div><span class="dr-pct">15%</span></div>
+                <div class="dist-row"><span class="dr-label">Twitter</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 37.5%;"></div></div><span class="dr-pct">15%</span></div>
+                <div class="dist-row"><span class="dr-label">LinkedIn</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 25%;"></div></div><span class="dr-pct">10%</span></div>
               </div>
             </div>
           </div>
@@ -1268,36 +979,39 @@
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">07 · Peer · Monzo &mdash; distinctive asset + community</span>
+        <span class="eyebrow">07 · Peer · Monzo &mdash; lifestyle-weighted</span>
         <div class="peer-layout">
           <div class="peer-left">
-            <h2 class="lg">Monzo built awareness through <em>community</em> &mdash; then rode it into expansion.</h2>
+            <h2 class="lg">Monzo runs <em>lifestyle</em>-led distinctiveness &mdash; the opposite shape of Pleo.</h2>
             <ul class="bullets">
-              <li><strong>Distinctive asset</strong> &mdash; coral card as visual icon + Subway / Tube OOH presence</li>
-              <li><strong>Community content</strong> &mdash; Instagram "card eyes" meme, product updates shared friend-to-friend</li>
-              <li><strong>Expansion</strong> &mdash; mortgages, pensions, investing launched on existing brand trust</li>
+              <li><strong>Cultural register</strong> &mdash; banking humour, coral-card as visual asset, Instagram card-eyes meme</li>
+              <li><strong>Distinctive asset</strong> + community voice earned right to expand (mortgages, pensions, investing)</li>
+              <li>Team built for <strong>continuous output</strong>: ~20 posts/week</li>
             </ul>
-            <div class="peer-takeaway">A distinctive asset + community voice <strong>compounds into the right to expand.</strong></div>
-            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#monzo" target="_blank">Read more: Study &rarr; Monzo</a>
+            <div class="peer-takeaway">Same category, opposite composition. <strong>Driven by buyer + resources, not "best practice."</strong></div>
+            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#case-monzo" target="_blank">Read: Study &rarr; Monzo</a>
           </div>
           <div class="peer-charts">
-            <div class="peer-chart-block">
-              <span class="peer-chart-title">Content composition</span>
-              <div class="blend-bar">
-                <div class="blend-seg s-brand" style="flex: 45;">45% Brand</div>
-                <div class="blend-seg s-aware" style="flex: 35;">35% Awareness</div>
-                <div class="blend-seg s-act" style="flex: 20;">20% Activation</div>
+            <div class="chart-block">
+              <div class="chart-title"><span class="ct-name">Content composition</span><span class="ct-sub">Pillars</span></div>
+              <div class="pillar-rows">
+                <div class="pillar-row"><span class="pr-label">Lifestyle / cultural</span><div class="pr-bar-wrap"><div class="pr-bar" style="width: 100%;"></div></div><span class="pr-pct">40%</span></div>
+                <div class="pillar-row"><span class="pr-label">Creators + local</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 37.5%;"></div></div><span class="pr-pct">15%</span></div>
+                <div class="pillar-row"><span class="pr-label">Educational evergreen</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 37.5%;"></div></div><span class="pr-pct">15%</span></div>
+                <div class="pillar-row"><span class="pr-label">Milestone / momentum</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 25%;"></div></div><span class="pr-pct">10%</span></div>
+                <div class="pillar-row"><span class="pr-label">Short-form</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 25%;"></div></div><span class="pr-pct">10%</span></div>
+                <div class="pillar-row"><span class="pr-label">Flagship research</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 12.5%;"></div></div><span class="pr-pct">5%</span></div>
+                <div class="pillar-row"><span class="pr-label">PR / earned media</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 12.5%;"></div></div><span class="pr-pct">5%</span></div>
               </div>
             </div>
-            <div class="peer-chart-block">
-              <span class="peer-chart-title">Distribution mix</span>
-              <div class="peer-dist-rows">
-                <div class="peer-dist-row"><span class="dr-label">Own social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 90%;"></div></div><span class="dr-pct">90</span></div>
-                <div class="peer-dist-row"><span class="dr-label">OOH (Tube)</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 80%;"></div></div><span class="dr-pct">80</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Community</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 78%;"></div></div><span class="dr-pct">78</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Referral</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 65%;"></div></div><span class="dr-pct">65</span></div>
-                <div class="peer-dist-row"><span class="dr-label">PR</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 60%;"></div></div><span class="dr-pct">60</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Partnerships</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 40%;"></div></div><span class="dr-pct">40</span></div>
+            <div class="chart-block">
+              <div class="chart-title"><span class="ct-name">Distribution mix</span><span class="ct-sub">Where content lives</span></div>
+              <div class="dist-rows">
+                <div class="dist-row"><span class="dr-label">Instagram</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 87.5%;"></div></div><span class="dr-pct">35%</span></div>
+                <div class="dist-row"><span class="dr-label">TikTok</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 62.5%;"></div></div><span class="dr-pct">25%</span></div>
+                <div class="dist-row"><span class="dr-label">X / Twitter</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 50%;"></div></div><span class="dr-pct">20%</span></div>
+                <div class="dist-row"><span class="dr-label">LinkedIn</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 25%;"></div></div><span class="dr-pct">10%</span></div>
+                <div class="dist-row"><span class="dr-label">Facebook</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 25%;"></div></div><span class="dr-pct">10%</span></div>
               </div>
             </div>
           </div>
@@ -1308,45 +1022,48 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 09 — PEER · REVOLUT                                               -->
+  <!-- 09 — PEER · NUBANK                                                -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Revolut</span><span class="sep"></span><span class="head-num">09</span></div>
+      <div class="head-meta"><span>Peer · Nubank</span><span class="sep"></span><span class="head-num">09</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">08 · Peer · Revolut &mdash; activation-first, brand later</span>
+        <span class="eyebrow">08 · Peer · Nubank &mdash; creator-led multi-region</span>
         <div class="peer-layout">
           <div class="peer-left">
-            <h2 class="lg">Revolut scaled on <em>activation</em> &mdash; then bolted on brand.</h2>
+            <h2 class="lg">Nubank runs heavy on <em>regional creators</em> &mdash; the closest profile to WorldFirst.</h2>
             <ul class="bullets">
-              <li><strong>Performance-led</strong> growth to 50M+ users via referral + paid + product hooks</li>
-              <li><strong>Sidemen sponsorship</strong> (2023) &mdash; mass-market UK brand awareness after activation had scaled</li>
-              <li><strong>Sequence</strong> &mdash; activation first, brand catches up. The mirror of Wise.</li>
+              <li><strong>LatAm expansion</strong> via localised creators per market &mdash; Gusta, Pedro Otoni, Jacira, Aline Diniz, Manu Gavassi</li>
+              <li><strong>Educational evergreen</strong> high &mdash; financial literacy where buyers need it</li>
+              <li><strong>Milestone narrative</strong> high &mdash; visible growth supports trust in new markets</li>
             </ul>
-            <div class="peer-takeaway">Activation-first compounds users. <strong>Brand catches up on the back of scale.</strong></div>
-            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#revolut" target="_blank">Read more: Study &rarr; Revolut</a>
+            <div class="peer-takeaway">Multi-market + low awareness = <strong>regional creators earn their weight.</strong></div>
+            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#case-nubank" target="_blank">Read: Study &rarr; Nubank</a>
           </div>
           <div class="peer-charts">
-            <div class="peer-chart-block">
-              <span class="peer-chart-title">Content composition</span>
-              <div class="blend-bar">
-                <div class="blend-seg s-brand" style="flex: 20;">20% Brand</div>
-                <div class="blend-seg s-aware" style="flex: 20;">20% Awareness</div>
-                <div class="blend-seg s-act" style="flex: 60;">60% Activation</div>
+            <div class="chart-block">
+              <div class="chart-title"><span class="ct-name">Content composition</span><span class="ct-sub">Pillars</span></div>
+              <div class="pillar-rows">
+                <div class="pillar-row"><span class="pr-label">Creators + local</span><div class="pr-bar-wrap"><div class="pr-bar" style="width: 75%;"></div></div><span class="pr-pct">30%</span></div>
+                <div class="pillar-row"><span class="pr-label">Educational evergreen</span><div class="pr-bar-wrap"><div class="pr-bar" style="width: 50%;"></div></div><span class="pr-pct">20%</span></div>
+                <div class="pillar-row"><span class="pr-label">Lifestyle / cultural</span><div class="pr-bar-wrap"><div class="pr-bar" style="width: 37.5%;"></div></div><span class="pr-pct">15%</span></div>
+                <div class="pillar-row"><span class="pr-label">Milestone / momentum</span><div class="pr-bar-wrap"><div class="pr-bar" style="width: 37.5%;"></div></div><span class="pr-pct">15%</span></div>
+                <div class="pillar-row"><span class="pr-label">Flagship research</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 25%;"></div></div><span class="pr-pct">10%</span></div>
+                <div class="pillar-row"><span class="pr-label">PR / earned media</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 12.5%;"></div></div><span class="pr-pct">5%</span></div>
+                <div class="pillar-row"><span class="pr-label">Short-form</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 12.5%;"></div></div><span class="pr-pct">5%</span></div>
               </div>
             </div>
-            <div class="peer-chart-block">
-              <span class="peer-chart-title">Distribution mix</span>
-              <div class="peer-dist-rows">
-                <div class="peer-dist-row"><span class="dr-label">Referral</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 95%;"></div></div><span class="dr-pct">95</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Paid / perf.</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 88%;"></div></div><span class="dr-pct">88</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Sponsorships</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 70%;"></div></div><span class="dr-pct">70</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Own social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 55%;"></div></div><span class="dr-pct">55</span></div>
-                <div class="peer-dist-row"><span class="dr-label">PR</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 48%;"></div></div><span class="dr-pct">48</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Partnerships</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 40%;"></div></div><span class="dr-pct">40</span></div>
+            <div class="chart-block">
+              <div class="chart-title"><span class="ct-name">Distribution mix</span><span class="ct-sub">Where content lives</span></div>
+              <div class="dist-rows">
+                <div class="dist-row"><span class="dr-label">Instagram</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 75%;"></div></div><span class="dr-pct">30%</span></div>
+                <div class="dist-row"><span class="dr-label">TikTok</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 62.5%;"></div></div><span class="dr-pct">25%</span></div>
+                <div class="dist-row"><span class="dr-label">YouTube</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 50%;"></div></div><span class="dr-pct">20%</span></div>
+                <div class="dist-row"><span class="dr-label">Press / owned</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 37.5%;"></div></div><span class="dr-pct">15%</span></div>
+                <div class="dist-row"><span class="dr-label">X / other</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 25%;"></div></div><span class="dr-pct">10%</span></div>
               </div>
             </div>
           </div>
@@ -1357,45 +1074,48 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 10 — PEER · AIRWALLEX                                             -->
+  <!-- 10 — PEER · REVOLUT                                               -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Airwallex</span><span class="sep"></span><span class="head-num">10</span></div>
+      <div class="head-meta"><span>Peer · Revolut</span><span class="sep"></span><span class="head-num">10</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">09 · Peer · Airwallex &mdash; the triumvirate</span>
+        <span class="eyebrow">09 · Peer · Revolut &mdash; YouTube-first creator push</span>
         <div class="peer-layout">
           <div class="peer-left">
-            <h2 class="lg">Airwallex runs the <em>triumvirate</em>: product, brand, performance.</h2>
+            <h2 class="lg">Revolut concentrates on <em>creators</em> &mdash; with explicit platform discipline.</h2>
             <ul class="bullets">
-              <li><strong>Explicit split</strong> &mdash; VP Global Marketing: product marketing &rarr; brand &rarr; performance as three distinct functions</li>
-              <li><strong>F1 partnership</strong> (2024) &mdash; distinctive brand association, global sponsorship play</li>
-              <li><strong>Senior hires</strong> &mdash; Balint as VP APAC (2025), signalling heavier brand build-out</li>
+              <li><strong>YouTube-first</strong> creator program (per Head of Growth Fiona Davies) &mdash; long-form personal finance wins</li>
+              <li><strong>Explicitly deprioritises TikTok</strong>: &ldquo;one we have not cracked&rdquo; &mdash; platform-fit over platform-presence</li>
+              <li><strong>Sidemen sponsorship</strong> (2023) added mass UK brand reach after activation had scaled</li>
             </ul>
-            <div class="peer-takeaway">Three functions. Three budgets. <strong>One shared message across every channel.</strong></div>
-            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/" target="_blank">Read more: Study</a>
+            <div class="peer-takeaway"><strong>Platform fit over platform presence.</strong> Mature to admit a channel isn't working and redeploy.</div>
+            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#case-revolut" target="_blank">Read: Study &rarr; Revolut</a>
           </div>
           <div class="peer-charts">
-            <div class="peer-chart-block">
-              <span class="peer-chart-title">Content composition</span>
-              <div class="blend-bar">
-                <div class="blend-seg s-brand" style="flex: 40;">40% Brand</div>
-                <div class="blend-seg s-aware" style="flex: 30;">30% Awareness</div>
-                <div class="blend-seg s-act" style="flex: 30;">30% Activation</div>
+            <div class="chart-block">
+              <div class="chart-title"><span class="ct-name">Content composition</span><span class="ct-sub">Pillars</span></div>
+              <div class="pillar-rows">
+                <div class="pillar-row"><span class="pr-label">Creators + local</span><div class="pr-bar-wrap"><div class="pr-bar" style="width: 100%;"></div></div><span class="pr-pct">70%</span></div>
+                <div class="pillar-row"><span class="pr-label">Short-form</span><div class="pr-bar-wrap"><div class="pr-bar" style="width: 25%;"></div></div><span class="pr-pct">10%</span></div>
+                <div class="pillar-row"><span class="pr-label">Milestone / momentum</span><div class="pr-bar-wrap"><div class="pr-bar" style="width: 25%;"></div></div><span class="pr-pct">10%</span></div>
+                <div class="pillar-row"><span class="pr-label">Educational evergreen</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 12.5%;"></div></div><span class="pr-pct">5%</span></div>
+                <div class="pillar-row"><span class="pr-label">PR / earned media</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 12.5%;"></div></div><span class="pr-pct">5%</span></div>
+                <div class="pillar-row"><span class="pr-label">Flagship research</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 0%;"></div></div><span class="pr-pct">0%</span></div>
+                <div class="pillar-row"><span class="pr-label">Lifestyle / cultural</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 0%;"></div></div><span class="pr-pct">0%</span></div>
               </div>
             </div>
-            <div class="peer-chart-block">
-              <span class="peer-chart-title">Distribution mix</span>
-              <div class="peer-dist-rows">
-                <div class="peer-dist-row"><span class="dr-label">Sponsorships (F1)</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 95%;"></div></div><span class="dr-pct">95</span></div>
-                <div class="peer-dist-row"><span class="dr-label">PR</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 78%;"></div></div><span class="dr-pct">78</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Events</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 72%;"></div></div><span class="dr-pct">72</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Own social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 60%;"></div></div><span class="dr-pct">60</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Paid media</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 55%;"></div></div><span class="dr-pct">55</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Employees</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 42%;"></div></div><span class="dr-pct">42</span></div>
+            <div class="chart-block">
+              <div class="chart-title"><span class="ct-name">Distribution mix</span><span class="ct-sub">Where content lives</span></div>
+              <div class="dist-rows">
+                <div class="dist-row"><span class="dr-label">YouTube</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 87.5%;"></div></div><span class="dr-pct">35%</span></div>
+                <div class="dist-row"><span class="dr-label">Instagram</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 62.5%;"></div></div><span class="dr-pct">25%</span></div>
+                <div class="dist-row"><span class="dr-label">LinkedIn</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 37.5%;"></div></div><span class="dr-pct">15%</span></div>
+                <div class="dist-row"><span class="dr-label">X / other</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 37.5%;"></div></div><span class="dr-pct">15%</span></div>
+                <div class="dist-row"><span class="dr-label">TikTok</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 25%;"></div></div><span class="dr-pct">10%</span></div>
               </div>
             </div>
           </div>
@@ -1415,36 +1135,39 @@
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">10 · Peer · Pleo &mdash; flagship research as engine</span>
+        <span class="eyebrow">10 · Peer · Pleo &mdash; flagship-weighted</span>
         <div class="peer-layout">
           <div class="peer-left">
-            <h2 class="lg">Pleo anchors awareness with <em>flagship</em> research.</h2>
+            <h2 class="lg">Pleo anchors on <em>flagship</em> research + educational evergreen.</h2>
             <ul class="bullets">
               <li><strong>CFO Playbook</strong> &mdash; annual research drumbeat that doubles as awareness + lead gen + sales enablement</li>
-              <li><strong>Creator short-form</strong> for top-of-funnel volume</li>
-              <li><strong>Activation paid</strong> complements, doesn't replace</li>
+              <li><strong>In-house Brand Studio</strong> supports original production</li>
+              <li><strong>Buyer (CFO)</strong> responds to authority over cultural register</li>
             </ul>
-            <div class="peer-takeaway">Research-led content is slow-burn. <strong>It also compounds into category authority.</strong></div>
-            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#pleo" target="_blank">Read more: Study &rarr; Pleo</a>
+            <div class="peer-takeaway">50% long-horizon compounding assets. <strong>Research + evergreen = authority moat.</strong></div>
+            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#case-pleo" target="_blank">Read: Study &rarr; Pleo</a>
           </div>
           <div class="peer-charts">
-            <div class="peer-chart-block">
-              <span class="peer-chart-title">Content composition</span>
-              <div class="blend-bar">
-                <div class="blend-seg s-brand" style="flex: 25;">25% Brand</div>
-                <div class="blend-seg s-aware" style="flex: 50;">50% Awareness</div>
-                <div class="blend-seg s-act" style="flex: 25;">25% Activation</div>
+            <div class="chart-block">
+              <div class="chart-title"><span class="ct-name">Content composition</span><span class="ct-sub">Pillars</span></div>
+              <div class="pillar-rows">
+                <div class="pillar-row"><span class="pr-label">Flagship research</span><div class="pr-bar-wrap"><div class="pr-bar" style="width: 62.5%;"></div></div><span class="pr-pct">25%</span></div>
+                <div class="pillar-row"><span class="pr-label">Educational evergreen</span><div class="pr-bar-wrap"><div class="pr-bar" style="width: 62.5%;"></div></div><span class="pr-pct">25%</span></div>
+                <div class="pillar-row"><span class="pr-label">Creators + local</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 37.5%;"></div></div><span class="pr-pct">15%</span></div>
+                <div class="pillar-row"><span class="pr-label">Lifestyle / cultural</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 25%;"></div></div><span class="pr-pct">10%</span></div>
+                <div class="pillar-row"><span class="pr-label">PR / earned media</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 25%;"></div></div><span class="pr-pct">10%</span></div>
+                <div class="pillar-row"><span class="pr-label">Short-form</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 25%;"></div></div><span class="pr-pct">10%</span></div>
+                <div class="pillar-row"><span class="pr-label">Milestone / momentum</span><div class="pr-bar-wrap"><div class="pr-bar muted" style="width: 12.5%;"></div></div><span class="pr-pct">5%</span></div>
               </div>
             </div>
-            <div class="peer-chart-block">
-              <span class="peer-chart-title">Distribution mix</span>
-              <div class="peer-dist-rows">
-                <div class="peer-dist-row"><span class="dr-label">Research / reports</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 95%;"></div></div><span class="dr-pct">95</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Creator content</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 72%;"></div></div><span class="dr-pct">72</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Own social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 62%;"></div></div><span class="dr-pct">62</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Paid media</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 50%;"></div></div><span class="dr-pct">50</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Events</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 48%;"></div></div><span class="dr-pct">48</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Email / CRM</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 45%;"></div></div><span class="dr-pct">45</span></div>
+            <div class="chart-block">
+              <div class="chart-title"><span class="ct-name">Distribution mix</span><span class="ct-sub">Where content lives</span></div>
+              <div class="dist-rows">
+                <div class="dist-row"><span class="dr-label">LinkedIn</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 87.5%;"></div></div><span class="dr-pct">35%</span></div>
+                <div class="dist-row"><span class="dr-label">Blog / web</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 62.5%;"></div></div><span class="dr-pct">25%</span></div>
+                <div class="dist-row"><span class="dr-label">Facebook</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 37.5%;"></div></div><span class="dr-pct">15%</span></div>
+                <div class="dist-row"><span class="dr-label">Email</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 37.5%;"></div></div><span class="dr-pct">15%</span></div>
+                <div class="dist-row"><span class="dr-label">YouTube</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 25%;"></div></div><span class="dr-pct">10%</span></div>
               </div>
             </div>
           </div>
@@ -1464,36 +1187,37 @@
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">11 · Peer · Ramp &mdash; distribution-led growth</span>
+        <span class="eyebrow">11 · Peer · Ramp &mdash; social-deprioritised counter-thesis</span>
         <div class="peer-layout">
           <div class="peer-left">
-            <h2 class="lg">Ramp plays the <em>middle</em>: partnerships + founder voice.</h2>
+            <h2 class="lg">Ramp runs <em>channel alpha</em> &mdash; paid + partnerships + product-led virality.</h2>
             <ul class="bullets">
-              <li><strong>PPC + accountant partnerships</strong> &mdash; mid-funnel activation at scale</li>
-              <li><strong>Founder-led content</strong> &mdash; Eric Glyman's personal social as trust channel</li>
-              <li><strong>"The Runway"</strong> thought leadership &mdash; without flashy brand campaigns</li>
+              <li><strong>~$413K/month PPC</strong> + productised accountant partnerships</li>
+              <li><strong>Social is supporting</strong>: thought leadership from operators, executive posts</li>
+              <li>Framing: <em class="serif">&ldquo;Not every fintech should be social-led.&rdquo;</em></li>
             </ul>
-            <div class="peer-takeaway">Partnerships as middle-of-funnel. <strong>Founder voice as cheap trust at scale.</strong></div>
-            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#ramp" target="_blank">Read more: Study &rarr; Ramp</a>
+            <div class="peer-takeaway"><strong>Counter-thesis discipline</strong> is itself a best practice. Not every fintech should lead with social.</div>
+            <a class="peer-link" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/#case-ramp" target="_blank">Read: Study &rarr; Ramp</a>
           </div>
           <div class="peer-charts">
-            <div class="peer-chart-block">
-              <span class="peer-chart-title">Content composition</span>
-              <div class="blend-bar">
-                <div class="blend-seg s-brand" style="flex: 15;">15% Brand</div>
-                <div class="blend-seg s-aware" style="flex: 35;">35% Awareness</div>
-                <div class="blend-seg s-act" style="flex: 50;">50% Activation</div>
+            <div class="chart-block">
+              <div class="chart-title"><span class="ct-name">Growth engine</span><span class="ct-sub">The real acquisition mechanism</span></div>
+              <div class="dist-rows">
+                <div class="dist-row"><span class="dr-label">Paid search (PPC)</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 87.5%;"></div></div><span class="dr-pct">35%</span></div>
+                <div class="dist-row"><span class="dr-label">Partnerships</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 62.5%;"></div></div><span class="dr-pct">25%</span></div>
+                <div class="dist-row"><span class="dr-label">PLG (savings proof)</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 50%;"></div></div><span class="dr-pct">20%</span></div>
+                <div class="dist-row"><span class="dr-label">PR</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 25%;"></div></div><span class="dr-pct">10%</span></div>
+                <div class="dist-row"><span class="dr-label">Outbound / sales</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 25%;"></div></div><span class="dr-pct">10%</span></div>
               </div>
             </div>
-            <div class="peer-chart-block">
-              <span class="peer-chart-title">Distribution mix</span>
-              <div class="peer-dist-rows">
-                <div class="peer-dist-row"><span class="dr-label">Partnerships</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 95%;"></div></div><span class="dr-pct">95</span></div>
-                <div class="peer-dist-row"><span class="dr-label">PPC / paid search</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 90%;"></div></div><span class="dr-pct">90</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Founder voice</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 68%;"></div></div><span class="dr-pct">68</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Thought leadership</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 60%;"></div></div><span class="dr-pct">60</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Own social</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 55%;"></div></div><span class="dr-pct">55</span></div>
-                <div class="peer-dist-row"><span class="dr-label">Events</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 40%;"></div></div><span class="dr-pct">40</span></div>
+            <div class="chart-block">
+              <div class="chart-title"><span class="ct-name">Distribution mix</span><span class="ct-sub">Where content lives (supporting)</span></div>
+              <div class="dist-rows">
+                <div class="dist-row"><span class="dr-label">LinkedIn</span><div class="dr-bar-wrap"><div class="dr-bar" style="width: 100%;"></div></div><span class="dr-pct">40%</span></div>
+                <div class="dist-row"><span class="dr-label">X / Twitter</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 50%;"></div></div><span class="dr-pct">20%</span></div>
+                <div class="dist-row"><span class="dr-label">Blog / web</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 37.5%;"></div></div><span class="dr-pct">15%</span></div>
+                <div class="dist-row"><span class="dr-label">Email</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 37.5%;"></div></div><span class="dr-pct">15%</span></div>
+                <div class="dist-row"><span class="dr-label">Podcast</span><div class="dr-bar-wrap"><div class="dr-bar muted" style="width: 25%;"></div></div><span class="dr-pct">10%</span></div>
               </div>
             </div>
           </div>
@@ -1504,7 +1228,7 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 13 — OUR CONTENT BLEND (90/5/5) · SHARP COMPARISON                -->
+  <!-- 13 — OUR CONTENT BLEND (90/5/5, no distribution)                  -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
@@ -1525,18 +1249,17 @@
           <span><span class="dot d-aware"></span>Awareness &mdash; 5%</span>
           <span><span class="dot d-brand"></span>Brand &mdash; 5%</span>
         </div>
-        <h3 style="margin-top: 2.5vh;">For reference &mdash; peer averages from the previous six</h3>
+        <h3 style="margin-top: 3vh;">For reference</h3>
         <div class="models models-2" style="margin-top: 1vh;">
           <div class="model-card">
             <span class="model-label">B2B fintech benchmark</span>
             <p>Roughly <strong class="pink">46 / 54</strong> brand / activation by marketing budget (Binet &amp; Field).</p>
           </div>
           <div class="model-card">
-            <span class="model-label">Our peer-set median</span>
-            <p>Roughly <strong class="pink">30% brand / 30% awareness / 40% activation</strong> across Wise, Monzo, Revolut, Airwallex, Pleo, Ramp.</p>
+            <span class="model-label">Peer-set median (from previous six)</span>
+            <p>Roughly <strong class="pink">30% brand / 30% awareness / 40% activation</strong> across Wise, Monzo, Nubank, Revolut, Pleo, Ramp.</p>
           </div>
         </div>
-        <div class="pull-quote">Sharp comparison. <span class="pink-strong">The gap is the opportunity.</span></div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
@@ -1558,7 +1281,7 @@
           <li>
             <strong>Branding</strong>
             Identity, values, distinctiveness. Global consistency. Slow ROI. Compounds permanently.
-            <p class="fine" style="margin-top: 0.6vh;"><em class="serif">Looks like:</em> Monzo coral card, Airwallex F1, Wise "hidden fees" era, WorldFirst's <strong class="pink">"Your cross-border moat."</strong></p>
+            <p class="fine" style="margin-top: 0.6vh;"><em class="serif">Looks like:</em> Monzo coral card, Wise "hidden fees" era, WorldFirst's <strong class="pink">"Build Your Cross-Border Moat."</strong></p>
           </li>
           <li>
             <strong>Awareness</strong>
@@ -1585,15 +1308,14 @@
         <span class="eyebrow">14 · Finding the balance</span>
         <h2 class="xl">The question is <em>rebalancing</em> &mdash; upper-funnel catches up to activation.</h2>
         <p>Activation stays strong &mdash; it's already our strongest layer.</p>
-        <p>Upper-funnel gradually gains weight over 3&ndash;4 quarters toward the 46 / 54 benchmark. No rebalancing today = CPA climbs and the pool shrinks.</p>
-        <div class="pull-quote">These two go hand in hand. <span class="pink-strong">Balance is the long-term efficiency play.</span></div>
+        <p>Upper-funnel gradually gains weight over 3&ndash;4 quarters toward the 46 / 54 benchmark. No rebalancing = CPA climbs, pool shrinks.</p>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
-  <!-- 16 — CONTENT MIX + DISTRIBUTION MIX                               -->
+  <!-- 16 — CONTENT + DISTRIBUTION                                       -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
@@ -1606,7 +1328,6 @@
         <h2 class="xl">Content mix matters. Distribution mix matters <em>more.</em></h2>
         <p>Calling upper-funnel "social's job" is the core mistake. Same asset, eight channels &rarr; outperforms same budget on social alone.</p>
         <p>The work: design for the awareness outcome, then distribute across whatever channels carry it best.</p>
-        <div class="pull-quote">Distribution thinking <span class="pink-strong">precedes content thinking.</span></div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
@@ -1640,7 +1361,7 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 18 — AIRWALLEX F1 WORKED EXAMPLE                                  -->
+  <!-- 18 — AIRWALLEX F1 (worked example, with image placeholder)        -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
@@ -1651,19 +1372,19 @@
       <div class="column column-wide">
         <span class="eyebrow">17 · Worked example · Airwallex F1</span>
         <h2 class="lg">Airwallex &times; F1 &mdash; <em>every</em> channel carried the same message.</h2>
-        <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 3vw; margin-top: 2vh; align-items: start;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3vw; margin-top: 2vh; align-items: start;">
           <div>
-            <div class="placeholder" style="min-height: 22vh;">[IMAGE: Airwallex F1 campaign still &mdash; car livery, paddock activation, or hero creative from the F1 partnership. Borrow from Study.]</div>
-            <p class="fine" style="margin-top: 1.5vh;">One shared creative spine: "Airwallex powers global ambition." Deployed across all eight channels during the F1 season.</p>
+            <div class="placeholder" style="min-height: 24vh;">[IMAGE: Airwallex F1 campaign still &mdash; Steven to provide]</div>
+            <p class="fine" style="margin-top: 1.5vh;">A shared creative spine deployed across all eight channels during the F1 season &mdash; the sum read bigger than any individual activation.</p>
           </div>
           <div class="models models-2">
-            <div class="model-card"><span class="model-label">Own social</span><p>Race-day content, announcements, driver cameos.</p></div>
-            <div class="model-card"><span class="model-label">Creators</span><p>F1 community creators + driver collabs.</p></div>
+            <div class="model-card"><span class="model-label">Own social</span><p>Race-day content, announcements.</p></div>
+            <div class="model-card"><span class="model-label">Creators</span><p>F1 community + driver collabs.</p></div>
             <div class="model-card"><span class="model-label">PR</span><p>Trade press + FT + Forbes pickup.</p></div>
             <div class="model-card"><span class="model-label">Events</span><p>Paddock hospitality, season-long.</p></div>
             <div class="model-card"><span class="model-label">Paid</span><p>F1-themed global brand ads.</p></div>
-            <div class="model-card"><span class="model-label">Website</span><p>Dedicated F1 landing page + hub.</p></div>
-            <div class="model-card"><span class="model-label">Employees</span><p>Leadership posts during race weekends.</p></div>
+            <div class="model-card"><span class="model-label">Website</span><p>Dedicated F1 landing + hub.</p></div>
+            <div class="model-card"><span class="model-label">Employees</span><p>Leadership posts during races.</p></div>
             <div class="model-card"><span class="model-label">Partnerships</span><p>F1 ecosystem co-marketing.</p></div>
           </div>
         </div>
@@ -1687,7 +1408,7 @@
         <div class="roi-chart">
           <div class="roi-label">Brand</div>
           <div class="roi-bar-wrap"><div class="roi-bar bar-brand">Compounds permanently</div></div>
-          <div class="roi-time">1&ndash;3 years+</div>
+          <div class="roi-time">0&ndash;3 years+</div>
 
           <div class="roi-label">Awareness</div>
           <div class="roi-bar-wrap"><div class="roi-bar bar-aware">Builds product demand</div></div>
@@ -1707,7 +1428,7 @@
           <div></div>
         </div>
         <div class="note" style="max-width: 80ch;">
-          <div class="note-text"><strong>Case to make here.</strong> When we evaluated some of the KOL content we ran last year, direct registrations read as zero. That doesn't mean it failed &mdash; awareness content doesn't convert next-day. Real contribution comes through retargeting, brand-search lift, and conversions 3&ndash;12 months later. <strong>Measure the right job.</strong></div>
+          <div class="note-text">When we evaluated some of our KOL content from last year, direct registrations read as <strong>zero</strong>. People could well have gone direct after seeing it, and awareness takes 3&ndash;12 months to convert through retargeting + brand-search lift. <strong>The KOL collab didn't fail &mdash; it was being measured against the wrong job.</strong></div>
         </div>
       </div>
     </div>
@@ -1725,16 +1446,16 @@
     <div class="slide-body v-center">
       <div class="column column-narrow">
         <span class="eyebrow">19 · Q2 focus</span>
-        <h2 class="xl">Q2 focuses on <em>awareness</em> content. Brand matters &mdash; we return to it at the end.</h2>
+        <h2 class="xl">Today we talk about <em>awareness</em> content. Brand matters &mdash; we return to it at the end.</h2>
         <p>Awareness has the biggest expansion headroom and the best short-term impact-to-effort ratio.</p>
-        <p>Brand is the parallel long-term build &mdash; Part 8 of this deck.</p>
+        <p>Brand is the parallel long-term build &mdash; final section of this deck.</p>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
-  <!-- 21 — THE BATTLE PLAN (DIRECT)                                     -->
+  <!-- 21 — THE BATTLE PLAN                                              -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
@@ -1747,7 +1468,7 @@
         <h2 class="xl"><em>Regional creators</em> + short-form carrying Q2 product focus to 20M / month.</h2>
         <ul class="bullets">
           <li><strong>Who</strong> &mdash; regional creators in priority corridors, not central talking heads</li>
-          <li><strong>What</strong> &mdash; platform-native short-form tied directly to WorldFirst product benefit (not generic category)</li>
+          <li><strong>What</strong> &mdash; platform-native short-form tied directly to WorldFirst product benefit</li>
           <li><strong>When</strong> &mdash; two-month concentration, Q2</li>
           <li><strong>How much</strong> &mdash; <strong class="pink">20M impressions per month</strong> across priority regions</li>
         </ul>
@@ -1757,101 +1478,143 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 22 — WHY 20M                                                      -->
+  <!-- 22 — VIDEO GRID (example content)                                 -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Why 20M</span><span class="sep"></span><span class="head-num">22</span></div>
-    </div>
-    <div class="slide-body v-center">
-      <div class="column column-narrow">
-        <span class="eyebrow">21 · The number</span>
-        <h2 class="xl">Why <em>20M?</em> Awareness needs scale to move the needle.</h2>
-        <ul class="bullets">
-          <li><strong>At 1M per month</strong> we sit below the recall threshold in priority regions &mdash; noise, not signal</li>
-          <li><strong>Awareness cycle</strong> &mdash; decision-makers need 3+ exposures within ~4 weeks to retain the message</li>
-          <li><strong>At 20M per month</strong> we clear effective reach &mdash; results become measurable</li>
-        </ul>
-        <div class="pull-quote">Small numbers are measurement noise. <span class="pink-strong">20M per month is the scale that makes awareness readable.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- ================================================================= -->
-  <!-- 23 — HOW WE DO IT · REGIONAL × PRODUCT CHART                     -->
-  <!-- ================================================================= -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>How we do it</span><span class="sep"></span><span class="head-num">23</span></div>
+      <div class="head-meta"><span>What it looks like</span><span class="sep"></span><span class="head-num">22</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">22 · How we do it &mdash; the distribution</span>
-        <h2 class="lg">20M per month <em>distributed</em> against paid budget &amp; product focus.</h2>
-        <p class="fine" style="max-width: 82ch;">Awareness content is built for the paid team's activation targets &mdash; same regions, same products. The demand we create feeds the pool they convert.</p>
-        <table class="region-chart">
-          <thead>
-            <tr><th>Region</th><th>Product focus</th><th class="num">Paid budget</th><th class="num">20M share</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>UK</strong></td><td class="product">WorldCard, World Account</td><td class="num">27.5%</td><td class="num"><span class="share-bar" style="width: 82px;"></span>5.5M</td></tr>
-            <tr><td><strong>SEA (MY + SG)</strong></td><td class="product">1688 WP, World Account</td><td class="num">16.0%</td><td class="num"><span class="share-bar" style="width: 48px;"></span>3.2M</td></tr>
-            <tr><td><strong>US (Zyla)</strong></td><td class="product">Zyla brand</td><td class="num">11.4%</td><td class="num"><span class="share-bar" style="width: 34px;"></span>2.3M</td></tr>
-            <tr><td><strong>EEA</strong></td><td class="product">World Account</td><td class="num">11.2%</td><td class="num"><span class="share-bar" style="width: 34px;"></span>2.2M</td></tr>
-            <tr><td><strong>Vietnam</strong></td><td class="product">World Account, WorldCard</td><td class="num">6.2%</td><td class="num"><span class="share-bar" style="width: 19px;"></span>1.2M</td></tr>
-            <tr><td><strong>Longtail (PK/NG/BD/MA)</strong></td><td class="product">1688 WP</td><td class="num">5.7%</td><td class="num"><span class="share-bar" style="width: 17px;"></span>1.1M</td></tr>
-            <tr><td><strong>ANZ</strong></td><td class="product">WorldCard</td><td class="num">5.7%</td><td class="num"><span class="share-bar" style="width: 17px;"></span>1.1M</td></tr>
-            <tr><td><strong>Turkey</strong></td><td class="product">WorldCard</td><td class="num">4.8%</td><td class="num"><span class="share-bar" style="width: 14px;"></span>1.0M</td></tr>
-            <tr><td><strong>JKT</strong></td><td class="product">1688 WP</td><td class="num">4.5%</td><td class="num"><span class="share-bar" style="width: 14px;"></span>0.9M</td></tr>
-            <tr><td><strong>Other</strong></td><td class="product">MX_BR, Middle East</td><td class="num">7.0%</td><td class="num"><span class="share-bar" style="width: 22px;"></span>1.5M</td></tr>
-            <tr class="total"><td colspan="2">Total priority regions</td><td class="num">~100%</td><td class="num">~20M / month</td></tr>
-          </tbody>
-        </table>
+        <span class="eyebrow">21 · What it looks like</span>
+        <h2 class="lg">Regional creators talking about our <em>product.</em></h2>
+        <p class="fine" style="max-width: 80ch;">Short-form videos by operators in each priority region, dedicated to WorldFirst product benefits in their own voice, their own market. Placeholders below &mdash; Steven to drop in eight example links.</p>
+        <div class="video-grid">
+          <div class="video-cell"><span class="vc-region">UK</span>WorldCard for freelancers with Asian suppliers</div>
+          <div class="video-cell"><span class="vc-region">SEA · MY</span>Paying 1688 suppliers in MYR</div>
+          <div class="video-cell"><span class="vc-region">Vietnam</span>CNY rates + Forwards for Q4 imports</div>
+          <div class="video-cell"><span class="vc-region">US · Zyla</span>Cross-border brand scaling story</div>
+          <div class="video-cell"><span class="vc-region">EEA · DE</span>World Account for European SMEs</div>
+          <div class="video-cell"><span class="vc-region">Longtail · PK</span>Local supplier payments in Urdu</div>
+          <div class="video-cell"><span class="vc-region">ANZ</span>WorldCard for Amazon sellers</div>
+          <div class="video-cell"><span class="vc-region">Turkey</span>Currency lock-in for importers</div>
+        </div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
-  <!-- 24 — PRODUCTION FLOW                                              -->
+  <!-- 23 — WHY 20M                                                      -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Production flow</span><span class="sep"></span><span class="head-num">24</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">23 · Production flow</span>
-        <h2 class="lg">After performance read, the path <em>splits.</em></h2>
-        <p class="fine" style="max-width: 80ch;"><strong>Today:</strong> identify &rarr; ideate &rarr; test &rarr; read &rarr; distribute (linear). <strong>Proposal:</strong> at the read, split into two parallel streams.</p>
-        <ul class="dual" style="margin-top: 1.5vh;">
-          <li><strong>Paid team</strong>Doubles down on activation variants for the in-market 5%.</li>
-          <li><strong>Upper-funnel + regional teams</strong>Build localised creator content for regional awareness pools.</li>
-        </ul>
-        <div class="placeholder wide" style="margin-top: 1.5vh;">[PLACEHOLDER: flow diagram &mdash; the split after performance read, two streams converging on shared dashboard]</div>
-        <p class="fine" style="max-width: 80ch;">Same campaign. Two workstreams. Different audiences. <strong class="pink">Shared dashboard.</strong></p>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- ================================================================= -->
-  <!-- 25 — REGIONAL REALITY                                             -->
-  <!-- ================================================================= -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Regional reality</span><span class="sep"></span><span class="head-num">25</span></div>
+      <div class="head-meta"><span>Why 20M</span><span class="sep"></span><span class="head-num">23</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">24 · Regional reality</span>
-        <h2 class="xl">Vietnam and SEA are <em>ready.</em> Others need a bridge.</h2>
-        <p>Vietnam and SEA are ready for collaborative execution today. Other regions are further behind &mdash; we build the bridge as we go.</p>
+        <span class="eyebrow">22 · The number</span>
+        <h2 class="xl">Why <em>20M?</em> Awareness needs scale to move the needle.</h2>
+        <ul class="bullets">
+          <li><strong>At 1M per month</strong> we sit below recall threshold in priority regions &mdash; noise, not signal</li>
+          <li><strong>Awareness cycle</strong> &mdash; decision-makers need 3+ exposures within ~4 weeks to retain the message</li>
+          <li><strong>At 20M per month</strong> we clear effective reach &mdash; results become measurable</li>
+        </ul>
+        <div class="pull-quote">Small numbers are measurement noise. <span class="pink-strong">20M is the scale that makes awareness readable.</span></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 24 — HOW WE DO IT (region × product, bars only)                   -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>How we do it</span><span class="sep"></span><span class="head-num">24</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">23 · How we do it &mdash; the distribution</span>
+        <h2 class="lg">20M per month distributed <em>against</em> paid budget &amp; product focus.</h2>
+        <p class="fine" style="max-width: 82ch;">Awareness content built for the paid team's activation targets &mdash; same regions, same products. The demand we create feeds the pool they convert.</p>
+        <div class="region-bars">
+          <div class="region-row"><span class="rr-name">UK</span><span class="rr-product">WorldCard, World Account</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 100%;"></div></div></div>
+          <div class="region-row"><span class="rr-name">SEA (MY + SG)</span><span class="rr-product">1688 WP, World Account</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 58%;"></div></div></div>
+          <div class="region-row"><span class="rr-name">US (Zyla)</span><span class="rr-product">Zyla brand</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 41%;"></div></div></div>
+          <div class="region-row"><span class="rr-name">EEA</span><span class="rr-product">World Account</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 41%;"></div></div></div>
+          <div class="region-row"><span class="rr-name">Vietnam</span><span class="rr-product">World Account, WorldCard</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 23%;"></div></div></div>
+          <div class="region-row"><span class="rr-name">Longtail (PK/NG/BD/MA)</span><span class="rr-product">1688 WP</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 21%;"></div></div></div>
+          <div class="region-row"><span class="rr-name">ANZ</span><span class="rr-product">WorldCard</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 21%;"></div></div></div>
+          <div class="region-row"><span class="rr-name">Turkey</span><span class="rr-product">WorldCard</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 18%;"></div></div></div>
+          <div class="region-row"><span class="rr-name">Other (JKT, MX_BR, ME)</span><span class="rr-product">Mixed</span><div class="rr-bar-wrap"><div class="rr-bar" style="width: 22%;"></div></div></div>
+        </div>
+        <p class="fine" style="margin-top: 1.5vh;">Bar length reflects paid budget share &mdash; each region's absolute impressions will vary based on CPM.</p>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 25 — PRODUCTION FLOW (HTML chart)                                 -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Production flow</span><span class="sep"></span><span class="head-num">25</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">24 · Production flow</span>
+        <h2 class="lg">After performance read, the path <em>splits.</em></h2>
+        <div class="pflow">
+          <div class="pflow-top">
+            <div class="pflow-step"><span class="ps-num">01</span><span class="ps-name">Campaign identification</span><span class="ps-desc">Product, region, audience</span></div>
+            <div class="pflow-step"><span class="ps-num">02</span><span class="ps-name">Creative ideation</span><span class="ps-desc">Multiple message angles</span></div>
+            <div class="pflow-step"><span class="ps-num">03</span><span class="ps-name">Freelancer testing</span><span class="ps-desc">Fast iteration, boosted</span></div>
+            <div class="pflow-step read"><span class="ps-num">04</span><span class="ps-name">Performance read</span><span class="ps-desc">What's working</span></div>
+          </div>
+          <div class="pflow-arrow-row"><span class="pflow-arrow">&darr;</span></div>
+          <div class="pflow-split">
+            <div class="pflow-branch">
+              <span class="pb-label">05a · Paid team</span>
+              <span class="pb-name">Amplify via assets + audiences</span>
+              <span class="pb-desc">Winning creative becomes paid variants. Awareness audiences become retargeting pools. Scale acquisition against in-market 5%.</span>
+            </div>
+            <div class="pflow-branch">
+              <span class="pb-label">05b · Upper-funnel + regional teams</span>
+              <span class="pb-name">Amplify via creators + influencers</span>
+              <span class="pb-desc">Proven message localised by regional creators at volume. Influencer program builds repeated exposure in priority corridors.</span>
+            </div>
+          </div>
+          <div class="pflow-arrow-row"><span class="pflow-arrow">&darr;</span></div>
+          <div class="pflow-regroup">
+            <span class="pr-name">06 · Regroup &middot; back to campaign goal</span>
+            <span class="pr-desc">Shared dashboard: what's contributing, what to double down on, what to cut.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 26 — REGIONAL REALITY (Vietnam + Steven bridge)                   -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Regional reality</span><span class="sep"></span><span class="head-num">26</span></div>
+    </div>
+    <div class="slide-body v-center">
+      <div class="column column-narrow">
+        <span class="eyebrow">25 · Regional reality</span>
+        <h2 class="xl">Vietnam is already <em>ready.</em> Other regions need a bridge &mdash; which is me.</h2>
+        <p><strong>Vietnam</strong> is ready for regional creator collaboration today &mdash; local team owns local channels, understands their audience, has language capability.</p>
+        <p><strong>Other regions</strong> &mdash; UK, SEA, EEA, ANZ, Longtail &mdash; don't have dedicated regional content leads yet. Central (me) steps in as the bridge: sourcing creators, briefing them on WorldFirst product benefit, co-producing with regional stakeholders.</p>
         <div class="pull-quote">A genuine description of where WorldFirst is, <span class="pink-strong">not an asterisk.</span></div>
       </div>
     </div>
@@ -1859,32 +1622,36 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 26 — METRICS                                                      -->
+  <!-- 27 — METRICS (colour-coded + descriptions + timespan)             -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Metrics</span><span class="sep"></span><span class="head-num">26</span></div>
+      <div class="head-meta"><span>Metrics</span><span class="sep"></span><span class="head-num">27</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">25 · Metrics</span>
-        <h2 class="lg">The <em>metrics</em> we look at.</h2>
-        <div class="metric-grid">
-          <div class="metric-card">
-            <span class="metric-label">01 · Content performance</span>
-            <ul><li>Impressions</li><li>Time spent</li><li>Engagement rate</li></ul>
+        <span class="eyebrow">26 · Metrics</span>
+        <h2 class="lg">The <em>metrics</em> we look at &mdash; four jobs, four time-horizons.</h2>
+        <div class="metric-grid-v2">
+          <div class="metric-card-v2 color-aware">
+            <div class="mc-head"><span class="mc-label">01 · Content performance</span><span class="mc-time">Weekly</span></div>
+            <div class="mc-desc">Is the content itself working? Are people watching, engaging, coming back?</div>
+            <ul><li>Impressions</li><li>Time spent</li><li>Engagement rate</li><li>Completion</li></ul>
           </div>
-          <div class="metric-card">
-            <span class="metric-label">02 · Direct acquisition</span>
+          <div class="metric-card-v2 color-act">
+            <div class="mc-head"><span class="mc-label">02 · Direct acquisition</span><span class="mc-time">3 / 6 / 12 mo</span></div>
+            <div class="mc-desc">Are people acting directly on what they saw &mdash; clicking through, signing up?</div>
             <ul><li>Website visits</li><li>App downloads</li><li>Registrations</li></ul>
           </div>
-          <div class="metric-card">
-            <span class="metric-label">03 · Audience building</span>
-            <ul><li>Social audiences</li><li>Website audiences (paid retargeting pool)</li></ul>
+          <div class="metric-card-v2 color-brand">
+            <div class="mc-head"><span class="mc-label">03 · Audience building</span><span class="mc-time">Monthly</span></div>
+            <div class="mc-desc">Is the asset behind acquisition growing? This is what compounds into paid retargeting efficiency.</div>
+            <ul><li>Social audiences</li><li>Website audiences</li><li>Retargeting pool</li></ul>
           </div>
-          <div class="metric-card">
-            <span class="metric-label">04 · Cycle signals</span>
+          <div class="metric-card-v2 color-cycle">
+            <div class="mc-head"><span class="mc-label">04 · Cycle signals</span><span class="mc-time">Quarterly</span></div>
+            <div class="mc-desc">Is awareness translating into consideration over time? This is the long-horizon payback read.</div>
             <ul><li>Brand-search lift</li><li>Indirect conversion (3 / 6 / 12 mo)</li></ul>
           </div>
         </div>
@@ -1894,41 +1661,42 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 27 — BEYOND Q2                                                    -->
+  <!-- 28 — BEYOND Q2                                                    -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Beyond Q2</span><span class="sep"></span><span class="head-num">27</span></div>
+      <div class="head-meta"><span>Beyond Q2</span><span class="sep"></span><span class="head-num">28</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">26 · Beyond Q2</span>
+        <span class="eyebrow">27 · Beyond Q2</span>
         <h2 class="xl">Two months, then we <em>regroup.</em></h2>
         <p>After Q2: consolidated hybrid strategy &mdash; a mix, not one format winning everything.</p>
-        <div class="pull-quote">The next slides outline <span class="pink-strong">what that mix looks like.</span></div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
-  <!-- 28 — FULL STACK                                                   -->
+  <!-- 29 — FULL STACK (+ signs, updated items)                          -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The full stack</span><span class="sep"></span><span class="head-num">28</span></div>
+      <div class="head-meta"><span>The full stack</span><span class="sep"></span><span class="head-num">29</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">27 · The full stack</span>
+        <span class="eyebrow">28 · The full stack</span>
         <h2 class="xl">Long-term leverage is a <em>combination.</em></h2>
-        <ul class="bullets">
-          <li><strong>Brand campaigns</strong> &mdash; the top layer</li>
-          <li><strong>Networking events</strong> &mdash; business people talk to business people</li>
-          <li><strong>Proof / partnership / customer-ambassador content</strong></li>
-          <li><strong>Flagship research</strong> &mdash; regional + corridor-specific</li>
+        <ul class="plus-list">
+          <li><strong>Brand campaigns</strong></li>
+          <li><strong>KLC</strong> &mdash; Key Leading Customer / customer-ambassador content</li>
+          <li><strong>Events, people, culture</strong></li>
+          <li><strong>Flagship research</strong></li>
+          <li><strong>Value-driven educational</strong></li>
+          <li><strong>Comparison + tutorial content</strong></li>
         </ul>
         <div class="pull-quote">Awareness content alone is a short-term play. <span class="pink-strong">These compound.</span></div>
       </div>
@@ -1937,77 +1705,16 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 29 — FLAGSHIP CONTENT WORTH INVESTING                             -->
+  <!-- 30 — DASHBOARD                                                    -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Flagship content</span><span class="sep"></span><span class="head-num">29</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">28 · Why flagship content &mdash; and when</span>
-        <h2 class="lg">Invest in flagship content <em>after</em> Q2 &mdash; once the awareness pipe is established.</h2>
-        <p class="fine" style="max-width: 82ch;">Flagship research is slow-burn. It's also a category-authority builder that differentiates WorldFirst from peers running creator-only upper-funnel. Right sequence: Q2 gets awareness running; Q3&ndash;Q4 we start flagship content on top.</p>
-        <div class="models models-2" style="margin-top: 2.5vh;">
-          <div class="model-card">
-            <span class="model-label">Idea 01</span>
-            <p><strong>The Cross-Border E-commerce Opportunity 2026</strong><span class="model-sub">Global, region-relevant, lead-gen magnet. Annual drumbeat in the Pleo CFO Playbook mould.</span></p>
-          </div>
-          <div class="model-card">
-            <span class="model-label">Idea 02</span>
-            <p><strong>Quarterly FX Management Report</strong><span class="model-sub">Corridor-specific (SGD, CNY, GBP). T0 / T1 client sales enablement + PR hook.</span></p>
-          </div>
-        </div>
-        <div class="pull-quote" style="margin-top: 3vh; max-width: 64ch;">Both compound. Both build category authority. <span class="pink-strong">Both differentiate us from peers running creator-only upper-funnel.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- ================================================================= -->
-  <!-- 30 — FLYWHEEL COMPOSITION                                         -->
-  <!-- ================================================================= -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The flywheel</span><span class="sep"></span><span class="head-num">30</span></div>
-    </div>
-    <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">29 · The flywheel</span>
-        <h2 class="lg">Three levels speaking the <em>same</em> language.</h2>
-        <div class="pyramid">
-          <div class="tier-row tier-top">
-            <div class="tier-label">Top</div>
-            <div class="tier-body"><strong>Business people talk about WorldFirst.</strong> Stripe-founder-interview energy &mdash; operators, investors, founders speaking unprompted.</div>
-          </div>
-          <div class="tier-row">
-            <div class="tier-label">Middle</div>
-            <div class="tier-body"><strong>Educational white papers</strong> for brands scaling up &mdash; research, corridors, market studies.</div>
-          </div>
-          <div class="tier-row">
-            <div class="tier-label">Bottom</div>
-            <div class="tier-body"><strong>How to save money, how to use WorldFirst.</strong> Product education, feature walkthroughs, practical guidance.</div>
-          </div>
-        </div>
-        <div class="pull-quote" style="margin-top: 3vh; max-width: 62ch;">Nothing overtakes everything else. <span class="pink-strong">It's a composition, not a winner.</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
-  </section>
-
-  <!-- ================================================================= -->
-  <!-- 31 — DASHBOARD                                                    -->
-  <!-- ================================================================= -->
-  <section class="slide">
-    <div class="slide-head">
-      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The dashboard</span><span class="sep"></span><span class="head-num">31</span></div>
+      <div class="head-meta"><span>The dashboard</span><span class="sep"></span><span class="head-num">30</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">30 · The dashboard</span>
+        <span class="eyebrow">29 · The dashboard</span>
         <h2 class="xl">One dashboard. <em>Shared.</em> Upper-funnel + regional + paid.</h2>
         <ul class="bullets">
           <li>UK awareness content works &rarr; Vietnam adapts it same day</li>
@@ -2020,40 +1727,39 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 32 — AWARENESS + ACTIVATION TOGETHER                              -->
+  <!-- 31 — AWARENESS + ACTIVATION TOGETHER                              -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Awareness + activation</span><span class="sep"></span><span class="head-num">32</span></div>
+      <div class="head-meta"><span>Working together</span><span class="sep"></span><span class="head-num">31</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">31 · Working together</span>
+        <span class="eyebrow">30 · Working together</span>
         <h2 class="xl">How awareness and activation <em>work together.</em></h2>
         <ul class="bullets">
           <li><strong>Consistent communications</strong> &mdash; same message across both layers, different jobs</li>
           <li><strong>Shared assets</strong> &mdash; winning awareness creative becomes activation variants</li>
           <li><strong>Shared data</strong> &mdash; awareness audiences become activation's retargeting pool</li>
         </ul>
-        <div class="pull-quote">They aren't separate programs. <span class="pink-strong">They're one program with two jobs.</span></div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
-  <!-- 33 — TEAM SHAPE (+ BRANDING SEGUE)                                -->
+  <!-- 32 — TEAM SHAPE                                                   -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Team shape</span><span class="sep"></span><span class="head-num">33</span></div>
+      <div class="head-meta"><span>Team shape</span><span class="sep"></span><span class="head-num">32</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">32 · Team shape</span>
-        <h2 class="lg">The team shape that <em>delivers</em> a complete upper-funnel stack.</h2>
+        <span class="eyebrow">31 · Team shape</span>
+        <h2 class="lg">One person can run social. Upper-funnel needs a <em>full team.</em></h2>
         <ul class="bullets" style="margin-top: 2vh;">
           <li><strong>Cathy (incoming)</strong> &mdash; shifting ad-hoc tasks over to her; owns social publishing + brand content coordination</li>
         </ul>
@@ -2063,7 +1769,7 @@
           <li>Influencer / KOL program ownership</li>
           <li>Production support for regional content at volume</li>
         </ul>
-        <p class="fine" style="max-width: 80ch; margin-top: 1.5vh;"><strong class="pink">And &mdash;</strong> close collaboration with the <strong>Branding department.</strong> Branding owns a huge share of the upper-funnel composition. Awareness content only lands when the brand above it is coherent.</p>
+        <p class="fine" style="max-width: 80ch; margin-top: 1.5vh;"><strong class="pink">And &mdash;</strong> close collaboration with the <strong>Branding department.</strong> Branding owns a huge share of upper-funnel composition. Awareness content only lands when the brand above it is coherent.</p>
         <div class="pull-quote">Medium-term leverage is awareness. <span class="pink-strong">Long-term leverage is brand.</span></div>
       </div>
     </div>
@@ -2071,12 +1777,12 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 34 — PIVOT DIVIDER · BRAND CAMPAIGN                               -->
+  <!-- 33 — PIVOT DIVIDER · BRAND CAMPAIGN                               -->
   <!-- ================================================================= -->
   <section class="slide slide-divider">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Part III · Brand campaign</span><span class="sep"></span><span class="head-num">34</span></div>
+      <div class="head-meta"><span>Part III · Brand campaign</span><span class="sep"></span><span class="head-num">33</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="div-num">III</div>
@@ -2090,79 +1796,94 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 35 — WISE MISTAKE                                                 -->
+  <!-- 34 — BRAND CAMPAIGN IS RISKY                                      -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Cautionary tale</span><span class="sep"></span><span class="head-num">35</span></div>
+      <div class="head-meta"><span>Brand campaign is risky</span><span class="sep"></span><span class="head-num">34</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column">
-        <span class="eyebrow">33 · The Wise cautionary tale</span>
-        <h2 class="lg">Wise built the category. <em>Others</em> collected the demand.</h2>
-        <ul class="bullets">
-          <li><strong>2014&ndash;19</strong> &mdash; the hidden-fees narrative built industry-wide awareness of "banks overcharge on FX"</li>
-          <li><strong>2020+</strong> &mdash; Revolut Business, Remitly, Atlantic Money entered with activation at scale</li>
-          <li><strong>Leakage</strong> &mdash; buyers educated on the category went shopping, many landed elsewhere</li>
+        <span class="eyebrow">32 · Brand campaigns come with real risk</span>
+        <h2 class="lg">Two reminders of what goes <em>wrong</em> when brand outpaces defence.</h2>
+        <ul class="bullets" style="margin-top: 2vh;">
+          <li><strong>Wise, 2014&ndash;19</strong> &mdash; built the "hidden fees" category for the whole market. Much of the demand got collected by Revolut, Remitly and Atlantic Money. Brand without activation defence <strong>subsidised competitors.</strong></li>
+          <li><strong>WorldFirst &times; Spurs</strong> &mdash; the football sponsorship delivered visibility but hasn't translated into upper-funnel awareness our activation teams can compound. A brand beat without the content layers to carry it through.</li>
         </ul>
-        <div class="pull-quote">Without a product moat Wise could uniquely defend, <span class="pink-strong">brand investment subsidised competitor growth.</span></div>
+        <div class="pull-quote">Brand is high-leverage. <span class="pink-strong">High-leverage means it cuts both ways.</span></div>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
-  <!-- 36 — MOAT BEFORE BRAND                                            -->
+  <!-- 35 — BRAND PROPOSITION NEEDS TO BE OURS TO COLLECT                -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The moat test</span><span class="sep"></span><span class="head-num">36</span></div>
+      <div class="head-meta"><span>Awareness for us to collect</span><span class="sep"></span><span class="head-num">35</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">34 · The moat test</span>
-        <h2 class="xl">Invest in brand <em>after</em> the moat is defensible.</h2>
-        <p><strong>FX savings alone is matchable.</strong> Most peers compete on the same claim. Brand built on a generic benefit leaks to whoever executes activation better.</p>
-        <p><strong>Our moat is specific:</strong> Ant / Alipay relationship, CNY depth, 1688 ecosystem, global corridors. Regional awareness concentrates around these. Global brand anchors to them.</p>
-        <div class="pull-quote">Regional &rarr; product benefit. <span class="pink-strong">Global &rarr; the moat itself.</span></div>
+        <span class="eyebrow">33 · The proposition test</span>
+        <h2 class="xl">Brand campaigns should create awareness that's <em>ours</em> to collect, not competitors'.</h2>
+        <p><strong>FX savings</strong> alone is a claim most peers can match. A brand built on it educates the market on a benefit anyone delivers &mdash; the strongest activation collects the demand.</p>
+        <p>The proposition has to anchor to something <strong>specifically WorldFirst</strong>: our Ant / Alipay depth, CNY routing, 1688 ecosystem, global cross-border footprint. Awareness against that is awareness we can uniquely convert.</p>
       </div>
     </div>
     <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
-  <!-- 37 — FLASHY HERO · YOUR CROSS-BORDER MOAT                         -->
+  <!-- 36 — FLASHY HERO · BUILD YOUR CROSS-BORDER MOAT                   -->
   <!-- ================================================================= -->
   <section class="slide slide-flash">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The proposition</span><span class="sep"></span><span class="head-num">37</span></div>
+      <div class="head-meta"><span>The proposition</span><span class="sep"></span><span class="head-num">36</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="flash-deco">moat</div>
       <div class="column column-wide flash-content">
-        <span class="eyebrow">35 · The global proposition</span>
-        <h1 class="flash-title">Your cross-border <em>moat.</em></h1>
-        <p class="flash-sub">The one sentence that says what WorldFirst does that no one else can match.</p>
-        <div class="flash-pillars">
-          <div class="flash-pillar">
-            <span class="p-label">Pillar 01</span>
-            <p>Ant / Alipay relationship &mdash; institutional depth peers can't replicate.</p>
+        <span class="eyebrow">34 · The global proposition</span>
+        <h1 class="flash-title">Build Your<br>Cross-Border <em>Moat.</em></h1>
+        <p class="flash-sub">The one idea that says what WorldFirst does that no one else can match &mdash; and invites our customers into their own story.</p>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 37 — CROSS-BORDER SUCCESS STORIES                                 -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Success stories</span><span class="sep"></span><span class="head-num">37</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column">
+        <span class="eyebrow">35 · The campaign shape</span>
+        <h2 class="lg">A campaign built around <em>cross-border success stories.</em></h2>
+        <p class="fine" style="max-width: 82ch;">Our customers are cross-border operators. When they share their tips, what they're really describing is <em>their</em> moat &mdash; and WorldFirst is part of how they built it. The brand campaign carries those stories.</p>
+        <div class="models" style="margin-top: 2vh;">
+          <div class="model-card">
+            <span class="model-label">Story archetype 01</span>
+            <p><strong>UK brand sourcing across Asia</strong>, selling EU + US, navigating tariff.</p>
           </div>
-          <div class="flash-pillar">
-            <span class="p-label">Pillar 02</span>
-            <p>CNY depth &mdash; same-day supplier payments, MYbank routing, FX corridors.</p>
+          <div class="model-card">
+            <span class="model-label">Story archetype 02</span>
+            <p><strong>Dreame-style Chinese brand</strong> selling globally from Chinese manufacturing.</p>
           </div>
-          <div class="flash-pillar">
-            <span class="p-label">Pillar 03</span>
-            <p>1688 ecosystem &mdash; only WorldFirst pays 1688 suppliers at scale.</p>
+          <div class="model-card">
+            <span class="model-label">Story archetype 03</span>
+            <p><strong>Brand shifting manufacturing</strong> China &rarr; Vietnam, surviving tariff and thriving.</p>
           </div>
-          <div class="flash-pillar">
-            <span class="p-label">Pillar 04</span>
-            <p>Global corridors &mdash; built for cross-border from day one.</p>
-          </div>
+        </div>
+        <div class="note" style="margin-top: 3vh;">
+          <div class="note-text"><strong>Contrarian by design.</strong> The market tells businesses to stay local and de-risk. Our story runs the opposite way &mdash; cross-border is where moats get built. Different is required. The same way Wise went after banks, we go after the "stay local" instinct.</div>
         </div>
       </div>
     </div>
@@ -2170,33 +1891,64 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 38 — ARCHETYPES + CONTRARIAN                                      -->
+  <!-- 38 — THE FULL STACK MAP (final)                                   -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Stories that prove the moat</span><span class="sep"></span><span class="head-num">38</span></div>
+      <div class="head-meta"><span>Full stack · final</span><span class="sep"></span><span class="head-num">38</span></div>
     </div>
     <div class="slide-body v-start">
-      <div class="column">
-        <span class="eyebrow">36 · Story archetypes</span>
-        <h2 class="lg">Real operators. Real <em>moats.</em></h2>
-        <div class="models" style="margin-top: 2.5vh;">
-          <div class="model-card">
-            <span class="model-label">Archetype 01</span>
-            <p><strong>UK brand sourcing across Asia</strong>, selling EU + US, navigating tariff.</p>
+      <div class="column column-full">
+        <span class="eyebrow">36 · The full stack</span>
+        <h2 class="lg" style="max-width: 30ch;">WorldFirst's upper-funnel stack &mdash; <em>mapped.</em></h2>
+        <div class="stack-map">
+          <div class="stack-tier tier-brand">
+            <div class="stack-tier-head">
+              <span class="stack-tier-label">Brand &middot; long-term leverage</span>
+              <span class="stack-tier-sub">Compounds permanently &mdash; the idea everything sits under</span>
+            </div>
+            <div class="stack-items">
+              <span class="stack-item primary">Build Your Cross-Border Moat</span>
+              <span class="stack-item">Customer hero stories</span>
+              <span class="stack-item">Brand identity films</span>
+              <span class="stack-item">Distinctive visual asset</span>
+              <span class="stack-item">Major sponsorships (F1-scale)</span>
+              <span class="stack-item">Founder / exec voice</span>
+            </div>
           </div>
-          <div class="model-card">
-            <span class="model-label">Archetype 02</span>
-            <p><strong>Dreame-style Chinese brand</strong> selling globally from Chinese manufacturing.</p>
+          <div class="stack-tier tier-aware">
+            <div class="stack-tier-head">
+              <span class="stack-tier-label">Awareness &middot; medium-term engine</span>
+              <span class="stack-tier-sub">Product benefit + regional + creator-led &mdash; where Q2 concentrates</span>
+            </div>
+            <div class="stack-items">
+              <span class="stack-item primary">Regional creator short-form</span>
+              <span class="stack-item primary">Platform-native short-form</span>
+              <span class="stack-item">Value-driven educational</span>
+              <span class="stack-item">Comparison + tutorial</span>
+              <span class="stack-item">KLC · customer ambassador</span>
+              <span class="stack-item">Flagship research (CFO-Playbook style)</span>
+              <span class="stack-item">Events · people · culture</span>
+              <span class="stack-item">Milestone announcements</span>
+              <span class="stack-item">PR-coded earned media</span>
+              <span class="stack-item">Corridor reports</span>
+              <span class="stack-item">Employee amplification</span>
+            </div>
           </div>
-          <div class="model-card">
-            <span class="model-label">Archetype 03</span>
-            <p><strong>Brand shifting manufacturing</strong> China &rarr; Vietnam, surviving tariff and thriving.</p>
+          <div class="stack-tier tier-act">
+            <div class="stack-tier-head">
+              <span class="stack-tier-label">Activation &middot; fast conversion</span>
+              <span class="stack-tier-sub">Already strong &mdash; awareness feeds it, not replaces it</span>
+            </div>
+            <div class="stack-items">
+              <span class="stack-item primary">FX calculator + SEO</span>
+              <span class="stack-item">Paid search ads</span>
+              <span class="stack-item">Product demo landing pages</span>
+              <span class="stack-item">Case-study landing pages</span>
+              <span class="stack-item">Retargeting creative</span>
+            </div>
           </div>
-        </div>
-        <div class="note" style="margin-top: 3vh;">
-          <div class="note-text"><strong>Contrarian by design.</strong> The market tells businesses to stay local and de-risk. Our story runs the opposite direction: cross-border is where moats get built. Different is required &mdash; and defensible, because we have the product footprint to back the promise.</div>
         </div>
       </div>
     </div>
