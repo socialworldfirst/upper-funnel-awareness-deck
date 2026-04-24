@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Upper-Funnel Awareness · Q2 Battle Plan · WorldFirst</title>
+<title>Creating Demand · Q2 Battle Plan · WorldFirst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -369,6 +369,100 @@
     color: var(--ink-soft);
     line-height: 1.35;
   }
+
+  /* ================= 5 STAGES OF AWARENESS (slide 3) ================= */
+  .stages-wrap {
+    margin-top: 1.8vh;
+  }
+  .stages-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.6vw;
+    position: relative;
+  }
+  .stage {
+    padding: 1.4vh 0.8vw 1.6vh;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--line);
+    border-radius: 4px;
+    position: relative;
+    transition: transform 120ms;
+  }
+  .stage.q2-focus {
+    border-top-color: var(--wf-pink);
+    box-shadow: 0 4px 14px rgba(230,24,95,0.15);
+    background: linear-gradient(180deg, var(--wf-pink-softer) 0%, var(--paper) 40%);
+  }
+  .stage.wf-current {
+    border-top-color: var(--ant-navy);
+    background: linear-gradient(180deg, var(--ant-navy-soft) 0%, var(--paper) 40%);
+  }
+  .stage .s-num {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(0.82rem, 1.4vh, 0.95rem);
+    color: var(--ink-soft);
+    display: block;
+    margin-bottom: 0.2vh;
+  }
+  .stage.q2-focus .s-num { color: var(--wf-pink); }
+  .stage.wf-current .s-num { color: var(--ant-navy); }
+  .stage .s-name {
+    font-size: clamp(0.88rem, 1.5vh, 1.02rem);
+    font-weight: 700;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.5vh;
+    letter-spacing: -0.01em;
+  }
+  .stage .s-desc {
+    font-size: clamp(0.72rem, 1.2vh, 0.82rem);
+    color: var(--ink-soft);
+    line-height: 1.35;
+    margin-bottom: 0.8vh;
+  }
+  .stage .s-example {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(0.72rem, 1.2vh, 0.82rem);
+    color: var(--ink);
+    line-height: 1.35;
+    border-top: 1px solid var(--line-soft);
+    padding-top: 0.6vh;
+  }
+  .stage .s-tag {
+    position: absolute;
+    top: -10px; left: 50%; transform: translateX(-50%);
+    background: var(--paper);
+    padding: 0.2vh 0.6vw;
+    border-radius: 99px;
+    font-size: clamp(0.62rem, 1vh, 0.72rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .stage.q2-focus .s-tag { background: var(--wf-pink); color: var(--paper); }
+  .stage.wf-current .s-tag { background: var(--ant-navy); color: var(--paper); }
+  .stages-funnel-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.6vw;
+    margin-top: 1.5vh;
+  }
+  .stages-funnel-bucket {
+    padding: 0.7vh 0.6vw;
+    text-align: center;
+    font-size: clamp(0.68rem, 1.15vh, 0.8rem);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+  .sfb-upper { background: var(--ant-navy-soft); color: var(--ant-navy); }
+  .sfb-mid { background: var(--wf-pink-soft); color: var(--wf-pink-dark); }
+  .sfb-lower { background: #FFF1E8; color: #C75016; }
 
   /* ================= LAYER CARDS (slide 15 - branding + awareness) ================= */
   .layer-grid {
@@ -1144,7 +1238,7 @@
             </div>
           </div>
           <div class="cover-sub-1">impressions.</div>
-          <p class="cover-sub-2">Building upper-funnel <em>awareness</em> for growth. A battle plan for Q2.</p>
+          <p class="cover-sub-2"><em>Creating demand</em>, not just capturing it. A Q2 battle plan.</p>
           <div class="cover-meta">
             <span class="author">Steven Chen</span>
             <span class="bar"></span>
@@ -1153,7 +1247,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1168,7 +1262,7 @@
       <div class="column column-wide">
         <span class="eyebrow">01 · The difference</span>
         <h2 class="lg">Awareness reaches <em>100%</em> of the ICP. Activation converts the <em>5%</em> ready to buy.</h2>
-        <p class="fine" style="max-width: 80ch;">These are different jobs pointed at different audiences. A complete upper-funnel stack needs both &mdash; and today WorldFirst does one well and the other barely at all.</p>
+        <p class="fine" style="max-width: 80ch;">These are different jobs for different audiences. A complete funnel needs both &mdash; today WorldFirst does one well (the 5%) and barely anything for the rest. The next slide shows <em>exactly</em> where our content sits and where the gap is.</p>
         <div class="icp-viz">
           <div class="icp-col">
             <div class="icp-label">Awareness target</div>
@@ -1183,20 +1277,87 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
-  <!-- 03 — FUNNEL EXPANSION (single chart)                              -->
+  <!-- 03 — THE 5 STAGES OF AWARENESS (Schwartz)                         -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Opportunity</span><span class="sep"></span><span class="head-num">03</span></div>
+      <div class="head-meta"><span>The 5 stages of awareness</span><span class="sep"></span><span class="head-num">03</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-full" style="padding: 0 3vw;">
+        <span class="eyebrow">02 · Where our content actually sits</span>
+        <h2 class="lg">Where our content sits on <em>Schwartz's</em> five stages of awareness.</h2>
+        <p class="fine" style="max-width: 82ch;">Eugene Schwartz, <em>Breakthrough Advertising</em> (1966). Every buyer moves through these five stages before purchase. Great content meets them at the stage they're in.</p>
+        <div class="stages-wrap">
+          <div class="stages-row">
+            <div class="stage">
+              <span class="s-tag">Upper-funnel</span>
+              <span class="s-num">Stage 01</span>
+              <span class="s-name">Unaware</span>
+              <span class="s-desc">Doesn't know they have a problem.</span>
+              <span class="s-example">e.g. general business content, brand campaigns that plant a problem.</span>
+            </div>
+            <div class="stage q2-focus">
+              <span class="s-tag">Q2 focus</span>
+              <span class="s-num">Stage 02</span>
+              <span class="s-name">Problem-aware</span>
+              <span class="s-desc">Knows something is wrong. Losing money. Doesn't know solutions exist.</span>
+              <span class="s-example">e.g. "You're losing 3% every time you pay a Chinese supplier."</span>
+            </div>
+            <div class="stage q2-focus">
+              <span class="s-tag">Q2 focus</span>
+              <span class="s-num">Stage 03</span>
+              <span class="s-name">Solution-aware</span>
+              <span class="s-desc">Knows solutions exist. Doesn't know which fits their case.</span>
+              <span class="s-example">e.g. "Here are the ways to pay Chinese suppliers, and what works when."</span>
+            </div>
+            <div class="stage wf-current">
+              <span class="s-tag">Where WF sits today</span>
+              <span class="s-num">Stage 04</span>
+              <span class="s-name">Product-aware</span>
+              <span class="s-desc">Knows WorldFirst. Weighing if it fits.</span>
+              <span class="s-example">e.g. "WorldCard gets 1% cashback. World Account holds 20 currencies."</span>
+            </div>
+            <div class="stage">
+              <span class="s-tag">Lower-funnel</span>
+              <span class="s-num">Stage 05</span>
+              <span class="s-name">Most aware</span>
+              <span class="s-desc">Knows WorldFirst is right. Ready to sign up.</span>
+              <span class="s-example">e.g. pricing, CTA ads, retargeting, sign-up flow.</span>
+            </div>
+          </div>
+          <div class="stages-funnel-row">
+            <div class="stages-funnel-bucket sfb-upper">Upper-funnel &middot; brand</div>
+            <div class="stages-funnel-bucket sfb-mid">Mid-funnel &middot; demand-building</div>
+            <div class="stages-funnel-bucket sfb-mid">Mid-funnel &middot; demand-building</div>
+            <div class="stages-funnel-bucket sfb-mid">Mid-funnel &middot; product</div>
+            <div class="stages-funnel-bucket sfb-lower">Lower-funnel &middot; activation</div>
+          </div>
+        </div>
+        <div class="note" style="margin-top: 2vh;">
+          <div class="note-text"><strong>The gap.</strong> Our content clusters at stage 4 (product-aware) with strong activation at stage 5. We're barely present at stages 2-3 &mdash; where demand is actually <em>created</em>. Q2 concentrates on 2-3 so stages 4-5 have a bigger pool to convert against.</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 04 — FUNNEL EXPANSION (single chart)                              -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Opportunity</span><span class="sep"></span><span class="head-num">4</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">02 · Opportunity</span>
+        <span class="eyebrow">03 · Opportunity</span>
         <h2 class="lg">Opening the <em>upper</em> funnel expands the lower one.</h2>
         <p class="fine" style="max-width: 80ch;">When more of the ICP hears about WorldFirst, the activation pool grows, growth accelerates, CPA drops. The lower funnel runs on the demand the upper funnel creates.</p>
         <div class="funnel-single">
@@ -1204,7 +1365,7 @@
             <div class="fh-left">Funnel tier</div>
             <div class="fh-axis">
               <span class="today-mark">Today</span>
-              <span class="add-mark">+ Upper-funnel investment</span>
+              <span class="add-mark">+ Mid-funnel investment</span>
             </div>
           </div>
           <div class="funnel-tier t1">
@@ -1232,7 +1393,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1241,12 +1402,12 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>WorldFirst dynamics</span><span class="sep"></span><span class="head-num">04</span></div>
+      <div class="head-meta"><span>WorldFirst dynamics</span><span class="sep"></span><span class="head-num">5</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">03 · What's specific to WorldFirst</span>
-        <h2 class="xl">Three dynamics shape our upper-funnel <em>specifically.</em></h2>
+        <span class="eyebrow">04 · What's specific to WorldFirst</span>
+        <h2 class="xl">Three dynamics shape our demand-building <em>specifically.</em></h2>
         <ul class="bullets">
           <li><strong>Brand architecture</strong> &mdash; Ant and WorldFirst show up together. Each dollar can do less for WorldFirst specifically unless we have a clear policy on when each brand leads.</li>
           <li><strong>Regional reality</strong> &mdash; different markets, different messages. SEA isn't Europe. Vietnam isn't the US. Regional intelligence has to be baked into the design.</li>
@@ -1254,7 +1415,7 @@
         </ul>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1263,17 +1424,17 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The composition problem</span><span class="sep"></span><span class="head-num">05</span></div>
+      <div class="head-meta"><span>The composition problem</span><span class="sep"></span><span class="head-num">6</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">04 · Composition</span>
+        <span class="eyebrow">05 · Composition</span>
         <h2 class="xl">Upper-funnel is a <em>composition</em> problem, not a channel one.</h2>
         <p>Teams organise around channels. Peer brands running meaningful upper-funnel land on PR + influencers + social + SEO + events + partnerships + paid + employees <strong>simultaneously.</strong></p>
         <div class="pull-quote">To calibrate what that composition should look like, we ran a dedicated competitor study. <span class="pink-strong">Here's what it found.</span></div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1282,11 +1443,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Research</span><span class="sep"></span><span class="head-num">06</span></div>
+      <div class="head-meta"><span>Research</span><span class="sep"></span><span class="head-num">7</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">05 · The research</span>
+        <span class="eyebrow">06 · The research</span>
         <h2 class="lg">Upper-funnel research of our <em>competitors</em> &mdash; and a relook at our current strategy.</h2>
         <p class="fine" style="max-width: 82ch;">Dedicated Fintech Upper-Funnel Study covering 8 competitor cases + WorldFirst's current position. The single clearest benchmark to calibrate against:</p>
         <div class="evidence-panel">
@@ -1301,7 +1462,7 @@
         <a class="cta-button" href="https://socialworldfirst.github.io/fintech-upper-funnel-study/" target="_blank">Read the full Fintech Upper-Funnel Study</a>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1310,12 +1471,12 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Wise</span><span class="sep"></span><span class="head-num">07</span></div>
+      <div class="head-meta"><span>Peer · Wise</span><span class="sep"></span><span class="head-num">8</span></div>
     </div>
     <img class="peer-logo" src="images/wise.png" alt="Wise logo">
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">06 · Peer · Wise &mdash; breakthrough (2014-18) + current mature</span>
+        <span class="eyebrow">07 · Peer · Wise &mdash; breakthrough (2014-18) + current mature</span>
         <div class="peer-layout">
           <div class="peer-left">
             <h2 class="lg">Wise led with <em>PR-coded</em> category-creation &mdash; then shifted to evergreen defence.</h2>
@@ -1354,7 +1515,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1363,12 +1524,12 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Monzo</span><span class="sep"></span><span class="head-num">08</span></div>
+      <div class="head-meta"><span>Peer · Monzo</span><span class="sep"></span><span class="head-num">9</span></div>
     </div>
     <img class="peer-logo" src="images/monzo.png" alt="Monzo logo">
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">07 · Peer · Monzo &mdash; lifestyle-weighted</span>
+        <span class="eyebrow">08 · Peer · Monzo &mdash; lifestyle-weighted</span>
         <div class="peer-layout">
           <div class="peer-left">
             <h2 class="lg">Monzo runs <em>lifestyle</em>-led distinctiveness &mdash; the opposite shape of Pleo.</h2>
@@ -1407,7 +1568,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1416,12 +1577,12 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Nubank</span><span class="sep"></span><span class="head-num">09</span></div>
+      <div class="head-meta"><span>Peer · Nubank</span><span class="sep"></span><span class="head-num">10</span></div>
     </div>
     <img class="peer-logo" src="images/nubank.png" alt="Nubank logo">
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">08 · Peer · Nubank &mdash; creator-led multi-region</span>
+        <span class="eyebrow">09 · Peer · Nubank &mdash; creator-led multi-region</span>
         <div class="peer-layout">
           <div class="peer-left">
             <h2 class="lg">Nubank runs heavy on <em>regional creators</em> &mdash; the closest profile to WorldFirst.</h2>
@@ -1460,7 +1621,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1469,12 +1630,12 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Revolut</span><span class="sep"></span><span class="head-num">10</span></div>
+      <div class="head-meta"><span>Peer · Revolut</span><span class="sep"></span><span class="head-num">11</span></div>
     </div>
     <img class="peer-logo" src="images/revolut.png" alt="Revolut logo">
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">09 · Peer · Revolut &mdash; YouTube-first creator push</span>
+        <span class="eyebrow">10 · Peer · Revolut &mdash; YouTube-first creator push</span>
         <div class="peer-layout">
           <div class="peer-left">
             <h2 class="lg">Revolut concentrates on <em>creators</em> &mdash; with explicit platform discipline.</h2>
@@ -1513,7 +1674,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1522,12 +1683,12 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Pleo</span><span class="sep"></span><span class="head-num">11</span></div>
+      <div class="head-meta"><span>Peer · Pleo</span><span class="sep"></span><span class="head-num">12</span></div>
     </div>
     <img class="peer-logo" src="images/pleo.png" alt="Pleo logo">
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">10 · Peer · Pleo &mdash; flagship-weighted</span>
+        <span class="eyebrow">11 · Peer · Pleo &mdash; flagship-weighted</span>
         <div class="peer-layout">
           <div class="peer-left">
             <h2 class="lg">Pleo anchors on <em>flagship</em> research + educational evergreen.</h2>
@@ -1566,7 +1727,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1575,12 +1736,12 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Peer · Ramp</span><span class="sep"></span><span class="head-num">12</span></div>
+      <div class="head-meta"><span>Peer · Ramp</span><span class="sep"></span><span class="head-num">13</span></div>
     </div>
     <img class="peer-logo" src="images/ramp.png" alt="Ramp logo">
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">11 · Peer · Ramp &mdash; social-deprioritised counter-thesis</span>
+        <span class="eyebrow">12 · Peer · Ramp &mdash; social-deprioritised counter-thesis</span>
         <div class="peer-layout">
           <div class="peer-left">
             <h2 class="lg">Ramp runs <em>channel alpha</em> &mdash; paid + partnerships + product-led virality.</h2>
@@ -1617,7 +1778,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1626,11 +1787,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Our position</span><span class="sep"></span><span class="head-num">13</span></div>
+      <div class="head-meta"><span>Our position</span><span class="sep"></span><span class="head-num">14</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-wide">
-        <span class="eyebrow">12 · Where WorldFirst sits today</span>
+        <span class="eyebrow">13 · Where WorldFirst sits today</span>
         <h2 class="lg">WorldFirst content today is roughly <em>90%</em> activation.</h2>
         <div class="blend-bar" style="margin-top: 2.5vh;">
           <div class="blend-seg s-act" style="flex: 90;">90% Activation</div>
@@ -1644,7 +1805,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1653,11 +1814,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Our YouTube &mdash; a closer look</span><span class="sep"></span><span class="head-num">14</span></div>
+      <div class="head-meta"><span>Our YouTube &mdash; a closer look</span><span class="sep"></span><span class="head-num">15</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">13 · Example &middot; our YouTube runs on ads</span>
+        <span class="eyebrow">14 · Example &middot; our YouTube runs on ads</span>
         <h2 class="lg">Example: our YouTube runs on <em>ads.</em></h2>
         <div class="yt-evidence">
           <div>
@@ -1685,7 +1846,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1694,12 +1855,12 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Inside upper-funnel</span><span class="sep"></span><span class="head-num">15</span></div>
+      <div class="head-meta"><span>Three content layers</span><span class="sep"></span><span class="head-num">16</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">14 · Inside upper-funnel</span>
-        <h2 class="lg">Upper-funnel itself has <em>two</em> layers.</h2>
+        <span class="eyebrow">15 · Above activation, two layers</span>
+        <h2 class="lg">Brand vs demand-building &mdash; <em>two</em> layers above activation.</h2>
         <div class="layer-grid">
           <div class="layer-card layer-branding">
             <div class="layer-tag">Branding</div>
@@ -1720,7 +1881,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1729,17 +1890,17 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Finding the balance</span><span class="sep"></span><span class="head-num">16</span></div>
+      <div class="head-meta"><span>Finding the balance</span><span class="sep"></span><span class="head-num">17</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">15 · Finding the balance</span>
-        <h2 class="xl">The question is <em>rebalancing</em> &mdash; upper-funnel catches up to activation.</h2>
+        <span class="eyebrow">16 · Finding the balance</span>
+        <h2 class="xl">The question is <em>rebalancing</em> &mdash; demand-building catches up to activation.</h2>
         <p>Activation stays strong &mdash; it's already our strongest layer.</p>
-        <p>Upper-funnel gradually gains weight over 3&ndash;4 quarters toward the 46 / 54 benchmark. No rebalancing = CPA climbs, pool shrinks.</p>
+        <p>Demand-building gradually gains weight over 3&ndash;4 quarters toward the 46 / 54 benchmark. No rebalancing = CPA climbs, the pool shrinks.</p>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1748,17 +1909,17 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Content + distribution</span><span class="sep"></span><span class="head-num">17</span></div>
+      <div class="head-meta"><span>Content + distribution</span><span class="sep"></span><span class="head-num">18</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">16 · Content mix + distribution mix</span>
+        <span class="eyebrow">17 · Content mix + distribution mix</span>
         <h2 class="xl">Content mix matters. Distribution mix matters <em>more.</em></h2>
-        <p>Calling upper-funnel "social's job" is the core mistake. Same asset, eight channels &rarr; outperforms same budget on social alone.</p>
+        <p>Calling demand-building "social's job" is the core mistake. Same asset, eight channels &rarr; outperforms same budget on social alone.</p>
         <p>The work: design for the awareness outcome, then distribute across whatever channels carry it best.</p>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1767,11 +1928,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Channel map</span><span class="sep"></span><span class="head-num">18</span></div>
+      <div class="head-meta"><span>Channel map</span><span class="sep"></span><span class="head-num">19</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column">
-        <span class="eyebrow">17 · The eight channels</span>
+        <span class="eyebrow">18 · The eight channels</span>
         <h2 class="lg">Peer brands land on <em>eight channels</em> simultaneously.</h2>
         <div class="channel-grid">
           <div class="channel-card">
@@ -1817,7 +1978,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1826,11 +1987,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Worked example</span><span class="sep"></span><span class="head-num">19</span></div>
+      <div class="head-meta"><span>Worked example</span><span class="sep"></span><span class="head-num">20</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">18 · Worked example · Airwallex F1</span>
+        <span class="eyebrow">19 · Worked example · Airwallex F1</span>
         <h2 class="lg">Airwallex &times; F1 &mdash; <em>every</em> channel carried the same message.</h2>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3vw; margin-top: 2vh; align-items: start;">
           <div style="display: flex; flex-direction: column; gap: 1vh; align-items: flex-start;">
@@ -1852,7 +2013,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1861,11 +2022,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Three layers</span><span class="sep"></span><span class="head-num">20</span></div>
+      <div class="head-meta"><span>Three layers</span><span class="sep"></span><span class="head-num">21</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">19 · Three layers</span>
+        <span class="eyebrow">20 · Three layers</span>
         <h2 class="lg">Three content layers. <em>Three</em> return profiles.</h2>
         <div class="roi-chart">
           <div class="roi-label">Brand</div>
@@ -1894,7 +2055,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1903,17 +2064,17 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Q2 focus</span><span class="sep"></span><span class="head-num">21</span></div>
+      <div class="head-meta"><span>Q2 focus</span><span class="sep"></span><span class="head-num">22</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">20 · Q2 focus</span>
+        <span class="eyebrow">21 · Q2 focus</span>
         <h2 class="xl">Today we talk about <em>awareness</em> content. Brand matters &mdash; we return to it at the end.</h2>
         <p>Awareness has the biggest expansion headroom and the best short-term impact-to-effort ratio.</p>
         <p>Brand is the parallel long-term build &mdash; final section of this deck.</p>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1922,11 +2083,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The battle plan</span><span class="sep"></span><span class="head-num">22</span></div>
+      <div class="head-meta"><span>The battle plan</span><span class="sep"></span><span class="head-num">23</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">21 · The battle plan</span>
+        <span class="eyebrow">22 · The battle plan</span>
         <h2 class="xl"><em>Regional creators</em> + short-form carrying Q2 product focus to 20M impressions.</h2>
         <ul class="bullets">
           <li><strong>Who</strong> &mdash; regional creators in priority corridors, not central talking heads</li>
@@ -1936,7 +2097,7 @@
         </ul>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1945,11 +2106,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>What it looks like</span><span class="sep"></span><span class="head-num">23</span></div>
+      <div class="head-meta"><span>What it looks like</span><span class="sep"></span><span class="head-num">24</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">22 · What it looks like</span>
+        <span class="eyebrow">23 · What it looks like</span>
         <h2 class="lg">Regional creators talking about our <em>product.</em></h2>
         <p class="fine" style="max-width: 80ch;">Short-form vertical videos by operators in each priority region, speaking to WorldFirst product benefits in their own voice and market.</p>
         <div class="video-grid-v2">
@@ -1987,7 +2148,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -1996,21 +2157,22 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Why 20M</span><span class="sep"></span><span class="head-num">24</span></div>
+      <div class="head-meta"><span>Why 20M</span><span class="sep"></span><span class="head-num">25</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">23 · The number</span>
-        <h2 class="xl">Why <em>20M?</em> Awareness needs scale to move the needle.</h2>
+        <span class="eyebrow">24 · The number</span>
+        <h2 class="xl">Why <em>20M?</em> Enough reach to seed demand, not just measure it.</h2>
         <ul class="bullets">
-          <li><strong>At Q1's 1M total</strong> we sit below recall threshold in priority regions &mdash; noise, not signal</li>
-          <li><strong>Awareness cycle</strong> &mdash; decision-makers need 3+ exposures within ~4 weeks to retain the message</li>
-          <li><strong>At 20M Q2 total</strong> we clear effective reach &mdash; results become measurable</li>
+          <li><strong>Problem-aware audiences are larger than in-market 5%</strong> &mdash; need enough reach to find them across each priority region</li>
+          <li><strong>Repetition matters</strong> &mdash; one exposure plants, three exposures land, so each targeted buyer needs ~3 touches</li>
+          <li><strong>20M across Q2 / 10 priority regions / 60 days</strong> works out to the floor for reach &times; repetition per targeted pool</li>
+          <li><strong>Below that</strong> we're producing content without enough delivery to know what actually lands</li>
         </ul>
-        <div class="pull-quote">Small numbers are measurement noise. <span class="pink-strong">20M is the scale that makes awareness readable.</span></div>
+        <div class="pull-quote">This isn't a brand-arithmetic target. <span class="pink-strong">It's the delivery floor for testable demand-building.</span></div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2019,11 +2181,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>How we do it</span><span class="sep"></span><span class="head-num">25</span></div>
+      <div class="head-meta"><span>How we do it</span><span class="sep"></span><span class="head-num">26</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">24 · How we do it &mdash; the distribution</span>
+        <span class="eyebrow">25 · How we do it &mdash; the distribution</span>
         <h2 class="lg">20M Q2 impressions distributed <em>against</em> paid budget &amp; product focus.</h2>
         <p class="fine" style="max-width: 82ch;">Awareness content built for the paid team's activation targets &mdash; same regions, same products. The demand we create feeds the pool they convert.</p>
         <div class="region-bars">
@@ -2039,7 +2201,7 @@
         <p class="fine" style="margin-top: 1.5vh;">Bar length reflects paid budget share. <strong>Turkey</strong> and <strong>US / Zyla</strong> are TBD &mdash; separate creative and brand decisions still being worked through.</p>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2048,11 +2210,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>May production plan</span><span class="sep"></span><span class="head-num">26</span></div>
+      <div class="head-meta"><span>May production plan</span><span class="sep"></span><span class="head-num">27</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">25 · May production plan &mdash; minimum output</span>
+        <span class="eyebrow">26 · May production plan &mdash; minimum output</span>
         <h2 class="lg">The <em>freelancer creatives</em> we'll produce ASAP for May.</h2>
         <p class="fine" style="max-width: 82ch;">Minimum set. Each creative lands on our own channels, gets handed to paid for ads, and gets shared with regional teams as a benchmark to test more messages. May feeds the tests &mdash; June expands on whichever work best.</p>
         <table class="prod-table">
@@ -2095,7 +2257,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2104,11 +2266,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Production flow</span><span class="sep"></span><span class="head-num">27</span></div>
+      <div class="head-meta"><span>Production flow</span><span class="sep"></span><span class="head-num">28</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">26 · Production flow</span>
+        <span class="eyebrow">27 · Production flow</span>
         <h2 class="lg">After performance read, the path <em>splits.</em></h2>
         <div class="pflow-v2">
           <svg viewBox="0 0 1000 540" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -2158,7 +2320,7 @@
             <span class="pn-desc">Winners become paid variants. Awareness audiences feed retargeting. Scale acquisition against in-market 5%.</span>
           </div>
           <div class="pf-node branch" style="left: 72%; top: 60%;">
-            <span class="pn-label">05b &middot; Upper-funnel + regional &middot; awareness</span>
+            <span class="pn-label">05b &middot; Mid-funnel + regional &middot; awareness</span>
             <span class="pn-name">Expand with <em class="serif">organic</em> reach</span>
             <span class="pn-desc">Proven message localised by creators + KOLs. Further experimentation with awareness-building in priority corridors.</span>
           </div>
@@ -2170,7 +2332,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2179,18 +2341,18 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Regional reality</span><span class="sep"></span><span class="head-num">27</span></div>
+      <div class="head-meta"><span>Regional reality</span><span class="sep"></span><span class="head-num">29</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">26 · Regional reality</span>
+        <span class="eyebrow">28 · Regional reality</span>
         <h2 class="xl">Vietnam and SEA are already <em>ready.</em> Others need a helping hand from central.</h2>
         <p><strong>Vietnam</strong> and <strong>SEA</strong> are ready for regional creator collaboration today &mdash; local teams own local channels, understand their audiences, have language capability.</p>
         <p><strong>Other regions</strong> &mdash; UK, EEA, ANZ, Longtail &mdash; don't have dedicated regional content leads yet. Central steps in with a helping hand: sourcing creators, briefing them on WorldFirst product benefit, co-producing with regional stakeholders.</p>
         <div class="pull-quote">A genuine description of where WorldFirst is, <span class="pink-strong">not an asterisk.</span></div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2199,11 +2361,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Metrics</span><span class="sep"></span><span class="head-num">29</span></div>
+      <div class="head-meta"><span>Metrics</span><span class="sep"></span><span class="head-num">30</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">28 · Metrics</span>
+        <span class="eyebrow">29 · Metrics</span>
         <h2 class="lg">The <em>metrics</em> we look at.</h2>
         <div class="metric-grid-v2">
           <div class="metric-card-v2 color-aware">
@@ -2225,7 +2387,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2234,16 +2396,16 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Beyond Q2</span><span class="sep"></span><span class="head-num">30</span></div>
+      <div class="head-meta"><span>Beyond Q2</span><span class="sep"></span><span class="head-num">31</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">29 · Beyond Q2</span>
+        <span class="eyebrow">30 · Beyond Q2</span>
         <h2 class="xl">Two months, then we <em>regroup.</em></h2>
         <p>After Q2: consolidated hybrid strategy &mdash; a mix, not one format winning everything.</p>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2252,11 +2414,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The full stack</span><span class="sep"></span><span class="head-num">31</span></div>
+      <div class="head-meta"><span>The full stack</span><span class="sep"></span><span class="head-num">32</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">30 · The full stack</span>
+        <span class="eyebrow">31 · The full stack</span>
         <h2 class="xl">Long-term leverage is a <em>combination.</em></h2>
         <ul class="plus-list">
           <li><strong>Brand campaigns</strong></li>
@@ -2269,7 +2431,7 @@
         <div class="pull-quote">Awareness content alone is a short-term play. <span class="pink-strong">These compound.</span></div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2278,12 +2440,12 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The dashboard</span><span class="sep"></span><span class="head-num">32</span></div>
+      <div class="head-meta"><span>The dashboard</span><span class="sep"></span><span class="head-num">33</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">31 · The dashboard</span>
-        <h2 class="lg">One dashboard. <em>Shared.</em> Upper-funnel + regional + paid.</h2>
+        <span class="eyebrow">32 · The dashboard</span>
+        <h2 class="lg">One dashboard. <em>Shared.</em> Demand-building + regional + paid.</h2>
         <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 3vw; margin-top: 2vh; align-items: start;">
           <div>
             <ul class="bullets">
@@ -2303,7 +2465,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2312,11 +2474,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Working together</span><span class="sep"></span><span class="head-num">33</span></div>
+      <div class="head-meta"><span>Working together</span><span class="sep"></span><span class="head-num">34</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">32 · Working together</span>
+        <span class="eyebrow">33 · Working together</span>
         <h2 class="xl">How awareness and activation <em>work together.</em></h2>
         <ul class="bullets">
           <li><strong>Consistent communications</strong> &mdash; same message across both layers, different jobs</li>
@@ -2325,7 +2487,7 @@
         </ul>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2334,11 +2496,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Team shape</span><span class="sep"></span><span class="head-num">34</span></div>
+      <div class="head-meta"><span>Team shape</span><span class="sep"></span><span class="head-num">35</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">33 · Team shape</span>
+        <span class="eyebrow">34 · Team shape</span>
         <h2 class="lg">A funnel needs a <em>full team.</em></h2>
         <ul class="bullets" style="margin-top: 1.5vh;">
           <li><strong>Cathy (incoming)</strong> &mdash; shifting ad-hoc tasks over; owns social publishing + brand content coordination</li>
@@ -2353,7 +2515,7 @@
         <div class="pull-quote">Medium-term leverage is awareness. <span class="pink-strong">Long-term leverage is brand.</span></div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2362,17 +2524,17 @@
   <section class="slide slide-divider">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Part III · Brand campaign</span><span class="sep"></span><span class="head-num">35</span></div>
+      <div class="head-meta"><span>Part III · Brand campaign — later, not now</span><span class="sep"></span><span class="head-num">36</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="div-num">III</div>
       <div class="div-content">
-        <span class="eyebrow">A unified brand idea &mdash; the long-run leverage</span>
-        <h1 class="div-title">A unified <em>brand campaign</em> for the long run.</h1>
-        <p class="div-sub">Awareness content builds medium-term demand. A brand campaign &mdash; sustained, distinctive, defensible &mdash; is where <em>long-term</em> leverage actually comes from. This is the positioning we'd carry alongside Q2.</p>
+        <span class="eyebrow">Brand campaign — parked for now, here's the <em>vision</em></span>
+        <h1 class="div-title">A brand campaign is the <em>long-term</em> ambition. Not Q2.</h1>
+        <p class="div-sub">Demand-building wins the short-to-medium term. Brand investment compounds over <em>years</em> and needs the mid-funnel foundation first. This section is <em>where we'd go</em> once the demand engine is running &mdash; not what runs alongside Q2.</p>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2381,11 +2543,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Brand campaign is risky</span><span class="sep"></span><span class="head-num">36</span></div>
+      <div class="head-meta"><span>Brand campaign is risky</span><span class="sep"></span><span class="head-num">37</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">34 · Brand campaigns come with real risk</span>
+        <span class="eyebrow">35 · Brand campaigns come with real risk</span>
         <h2 class="lg">Two reminders of what goes <em>wrong</em> when brand outpaces defence.</h2>
         <ul class="bullets" style="margin-top: 1.5vh;">
           <li><strong>Wise, 2014&ndash;19</strong> &mdash; built the "hidden fees" category for the whole market. Much of the demand got collected by Revolut, Remitly and Atlantic Money. Brand without activation defence <strong>subsidised competitors.</strong></li>
@@ -2394,7 +2556,7 @@
         <div class="pull-quote">Brand is high-leverage. <span class="pink-strong">High-leverage means it cuts both ways.</span></div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2403,17 +2565,17 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Awareness for us to collect</span><span class="sep"></span><span class="head-num">37</span></div>
+      <div class="head-meta"><span>Awareness for us to collect</span><span class="sep"></span><span class="head-num">38</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">35 · The proposition test</span>
+        <span class="eyebrow">36 · The proposition test</span>
         <h2 class="xl">Brand campaigns should create awareness that's <em>ours</em> to collect, not competitors'.</h2>
         <p><strong>FX savings</strong> alone is a claim most peers can match. A brand built on it educates the market on a benefit anyone delivers &mdash; the strongest activation collects the demand.</p>
         <p>The proposition has to anchor to something <strong>specifically WorldFirst</strong>: our Ant / Alipay depth, CNY routing, 1688 ecosystem, global cross-border footprint. Awareness against that is awareness we can uniquely convert.</p>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2422,17 +2584,17 @@
   <section class="slide slide-flash">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The proposition</span><span class="sep"></span><span class="head-num">38</span></div>
+      <div class="head-meta"><span>The proposition</span><span class="sep"></span><span class="head-num">39</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="flash-deco">moat</div>
       <div class="column column-wide flash-content">
-        <span class="eyebrow">36 · The global proposition</span>
+        <span class="eyebrow">37 · The global proposition</span>
         <h1 class="flash-title">Build Your<br>Cross-Border <em>Moat.</em></h1>
         <p class="flash-sub">The one idea that says what WorldFirst does that no one else can match &mdash; and invites our customers into their own story.</p>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2441,11 +2603,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Success stories</span><span class="sep"></span><span class="head-num">39</span></div>
+      <div class="head-meta"><span>Success stories</span><span class="sep"></span><span class="head-num">40</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column">
-        <span class="eyebrow">37 · The campaign shape</span>
+        <span class="eyebrow">38 · The campaign shape</span>
         <h2 class="lg">A campaign built around <em>cross-border success stories.</em></h2>
         <p class="fine" style="max-width: 82ch;">Our customers are cross-border operators. When they share their tips, what they're really describing is <em>their</em> moat &mdash; and WorldFirst is part of how they built it. The brand campaign carries those stories.</p>
         <div class="models" style="margin-top: 2vh;">
@@ -2467,7 +2629,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
   <!-- ================================================================= -->
@@ -2476,12 +2638,12 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Full stack · final</span><span class="sep"></span><span class="head-num">40</span></div>
+      <div class="head-meta"><span>Full stack · final</span><span class="sep"></span><span class="head-num">41</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-full">
-        <span class="eyebrow">38 · The full stack</span>
-        <h2 class="lg" style="max-width: 30ch;">WorldFirst's upper-funnel stack &mdash; <em>mapped.</em></h2>
+        <span class="eyebrow">39 · The full stack</span>
+        <h2 class="lg" style="max-width: 30ch;">WorldFirst's full content stack &mdash; <em>mapped.</em></h2>
         <div class="stack-funnel">
           <div class="stack-tier tier-brand">
             <div class="stack-tier-head">
@@ -2531,7 +2693,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-foot"><span>Upper-Funnel Awareness · Q2 2026</span></div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
 </div>
@@ -2542,7 +2704,7 @@
 
 <div id="persist-nav">
   <button id="btn-prev" aria-label="Previous">&larr;</button>
-  <span id="counter">01 / 40</span>
+  <span id="counter">01 / 41</span>
   <button id="btn-next" aria-label="Next">&rarr;</button>
 </div>
 
