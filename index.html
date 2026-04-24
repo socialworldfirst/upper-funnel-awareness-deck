@@ -370,6 +370,207 @@
     line-height: 1.35;
   }
 
+  /* ================= THANK YOU SLIDE (final) ================= */
+  .slide-thanks {
+    background: radial-gradient(ellipse at 30% 40%, #25347a 0%, var(--ant-navy-deep) 55%, #050a1f 100%);
+    color: var(--paper);
+  }
+  .slide-thanks .slide-head { border-bottom-color: rgba(255,255,255,0.08); }
+  .slide-thanks .slide-head .head-meta,
+  .slide-thanks .slide-head .head-meta .head-num { color: rgba(255,255,255,0.45); }
+  .slide-thanks .slide-head .head-num { color: var(--wf-pink); }
+  .slide-thanks .slide-foot {
+    border-top-color: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.4);
+  }
+  .slide-thanks .slide-body { position: relative; padding: 0 6vw; }
+  .slide-thanks .thanks-orbs {
+    position: absolute; inset: 0;
+    overflow: hidden; pointer-events: none;
+  }
+  .slide-thanks .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+  }
+  .slide-thanks .orb-1 {
+    width: 42vh; height: 42vh;
+    left: 12vw; top: 15vh;
+    background: radial-gradient(circle, var(--wf-pink), transparent 70%);
+  }
+  .slide-thanks .orb-2 {
+    width: 38vh; height: 38vh;
+    right: 15vw; top: 55vh;
+    background: radial-gradient(circle, var(--orange), transparent 70%);
+    opacity: 0.32;
+  }
+  .slide-thanks .orb-3 {
+    width: 24vh; height: 24vh;
+    right: 35vw; top: 12vh;
+    background: radial-gradient(circle, #5b6bde, transparent 70%);
+    opacity: 0.4;
+  }
+  .slide-thanks .thanks-deco {
+    position: absolute;
+    left: 50%; top: 50%; transform: translate(-50%, -46%);
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(18rem, 48vh, 38rem);
+    line-height: 0.85;
+    color: var(--wf-pink);
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 1;
+    white-space: nowrap;
+  }
+  .slide-thanks .thanks-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  .slide-thanks .thanks-pre {
+    font-family: 'Inter', sans-serif;
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    font-size: clamp(0.75rem, 1.25vh, 0.9rem);
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--wf-pink);
+    margin-bottom: 3vh;
+  }
+  .slide-thanks .thanks-pre::before,
+  .slide-thanks .thanks-pre::after {
+    content: ''; width: 32px; height: 1.5px; background: var(--wf-pink);
+  }
+  .slide-thanks .thanks-headline {
+    font-size: clamp(5rem, 16vh, 11rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+    color: var(--paper);
+  }
+  .slide-thanks .thanks-headline em {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--wf-pink);
+    font-size: 1.08em;
+    letter-spacing: -0.015em;
+  }
+  .slide-thanks .thanks-sub {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.4vh, 1.8rem);
+    color: rgba(255,255,255,0.72);
+    margin-top: 3.5vh;
+    line-height: 1.4;
+    max-width: 56ch;
+    margin-left: auto; margin-right: auto;
+  }
+  .slide-thanks .thanks-meta {
+    margin-top: 5vh;
+    display: inline-flex; align-items: center; gap: 1.5rem;
+    font-size: clamp(0.85rem, 1.4vh, 1rem);
+    color: rgba(255,255,255,0.65);
+  }
+  .slide-thanks .thanks-meta .author { color: var(--paper); font-weight: 600; }
+  .slide-thanks .thanks-meta .bar { width: 1px; height: 14px; background: rgba(255,255,255,0.3); }
+
+  /* ================= 3-TAB YT COMPARISON (slide 15) ================= */
+  .yt3-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2vw;
+    margin-top: 1.8vh;
+  }
+  .yt3-card {
+    padding: 1.6vh 1.3vw;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--line);
+    border-radius: 6px;
+    display: flex; flex-direction: column;
+  }
+  .yt3-card.upper { border-top-color: var(--ant-navy); }
+  .yt3-card.mid { border-top-color: var(--wf-pink); box-shadow: 0 4px 14px rgba(230,24,95,0.15); background: linear-gradient(180deg, var(--wf-pink-softer) 0%, var(--paper) 30%); }
+  .yt3-card.lower { border-top-color: var(--orange); }
+  .yt3-tag {
+    font-size: clamp(0.65rem, 1.05vh, 0.75rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.8vh;
+    display: inline-block;
+    padding: 0.2vh 0.6vw;
+    border-radius: 99px;
+    align-self: flex-start;
+  }
+  .yt3-card.upper .yt3-tag { background: var(--ant-navy); color: var(--paper); }
+  .yt3-card.mid .yt3-tag { background: var(--wf-pink); color: var(--paper); }
+  .yt3-card.lower .yt3-tag { background: var(--orange); color: var(--paper); }
+  .yt3-thumb {
+    aspect-ratio: 16 / 9;
+    background: var(--line-soft);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1vh;
+  }
+  .yt3-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .yt3-thumb .yt3-play {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: clamp(32px, 4.5vh, 44px); height: clamp(32px, 4.5vh, 44px);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.28);
+    border: 2px solid rgba(255,255,255,0.85);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .yt3-thumb .yt3-play::before {
+    content: '';
+    width: 0; height: 0;
+    border-left: clamp(9px, 1.3vh, 12px) solid var(--paper);
+    border-top: clamp(6px, 0.9vh, 8px) solid transparent;
+    border-bottom: clamp(6px, 0.9vh, 8px) solid transparent;
+    margin-left: 3px;
+  }
+  .yt3-thumb .yt3-placeholder {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--ant-navy-deep), var(--ant-navy));
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(0.9rem, 1.5vh, 1.1rem);
+    text-align: center;
+    padding: 1vh 1vw;
+  }
+  .yt3-num {
+    font-size: clamp(1.6rem, 3.8vh, 2.6rem);
+    font-weight: 700;
+    color: var(--wf-pink);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 0.3vh;
+  }
+  .yt3-card.upper .yt3-num { color: var(--ant-navy); }
+  .yt3-card.lower .yt3-num { color: var(--orange); }
+  .yt3-label {
+    font-size: clamp(0.78rem, 1.3vh, 0.92rem);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.4vh;
+  }
+  .yt3-body {
+    font-size: clamp(0.75rem, 1.25vh, 0.88rem);
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .yt3-body strong { color: var(--ink); font-weight: 600; }
+
   /* ================= 5 STAGES OF AWARENESS (slide 3) ================= */
   .stages-wrap {
     margin-top: 1.8vh;
@@ -1406,8 +1607,8 @@
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">04 · What's specific to WorldFirst</span>
-        <h2 class="xl">Three dynamics shape our demand-building <em>specifically.</em></h2>
+        <span class="eyebrow">04 · Three upper-funnel paradoxes to solve</span>
+        <h2 class="xl">Three <em>paradoxes</em> we need to solve for WorldFirst's upper-funnel.</h2>
         <ul class="bullets">
           <li><strong>Brand architecture</strong> &mdash; Ant and WorldFirst show up together. Each dollar can do less for WorldFirst specifically unless we have a clear policy on when each brand leads.</li>
           <li><strong>Regional reality</strong> &mdash; different markets, different messages. SEA isn't Europe. Vietnam isn't the US. Regional intelligence has to be baked into the design.</li>
@@ -1429,8 +1630,8 @@
     <div class="slide-body v-center">
       <div class="column column-narrow">
         <span class="eyebrow">05 · Composition</span>
-        <h2 class="xl">Upper-funnel is a <em>composition</em> problem, not a channel one.</h2>
-        <p>Teams organise around channels. Peer brands running meaningful upper-funnel land on PR + influencers + social + SEO + events + partnerships + paid + employees <strong>simultaneously.</strong></p>
+        <h2 class="xl">For upper <em>and</em> mid-funnel, social isn't the only channel &mdash; it's a different layer.</h2>
+        <p>Social is one layer of content among many. Peer brands running meaningful upper + mid-funnel work land on PR + influencers + SEO + events + partnerships + paid + employees <strong>alongside</strong> social &mdash; not instead of.</p>
         <div class="pull-quote">To calibrate what that composition should look like, we ran a dedicated competitor study. <span class="pink-strong">Here's what it found.</span></div>
       </div>
     </div>
@@ -1792,16 +1993,16 @@
     <div class="slide-body v-center">
       <div class="column column-wide">
         <span class="eyebrow">13 · Where WorldFirst sits today</span>
-        <h2 class="lg">WorldFirst content today is roughly <em>90%</em> activation.</h2>
+        <h2 class="lg">WorldFirst content today is <em>activation-dominant.</em></h2>
         <div class="blend-bar" style="margin-top: 2.5vh;">
-          <div class="blend-seg s-act" style="flex: 90;">90% Activation</div>
-          <div class="blend-seg s-aware s-thin" style="flex: 5;">5%</div>
-          <div class="blend-seg s-brand s-thin" style="flex: 5;">5%</div>
+          <div class="blend-seg s-act" style="flex: 90;">Activation</div>
+          <div class="blend-seg s-aware s-thin" style="flex: 5;">Aware.</div>
+          <div class="blend-seg s-brand s-thin" style="flex: 5;">Brand</div>
         </div>
         <div class="blend-legend">
           <span><span class="dot d-act"></span>Activation &mdash; acquisition ads, product demo, CTAs</span>
-          <span><span class="dot d-aware"></span>Awareness &mdash; 5%</span>
-          <span><span class="dot d-brand"></span>Brand &mdash; 5%</span>
+          <span><span class="dot d-aware"></span>Awareness &mdash; small sliver</span>
+          <span><span class="dot d-brand"></span>Brand &mdash; small sliver</span>
         </div>
       </div>
     </div>
@@ -1818,31 +2019,46 @@
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">14 · Example &middot; our YouTube runs on ads</span>
-        <h2 class="lg">Example: our YouTube runs on <em>ads.</em></h2>
-        <div class="yt-evidence">
-          <div>
-            <div class="yt-stat">
-              <div class="yt-stat-num">~80K</div>
-              <div class="yt-stat-label">Organic views this year so far</div>
-              <div class="yt-stat-desc">Organic is growing &mdash; but against 20M+ paid views, it's a <strong>tiny proportion</strong>. Organic alone can't carry awareness at the scale we need.</div>
+        <span class="eyebrow">14 · Where the views actually go</span>
+        <h2 class="lg">Our YouTube views tell the <em>whole</em> story.</h2>
+        <p class="fine" style="max-width: 80ch;">Three types of content on our channel this year so far. The scale split shows exactly what's missing.</p>
+        <div class="yt3-grid">
+          <div class="yt3-card upper">
+            <span class="yt3-tag">Upper-funnel &middot; brand campaign</span>
+            <div class="yt3-thumb">
+              <a href="https://www.youtube.com/watch?v=ci-nscUSFbU" target="_blank" style="display: block; width: 100%; height: 100%;">
+                <img src="images/yt-thomas-frank.jpg" alt="Thomas Frank x WorldFirst">
+                <div class="yt3-play"></div>
+              </a>
             </div>
-            <div class="yt-img-block" style="margin-top: 1.5vh;">
-              <img class="lb-img" src="images/wf-yt-traffic-source.png" alt="YouTube Studio Views by Traffic source &mdash; YouTube advertising dominates">
-              <span class="yt-img-cap">Views by traffic source &middot; YouTube Studio &middot; Q1 2026</span>
-            </div>
+            <div class="yt3-num">3M+</div>
+            <div class="yt3-label">Thomas Frank + Spurs campaign</div>
+            <div class="yt3-body">Boosted YouTube reach on creator + sponsorship content. Builds <strong>who we are</strong>. Doesn't help buyers solve a problem.</div>
           </div>
-          <div>
-            <div class="yt-stat">
-              <div class="yt-stat-num">Top views</div>
-              <div class="yt-stat-label">Activation videos aren't building awareness</div>
-              <div class="yt-stat-desc">Our top-viewed pieces read like <strong>stacked-up display ads</strong> &mdash; feature lists, CTAs, reasons to sign up. Great for people already in-market. <strong>They don't create demand among people who don't yet know they need us.</strong> <a href="https://www.youtube.com/watch?v=kmYzgqEdFpk" target="_blank" class="pink-strong" style="text-decoration: underline;">See one &rarr;</a></div>
+          <div class="yt3-card mid">
+            <span class="yt3-tag">Mid-funnel &middot; awareness (where we're thin)</span>
+            <div class="yt3-thumb">
+              <div class="yt3-placeholder">"How to pay 1688 suppliers"<br>type content &mdash; organic-led, our weakest layer</div>
             </div>
-            <div class="yt-img-block" style="margin-top: 1.5vh;">
-              <img class="lb-img" src="images/wf-yt-content-list.png" alt="YouTube Studio Views by Content &mdash; top videos are product activation">
-              <span class="yt-img-cap">Views by content &middot; YouTube Studio &middot; Q1 2026</span>
-            </div>
+            <div class="yt3-num">~80K</div>
+            <div class="yt3-label">Organic awareness views this year</div>
+            <div class="yt3-body">Problem + solution content is earning watch-time, but at a fraction of needed scale. <strong>This is the layer we need to build.</strong></div>
           </div>
+          <div class="yt3-card lower">
+            <span class="yt3-tag">Lower-funnel &middot; activation (display ads)</span>
+            <div class="yt3-thumb">
+              <a href="https://www.youtube.com/watch?v=kmYzgqEdFpk" target="_blank" style="display: block; width: 100%; height: 100%;">
+                <img src="images/wf-yt-content-list.png" alt="Top activation content">
+                <div class="yt3-play"></div>
+              </a>
+            </div>
+            <div class="yt3-num">~15M</div>
+            <div class="yt3-label">Boosted product activation ads</div>
+            <div class="yt3-body">Top-viewed content: stacked-up display ads, feature lists, CTAs. Converts in-market 5%. <strong>Doesn't create demand.</strong></div>
+          </div>
+        </div>
+        <div class="note" style="margin-top: 1.5vh;">
+          <div class="note-text"><strong>The gap the numbers show.</strong> Upper-funnel brand spend reaches at scale. Lower-funnel activation reaches at scale. The mid-funnel awareness layer where demand is actually created is operating at ~80K organic views. <strong>Building that layer is what makes the upper and lower funnel numbers compound.</strong></div>
         </div>
       </div>
     </div>
@@ -1895,9 +2111,10 @@
     <div class="slide-body v-center">
       <div class="column column-narrow">
         <span class="eyebrow">16 · Finding the balance</span>
-        <h2 class="xl">The question is <em>rebalancing</em> &mdash; demand-building catches up to activation.</h2>
-        <p>Activation stays strong &mdash; it's already our strongest layer.</p>
-        <p>Demand-building gradually gains weight over 3&ndash;4 quarters toward the 46 / 54 benchmark. No rebalancing = CPA climbs, the pool shrinks.</p>
+        <h2 class="xl">Rebalancing now also <em>seeds</em> future upper-funnel campaigns.</h2>
+        <p>Activation stays strong &mdash; it's already our strongest layer. Demand-building gradually gains weight over 3&ndash;4 quarters toward the 46 / 54 benchmark.</p>
+        <p>And when the future brand campaign eventually runs, it lands on audiences who <strong>already know who we are, what we do, and how we help them</strong>. Without that mid-funnel foundation, upper-funnel spend lands on strangers and doesn't convert.</p>
+        <div class="pull-quote">Mid-funnel now is <span class="pink-strong">the foundation that future brand campaigns need to stand on.</span></div>
       </div>
     </div>
     <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
@@ -2069,9 +2286,9 @@
     <div class="slide-body v-center">
       <div class="column column-narrow">
         <span class="eyebrow">21 · Q2 focus</span>
-        <h2 class="xl">Today we talk about <em>awareness</em> content. Brand matters &mdash; we return to it at the end.</h2>
-        <p>Awareness has the biggest expansion headroom and the best short-term impact-to-effort ratio.</p>
-        <p>Brand is the parallel long-term build &mdash; final section of this deck.</p>
+        <h2 class="xl">Q2 concentrates on <em>problem &rarr; solution &rarr; product</em> awareness.</h2>
+        <p>It's not just "build product demand." It's the full bridge: plant the problem, show the solution space, then integrate WorldFirst as the answer.</p>
+        <p>This is where the biggest expansion headroom sits. Brand is the parallel long-term build, final section of this deck.</p>
       </div>
     </div>
     <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
@@ -2088,7 +2305,8 @@
     <div class="slide-body v-center">
       <div class="column column-narrow">
         <span class="eyebrow">22 · The battle plan</span>
-        <h2 class="xl"><em>Regional creators</em> + short-form carrying Q2 product focus to 20M impressions.</h2>
+        <h2 class="xl">The most <em>efficient</em> way to spend our dollars on building awareness.</h2>
+        <p class="lede">Solution: <strong class="pink">regional creators + short-form</strong>, carrying Q2 product focus to 20M impressions.</p>
         <ul class="bullets">
           <li><strong>Who</strong> &mdash; regional creators in priority corridors, not central talking heads</li>
           <li><strong>What</strong> &mdash; platform-native short-form tied directly to WorldFirst product benefit</li>
@@ -2152,16 +2370,51 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 23 — WHY 20M                                                      -->
+  <!-- 25 — PROOF · TIDE BANKING (competitor running the playbook)       -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Why 20M</span><span class="sep"></span><span class="head-num">25</span></div>
+      <div class="head-meta"><span>Proof &middot; peer already running it</span><span class="sep"></span><span class="head-num">25</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">24 · The playbook, already in market</span>
+        <h2 class="lg">Tide (UK) is already running the <em>exact</em> playbook we're proposing.</h2>
+        <p class="fine" style="max-width: 82ch;">Tide's paid team in the UK is running localised mid-funnel product-awareness ads &mdash; local faces, local language, product benefit tied to a specific problem. Heavily at volume. We can see it live in Meta Ad Library.</p>
+        <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 3vw; margin-top: 1.5vh; align-items: start;">
+          <div>
+            <a href="https://www.facebook.com/ads/library/?active_status=active&amp;ad_type=all&amp;country=GB&amp;id=1146262231023263&amp;is_targeted_country=false&amp;media_type=all&amp;search_type=page&amp;sort_data[mode]=total_impressions&amp;sort_data[direction]=desc&amp;view_all_page_id=264931190588490" target="_blank" style="display: block;">
+              <img class="lb-img" src="images/tide-meta-ads.png" alt="Tide Banking Meta Ad Library &mdash; active localised mid-funnel ads" style="width: 100%; border-radius: 4px;">
+            </a>
+          </div>
+          <div>
+            <ul class="bullets" style="margin-top: 0;">
+              <li><strong>Local faces, local voices</strong> &mdash; not central brand talent</li>
+              <li><strong>Short-form + product benefit</strong> &mdash; problem framed, solution shown</li>
+              <li><strong>Running at volume</strong> &mdash; multiple active creatives per product, per region</li>
+              <li><strong>Paid distribution</strong> &mdash; not relying on organic alone</li>
+            </ul>
+            <div class="pull-quote" style="margin-top: 1.5vh;">The playbook works. <span class="pink-strong">We just need to run it with more regions to cover.</span></div>
+            <a class="cta-button" href="https://www.facebook.com/ads/library/?active_status=active&amp;ad_type=all&amp;country=GB&amp;id=1146262231023263&amp;is_targeted_country=false&amp;media_type=all&amp;search_type=page&amp;sort_data[mode]=total_impressions&amp;sort_data[direction]=desc&amp;view_all_page_id=264931190588490" target="_blank">See Tide's live ads in Meta Library</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 26 — WHY 20M                                                      -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Why 20M</span><span class="sep"></span><span class="head-num">26</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">24 · The number</span>
+        <span class="eyebrow">25 · The number</span>
         <h2 class="xl">Why <em>20M?</em> Enough reach to seed demand, not just measure it.</h2>
         <ul class="bullets">
           <li><strong>Problem-aware audiences are larger than in-market 5%</strong> &mdash; need enough reach to find them across each priority region</li>
@@ -2181,11 +2434,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>How we do it</span><span class="sep"></span><span class="head-num">26</span></div>
+      <div class="head-meta"><span>How we do it</span><span class="sep"></span><span class="head-num">27</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">25 · How we do it &mdash; the distribution</span>
+        <span class="eyebrow">26 · How we do it &mdash; the distribution</span>
         <h2 class="lg">20M Q2 impressions distributed <em>against</em> paid budget &amp; product focus.</h2>
         <p class="fine" style="max-width: 82ch;">Awareness content built for the paid team's activation targets &mdash; same regions, same products. The demand we create feeds the pool they convert.</p>
         <div class="region-bars">
@@ -2210,11 +2463,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>May production plan</span><span class="sep"></span><span class="head-num">27</span></div>
+      <div class="head-meta"><span>May production plan</span><span class="sep"></span><span class="head-num">28</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">26 · May production plan &mdash; minimum output</span>
+        <span class="eyebrow">27 · May production plan &mdash; minimum output</span>
         <h2 class="lg">The <em>freelancer creatives</em> we'll produce ASAP for May.</h2>
         <p class="fine" style="max-width: 82ch;">Minimum set. Each creative lands on our own channels, gets handed to paid for ads, and gets shared with regional teams as a benchmark to test more messages. May feeds the tests &mdash; June expands on whichever work best.</p>
         <table class="prod-table">
@@ -2261,16 +2514,54 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 27 — PRODUCTION FLOW (HTML chart)                                 -->
+  <!-- 29 — OKR + PROJECTED COST (CPM $19.13 · $400K for 20M Q2)         -->
   <!-- ================================================================= -->
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Production flow</span><span class="sep"></span><span class="head-num">28</span></div>
+      <div class="head-meta"><span>OKR &amp; projected cost</span><span class="sep"></span><span class="head-num">29</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">27 · Production flow</span>
+        <span class="eyebrow">28 · The cost to hit 20M</span>
+        <h2 class="lg">Benchmarked to our 2026 OKR &mdash; <em>~$400K</em> for Q2, production + boosted distribution.</h2>
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 3vw; margin-top: 1.5vh; align-items: start;">
+          <div>
+            <img class="lb-img" src="images/wf-okr-cpm.png" alt="WorldFirst 2026 social OKR &mdash; CPM target $19.13" style="width: 100%; border-radius: 4px; border: 1px solid var(--line);">
+            <span class="yt-img-cap" style="margin-top: 0.8vh; display: block;">2026 social OKR &middot; primary + secondary KRs</span>
+          </div>
+          <div>
+            <div class="evidence-panel" style="margin: 0; flex-direction: column; align-items: flex-start;">
+              <div class="evidence-num" style="font-size: clamp(2.6rem, 6vh, 4rem);">~$400K</div>
+              <div class="evidence-body" style="margin-top: 0.6vh;">
+                <div class="ev-label">Projected Q2 cost</div>
+                <div class="ev-quote">CPM $19.13 &times; 20M impressions = ~$383K. Rounded to ~$400K to cover creative production + boosted distribution.</div>
+                <div class="ev-source">Source: 2026 OKR CPM secondary KR (KR1.1: $19.13 down from $81.41 in 2025, -77%)</div>
+              </div>
+            </div>
+            <ul class="bullets" style="margin-top: 2vh;">
+              <li><strong>Production cost</strong> &mdash; ~29 freelancer creatives (May) + regional co-production</li>
+              <li><strong>Distribution boost</strong> &mdash; organic first, then paid amplification on winners</li>
+              <li><strong>Benchmark</strong> &mdash; this is the floor to test the engine at readable scale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 30 — PRODUCTION FLOW (HTML chart)                                 -->
+  <!-- ================================================================= -->
+  <section class="slide">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Production flow</span><span class="sep"></span><span class="head-num">30</span></div>
+    </div>
+    <div class="slide-body v-start">
+      <div class="column column-wide">
+        <span class="eyebrow">29 · Production flow</span>
         <h2 class="lg">After performance read, the path <em>splits.</em></h2>
         <div class="pflow-v2">
           <svg viewBox="0 0 1000 540" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -2341,11 +2632,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Regional reality</span><span class="sep"></span><span class="head-num">29</span></div>
+      <div class="head-meta"><span>Regional reality</span><span class="sep"></span><span class="head-num">31</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">28 · Regional reality</span>
+        <span class="eyebrow">30 · Regional reality</span>
         <h2 class="xl">Vietnam and SEA are already <em>ready.</em> Others need a helping hand from central.</h2>
         <p><strong>Vietnam</strong> and <strong>SEA</strong> are ready for regional creator collaboration today &mdash; local teams own local channels, understand their audiences, have language capability.</p>
         <p><strong>Other regions</strong> &mdash; UK, EEA, ANZ, Longtail &mdash; don't have dedicated regional content leads yet. Central steps in with a helping hand: sourcing creators, briefing them on WorldFirst product benefit, co-producing with regional stakeholders.</p>
@@ -2361,16 +2652,16 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Metrics</span><span class="sep"></span><span class="head-num">30</span></div>
+      <div class="head-meta"><span>Metrics</span><span class="sep"></span><span class="head-num">32</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">29 · Metrics</span>
+        <span class="eyebrow">31 · Metrics</span>
         <h2 class="lg">The <em>metrics</em> we look at.</h2>
         <div class="metric-grid-v2">
           <div class="metric-card-v2 color-aware">
             <div class="mc-head"><span class="mc-label">01 · Content performance</span><span class="mc-time">Real-time</span></div>
-            <ul><li>Impressions</li><li>Time spent</li><li>Engagement rate</li><li>Completion</li></ul>
+            <ul><li>Impressions</li><li>Time spent</li><li>Engagement rate</li></ul>
           </div>
           <div class="metric-card-v2 color-act">
             <div class="mc-head"><span class="mc-label">02 · Direct acquisition</span><span class="mc-time">Real-time</span></div>
@@ -2378,7 +2669,7 @@
           </div>
           <div class="metric-card-v2 color-brand">
             <div class="mc-head"><span class="mc-label">03 · Audience building</span><span class="mc-time">Monthly</span></div>
-            <ul><li>Social audiences</li><li>Website audiences</li><li>Retargeting pool</li></ul>
+            <ul><li>Social + website audiences</li><li>Retargeting pool</li><li><strong>CPA for demand gen</strong></li></ul>
           </div>
           <div class="metric-card-v2 color-cycle">
             <div class="mc-head"><span class="mc-label">04 · Cycle signals</span><span class="mc-time">Quarterly</span></div>
@@ -2396,11 +2687,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Beyond Q2</span><span class="sep"></span><span class="head-num">31</span></div>
+      <div class="head-meta"><span>Beyond Q2</span><span class="sep"></span><span class="head-num">33</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">30 · Beyond Q2</span>
+        <span class="eyebrow">32 · Beyond Q2</span>
         <h2 class="xl">Two months, then we <em>regroup.</em></h2>
         <p>After Q2: consolidated hybrid strategy &mdash; a mix, not one format winning everything.</p>
       </div>
@@ -2414,11 +2705,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The full stack</span><span class="sep"></span><span class="head-num">32</span></div>
+      <div class="head-meta"><span>The full stack</span><span class="sep"></span><span class="head-num">34</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">31 · The full stack</span>
+        <span class="eyebrow">33 · The full stack</span>
         <h2 class="xl">Long-term leverage is a <em>combination.</em></h2>
         <ul class="plus-list">
           <li><strong>Brand campaigns</strong></li>
@@ -2440,12 +2731,12 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The dashboard</span><span class="sep"></span><span class="head-num">33</span></div>
+      <div class="head-meta"><span>The dashboard</span><span class="sep"></span><span class="head-num">35</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-wide">
-        <span class="eyebrow">32 · The dashboard</span>
-        <h2 class="lg">One dashboard. <em>Shared.</em> Demand-building + regional + paid.</h2>
+        <span class="eyebrow">34 · Work shared across content + paid + regions</span>
+        <h2 class="lg">Content works best when <em>paid</em> and <em>regional</em> teams share the same view.</h2>
         <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 3vw; margin-top: 2vh; align-items: start;">
           <div>
             <ul class="bullets">
@@ -2474,11 +2765,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Working together</span><span class="sep"></span><span class="head-num">34</span></div>
+      <div class="head-meta"><span>Working together</span><span class="sep"></span><span class="head-num">36</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">33 · Working together</span>
+        <span class="eyebrow">35 · Working together</span>
         <h2 class="xl">How awareness and activation <em>work together.</em></h2>
         <ul class="bullets">
           <li><strong>Consistent communications</strong> &mdash; same message across both layers, different jobs</li>
@@ -2496,23 +2787,23 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Team shape</span><span class="sep"></span><span class="head-num">35</span></div>
+      <div class="head-meta"><span>Team shape</span><span class="sep"></span><span class="head-num">37</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">34 · Team shape</span>
-        <h2 class="lg">A funnel needs a <em>full team.</em></h2>
+        <span class="eyebrow">36 · Potential content team composition</span>
+        <h2 class="lg">A full funnel needs a <em>full content team.</em></h2>
         <ul class="bullets" style="margin-top: 1.5vh;">
           <li><strong>Cathy (incoming)</strong> &mdash; shifting ad-hoc tasks over; owns social publishing + brand content coordination</li>
         </ul>
-        <p class="fine" style="margin-top: 1vh;"><strong class="pink">Additional roles over time (as volume grows):</strong></p>
+        <p class="fine" style="margin-top: 1vh;"><strong class="pink">Potential additional roles over time (as volume grows):</strong></p>
         <ul class="bullets">
           <li>Proof / partnership / customer content + employee amplification</li>
           <li>Influencer / KOL program ownership</li>
           <li>Production support for regional content at volume</li>
         </ul>
-        <p class="fine" style="margin-top: 1.2vh;"><strong class="pink">And &mdash;</strong> close collaboration with the <strong>Branding department.</strong> Awareness content only lands when the brand above it is coherent.</p>
-        <div class="pull-quote">Medium-term leverage is awareness. <span class="pink-strong">Long-term leverage is brand.</span></div>
+        <p class="fine" style="margin-top: 1.2vh;"><strong class="pink">Why a full team, not just mid-funnel.</strong> Q2's focus is mid-to-lower-funnel selling, but long-term we need proper <strong>brand</strong> too. A full content team contributes across <strong>every pillar from upper to lower</strong> &mdash; that's how the stack actually compounds.</p>
+        <div class="pull-quote">Mid-funnel now. <span class="pink-strong">Full-funnel as the team grows.</span></div>
       </div>
     </div>
     <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
@@ -2524,7 +2815,7 @@
   <section class="slide slide-divider">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Part III · Brand campaign — later, not now</span><span class="sep"></span><span class="head-num">36</span></div>
+      <div class="head-meta"><span>Part III · Brand campaign — later, not now</span><span class="sep"></span><span class="head-num">38</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="div-num">III</div>
@@ -2543,11 +2834,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Brand campaign is risky</span><span class="sep"></span><span class="head-num">37</span></div>
+      <div class="head-meta"><span>Brand campaign is risky</span><span class="sep"></span><span class="head-num">39</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">35 · Brand campaigns come with real risk</span>
+        <span class="eyebrow">37 · Brand campaigns come with real risk</span>
         <h2 class="lg">Two reminders of what goes <em>wrong</em> when brand outpaces defence.</h2>
         <ul class="bullets" style="margin-top: 1.5vh;">
           <li><strong>Wise, 2014&ndash;19</strong> &mdash; built the "hidden fees" category for the whole market. Much of the demand got collected by Revolut, Remitly and Atlantic Money. Brand without activation defence <strong>subsidised competitors.</strong></li>
@@ -2565,14 +2856,15 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Awareness for us to collect</span><span class="sep"></span><span class="head-num">38</span></div>
+      <div class="head-meta"><span>Awareness for us to collect</span><span class="sep"></span><span class="head-num">40</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column column-narrow">
-        <span class="eyebrow">36 · The proposition test</span>
-        <h2 class="xl">Brand campaigns should create awareness that's <em>ours</em> to collect, not competitors'.</h2>
-        <p><strong>FX savings</strong> alone is a claim most peers can match. A brand built on it educates the market on a benefit anyone delivers &mdash; the strongest activation collects the demand.</p>
-        <p>The proposition has to anchor to something <strong>specifically WorldFirst</strong>: our Ant / Alipay depth, CNY routing, 1688 ecosystem, global cross-border footprint. Awareness against that is awareness we can uniquely convert.</p>
+        <span class="eyebrow">38 · The proposition test</span>
+        <h2 class="xl">Build awareness that's <em>best for us</em> to collect.</h2>
+        <p>Ramp talks to CFOs. Ramp's awareness all points at something CFOs recognise in Ramp &mdash; automated controls, vendor visibility, built for finance ops. That awareness is <strong>hard to redirect to a competitor</strong>.</p>
+        <p><strong>FX savings alone</strong> doesn't do that job. Any peer can match the claim. A brand built on a generic benefit builds awareness <strong>for the whole category</strong>, not specifically for us.</p>
+        <p>Our proposition has to anchor to what only WorldFirst does: <strong>Ant / Alipay depth, CNY routing, 1688 ecosystem, global cross-border footprint</strong>. That's awareness worth building &mdash; because it's awareness only we can convert.</p>
       </div>
     </div>
     <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
@@ -2584,14 +2876,14 @@
   <section class="slide slide-flash">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>The proposition</span><span class="sep"></span><span class="head-num">39</span></div>
+      <div class="head-meta"><span>The proposition</span><span class="sep"></span><span class="head-num">41</span></div>
     </div>
     <div class="slide-body v-center">
-      <div class="flash-deco">moat</div>
+      <div class="flash-deco">winners</div>
       <div class="column column-wide flash-content">
-        <span class="eyebrow">37 · The global proposition</span>
-        <h1 class="flash-title">Build Your<br>Cross-Border <em>Moat.</em></h1>
-        <p class="flash-sub">The one idea that says what WorldFirst does that no one else can match &mdash; and invites our customers into their own story.</p>
+        <span class="eyebrow">39 · The global proposition</span>
+        <h1 class="flash-title">Cross-border <em>winners.</em></h1>
+        <p class="flash-sub">A campaign built on the operators who won by going cross-border. WorldFirst is how they did it.</p>
       </div>
     </div>
     <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
@@ -2603,11 +2895,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Success stories</span><span class="sep"></span><span class="head-num">40</span></div>
+      <div class="head-meta"><span>Success stories</span><span class="sep"></span><span class="head-num">42</span></div>
     </div>
     <div class="slide-body v-center">
       <div class="column">
-        <span class="eyebrow">38 · The campaign shape</span>
+        <span class="eyebrow">40 · The campaign shape</span>
         <h2 class="lg">A campaign built around <em>cross-border success stories.</em></h2>
         <p class="fine" style="max-width: 82ch;">Our customers are cross-border operators. When they share their tips, what they're really describing is <em>their</em> moat &mdash; and WorldFirst is part of how they built it. The brand campaign carries those stories.</p>
         <div class="models" style="margin-top: 2vh;">
@@ -2638,11 +2930,11 @@
   <section class="slide">
     <div class="slide-head">
       <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
-      <div class="head-meta"><span>Full stack · final</span><span class="sep"></span><span class="head-num">41</span></div>
+      <div class="head-meta"><span>Full stack · final</span><span class="sep"></span><span class="head-num">43</span></div>
     </div>
     <div class="slide-body v-start">
       <div class="column column-full">
-        <span class="eyebrow">39 · The full stack</span>
+        <span class="eyebrow">41 · The full stack</span>
         <h2 class="lg" style="max-width: 30ch;">WorldFirst's full content stack &mdash; <em>mapped.</em></h2>
         <div class="stack-funnel">
           <div class="stack-tier tier-brand">
@@ -2696,6 +2988,35 @@
     <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
   </section>
 
+  <!-- ================================================================= -->
+  <!-- 44 — THANK YOU                                                    -->
+  <!-- ================================================================= -->
+  <section class="slide slide-thanks">
+    <div class="slide-head">
+      <div class="logo-mark"><img src="wf_logo.webp" alt=""></div>
+      <div class="head-meta"><span>Fin.</span><span class="sep"></span><span class="head-num">44</span></div>
+    </div>
+    <div class="slide-body v-center">
+      <div class="thanks-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+      </div>
+      <div class="thanks-deco">thanks</div>
+      <div class="thanks-content">
+        <span class="thanks-pre">Q2 battle plan &middot; creating demand</span>
+        <h1 class="thanks-headline">Thank <em>you.</em></h1>
+        <p class="thanks-sub">Let's build the mid-funnel engine that makes the rest of the stack compound.</p>
+        <div class="thanks-meta">
+          <span class="author">Steven Chen</span>
+          <span class="bar"></span>
+          <span>WorldFirst &middot; April 2026</span>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Creating Demand · Q2 2026</span></div>
+  </section>
+
 </div>
 
 <div class="kbd-hint">
@@ -2704,7 +3025,7 @@
 
 <div id="persist-nav">
   <button id="btn-prev" aria-label="Previous">&larr;</button>
-  <span id="counter">01 / 41</span>
+  <span id="counter">01 / 44</span>
   <button id="btn-next" aria-label="Next">&rarr;</button>
 </div>
 
@@ -2735,7 +3056,7 @@
     prevBtn.style.opacity = current === 0 ? '0.25' : '1';
     nextBtn.style.opacity = current === total - 1 ? '0.25' : '1';
     const active = slides[current];
-    const dark = active && (active.classList.contains('slide-cover') || active.classList.contains('slide-flash'));
+    const dark = active && (active.classList.contains('slide-cover') || active.classList.contains('slide-flash') || active.classList.contains('slide-thanks'));
     counter.style.color = dark ? '#FFFFFF' : '';
     prevBtn.style.color = dark ? 'rgba(255,255,255,0.7)' : '';
     nextBtn.style.color = dark ? 'rgba(255,255,255,0.7)' : '';
